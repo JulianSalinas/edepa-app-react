@@ -1,0 +1,1749 @@
+{
+  "comments" : {
+    "-LMnawZtIcwTe1897BTB" : {
+      "content" : "muy buena app",
+      "time" : 1537390399210,
+      "userid" : "J5oUpZO7EbT2ChY0whwwmTpRl7w1"
+    },
+    "-LMndJiLOTnX9QYcMmxK" : {
+      "content" : "a nu ma que bien",
+      "time" : 1537391022409,
+      "userid" : "J5oUpZO7EbT2ChY0whwwmTpRl7w1"
+    },
+    "-LMoZrZpZ9SYqGigxTrs" : {
+      "content" : "hola admins",
+      "time" : 1537406631753,
+      "userid" : "J5oUpZO7EbT2ChY0whwwmTpRl7w1"
+    },
+    "-LMsa4xziP9SYUAl3rZz" : {
+      "content" : "blabla",
+      "time" : 1537474062201,
+      "userid" : "J5oUpZO7EbT2ChY0whwwmTpRl7w1"
+    },
+    "-LMwgsMRy9hZxKL9R28o" : {
+      "content" : "muy buena aplicación 100!",
+      "time" : 1537542945826,
+      "userid" : "8mUijiYrosYgyod7UIcpGKyCqdP2"
+    },
+    "-LOegmE3GKraS62qPPlu" : {
+      "content" : "dia 12 de octubre...aun nadie ha descargado la app",
+      "time" : 1539388418237,
+      "userid" : "J5oUpZO7EbT2ChY0whwwmTpRl7w1"
+    }
+  },
+  "edepa5" : {
+    "admins" : {
+      "5FgsR45LsRcEBtRIbU66yPi8X143" : "Greivin Ramírez",
+      "EutHxEyAoCYzzkaKcqm0sMnVMM42" : "Julian desde Facebook",
+      "J5oUpZO7EbT2ChY0whwwmTpRl7w1" : "Julian Salinas",
+      "kXhUQYuVdEQf4k9BhHOhzWZBoJq2" : "Mari SolBenavides",
+      "rcLY51VEgnfw9R7COGkc19OQUOq1" : "Greivin"
+    },
+    "banks" : {
+      "-GWRETgjwhjkfdwbweFW" : {
+        "description" : "100 mts norte de los Tribunales de Justicia, calle 5, avenida central",
+        "facebookUrl" : "fb.me/BancoBCR",
+        "imageUrl" : "https://scontent.fsyq1-1.fna.fbcdn.net/v/t1.0-9/197583_256386997816834_1479303588_n.jpg?_nc_cat=1&oh=14ef10543f77ef99fbf090fb293b6742&oe=5C319948",
+        "location" : "https://www.google.com/maps/place/Banco+de+Costa+Rica/@9.8642386,-83.9175192,21z/data=!4m12!1m6!3m5!1s0x8fa0dfe94a1db589:0xe403ee46d9b434c1!2sBanco+de+Costa+Rica!8m2!3d9.8641573!4d-83.9174555!3m4!1s0x8fa0dfe94a1db589:0xe403ee46d9b434c1!8m2!3d9.8641573!4d-83.9174555",
+        "name" : "Banco de Costa Rica",
+        "phone" : "22111111",
+        "web" : "www.bancobcr.com"
+      },
+      "-sGRESWkljgaskjnGREAW" : {
+        "description" : "300 mts este de los Tribunales de Justicia, avenida 4",
+        "facebookUrl" : "fb.me/MucapCR",
+        "imageUrl" : "https://scontent.fsyq1-1.fna.fbcdn.net/v/t1.0-9/34859983_981697378647005_1343761156564582400_n.jpg?_nc_cat=1&oh=18561b8e1f02b94c59331f8d34839d97&oe=5C1DF6E7",
+        "location" : "https://www.google.com/maps/place/MUCAP/@9.8618154,-83.9151366,20.17z/data=!4m8!1m2!2m1!1sMUCAP!3m4!1s0x0:0x6f8ec2d0ce8a3c99!8m2!3d9.861746!4d-83.915036",
+        "name" : "MUCAP",
+        "phone" : "25508400",
+        "web" : "www.mucap.fi.cr"
+      },
+      "-serthgkjserGSERgserkjngre" : {
+        "description" : "De la Basílica de los Ángeles, 200m al oeste. Sobre la Calle 11 y Avenida Central",
+        "facebookUrl" : "fb.me/bnmascerca/",
+        "imageUrl" : "https://lh3.googleusercontent.com/nTfdeMyhHfDq2A8E6CeRElytENOl94eG8hgu9Wqd88M-1E5vhPJdx9f4sweGGS_5K4XK",
+        "location" : "https://www.google.com/maps/place/Banco+Nacional/@9.8639282,-83.9154645,21z/data=!4m8!1m2!2m1!1sBanco+Nacional!3m4!1s0x8fa0dfec085dba85:0x6a46378c353944d3!8m2!3d9.8638943!4d-83.915437",
+        "name" : "Banco Nacional de Costa Rica",
+        "phone" : "22122000",
+        "web" : "www.bncr.fi.cr/SitePages/Inicio.aspx"
+      }
+    },
+    "chat" : {
+      "-LP6x_Vz13JxEgu0Niba" : {
+        "content" : "hola",
+        "delivered" : true,
+        "time" : 1539879360575,
+        "userid" : "kXhUQYuVdEQf4k9BhHOhzWZBoJq2",
+        "username" : "Mari SolBenavides"
+      },
+      "-LRKOyvdjFlIBJixAOuo" : {
+        "content" : "hola",
+        "delivered" : true,
+        "time" : 1542252392589,
+        "userid" : "RP42HM9y82WKEsirlMCDLX1xXl92",
+        "username" : "Leonardo Camacho Calvo "
+      },
+      "-LRKQEJ5k8uD9TR9Dr1V" : {
+        "content" : "hola",
+        "delivered" : true,
+        "time" : 1542252722802,
+        "userid" : "P3oWlfbWUAXvEQXe13IGBDUXveC3",
+        "username" : "Jorge Jiménez Q."
+      },
+      "-LROrytG3P436Nd-ceVJ" : {
+        "content" : "Bienvenidos al VI EDEPA",
+        "delivered" : true,
+        "time" : 1542327364352,
+        "userid" : "5FgsR45LsRcEBtRIbU66yPi8X143",
+        "username" : "Greivin Ramírez"
+      },
+      "-LROwRpqxjpxcbV3jeJJ" : {
+        "content" : "Gracias. .",
+        "delivered" : true,
+        "time" : 1542328536118,
+        "userid" : "RP42HM9y82WKEsirlMCDLX1xXl92",
+        "username" : "Leonardo Camacho Calvo "
+      }
+    },
+    "config" : {
+      "chat" : true,
+      "comments" : true,
+      "info" : true,
+      "minimap" : "https://res.cloudinary.com/edepa/image/upload/v1541644312/Edepa/Mapa_actualizado.png",
+      "news" : true,
+      "palette" : true,
+      "people" : true
+    },
+    "congress" : {
+      "description" : "El *propósito* central del evento es rescatar, a través de conferencias, talleres, ponencias, reportes de investigación y charlas, entre otras actividades, la importancia que tienen la enseñanza de estos tópicos en un mundo cada vez más competitivo e informatizado. Esperamos contar con aportes pedagógicos sobre probabilidad y estadística, particularmente relacionados con los temas propuestos en los programas del Ministerio de Educación de Costa Rica, y propuestas que tengan que ver con el incipiente campo de la didáctica del análisis de datos.",
+      "end" : 1544830200000,
+      "location" : "Instituto Tecnológico de Costa Rica, Sede Cartago. Puede ver el croquis de la sede presionando en el icono \"Mapa\"",
+      "locationTag" : "Sede",
+      "name" : "VI Encuentro sobre la Didáctica de la Estadística, la Probabilidad y el Análisis de Datos",
+      "start" : 1524439800000,
+      "xCoord" : -83.912,
+      "yCoord" : 9.857
+    },
+    "exchange" : {
+      "buy" : "622,99",
+      "description" : "Última actualización realizada el 7 de noviembre del 2018",
+      "sell" : "631,30"
+    },
+    "favorites" : {
+      "19vFxtaXrQQbC7BFTD5KAiURLcl1" : {
+        "-LKnn6ANJ533JSPX8hzn" : 1512604800000
+      },
+      "5FgsR45LsRcEBtRIbU66yPi8X143" : {
+        "-LKnn6AcKtpjjb6HKumz" : 1512432000000
+      },
+      "5XSKB4igTDOKP06CNxpdEvAHTUg1" : {
+        "-LNQz3V25LufpjxeYIlJ" : 1543968000000
+      },
+      "6dM915xz7rU6IWTqExW1DAEpz7u2" : {
+        "-LKnn6ARZEafVXmESSrF" : 1512691200000,
+        "-LKnn6ATljCg2Dm44GrJ" : 1512691200000,
+        "-LKnn6AUMvVEnSknqDor" : 1512777600000,
+        "-LMowM2tKCZrF2UYuZHZ" : 1537401600000
+      },
+      "8mUijiYrosYgyod7UIcpGKyCqdP2" : {
+        "-LKnn6ATljCg2Dm44GrJ" : 1512691200000,
+        "-LKnn6AaXl5r-YB9LcCy" : 1512691200000,
+        "-LMuHfhQaXPJIbHC8-vk" : 1537488000000
+      },
+      "EutHxEyAoCYzzkaKcqm0sMnVMM42" : {
+        "-LKnn6AUMvVEnSknqDor" : 1512777600000,
+        "-LKnn6AcKtpjjb6HKumz" : 1512432000000,
+        "-LMowM2tKCZrF2UYuZHZ" : 1538092800000
+      },
+      "J5oUpZO7EbT2ChY0whwwmTpRl7w1" : {
+        "-LNQuihfuKvIi2OeDswF" : 1538006400000,
+        "-LNQviKqWHtVJT0Om550" : 1543795200000,
+        "-LNRVslY6H98o7ZqBO7m" : 1544140800000,
+        "-LNRoJ73-CHyfe1MMy_O" : 1543968000000,
+        "-LNRoebbXB90OsMf8GhS" : 1543968000000,
+        "-LNRp446Ix_VbtgqGUcv" : 1543968000000
+      },
+      "RP42HM9y82WKEsirlMCDLX1xXl92" : {
+        "-LNQuihfuKvIi2OeDswF" : 1543968000000,
+        "-LQFdrMcAVzafjMPWFln" : 1543968000000
+      },
+      "VL35gANawEStWHeZQKxO7YdXdrS2" : {
+        "-LNRoJ73-CHyfe1MMy_O" : 1543968000000
+      },
+      "bCoRNnatPKOglSONObMVHOXIKAj2" : {
+        "-LNQuihfuKvIi2OeDswF" : 1543968000000,
+        "-LNQviKqWHtVJT0Om550" : 1543795200000,
+        "-LNQwiyGD6-8V14HJjrG" : 1544054400000,
+        "-LNQy2SR68Iao7Zf0TU0" : 1544140800000,
+        "-LNQyXZ5J2IF_0ghsLva" : 1544140800000,
+        "-LNQzViK2LORZShqBkdN" : 1544140800000,
+        "-LNR-FWrFYcA82DdyFir" : 1544140800000,
+        "-LNR0mhMXqP3GpT_SNQc" : 1544054400000,
+        "-LNRUUoE1Si31dgxcvOT" : 1544054400000,
+        "-LNRV1T_qW19ysXDhiEj" : 1544140800000,
+        "-LNRWeACsEKA4IeFii6N" : 1544140800000,
+        "-LNRYBMg3r55NzHQjO7N" : 1544054400000,
+        "-LNRYf-tIpjyKLivVgFB" : 1544054400000,
+        "-LNRZAczstiHmFx_DoWD" : 1544140800000,
+        "-LNRaqC4QSLGkk_tHLC6" : 1544140800000,
+        "-LNRcGoY_k5pPaXuz9ky" : 1544140800000,
+        "-LNRd5BJfT-UpdZ0ib_6" : 1544054400000,
+        "-LNRdTplquw4fL13Bazj" : 1543968000000,
+        "-LNRfsipf09FUOU7kKJn" : 1544140800000,
+        "-LNRg_ACBNUcxHBzCWF5" : 1544140800000,
+        "-LNRhpssc6GtMxRc8FTp" : 1544054400000,
+        "-LNRmH7tTKA_WKtSnFIv" : 1544054400000,
+        "-LNRmgaC1OgBlzjeM4yj" : 1543968000000,
+        "-LNRnDE_XRV6lyh4JKPE" : 1543968000000,
+        "-LNRoJ73-CHyfe1MMy_O" : 1543968000000,
+        "-LNRoebbXB90OsMf8GhS" : 1543968000000,
+        "-LNRp446Ix_VbtgqGUcv" : 1543968000000,
+        "-LNRpYQJeXOqmmvwJULv" : 1543968000000,
+        "-LQF6vXQGx819IP2Ci5L" : 1543881600000,
+        "-LQFdrMcAVzafjMPWFln" : 1543968000000
+      },
+      "kXhUQYuVdEQf4k9BhHOhzWZBoJq2" : {
+        "-LKnn6ANJ533JSPX8hzn" : 1512604800000,
+        "-LKnn6AOzFLfgKOwoDpb" : 1512604800000,
+        "-LKnn6ARZEafVXmESSrF" : 1512691200000,
+        "-LKnn6ATljCg2Dm44GrJ" : 1512691200000
+      },
+      "rcLY51VEgnfw9R7COGkc19OQUOq1" : {
+        "-LKnn6AcKtpjjb6HKumz" : 1512432000000
+      },
+      "xr8PER16H4VSc5XpOOAlroR5d0i2" : {
+        "-LKnn6ANJ533JSPX8hzn" : 1512604800000,
+        "-LKnn6APLDsZqrHqwe3U" : 1512691200000,
+        "-LKnn6ATljCg2Dm44GrJ" : 1512691200000,
+        "-LKnn6AXRSP_iZ-8c7ko" : 1512777600000,
+        "-LKnn6AcKtpjjb6HKumz" : 1512432000000,
+        "-LMowM2tKCZrF2UYuZHZ" : 1538092800000
+      }
+    },
+    "lodging" : {
+      "-GHESRTgtrwsekjngtsdrlktngtGTr" : {
+        "description" : "50m Norte de la facultad de Derecho de la UCR, San José, San Pedro, 115001",
+        "facebookUrl" : "fb.me/HotelAvedelParaiso",
+        "imageUrl" : "https://scontent.fsyq1-1.fna.fbcdn.net/v/t31.0-8/885626_834296543273632_2274271060268116621_o.jpg?_nc_cat=100&oh=25c6f31dacb86cf40ea09e6b0146efcc&oe=5C2E8E99",
+        "location" : "https://www.google.com/maps/place/Hotel+Ave+del+Paraiso/@9.9378965,-84.0559748,17z/data=!3m1!4b1!4m7!3m6!1s0x8fa0e380ad5011fb:0xe99d0dc3b8acd6a5!5m1!1s2018-10-15!8m2!3d9.9378912!4d-84.0537861",
+        "name" : "Hotel Ave del Paraíso",
+        "phone" : "+506 22258515",
+        "web" : "www.hotelavedelparaiso.com"
+      },
+      "-HRThtrsdeHTRSthrsdlknmhtrsdhrt" : {
+        "description" : "Ubicado en la exclusiva zona de Barrio Dent, Este de la Capital. Muy cerca de centros comerciales, teatros, oficentros",
+        "facebookUrl" : "fb.me/HotelBoutiqueJade",
+        "imageUrl" : "https://scontent.fsyq1-1.fna.fbcdn.net/v/t31.0-8/1597059_714975088543202_160732365_o.jpg?_nc_cat=104&oh=4cf60c5b30d271ed6bb759803e88c451&oe=5C20D216",
+        "location" : "https://www.google.com/maps/place/Hotel+Jade/@9.9339197,-84.0609955,17z/data=!3m1!4b1!4m7!3m6!1s0x8fa0e381e30eb7c7:0x91943e2986f05b64!5m1!1s2018-10-15!8m2!3d9.9339144!4d-84.0588068",
+        "name" : "Hotel Jade",
+        "phone" : "+506 22242455",
+        "web" : "www.hotelboutiquejade.com"
+      },
+      "-JUFYGERgfsergszregresrsdgser" : {
+        "description" : "Cartago centro: 150 m Norte de la esquina N-E del mercado municipal Cartago. 1.5 Km del evento",
+        "facebookUrl" : "fb.me/HotelCasaAura",
+        "imageUrl" : "https://scontent.fsyq1-1.fna.fbcdn.net/v/t1.0-9/40580365_704048779942705_4187222067080331264_o.jpg?_nc_cat=100&oh=56354aeec45f2d0a8f382c66051fafb1&oe=5C5C4C89",
+        "location" : "https://www.google.com/maps/place/Hotel+Casa+Aura/@9.8678843,-83.9241571,16.74z/data=!4m7!3m6!1s0x8fa0dfe871fa8d9f:0x8625bb4e22bc97b3!5m1!1s2018-10-15!8m2!3d9.867694!4d-83.920973",
+        "name" : "Casa Aura",
+        "phone" : "+506 25918161",
+        "web" : "www.casaauracr.com"
+      },
+      "-gw54erigjhu" : {
+        "description" : "Cartago centro: 5 Km del evento",
+        "facebookUrl" : "fb.me/hotelelguarco",
+        "imageUrl" : "https://scontent.fsyq1-1.fna.fbcdn.net/v/t31.0-8/977660_550522711660553_30762608_o.jpg?_nc_cat=103&oh=6f5d2ac5683f1f09692700111b1d6262&oe=5C288583",
+        "location" : "https://www.google.com/maps/place/Hotel+El+Guarco/@9.845484,-83.9516412,17z/data=!3m1!4b1!4m7!3m6!1s0x8fa11fe1a17754dd:0x517b49e85cd1b169!5m1!1s2018-10-15!8m2!3d9.8454787!4d-83.9494525",
+        "name" : "Hotel el Guarco",
+        "phone" : "+506 25730000",
+        "web" : "www.hotelelguarco.com"
+      },
+      "-liuhareluiDTHRTOILKJ" : {
+        "description" : "Centro de cartago, a un 1 Km del evento",
+        "location" : "https://www.google.com/maps/place/Casa+Mora+Bed+and+Brekfast/@9.8651294,-83.9152908,17z/data=!3m1!4b1!4m5!3m4!1s0x8fa0dfeb7333ce45:0xd02bf6889e61d7e7!8m2!3d9.8651241!4d-83.9131021",
+        "name" : "Hotel Casa Mora",
+        "phone" : "+506 25510324",
+        "web" : "www.casamoracr.com"
+      },
+      "-seruhglGERDSGRjegrf" : {
+        "description" : "Dentro de un Centro Comercial a 30 minitos del evento",
+        "location" : "https://www.google.com/maps/place/Hyatt+Place+San+Jose%2FPinares/@9.9109418,-84.0201894,17z/data=!4m16!1m8!3m7!1s0x8fa0e3df46171c03:0x7e6b9c63d8b9b2a4!2sHyatt+Place+San+Jose%2FPinares!5m1!1s2018-10-15!8m2!3d9.9109365!4d-84.0180007!3m6!1s0x8fa0e3df46171c03:0x7e6b9c63d8b9b2a4!5m1!1s2018-10-15!8m2!3d9.9109365!4d-84.0180007",
+        "name" : "Hotel Hyatt",
+        "phone" : "+506 25187700",
+        "web" : "www.hyatt.com"
+      },
+      "-sjeghnrflikujh" : {
+        "description" : "Cartago centro: 500 metros este del cruce Cot-Pacayas, sobre la carretera que se dirige al Parque Nacional Volcán Irazú. 10 Km del evento",
+        "facebookUrl" : "https://www.facebook.com/Hotel-Grandpas-107082162653285",
+        "imageUrl" : "http://www.grandpashotel.com/wp-content/uploads/2015/06/villa-grandpas-hotel-1024x768.jpg",
+        "location" : "https://www.google.com/maps/place/Grandpas+Hotel/@9.8893105,-83.8812141,17z/data=!3m1!4b1!4m7!3m6!1s0x8fa0df1d34c279d9:0x4f921708c1ba4a5b!5m1!1s2018-10-15!8m2!3d9.8893052!4d-83.8790254",
+        "name" : "Grandpa’s Hotel Cartago",
+        "phone" : "+506 25366666",
+        "web" : "www.grandpashotel.com"
+      },
+      "-srtgijhlsertdg" : {
+        "description" : "Cartago centro: 5 Km del evento",
+        "facebookUrl" : "fb.me/HOTELLASBRUMAS/",
+        "imageUrl" : "https://t-ec.bstatic.com/images/hotel/max1024x768/499/49970969.jpg",
+        "location" : "https://www.google.com/maps/place/Hotel+Las+Brumas/@9.8785656,-83.9036876,17z/data=!3m1!4b1!4m7!3m6!1s0x8fa0dfbac1983db9:0xcd61edd19b19b308!5m1!1s2018-10-15!8m2!3d9.8785603!4d-83.9014989",
+        "name" : "Hotel Las Brumas",
+        "phone" : "+506 25533838",
+        "web" : "hotellasbrumas.com"
+      }
+    },
+    "near" : {
+      "-GSEgserfkqaikjj3egr5e" : {
+        "description" : "Parque Nacional a 1 hora del TEC. Horario: Todos los días de 8:00am a 3:30pm.",
+        "facebookUrl" : "https://www.facebook.com/Volcán-Irazú-SINAC-381229655312614/",
+        "imageUrl" : "https://scontent.fsyq1-1.fna.fbcdn.net/v/t1.0-9/23031169_1177108502391388_7634857903181557631_n.jpg?_nc_cat=111&oh=ddf834399ab847ef7427be2b027ae241&oe=5C2E126D",
+        "location" : "https://www.google.com/maps/place/Iraz%C3%BA+Volcano/@9.9800034,-83.8492089,21z/data=!4m13!1m7!3m6!1s0x8fa0dc7db43e8a51:0x9d2ef5e48cccec68!2sIraz%C3%BA+Volcano!3b1!8m2!3d9.9799813!4d-83.8490761!3m4!1s0x8fa0dc7db43e8a51:0x9d2ef5e48cccec68!8m2!3d9.9799813!4d-83.8490761",
+        "name" : "Volcán Irazú"
+      },
+      "-HBDrtgjherfhjafkGHSert" : {
+        "description" : "Centro de Cartago. A 5 minutos del TEC",
+        "imageUrl" : "https://scontent.fsyq1-1.fna.fbcdn.net/v/t1.0-9/38431583_907401719470570_9185482655708217344_o.jpg?_nc_cat=109&oh=6475b14ea2e98ac8cfd9a8914043461d&oe=5C26818B",
+        "location" : "https://www.google.com/maps/place/Ruinas+De+Cartago/@9.8643188,-83.9201822,21z/data=!4m12!1m6!3m5!1s0x8fa0dfef61ec78db:0xc74c4f1a543695a1!2sRuinas+De+Cartago!8m2!3d9.8642561!4d-83.9200454!3m4!1s0x8fa0dfef61ec78db:0xc74c4f1a543695a1!8m2!3d9.8642561!4d-83.9200454",
+        "name" : "Las Ruinas de Cartago"
+      },
+      "-SDERFGserjhbjhbrgsegrse" : {
+        "description" : "10 minutos del TEC caminando",
+        "imageUrl" : "https://images.visitarcostarica.com/basilica-nuestra-senora-de-los-angeles.jpg",
+        "location" : "https://www.google.com/maps/place/Nuestra+Se%C3%B1ora+de+los+%C3%81ngeles/@9.8641381,-83.9129057,21z/data=!4m12!1m6!3m5!1s0x8fa0dfeb6353616f:0x9312e7ffa03f0877!2sNuestra+Se%C3%B1ora+de+los+%C3%81ngeles!8m2!3d9.8641107!4d-83.9128805!3m4!1s0x8fa0dfeb6353616f:0x9312e7ffa03f0877!8m2!3d9.8641107!4d-83.9128805",
+        "name" : "Basílica de Nuestra Señora de los Ángeles"
+      },
+      "-sgihrtbgaseGERgeredaws" : {
+        "description" : "Centro de Cartago. A 5 minutos del TEC",
+        "facebookUrl" : "fb.me/Museocartago/",
+        "imageUrl" : "https://scontent.fsyq1-1.fna.fbcdn.net/v/t1.0-9/14717258_2140922012800249_141292595075520587_n.jpg?_nc_cat=110&oh=265bffc98ba6a22a8ec19fa061bcb477&oe=5C17FCF0",
+        "location" : "https://www.google.com/maps/place/Cartago+Municipal+Museum/@9.8669459,-83.919978,21z/data=!4m12!1m6!3m5!1s0x8fa0dfe85ecd6a99:0x6e6c258669410156!2sCartago+Municipal+Museum!8m2!3d9.8668752!4d-83.9198399!3m4!1s0x8fa0dfe85ecd6a99:0x6e6c258669410156!8m2!3d9.8668752!4d-83.9198399",
+        "name" : "Museo Municipal de Cartago "
+      },
+      "-srtkljGASErkeskdwbnkjgf" : {
+        "description" : "A 30 min del TEC. 4 kilómetros al sur del Parque Central de Paraíso. Gratis. \nHorario: Todos los días de 8:00am a 4:30pm",
+        "imageUrl" : "http://rentacarcostarica.com/portal/wp-content/uploads/2016/08/family-time-and-fresh-air-in-Orosi-Catago-750x563.jpg",
+        "location" : "https://www.google.com/maps/place/Mirador+de+Orosi/@9.8185959,-83.8587838,17z/data=!4m5!3m4!1s0x8fa120c607a63ac1:0x42a3d3be7d3b1efe!8m2!3d9.8186699!4d-83.8582366",
+        "name" : "Mirador de Orosi"
+      }
+    },
+    "news" : {
+      "-LKrWUZAJRfzPk6HGOui" : {
+        "content" : "Para los que no conocen la sede http://res.cloudinary.com/edepa/image/upload/v1534729423/Edepa/IMG-20180623-WA0000.jpg",
+        "preview" : {
+          "url" : "http://res.cloudinary.com/edepa/image/upload/v1534729423/Edepa/IMG-20180623-WA0000.jpg"
+        },
+        "time" : 1535308596074,
+        "title" : "Mapa del TEC",
+        "viewed" : 8
+      },
+      "-LKrWwfzTegKaCw68z9q" : {
+        "content" : "Página Web para inscripciones y envíos de trabajos http://tecdigital.tec.ac.cr:8088/congresos/index.php/edepa/6_edepa",
+        "preview" : {
+          "description" : "INFORMACION DEL CONGRESO >> Temática del evento >> Actividades >> Lineamientos para la presentación...",
+          "header" : "VI Encuentro sobre Didáctica de la Estadística, la Probabilidad y el Análisis de Datos",
+          "thumbnail" : "http://res.cloudinary.com/edepa/image/upload/v1/Logos/tecdigital.png",
+          "url" : "http://tecdigital.tec.ac.cr:8088/congresos/index.php/edepa/6_edepa"
+        },
+        "time" : 1535308715358,
+        "title" : "Nuestra página web",
+        "viewed" : 2
+      },
+      "-LKrXdY4YN93RoGmn-ir" : {
+        "content" : "Ingresa mediante el siguiente enlace https://www.facebook.com/EDEPA-341307349313857/",
+        "preview" : {
+          "description" : "EDEPA, Cartago (Costa Rica). 530 Me gusta. A realizarse del 5 al 9 de diciembre de 2016 en Costa Ri...",
+          "header" : "EDEPA",
+          "thumbnail" : "http://res.cloudinary.com/edepa/image/upload/v1/Logos/facebook.png",
+          "url" : "https://m.facebook.com/EDEPA-341307349313857/"
+        },
+        "time" : 1535308899108,
+        "title" : "Visitanos en Facebook",
+        "viewed" : 2
+      },
+      "-LKrZEIPKv9ugauNauFz" : {
+        "content" : "https://www.youtube.com/watch?v=Eccj5tb3nZs&feature=youtu.be",
+        "preview" : {
+          "description" : "El propósito central del evento es rescatar, a través de conferencias, talleres, ponencias, reporte...",
+          "header" : "EDEPA: Encuentro sobre Didáctica de la Estadística, la Probabilidad y el Análisis de Datos",
+          "thumbnail" : "http://res.cloudinary.com/edepa/image/upload/v1/Logos/youtube.png",
+          "url" : "https://m.youtube.com/watch?v=Eccj5tb3nZs"
+        },
+        "time" : 1535850594905,
+        "title" : "Canal de Youtube",
+        "viewed" : 7
+      },
+      "-LKu3lMHYAtC_TRJGJ5w" : {
+        "content" : "https://www.google.com/maps/place/Tecnol%C3%B3gico+de+Costa+Rica+TEC/@9.857247,-83.9145017,17z/data=!3m1!4b1!4m5!3m4!1s0x8fa0dff29640d73b:0xc11e19b85da8947f!8m2!3d9.857247!4d-83.912313",
+        "preview" : {
+          "description" : "★★★★★ · Universidad pública · Calle 15, Avenida 14., 1 km Sur de la Basílica de los Ángeles.",
+          "header" : "Tecnológico de Costa Rica",
+          "thumbnail" : "https://lh5.googleusercontent.com/p/AF1QipMFQ6XYjmf3yimVntMrm5bWYmJZ-C9gqQ5ipZOK=w256-h256-k-no-p",
+          "url" : "https://www.google.com/maps/place/Tecnol%C3%B3gico+de+Costa+Rica+TEC/@9.857247,-83.9145017,17z/data=!3m1!4b1!4m5!3m4!1s0x8fa0dff29640d73b:0xc11e19b85da8947f!8m2!3d9.857247!4d-83.912313"
+        },
+        "time" : 1535351398449,
+        "title" : "Ubicación del evento",
+        "viewed" : 2
+      },
+      "-LQlKZXBFzHwWkPf2CHt" : {
+        "content" : "En el siguiente enlace es posible descargar el mapa del TEC en formato PDF. https://firebasestorage.googleapis.com/v0/b/rommie-91186.appspot.com/o/edepa_map_document.pdf?alt=media&token=4115c00a-d2e9-4834-90a2-7c66d8c4fbff",
+        "preview" : {
+          "description" : "Presiona para descargar",
+          "header" : "Mapa Actualizado",
+          "thumbnail" : "https://png.pngtree.com/svg/20161222/map_1077023.png",
+          "url" : "https://firebasestorage.googleapis.com/v0/b/rommie-91186.appspot.com/o/edepa_map_document.pdf?alt=media&token=4115c00a-d2e9-4834-90a2-7c66d8c4fbff"
+        },
+        "time" : 1541647256853,
+        "title" : "Mapa actualizado de la Sede",
+        "viewed" : 8
+      }
+    },
+    "news_comments" : {
+      "-LKrWUZAJRfzPk6HGOui" : {
+        "-LMtQfblSqZ-I83wtN0V" : {
+          "content" : "Este mapa está desactualizado",
+          "time" : 1537488110156,
+          "userid" : "J5oUpZO7EbT2ChY0whwwmTpRl7w1"
+        }
+      },
+      "-LKr_QwI1K90jDyYOlmX" : {
+        "-LN3dItL_zX45ShPa5hQ" : {
+          "content" : "Esto es del Edepa 4",
+          "time" : 1537676233794,
+          "userid" : "J5oUpZO7EbT2ChY0whwwmTpRl7w1"
+        }
+      },
+      "-LMU49V-gK0Kq_oviCoQ" : {
+        "-LNY-K8GkbNiCdE4G4fC" : {
+          "content" : "mm",
+          "time" : 1538185581208,
+          "userid" : "J5oUpZO7EbT2ChY0whwwmTpRl7w1"
+        }
+      },
+      "-LMtjjmTgSgAbjRSep72" : {
+        "-LMwhV_nqE8qIB8Xkmat" : {
+          "content" : "esa tarifa es correcta?",
+          "time" : 1537543110504,
+          "userid" : "8mUijiYrosYgyod7UIcpGKyCqdP2"
+        }
+      },
+      "-LQlKZXBFzHwWkPf2CHt" : {
+        "-LQlNZMl0Gt9qyL03Yft" : {
+          "content" : "El mapa en la sección *Información* de esta app puede que no se vea muy bien, por eso recomiendo descargar este",
+          "time" : 1541648041537,
+          "userid" : "J5oUpZO7EbT2ChY0whwwmTpRl7w1"
+        }
+      }
+    },
+    "people" : {
+      "-LP765JsOB0FFX5q6Cnx" : {
+        "about" : "Se especializó en Estudios Comparativos Internacionales.  Desde hace dos décadas, nuestra distinguida invitada es profesora titular de educación matemática en la prestigiada Universidad de Hamburgo. Entre las Líneas de Investigación que cultiva se encuentran: * Formación de profesores. * Modelado y aplicaciones en el ámbito escolar. * Estudios Comparativos Internacionales. * Aspectos culturales y de género en educación matemática.  Recientemente, la Dra. Kaiser ocupó el Vice Decanato en la Facultad de Educación, con la responsabilidad de promover la investigación científica, la cooperación internacional y la formación de investigadores jóvenes.  La Dra. Kaiser también colabora de manera intensa en la promoción de la cultura y difusión del conocimiento. Desde el año 2005 funge como Editora en Jefe de la Revista  Mathematics Education publicada por la Casa Editorial Springer.  En 2016 comandó la organización del Décimo Tercer Congreso en Educación Matemática (ICME-13), considerado el Foro Académico más importante del mundo y cuya sede fue la Universidad de Hamburgo.  Gabriele Kaiser es oriunda de la Hermana República Federal de Alemania. Tiene una Maestría en Enseñanza de la Matemática y las Humanidades en Educación Básica. Se Doctoró en Educación Matemática bajo la tutela de Werner Blum y Arnold Kirsch. En 1997 efectuó estudios PosDoctorales en Pedagogía durante su estadía en la Universidad de Kassel; particularmente se especializó en Estudios Comparativos Internacionales.  Desde hace dos décadas, nuestra distinguida invitada es profesora titular de educación matemática en la prestigiada Universidad de Hamburgo. Entre las Líneas de Investigación que cultiva se encuentran: * Formación de profesores. * Modelado y aplicaciones en el ámbito escolar. * Estudios Comparativos Internacionales. * Aspectos culturales y de género en educación matemática.  Recientemente, la Dra. Kaiser ocupó el Vice Decanato en la Facultad de Educación, con la responsabilidad de promover la investigación científica, la cooperación internacional y la formación de investigadores jóvenes.  La Dra. Kaiser también colabora de manera intensa en la promoción de la cultura y difusión del conocimiento. Desde el año 2005 funge como Editora en Jefe de la Revista  Mathematics Education publicada por la Casa Editorial Springer.  En 2016 comandó la organización del Décimo Tercer Congreso en Educación Matemática (ICME-13), considerado el Foro Académico más importante del mundo y cuya sede fue la Universidad de Hamburgo.",
+        "completeName" : "Gabriele Kaiser",
+        "events" : {
+          "-LNQuihfuKvIi2OeDswF" : true,
+          "-LNQviKqWHtVJT0Om550" : true,
+          "-LNRmgaC1OgBlzjeM4yj" : true
+        },
+        "personalTitle" : "Alemania"
+      },
+      "-LP76KLKUPcRzVmf86Hj" : {
+        "about" : "Pontificia Universidad Católica de Chile.",
+        "completeName" : "Claudia Vásquez Ortiz",
+        "events" : {
+          "-LNQwiyGD6-8V14HJjrG" : true
+        },
+        "personalTitle" : "Chile"
+      },
+      "-LP76Y_uyjZWVnQGcvgf" : {
+        "about" : "Tecnológico de Monterrey",
+        "completeName" : "Blanca Ruiz Hernández ",
+        "events" : {
+          "-LNQy2SR68Iao7Zf0TU0" : true,
+          "-LNR0mhMXqP3GpT_SNQc" : true,
+          "-LNRp446Ix_VbtgqGUcv" : true
+        },
+        "personalTitle" : "México"
+      },
+      "-LP76sPhD8c0VbQQPZ5s" : {
+        "about" : "Licenciada en Matemáticas por la Universidad Federal de Rio Grande en la hermana República del Brasil. Se Doctoró en Informática en Educación por la Universidad Federal de Rio Grande del Sur. Actualmente se desempeña como profesora de pregrado y posgrado en estadística con énfasis en el campo de la educación.  Nuestra invitada es una ferviente analista de procesos cognitivos y tecnológicos en la educación estadística, especialmente en temas relacionados con la multimedia y sus efectos potenciadores del aprendizaje. Durante los últimos ocho años ha incrementado su productividad como investigadora. El número de citas a sus informes de investigación así lo muestran, especialmente en el campo de la formación de profesores. En virtud de su trayectoria académica, nuestra distinguida invitada es miembro de Asociaciones Académicas Internacionales como La IASE.",
+        "completeName" : "Mauren Porciúncula ",
+        "events" : {
+          "-LNRpYQJeXOqmmvwJULv" : true
+        },
+        "personalTitle" : "Brasil"
+      },
+      "-LP7781A4PWi4hrJdPKT" : {
+        "about" : "Instituto Tecnológico de Costa Rica",
+        "completeName" : "Armando Gabriel Solís Zúñiga",
+        "events" : {
+          "-LNQz3V25LufpjxeYIlJ" : true
+        },
+        "personalTitle" : "Costa Rica"
+      },
+      "-LP77IHaCMx8cGGqZeX3" : {
+        "about" : "Instituto  Tecnológico de  Costa Rica",
+        "completeName" : "Adrián Gerardo Vega Flores",
+        "events" : {
+          "-LNQz3V25LufpjxeYIlJ" : true
+        },
+        "personalTitle" : "Costa Rica"
+      },
+      "-LP77X-fj0ilW3BXiLsB" : {
+        "about" : "Instituto  Tecnológico de Costa Rica",
+        "completeName" : "Freddy Steven Ulate Agüero",
+        "events" : {
+          "-LNQzViK2LORZShqBkdN" : true
+        },
+        "personalTitle" : "Costa Rica"
+      },
+      "-LP77slFfV4_pTIslbcX" : {
+        "about" : "Itskatzú Educación Integral ",
+        "completeName" : "José Andrés Delgado Solano",
+        "events" : {
+          "-LNR-FWrFYcA82DdyFir" : true
+        },
+        "personalTitle" : "Costa Rica"
+      },
+      "-LP784_2w0r6kdSgWfpZ" : {
+        "about" : "Universidad de Costa Rica",
+        "completeName" : "Mónica Mora Badilla",
+        "events" : {
+          "-LNR-hkir1KRBqgNkX71" : true,
+          "-LNRcGoY_k5pPaXuz9ky" : true
+        },
+        "personalTitle" : "Costa Rica"
+      },
+      "-LP78LWYH4XxVgR9OKsG" : {
+        "about" : "Universidad de Costa Rica",
+        "completeName" : "Graciela Ordoñez Gutierrez",
+        "events" : {
+          "-LNR-hkir1KRBqgNkX71" : true
+        },
+        "personalTitle" : "Costa Rica"
+      },
+      "-LP78ek8KT6Aw11IBJEh" : {
+        "about" : "Universidad de  los Lagos",
+        "completeName" : "Jesus Guadalupe Lugo Armenta",
+        "events" : {
+          "-LNR0mhMXqP3GpT_SNQc" : true
+        },
+        "personalTitle" : "Chile"
+      },
+      "-LP791Bzcwtx2x0hRgef" : {
+        "about" : "Universidad de  los  Lagos",
+        "completeName" : "Jaime Israel García-García",
+        "events" : {
+          "-LNR0mhMXqP3GpT_SNQc" : true,
+          "-LNRUUoE1Si31dgxcvOT" : true
+        },
+        "personalTitle" : "Chile "
+      },
+      "-LP79LZKqWILYjXdfiBN" : {
+        "about" : "Universidad de los Lagos",
+        "completeName" : "Elizabeth Hernández Arredondo",
+        "events" : {
+          "-LNRUUoE1Si31dgxcvOT" : true
+        },
+        "personalTitle" : "Chile"
+      },
+      "-LP79Z7dEaJ55Bv00FN-" : {
+        "about" : "Universidad Autónoma de Guerrero",
+        "completeName" : "César López Calvario ",
+        "events" : {
+          "-LNRUUoE1Si31dgxcvOT" : true
+        },
+        "personalTitle" : "México"
+      },
+      "-LP79mNTySVsJIsOcyzn" : {
+        "about" : "Universidad de Costa Rica",
+        "completeName" : "Maynor Jiménez Castro",
+        "events" : {
+          "-LNRV1T_qW19ysXDhiEj" : true
+        },
+        "personalTitle" : "Costa Rica "
+      },
+      "-LP79vWdZfKPkl4TtROx" : {
+        "about" : "Universidad de Sonora",
+        "completeName" : "Yolanda Pérez Rodríguez",
+        "events" : {
+          "-LNRVslY6H98o7ZqBO7m" : true
+        },
+        "personalTitle" : "México"
+      },
+      "-LP7AT7cN6KKJR5h4_FJ" : {
+        "about" : "Universidad de Costa Rica",
+        "completeName" : "Guillermo Enrique Ramirez Montes",
+        "events" : {
+          "-LNRWeACsEKA4IeFii6N" : true
+        },
+        "personalTitle" : "Costa  Rica "
+      },
+      "-LP7BI91YrjJ3MZxTL9K" : {
+        "about" : "Universidad de Lisboa",
+        "completeName" : "Ana Claúdia Correia Batalha Henriques",
+        "events" : {
+          "-LNRWeACsEKA4IeFii6N" : true
+        },
+        "personalTitle" : "Portugal"
+      },
+      "-LP7BxqSiD8PKRzHSso6" : {
+        "about" : "Escuela Interamericana y Colegio Científico Interamericano CATIE.",
+        "completeName" : "José Manuel Coto Alcázar",
+        "events" : {
+          "-LNRXI03Xd4gSMypFLCO" : true
+        },
+        "personalTitle" : "Costa Rica"
+      },
+      "-LP7CMArBudnIH2icT26" : {
+        "about" : "Colegio Científico Interamericano CATIE",
+        "completeName" : "Paulina Quesada Abarca",
+        "events" : {
+          "-LNRXI03Xd4gSMypFLCO" : true
+        },
+        "personalTitle" : "Costa Rica"
+      },
+      "-LP7C_gJVMUcGBJvkNw3" : {
+        "about" : "Colegio Científico Interamericano CATIE",
+        "completeName" : "Fiorela Franco Garbanzo",
+        "events" : {
+          "-LNRXI03Xd4gSMypFLCO" : true
+        },
+        "personalTitle" : "Costa Rica"
+      },
+      "-LP7CnWh14AiDSClINyP" : {
+        "about" : "Universidad Nacional de Costa Rica",
+        "completeName" : "Danny Esteban Ramírez Lobo",
+        "events" : {
+          "-LNRYBMg3r55NzHQjO7N" : true,
+          "-LNRYf-tIpjyKLivVgFB" : true
+        },
+        "personalTitle" : "Costa Rica"
+      },
+      "-LP7CyPwUVDVKT8T6n2Y" : {
+        "about" : "Universidad Nacional de  Costa Rica",
+        "completeName" : "Erick Ángel Pizarro Carrillo",
+        "events" : {
+          "-LNRYBMg3r55NzHQjO7N" : true,
+          "-LNRYf-tIpjyKLivVgFB" : true
+        },
+        "personalTitle" : "Costa Rica"
+      },
+      "-LP7DJeFhQ1unh6umz0T" : {
+        "about" : "Instituto  Tecnológico de Costa Rica",
+        "completeName" : "Rebeca Paola Chaves",
+        "events" : {
+          "-LNRZAczstiHmFx_DoWD" : true,
+          "-LNRnDE_XRV6lyh4JKPE" : true
+        },
+        "personalTitle" : "Costa Rica"
+      },
+      "-LP7DTZMM6zhcgphPYYM" : {
+        "about" : "Instituto  Tecnológico de  Costa Rica",
+        "completeName" : "Uriel Goméz",
+        "events" : {
+          "-LNRZAczstiHmFx_DoWD" : true,
+          "-LNRnDE_XRV6lyh4JKPE" : true
+        },
+        "personalTitle" : "Costa Rica"
+      },
+      "-LP7YjwAdomEuX39Ux4E" : {
+        "about" : "Tecnológico de Costa Rica",
+        "completeName" : "Melissa Luna",
+        "events" : {
+          "-LNRZAczstiHmFx_DoWD" : true,
+          "-LNRnDE_XRV6lyh4JKPE" : true
+        },
+        "personalTitle" : "Costa Rica"
+      },
+      "-LP7YxUGtUGUWiyZ5Z9M" : {
+        "about" : "Instituto Tecnológico de  Costa",
+        "completeName" : "Carlos Alberto Monge Madriz",
+        "events" : {
+          "-LNR_SdhXtG4JsHn8y9e" : true
+        },
+        "personalTitle" : "Costa  Rica"
+      },
+      "-LP7Z3Aiui0RZvrcfjLK" : {
+        "completeName" : "Natalie Reyes Riotte",
+        "events" : {
+          "-LNR_SdhXtG4JsHn8y9e" : true
+        },
+        "personalTitle" : "Costa Rica"
+      },
+      "-LP7ZFSWTg_TG88CHrs9" : {
+        "about" : "Universidad Católica de  Colombia",
+        "completeName" : "Giovanni Martínez",
+        "events" : {
+          "-LNRaqC4QSLGkk_tHLC6" : true
+        },
+        "personalTitle" : "Colombia"
+      },
+      "-LP7ZMOFAxAGDlshzgE4" : {
+        "about" : "Universidad Católica de  Colombia",
+        "completeName" : "Pablo García",
+        "events" : {
+          "-LNRaqC4QSLGkk_tHLC6" : true
+        },
+        "personalTitle" : "Colombia"
+      },
+      "-LP7_RwLW94FrJkT2nf0" : {
+        "about" : "Universidad Católica de  Colombia",
+        "completeName" : "Juan Carlos Barrero",
+        "events" : {
+          "-LNRaqC4QSLGkk_tHLC6" : true
+        },
+        "personalTitle" : "Colombia "
+      },
+      "-LP7_rdQVbmPgpeLgU9k" : {
+        "about" : "Universidad  Católica de  Colombia",
+        "completeName" : "Yenny Paola Sierra",
+        "events" : {
+          "-LNRaqC4QSLGkk_tHLC6" : true
+        },
+        "personalTitle" : "Colombia "
+      },
+      "-LP7aH-Jgd6BKyRKkZFB" : {
+        "about" : "Universidad Católica de  Colombia",
+        "completeName" : "Maria Isabel González",
+        "events" : {
+          "-LNRaqC4QSLGkk_tHLC6" : true
+        },
+        "personalTitle" : "Colombia "
+      },
+      "-LP7aQuL0BWw9PqMwSXK" : {
+        "about" : "Universidad Católica de  Costa Rica",
+        "completeName" : "Ana Rosa Rodríguez ",
+        "events" : {
+          "-LNRaqC4QSLGkk_tHLC6" : true
+        },
+        "personalTitle" : "Colombia "
+      },
+      "-LP7b-MBna85vuAjvfcn" : {
+        "about" : "Tecnológico de Monterrey",
+        "completeName" : "Jose Armando Albert ",
+        "events" : {
+          "-LNRd5BJfT-UpdZ0ib_6" : true,
+          "-LNRp446Ix_VbtgqGUcv" : true
+        },
+        "personalTitle" : "México"
+      },
+      "-LP7bE5po5Hi3Cgx3voO" : {
+        "about" : "Instituto  Tecnológico de Costa Rica y  Universidad de Costa Rica",
+        "completeName" : "Giovanni Sanabria Brenes ",
+        "events" : {
+          "-LNRdTplquw4fL13Bazj" : true
+        },
+        "personalTitle" : "Costa  Rica"
+      },
+      "-LP7bRSPcNNuEOWb9Ytp" : {
+        "about" : "Instituto de Educação, Universidade de Lisboa",
+        "completeName" : "Ana Henriques",
+        "personalTitle" : "Portugal"
+      },
+      "-LP7beWOIR9ovZJ3lbb8" : {
+        "about" : "Instituto de Educação, Universidade de Lisboa",
+        "completeName" : "Hélia Oliveira",
+        "personalTitle" : "Potugal"
+      },
+      "-LP7bvFfLaKkTrJWrQxu" : {
+        "about" : "Universidad Técnica Nacional",
+        "completeName" : "Ana Magali Salazar Avila",
+        "events" : {
+          "-LNRfsipf09FUOU7kKJn" : true
+        },
+        "personalTitle" : "Costa  Rica"
+      },
+      "-LP7ceGfu40bIJhoXX9X" : {
+        "about" : "Universidad Técnica Nacional,  Ministerio de  Educación Pública",
+        "completeName" : "Sandra Rodríguez Herrera",
+        "events" : {
+          "-LNRfsipf09FUOU7kKJn" : true
+        },
+        "personalTitle" : "Costa  Rica"
+      },
+      "-LP7csAXpuy6uz54ujl3" : {
+        "about" : "Instituto  Tecnológico de Costa Rica",
+        "completeName" : "RANDALL ALBERTO BRENES GOMEZ",
+        "events" : {
+          "-LNRg_ACBNUcxHBzCWF5" : true
+        },
+        "personalTitle" : "Costa  Rica"
+      },
+      "-LP7dGPPz0zadC6dX-S4" : {
+        "about" : "Instituto Tecnológico de Costa Rica",
+        "completeName" : "Didier Alberto Castro Méndez",
+        "events" : {
+          "-LNRh2yVDkraHFnzE25a" : true
+        },
+        "personalTitle" : "Costa Rica"
+      },
+      "-LP7dhu_bo2o-3R0QNlJ" : {
+        "about" : "Facultad de Ciencias Físico Matemáticas de la Benemérita Universidad Autónoma de Puebla",
+        "completeName" : "Gladys Denisse Salgado Suárez",
+        "events" : {
+          "-LNRhpssc6GtMxRc8FTp" : true
+        },
+        "personalTitle" : "México"
+      },
+      "-LP7dvioGkMg85o9nTAD" : {
+        "about" : "Facultad de Ciencias Físico Matemáticas de la Benemérita Universidad Autónoma de Puebla",
+        "completeName" : "José Dionicio Zacarías Flores",
+        "events" : {
+          "-LNRhpssc6GtMxRc8FTp" : true,
+          "-LNRmH7tTKA_WKtSnFIv" : true
+        },
+        "personalTitle" : "México"
+      },
+      "-LP7e8r6QlZkVYh5nqAv" : {
+        "about" : "Facultad de Ciencias Físico Matemáticas de la Benemérita Universidad Autónoma de Puebla",
+        "completeName" : "Hugo Adán Cruz Suárez",
+        "events" : {
+          "-LNRhpssc6GtMxRc8FTp" : true
+        },
+        "personalTitle" : "México"
+      },
+      "-LP7eQ554lqTLTDDFEgy" : {
+        "about" : "Benemérita Universidad Autónoma de Puebla",
+        "completeName" : "MÓNICA PÉREZ GARCÍA",
+        "events" : {
+          "-LNRmH7tTKA_WKtSnFIv" : true
+        },
+        "personalTitle" : "México"
+      },
+      "-LP7eqxv_0gcYmcetwAt" : {
+        "about" : "Canguro Costarricense",
+        "completeName" : "Grace Dayana Calderón Prado",
+        "events" : {
+          "-LNRoJ73-CHyfe1MMy_O" : true
+        },
+        "personalTitle" : "Costa Rica"
+      },
+      "-LP7f0TCQWp3z_XU4cBi" : {
+        "about" : "Instituto Tecnológico de Costa Rica",
+        "completeName" : "Alexander Borbón Alpízar",
+        "events" : {
+          "-LNRoJ73-CHyfe1MMy_O" : true
+        },
+        "personalTitle" : "Costa Rica"
+      },
+      "-LP7fOx1sHm01wYqST3P" : {
+        "about" : "Instituto  Tecnológico de Costa Rica",
+        "completeName" : "Siony Ulloa Araya",
+        "events" : {
+          "-LNRoebbXB90OsMf8GhS" : true
+        },
+        "personalTitle" : "Costa  Rica"
+      },
+      "-LP7fiw6jn_w1uymw7B1" : {
+        "about" : "Instituto Tecnológico de Costa Rica",
+        "completeName" : "Jenny Romero Boniche",
+        "events" : {
+          "-LNRoebbXB90OsMf8GhS" : true
+        },
+        "personalTitle" : "Costa Rica "
+      },
+      "-LP7g3M_0refQ_H9LMhS" : {
+        "about" : "FEDECRÉDITO,El Salvador",
+        "completeName" : "Welman Rosa Alvarado",
+        "events" : {
+          "-LNRpYQJeXOqmmvwJULv" : true
+        },
+        "personalTitle" : "El Salvador"
+      },
+      "-LP7gF94aVNckh34sOp5" : {
+        "about" : "Universidade Federal do Rio Grande",
+        "completeName" : "Suzi Samá",
+        "events" : {
+          "-LNRpYQJeXOqmmvwJULv" : true
+        },
+        "personalTitle" : "Brasil"
+      },
+      "-LP7tr_iSoRNPPvHq57Z" : {
+        "completeName" : "Enrique Hugues Galindo",
+        "events" : {
+          "-LNRVslY6H98o7ZqBO7m" : true
+        },
+        "personalTitle" : "México"
+      },
+      "-LQFbzSZ0323R-NLA-6c" : {
+        "about" : "El profesor Monge-Fallas es Licenciado en la Enseñanza de la Matemática de la Universidad Nacional de Costa Rica, tiene un Magister Scientiae en Computación con énfasis en  Ciencias de la Computación del Instituto Tecnológico de Costa Rica.  Además es doctor en visualización del conocimiento del programa de Intervención Educativa de la Universidad de Valencia, España.  Fue coordinador de la carrera Enseñanza de la Matemática Asistida por Computadora que se imparte en la Escuela de Matemática de ITCR.  Es miembro del programa de investigación eScience-Tec programa interdisciplinario que desarrolla proyectos de investigación de alto impacto.  Es profesor-investigador  desde el 2006 y actualmente es profesor catedrático del Instituto Tecnológico de Costa Rica. En su producción académica cuenta con varios artículos técnicos y proyectos de investigación principalmente en temas como; visualización de información, interfaces en ambientes tridimensionales, visualización del conocimiento y en los últimos años se ha enfocado en visualización científica de datos, tales como las visualización de placas tectónicas  y la simulación de  movimientos sísmicos en Costa Rica.  En al área de la enseñanza de matemática, ha venido incorporando en los procesos de enseñanza-aprendizaje la tecnología a través de la visualización del conocimiento. Esto último con el objetivo de hacer la tecnología trasparente en el proceso educativo",
+        "completeName" : "Jorge Monge Fallas",
+        "events" : {
+          "-LQF6vXQGx819IP2Ci5L" : true
+        },
+        "personalTitle" : "Costa Rica "
+      },
+      "-LQFeGMZYZCylWzPgzHc" : {
+        "about" : "Instituto Tecnológico de Costa Rica y  Universidad de  Costa Rica",
+        "completeName" : "Félix Núñez Vanegas",
+        "events" : {
+          "-LQFdrMcAVzafjMPWFln" : true
+        },
+        "personalTitle" : "Costa Rica "
+      },
+      "-LRN7Au60zFiKLyGIAw0" : {
+        "about" : "David Cardoza Rodríguez, es Máster en Economía del Instituto Torcuato Di Tella de Argentina y Licenciado en Economía de la Universidad Nacional. Ha trabajado como Asesor Legislativo y de Asuntos Económicos en la Asamblea Legislativa.  Trabajó en la Contraloría General de la República en temas económicos y fiscales.  Coordinador de Estimaciones Económicas.  En la parte docente tiene 20 años de enseñar econometría en la Universidad Nacional.  Actualmente Investigador del Proyecto de Estudios Fiscales.",
+        "completeName" : "Msc. David Cardoza Rodríguez ",
+        "events" : {
+          "-LNQyXZ5J2IF_0ghsLva" : true
+        },
+        "personalTitle" : "Costa  Rica"
+      },
+      "-LRN7KI3u5CvXle8aIvf" : {
+        "about" : "Marlon Molina Corella, es egresado de Licenciatura en Economía.  Laboró de Asistente de Investigación en la Asamblea Legislativa mediante práctica profesional.  Actualmente es Investigador del Proyecto de Estudios Fiscales de la Universidad Nacional, donde ha realizado investigaciones aplicadas de estadísticos para medir el impacto de los impuestos sobre la sociedad y ha construido y desarrollado un Modelo de Equilibrio General Computable aplicado al tema fiscal.",
+        "completeName" : "Marlon Molina Corella",
+        "events" : {
+          "-LNQyXZ5J2IF_0ghsLva" : true
+        },
+        "personalTitle" : "Costa  Rica"
+      }
+    },
+    "restaurants" : {
+      "-GHSRETghsfedgbsertgsertg" : {
+        "description" : "Descargando la aplicación desde Play Store o App Store podrá tener acceso a diversos restaurantes cerca del evento mediante servicio express",
+        "imageUrl" : "http://www.news-gazette.com/sites/all/files/images/2018/05/02/167968_0502_loca_au_uber_eats_0.jpg",
+        "name" : "UBER Eats",
+        "web" : "play.google.com/store/apps/details?id=com.ubercab.eats"
+      },
+      "-GSDGHklwsedoGASjkafkfgiowejns " : {
+        "description" : "Frente a la plaza del monumento estudiantil. PRETIL ",
+        "location" : "https://www.google.com/maps/place/Restaurante+Institucional/@9.8556682,-83.9117091,17.88z/data=!4m5!3m4!1s0x8fa0dff2e2afcf1b:0x8c49046e9fe7c8a7!8m2!3d9.8553865!4d-83.912905",
+        "name" : "Restaurante Institucional ITCR",
+        "web" : "Canal de Telegram https://t.me/comitec"
+      },
+      "-GSERTGfgasdGREmegrg" : {
+        "description" : "La Lima, entrada principal a Cartago. A 10 min del TEC. Cuenta con una serie de tiendas, restaurantes y bancos (abierto toda la semana)",
+        "imageUrl" : "https://paseometropoli.com/wp-content/uploads/2018/05/SlidersMayo1280x600-1-min.png",
+        "location" : "https://www.google.com/maps/place/Paseo+Metr%C3%B3poli/@9.8672206,-83.9426772,21z/data=!4m12!1m6!3m5!1s0x8fa0dfef61ec78db:0xbbd21482f26cf090!2sPaseo+Metr%C3%B3poli!8m2!3d9.8671493!4d-83.942533!3m4!1s0x8fa0dfef61ec78db:0xbbd21482f26cf090!8m2!3d9.8671493!4d-83.942533",
+        "name" : "Mall Paseo Metrópoli",
+        "web" : "paseometropoli.com"
+      },
+      "-GTRSGTSgtstrgsrtgstr" : {
+        "description" : "De los tribunales de justicia 1,5 km sobre la avenida 4; carretera a Paraíso",
+        "imageUrl" : "https://www.rd.com/wp-content/uploads/2017/12/the-true-story-behind-the-mysterious-mcdonalds-gold-card-673955074-Vytautas-Kielaitis-1024x683.jpg",
+        "location" : "https://www.google.com/maps/place/McDonald%E2%80%99s/@9.858448,-83.9124403,15z/data=!4m8!1m2!2m1!1smcdonald's+near+Cartago+Province,+Cartago!3m4!1s0x0:0x53ed7527e4fa040c!8m2!3d9.8556706!4d-83.9043421",
+        "name" : "Mc Donalds's",
+        "web" : "play.google.com/store/apps/details?id=com.mcdo.mcdonalds"
+      },
+      "-HSRETthstfkjnfsdgr5" : {
+        "description" : "Campus central ITCR, a un costado del lago.",
+        "imageUrl" : "https://scontent.fsyq1-1.fna.fbcdn.net/v/t31.0-8/14067789_854514834649051_6293000010554141589_o.jpg?_nc_cat=106&oh=d4fd0053a5daaf51896cc91a701cc978&oe=5C317F81",
+        "location" : "https://www.google.com/maps/place/Soda+El+Lago/@9.8544092,-83.9104066,18z/data=!4m5!3m4!1s0x8fa0df8cc8d0a0d1:0xa160af49f292a868!8m2!3d9.8542831!4d-83.9103404",
+        "name" : "Soda El Lago",
+        "web" : "https://www.facebook.com/Cafetería-el-Lago-551561024944435"
+      },
+      "-JUKYWSEejkherfgHRerjefgr" : {
+        "description" : "Campus central ITCR, detrás del gimnasio institucional",
+        "imageUrl" : "https://igx.4sqi.net/img/general/width960/3567706_osVK7Sx8SxkqxGBGV_418T0vPGJdHVy83460HFsy5Lc.jpg",
+        "location" : "https://www.google.com/maps/place/Restaurante+Casa+Luna/@9.8553445,-83.9101361,21z/data=!4m8!1m2!2m1!1sCasa+Luna+TEc!3m4!1s0x8fa0df8cd8334f79:0xda50b8ef63086c09!8m2!3d9.8552456!4d-83.9100943",
+        "name" : "Casa Luna",
+        "web" : "es.foursquare.com/v/casa-luna/4d4c44659bbb721e331891a0"
+      },
+      "-REGSGRSDRGSDFsdfgs" : {
+        "description" : "300m sur de la esquina suroeste de los Tribunales de Justicia de Cartago Avenida 10, Calle 5, Provincia de Cartago",
+        "facebookUrl" : "fb.me/VIllaItaliaCR/",
+        "imageUrl" : "https://scontent.fsyq1-1.fna.fbcdn.net/v/t1.0-9/1483094_615804155177424_5931541868058349019_n.jpg?_nc_cat=103&oh=98b9deac2ede1cc130eb475f661172ec&oe=5C293C8F",
+        "location" : "https://www.google.com/maps/place/Pizzer%C3%ADa+Villa+Italia/@9.8601006,-83.9203833,17z/data=!4m12!1m6!3m5!1s0x8fa0dfee6ce3a5e7:0xd5d9523dab6f63a8!2sPizzer%C3%ADa+Villa+Italia!8m2!3d9.8600953!4d-83.9181946!3m4!1s0x8fa0dfee6ce3a5e7:0xd5d9523dab6f63a8!8m2!3d9.8600953!4d-83.9181946",
+        "name" : "Pizzería Villa Italia",
+        "phone" : "+506 2591 0223",
+        "web" : "www.pizzeriavillaitalia.com"
+      },
+      "-SHBRTHBSRDtfhbgsdefg" : {
+        "description" : "75 mts oeste de Maxi Palí, San Rafael de Oreamuno",
+        "facebookUrl" : "fb.me/MalangaFusionCaribe",
+        "imageUrl" : "https://scontent.fsyq1-1.fna.fbcdn.net/v/t1.0-9/17554241_1369610006447551_4349647901205762162_n.jpg?_nc_cat=104&oh=0680a5a527ddddb8da8bee851b8384f4&oe=5C5E070C",
+        "location" : "https://www.google.com/maps/place/Malanga+Caribbean+Fusion/@9.8787747,-83.909538,21z/data=!4m12!1m6!3m5!1s0x8fa0dfeba2f9b05d:0x5279ba664269b79c!2sMalanga+Caribbean+Fusion!8m2!3d9.8787113!4d-83.9093972!3m4!1s0x8fa0dfeba2f9b05d:0x5279ba664269b79c!8m2!3d9.8787113!4d-83.9093972",
+        "name" : "Malanga Caribbean Fusion",
+        "phone" : "+506 25510750"
+      },
+      "-TRawfawsdGFEgefgeasrg" : {
+        "description" : "Costado Este de la municipalidad de Cartago",
+        "imageUrl" : "http://www.2cents.my/wp-content/uploads/2018/05/pizzahut.jpg",
+        "location" : "https://www.google.com/maps/place/Pizza+Hut/@9.8650371,-83.9200261,20.86z/data=!4m12!1m6!3m5!1s0x8fa0dfe8bc0093c5:0xa22f28275dd29559!2sMunicipality+of+Cartago!8m2!3d9.8650196!4d-83.9207449!3m4!1s0x8fa0dfe8c3da4b71:0xbe2bd715abcc3836!8m2!3d9.8650274!4d-83.9200035",
+        "name" : "Pizza Hut",
+        "phone" : "+506 22909595",
+        "web" : "play.google.com/store/apps/details?id=com.socialsnack.pizzahutcr"
+      },
+      "-gERGREagergfsadgsade" : {
+        "description" : "Carretera al volcán Irazú",
+        "facebookUrl" : "fb.me/MiTierraCR/",
+        "imageUrl" : "https://www.mitierrarestaurante.com/assets/restaurante-6.jpg",
+        "location" : "https://www.google.com/maps/place/Restaurante+Mi+Tierra/@9.8788118,-83.9014772,21z/data=!4m12!1m6!3m5!1s0x8fa0dfbac0c7e1c3:0xa6f62892d5179801!2sRestaurante+Mi+Tierra!8m2!3d9.8787325!4d-83.9013371!3m4!1s0x8fa0dfbac0c7e1c3:0xa6f62892d5179801!8m2!3d9.8787325!4d-83.9013371",
+        "name" : "Mi Tierra",
+        "phone" : "+506 25533838",
+        "web" : "www.mitierrarestaurante.com"
+      },
+      "-geawGERAWSgergersdagva" : {
+        "description" : "De los tribunales de justicia 1km sobre la avenida 4; carretera a Paraíso. O bien, del ITCR 700 mts al sur",
+        "imageUrl" : "https://www.supermarketnews.com/sites/supermarketnews.com/files/styles/article_featured_standard/public/Walmart_store_banner_closeupb.png?itok=N3qONCAy",
+        "location" : "https://www.google.com/maps/place/Walmart/@9.8571213,-83.9076524,17.17z/data=!4m8!1m2!2m1!1swallmart!3m4!1s0x0:0xfe87c7c414dde210!8m2!3d9.8575839!4d-83.9063108",
+        "name" : "Walmart"
+      },
+      "-gegGRESgreskujnGREasgr" : {
+        "description" : "600m Este del Puente Bailey, carretera al Volcán Irazú",
+        "facebookUrl" : "fb.me/ElSitioBarGrill",
+        "imageUrl" : "https://scontent.fsyq1-1.fna.fbcdn.net/v/t1.0-9/10445913_290217567850574_4253477296489527625_n.jpg?_nc_cat=101&oh=a50f5aee49e31b39dbbbee720e871a89&oe=5C174307",
+        "location" : "https://www.google.com/maps/place/Site+Bar+%26+Grill/@9.879575,-83.9131625,20z/data=!4m12!1m6!3m5!1s0x8fa0dfc7cf5fb2f3:0xc22155a6ab799c3f!2sSite+Bar+%26+Grill!8m2!3d9.8794587!4d-83.9128929!3m4!1s0x8fa0dfc7cf5fb2f3:0xc22155a6ab799c3f!8m2!3d9.8794587!4d-83.9128929",
+        "name" : "El Sitio Mirador Bar and Grill",
+        "phone" : "+506 25510181"
+      },
+      "-gsrtgGSRTGSTRgsdfgsdfdsg" : {
+        "description" : "De la Basilica de los Ángeles 800 mts camino a Paraíso, frente a la bomba de los Ángeles",
+        "location" : "https://www.google.com/maps/place/Farmacia+La+Arboleda/@9.8573426,-83.9046079,21z/data=!4m12!1m6!3m5!1s0x8fa0df8e16e9ca35:0xa848a5966a9be6ff!2sPops!8m2!3d9.8571188!4d-83.9045191!3m4!1s0x8fa0df8e17464c2d:0x941dbb8c9d30eabb!8m2!3d9.8572737!4d-83.904558",
+        "name" : "El Parrillero"
+      },
+      "-sbtBSRThbsrtgasdrfgger" : {
+        "description" : "75 mts oeste de Maxipalí, San Rafael de Oreamuno",
+        "facebookUrl" : "fb.me/WoodsCartago",
+        "imageUrl" : "https://scontent.fsyq1-1.fna.fbcdn.net/v/t1.0-9/30411549_2093770683972873_8254561370735652548_n.jpg?_nc_cat=106&oh=567c5bd9f29f3215c1fa078994feefd6&oe=5C17950C",
+        "location" : "https://www.google.com/maps/place/Woods+Pizza+%26+Beer+Garden/@9.878751,-83.9092307,21z/data=!4m12!1m6!3m5!1s0x8fa0dfb8468e258b:0x9e13a5cfcec491f1!2sWoods+Pizza+%26+Beer+Garden!8m2!3d9.8786739!4d-83.9091157!3m4!1s0x8fa0dfb8468e258b:0x9e13a5cfcec491f1!8m2!3d9.8786739!4d-83.9091157",
+        "name" : "Woods Pizza & Beer Garden",
+        "phone" : "+506 40307964"
+      }
+    },
+    "schedule" : {
+      "-LNQuihfuKvIi2OeDswF" : {
+        "briefSpanish" : "La presente investigación sobre las competencias profesionales de profesores de matemática, llevado a cabo durante la última década, está caracterizada por diferentes acercamientos teóricos sobre las competencias profesionales de conceptualización y evaluación del profesor; llamadas aproximaciones cognitivas versus situadas. Construida sobre la internacional IEA “Teacher Education and Development Study in Mathematics” (TEDS-M) y su estudio siguiente TEDS-FU, la lectura compara aproximaciones cognitivas y situadas sobre competencias profesionales de profesores. En TEDS-FU el marco de TEDS-M ha sido enriquecido por una orientación situada incluyendo el marco de novato-experto y el concepto de notar como acercamientos teóricos sobre el análisis de situaciones de clase. Correspondientemente, los instrumentos de evaluación fueron extendidos utilizando video-viñetas para evaluar la percepción de los profesores, competencias de interpretación y toma de decisiones en adición a pruebas de conocimiento cognitivo orientado. La lectura discute los diferentes tipos de marcos teóricos y las consecuencias para los métodos de evaluación, las fortalezas y debilidades de ambos enfoques.  Además, conectar los resultados de TEDS-FU con TEDS-M permite una visión integral de la estructura y el desarrollo de competencias profesionales de profesores de matemática, la compleja interacción entre las diferentes facetas de competencias de los profesores y la alta relevancia de la práctica de enseñanza para el desarrollo de esas competencias. Especialmente se presentarán en detalle los análisis sobre la naturaleza de las competencias de los docentes. En general, los análisis muestran por un lado que ambos acercamientos –cognitivos y situados – son necesarios para una descripción comprensión de las competencias profesionales de los profesores. Y por otro lado, se muestra que ambos acercamientos pueden ser integrados de manera productiva.",
+        "date" : 1543968000000,
+        "end" : 1544029800000,
+        "eventype" : "CONFERENCIA",
+        "favorites" : 3,
+        "id" : "C01",
+        "location" : "CENTRO DE LAS ARTES",
+        "people" : {
+          "-LP765JsOB0FFX5q6Cnx" : true
+        },
+        "start" : 1544024400000,
+        "title" : "C01. Competencias profesionales de profesores de matemática (prospectiva): aproximaciones cognitivas versus situadas."
+      },
+      "-LNQviKqWHtVJT0Om550" : {
+        "briefSpanish" : "\t\nLa investigación basada en videos está jugando un importante crecimiento en el papel de la investigación en educación matemática y cómo está yendo más allá de la evaluación clásica de métodos basados en pruebas de papel y lápiz u observaciones de clase. La presentación se enfocará sobre investigación basada en videos para la educación y desarrollo profesional del profesor.\n\nEn principio, existen varios caminos para investigación basada en videos en esta área, entre otros están las grabaciones en video de la práctica en el aula de los docentes o la evaluación basada en video que requieren que los maestros perciban las situaciones típicas del aula presentadas en video-clips.  Estos últimos juegan un papel especial en los estudios a gran escala en el desarrollo profesional de los profesores. Surge la pregunta, si estos acercamientos son culturalmente invariantes, es decir el mismo acercamiento metodológico con el mismo video-clips puede ser usado en diferentes culturas o si las adaptaciones tienen que realizarse para cumplir con las características culturales específicas.\n\nBasados en los resultados del estudio de seguimiento de Educación de Profesores y Estudio de Desarrollo (TEDS-M), en los cuáles los métodos de evaluación basados en videos son adaptados de Alemania a China, los desafíos de esta adaptación serán descritos con sus limitaciones.",
+        "date" : 1543795200000,
+        "end" : 1543859400000,
+        "eventype" : "CONFERENCIA",
+        "favorites" : 3,
+        "id" : "C02",
+        "location" : "Auditorio D3-01",
+        "people" : {
+          "-LP765JsOB0FFX5q6Cnx" : true
+        },
+        "start" : 1543851600000,
+        "title" : "C02. Investigación basada en videos para estudios comparativos y transferencia de metodologías de una cultura a otra"
+      },
+      "-LNQwiyGD6-8V14HJjrG" : {
+        "briefSpanish" : "\tel propósito de este estudio es analizar cómo el profesorado de Educación Primaria considera y aborda en sus prácticas de aula los significados de la probabilidad establecidos por Batanero (2005), considerando para ello los objetos matemáticos que permiten describir los conocimientos puestos en juego en la resolución de un problema matemático (Godino, 2002): situaciones-problema, elementos lingüísticos, conceptos-definición, procedimientos, proposiciones-propiedades y argumentos. Para la obtención de datos, se videograbaron 63 clases del eje de datos y probabilidades de 12 profesores de la región de La Araucanía, Chile, que abarcan los distintos niveles (1º a 8º). Se seleccionaron las clases en que se abordan contenidos vinculados al tema de azar y probabilidad, correspondiendo a un total de 23 clases de entre 45 y 90 minutos de duración cada una, que se transcribieron y fueron codificadas por una terna de codificadores externos, especialistas en Didáctica de la Matemática para la Educación Primaria. Los primeros resultados obtenidos dibujan una trayectoria de significados que se caracteriza por una fuerte presencia del significado intuitivo en los tres primeros niveles, junto con una presencia mucho inferior del significado frecuencial y la ausencia del resto de significados. A medida que se avanza de nivel va descendiendo la presencia del significado intuitivo, y su lugar lo ocupan los significados frecuencial, subjetivo y clásico. Se concluye que estos datos van a ser de utilidad para poder aportar nuevo conocimiento que permita fortalecer la formación docente en relación con la probabilidad y su enseñanza.",
+        "date" : 1544054400000,
+        "end" : 1544107800000,
+        "eventype" : "CONFERENCIA",
+        "favorites" : 1,
+        "id" : "C03",
+        "location" : "Auditorio Centro de  las Artes",
+        "people" : {
+          "-LP76KLKUPcRzVmf86Hj" : true
+        },
+        "start" : 1544104800000,
+        "title" : "C03. Enseñanza de la probabilidad en Educación Primaria: Un análisis a partir de sus significados"
+      },
+      "-LNQy2SR68Iao7Zf0TU0" : {
+        "briefSpanish" : "\t\nLa formación escolar en matemáticas y estadística suelen estar poco relacionadas. Sin embargo, a través de la modelación encuentran lugares comunes donde se refuerzan y contribuyen una a otra. En esta conferencia se muestran dos casos, uno desde la perspectiva aleatoria y el otro de la modelación determinística, donde sus vínculos surgen de manera natural y esclarecedora, pero que no le hemos dado énfasis ni en la enseñanza de la estadística, ni en la del cálculo.",
+        "date" : 1544140800000,
+        "end" : 1544214600000,
+        "eventype" : "CONFERENCIA",
+        "favorites" : 1,
+        "id" : "C04",
+        "location" : "BIBLIOTECA",
+        "people" : {
+          "-LP76Y_uyjZWVnQGcvgf" : true
+        },
+        "start" : 1544211000000,
+        "title" : "C04. Modelos, cálculo y aleatoriedad en la educación superior"
+      },
+      "-LNQyXZ5J2IF_0ghsLva" : {
+        "briefSpanish" : "Este trabajo tiene por objetivo analizar la interdependencia de algunas variables macroeconómicas que se ven afectadas ante un cambio fiscal. Se analiza la recaudación tributaria y el gasto primario de Costa Rica en términos reales. Se utiliza la metodología de Vectores Autorregresivos Estructurales (SVAR), que permiten observar los efectos dinámicos de los shocks provocados por cambios en la política fiscal mediante el empleo de funciones impulso respuesta. Este tipo de modelos aplicados, consiste en relacionar ciertas variables económicas siguiendo un proceso estocástico y ver los impactos que tienen en el sistema, además para respetar la lógica económica se realizan ciertas restricciones en los parámetros de las ecuaciones. Se analizan  los impactos de las políticas públicas exógenas en la producción real, las políticas públicas se analizan desde dos vertientes, por el lado de los ingresos tributarios o gasto corriente.  Los resultados describen que los choques de gasto tienen un efecto positivo en el PIB, mientras los choques de impuestos presentan una contracción del PIB.",
+        "date" : 1544140800000,
+        "end" : 1544211000000,
+        "eventype" : "CONFERENCIA",
+        "favorites" : 1,
+        "id" : "C05",
+        "location" : "Auditorio D3 01",
+        "people" : {
+          "-LRN7Au60zFiKLyGIAw0" : true,
+          "-LRN7KI3u5CvXle8aIvf" : true
+        },
+        "start" : 1544211000000,
+        "title" : "C05. Los efectos de la política fiscal en Costa Rica. Una aproximación con shocks fiscales."
+      },
+      "-LNQz3V25LufpjxeYIlJ" : {
+        "briefSpanish" : "\t\nEn este trabajo, se realizan propuestas de enseñanza para el tema de Estadística y Probabilidad en quinto y sexto año del Segundo Ciclo de la Educación General Básica de Costa Rica. Las propuestas se realizaron de acuerdo a los conocimientos y habilidades que se encuentran en el plan de estudio de Matemática del Ministerio de Educación Pública (MEP). Sin embargo, se presentan otras ideas para guiar a los profesores, ya que al ser temas que hasta hace poco tiempo se imparten en Costa Rica, no cuentan como mucho material didáctico. También esto ayudará a fomentar que las clases sean diferentes, dinámicas y no tan magistrales.",
+        "date" : 1543968000000,
+        "end" : 1544032200000,
+        "eventype" : "PONENCIA",
+        "favorites" : 1,
+        "id" : "P26",
+        "location" : "Aula B2-03",
+        "people" : {
+          "-LP7781A4PWi4hrJdPKT" : true,
+          "-LP77IHaCMx8cGGqZeX3" : true
+        },
+        "start" : 1544030400000,
+        "title" : "P26. Propuestas de Enseñanza sobre Estadística y Probabilidad para 5° y 6° grado de Primaria en Costa Rica"
+      },
+      "-LNQzViK2LORZShqBkdN" : {
+        "briefSpanish" : "Se pretende hacer un análisis crítico - comparativo entre las competencias de Olimpiadas Costarricenses de Matemática (OLCOMA) y la Competición Estadística Europea (ESC) a nivel de España enfocados en la evaluación del razonamiento estadístico. Además se espera justificar la necesidad de la inclusión de la Estadística en las pruebas de OLCOMA y cómo lograrlo.\n",
+        "date" : 1544140800000,
+        "end" : 1544196600000,
+        "eventype" : "PONENCIA",
+        "favorites" : 1,
+        "id" : "P01",
+        "location" : "Auditorio Biblioteca",
+        "people" : {
+          "-LP77X-fj0ilW3BXiLsB" : true
+        },
+        "start" : 1544194800000,
+        "title" : "P01. Olimpiadas Costarricenses de Matemática y la Estadística: Una comparación a nivel evaluativo"
+      },
+      "-LNR-FWrFYcA82DdyFir" : {
+        "briefSpanish" : "El siguiente artculo abarcara un pequeño analisis sobre los programas\nde estudio para el octavo grado de colegio en Costa Rica, seguidamente\nse definira el concepto de ingeniera didactica, ademas de conceptos\nbasicos sobre la estadística y probabilidad, para finalmente abarcar una\npropuesta de enseñanza de la estadística y probabilidad utilizando la ingeniería didáctica",
+        "date" : 1544140800000,
+        "end" : 1544199000000,
+        "eventype" : "PONENCIA",
+        "favorites" : 1,
+        "id" : "P02",
+        "location" : "Auditorio D3-03",
+        "people" : {
+          "-LP77slFfV4_pTIslbcX" : true
+        },
+        "start" : 1544197200000,
+        "title" : "P02.  Ingeniería Didáctica en la enseñanza de la estadística y probabilidad en 8 año de colegio"
+      },
+      "-LNR-hkir1KRBqgNkX71" : {
+        "briefSpanish" : "Este trabajo tiene como objetivo encontrar evidencia que respalde la hipótesis de que el razonamiento cuantitativo es un predictor relevante del rendimiento en cursos introductorios de matemática en carreras de Ciencia, Tecnología, Ingeniería y Matemática (STEM por sus siglas en inglés) controlando variables relevantes en la predicción de este rendimiento. El estudio se realizó en grupos de carreras, determinados por el curso de matemática introductoria compartido: a. Física, Meteorología y Química (n=132),b. Estadística(n=64)y c. Matemática y Ciencias Actuariales (n=87); con n igual a la cantidad de estudiantes por grupo.En cada agrupación se estimó un modelo de regresión lineal con medidas remediales apropiadas para el cumplimiento de los supuestos; la variable dependiente de los modelos fue la nota en el curso introductorio de matemática y las variables independientes fueron: el nivel de razonamiento cuantitativo, un indicador de las notas de secundaria y el examen de admisión, el sexo y la dependencia del tipo de colegio. En todos los modelos se obtuvo que la variable más relevante fue el nivel de razonamiento cuantitativo. Los coeficientes de determinación de los modelos fueron relevantes, ya que fueron superiores a 0.20.",
+        "date" : 1544140800000,
+        "end" : 1544199000000,
+        "eventype" : "PONENCIA",
+        "id" : "P03",
+        "location" : "Auditorio  Biblioteca",
+        "people" : {
+          "-LP784_2w0r6kdSgWfpZ" : true,
+          "-LP78LWYH4XxVgR9OKsG" : true
+        },
+        "start" : 1544197200000,
+        "title" : "P03.  Asociación del Razonamiento Cuantitativo con el Rendimiento Académico en Cursos Introductorios de Matemática de Carreras STEM."
+      },
+      "-LNR0mhMXqP3GpT_SNQc" : {
+        "briefSpanish" : "La Didáctica de la Estadística es un área de investigación que recientemente ha cobrado gran interés, esto por la importancia que tiene no sólo en la vida profesional de las personas sino en la vida cotidiana. Frecuentemente podemos observar en los diversos medios de comunicación una gran variedad de información que se apoya en estudios estadísticos, por lo tanto los ciudadanos debemos ser capaces de analizar, evaluar y valorar críticamente dicha información para poder tomar decisiones.\n\nCentrándonos en la Estadística Inferencial, diversos investigadores (e.g., Watson, 2004; Bakker y Gravemeijer, 2004; Carver, 2006) han reportado las dificultades que se tienen los estudiantes para comprender la variabilidad del muestreo, las distribuciones muestrales y otros conceptos fundamentales, así como la intolerancia que éstos tienen a la ambigüedad. No obstante, en correspondencia a las dificultades que se han puesto de manifiesto, se han estado proponiendo algunas ideas acerca de cómo investigar y trabajar en el aula de clases el Razonamiento Inferencial Informal (RII), con el objeto de integrar y dar sentido a las ideas estadísticas, así como de generar un acercamiento temprano a la Estadística Inferencial por parte de los estudiantes.\n\nCon respecto a lo anterior, en este trabajo se presenta un estudio del arte sobre el RII que tiene como objetivo recuperar y trascender el conocimiento acumulado en las investigaciones que se han abordado en los últimos años por las diferentes comunidades de investigación. De manera general, se puede mencionar que aún no existe un consenso de las comunidades acerca de cómo abordar el RII, algunas lo proponen mediante una visión global (e.g., Zieffler, Garfield, delMas y Reading, 2008; Reading, 2009; Makar,Bakker y Ben-Zvi, 2011)y otras a partir de un tópico especifico de la inferencia como son los intervalos de confianza, el valor-p y las pruebas de hipótesis (Batanero y Díaz, 2015); incluso en ambas visiones, algunos destacan el uso de la tecnología para promover el desarrollo del RII. También se rescata la diferencia que realiza Makar et al., 2011acerca del RII y la Inferencia Estadística Informal (ISI).",
+        "date" : 1544054400000,
+        "end" : 1544110200000,
+        "eventype" : "PONENCIA",
+        "favorites" : 1,
+        "id" : "P04",
+        "location" : "Auditorio D3-01",
+        "people" : {
+          "-LP76Y_uyjZWVnQGcvgf" : true,
+          "-LP78ek8KT6Aw11IBJEh" : true,
+          "-LP791Bzcwtx2x0hRgef" : true
+        },
+        "start" : 1544108400000,
+        "title" : "P04. Desarrollo de la Investigación en el Razonamiento Inferencial Informal: Estado del Arte"
+      },
+      "-LNRUUoE1Si31dgxcvOT" : {
+        "briefSpanish" : "Actualmente, en la enseñanza de la Estadística es de vital importancia que el estudiante desarrolle una cultura estadística que le permita participar y desenvolverse en nuestra sociedad; por ejemplo, los medios de comunicación con los que tiene contacto, hacen uso de tablas y gráficas estadísticas para divulgar información política, deportiva, social, cultural, entre otra. La investigación en esta disciplina reconoce este hecho en actividades tan cotidianas como la lectura de la prensa (Batanero, Díaz, Contreras y Roa, 2013) o la interpretación de información estadística que se puede encontrar en diversos contextos (Gal, 2002), más aún, se enfatiza que esta debe ser evaluada con una mirada crítica para tomar decisiones y entender nuestro entorno (Díaz-Levicoy, Batanero, Arteaga y López-Martín, 2015). Lo anterior nos motivó a explorar la interpretación que realizan treinta y seis estudiantes de licenciatura cuando leen información estadística sobre la matrícula escolar de nivel básico en tres ciclos escolares en México, representada de manera tabular y gráfica; además de establecer las siguientes preguntas que guiaron nuestra investigación: ¿Qué niveles de lectura exhiben los estudiantes de licenciatura cuando realizan la interpretación de información representada en una tabla y una gráfica de líneas? ¿Qué tipo de representación, bajo el mismo contexto, promueve niveles superiores de lectura en los estudiantes?\n\nNuestro trabajo se fundamenta bajo dos marcos de referencia, los niveles de lectura de Curcio (1989) y Friel, Curcio y Bright (2001) para el análisis de la comprensión gráfica, y la jerarquía propuesta por Aoyama (2007) para la valoración crítica de la información, por parte de los estudiantes. El análisis de las interpretaciones evidencia que la mayoría de los estudiantes alcanzan el nivel 2, leer dentro de los datos, al enfocarse en la comparación de los datos; pocos jóvenes pudieron alcanzar los niveles superiores 3 y 4, leer más allá de los datos y leer detrás de los datos, respectivamente, al dar una predicción sobre una tendencia de los datos, o bien, al proporcionar hipótesis explicativas en términos de los datos que se muestran en la tabla o gráfica. Se observa que la valoración crítica de la información por parte del estudiante, se encuentra directamente relacionada con su conocimiento sobre el contexto, siendo este el que determina y caracteriza el nivel superior 4. Además, con base en nuestro análisis, podemos mencionar que el tipo de representación gráfica favorece en la interpretación de los estudiantes participantes para alcanzar niveles superiores de lectura.",
+        "date" : 1544054400000,
+        "end" : 1544112600000,
+        "eventype" : "PONENCIA",
+        "favorites" : 1,
+        "id" : "P05",
+        "location" : "Auditorio D3-01",
+        "people" : {
+          "-LP791Bzcwtx2x0hRgef" : true,
+          "-LP79LZKqWILYjXdfiBN" : true,
+          "-LP79Z7dEaJ55Bv00FN-" : true
+        },
+        "start" : 1544110800000,
+        "title" : "P05. Niveles de lectura de estudiantes de licenciatura: el caso de una tabla y una gráfica de líneas"
+      },
+      "-LNRV1T_qW19ysXDhiEj" : {
+        "briefSpanish" : "\t\nLos gráficos estadísticos juegan un papel importante en el análisis y la comunicación de información estadística y son ampliamente utilizados en los medios de comunicación escrita; por lo tanto, es necesario que los ciudadanos alcancen suficiente competencia gráfica que permita una actitud crítica y responsable ante los sucesos que se presentan en el diario vivir (Arteaga, Batanero, Contreras y Cañadas, 2012). Estas razones llevan a países como Costa Rica a introducir gráficos estadísticos en la educación primaria. Más específicamente, se solicita a los niños que recopilen y registren datos para responder preguntas estadísticas sobre ellos y su entorno, usando gráficos de barras, tablas y pictogramas, así como para leer e interpretar estas representaciones desde los primeros grados de escolaridad (MEP, 2012). Un elemento importante en este objetivo es el estudio de los libros de texto como recurso didáctico, pues constituyen un paso intermedio entre las directrices curriculares oficiales y la enseñanza implementada en el aula (Herbel, 2007), la cual cada día recibe más atención de la comunidad de investigadores educativos.\n\n \n\nEl libro de texto seleccionado por el maestro generalmente proporciona la base principal por la cual se enseña el tema (Shield y Dole, 2013), por lo que, el objetivo de este artículo es describir el análisis de las tareas que incluyen gráficos estadísticos en dos de las series de libros de texto más utilizados en la educación primaria en Costa Rica. Para lograr este propósito, realizamos un análisis de contenido de todas las actividades (n = 167) relacionadas con gráficos estadísticos en las dos series de libros (grados 1º a 6º) que son los más utilizados en Costa Rica. El estudio de los gráficos en los libros de texto contempla en análisis de varios constructos que han sido abordados por expertos en investigaciones a nivel internacional, como son: los niveles de lectura, los niveles de complejidad semiótica, el tipo de gráfico, tarea solicitada, propósito del gráfico y contexto en el que se utiliza el gráfico estadístico.\n\n \n\nEn este artículo se dan a conocer los resultados del análisis del contexto gráfico, teniendo en cuenta las categorías propuestas en las pruebas PISA (OCDE 2015), que han contribuido al renovado interés en la educación contextualizada. Al analizar esta variable, utilizamos las siguientes categorías:\n\nContexto personal: Estos gráficos (23.4% del total de gráficos analizados) se enfocan en actividades que pueden ser llevadas a cabo por el estudiante, miembros de su familia o compañeros, por ejemplo, el consumo familiar de electricidad;\nContexto educativo (38.3% de los gráficos): se centra en el mundo de la escuela. Por ejemplo, actividades o tareas escolares o cantidad de libros en la biblioteca;\nEl contexto social (22.2%) considera la comunidad del estudiante (ya sea local, nacional o global) y también incluye juegos de azar en esta categoría. Otros ejemplos son encuestas o votaciones;\nContexto científico (15.2%): los problemas clasificados en la categoría científica se relacionan con la aplicación de las matemáticas al mundo natural y con los temas relacionados con la ciencia y la tecnología;\nEsta distribución no fue uniforme en las dos series de libros de texto analizados, uno de los cuales solo incluía el 3,6% de contextos personales. También hubo variación entre los diferentes años escolares, donde el contexto personal fue más frecuente en el 1º grado y el contexto educativo del 2º al 5º grado. Del 1º al 3º grado escolar, el contexto científico es casi nulo, mientras que a partir del 4 ° grado constituye cerca de un cuarto de todos los gráficos. Estos resultados son útiles para los docentes que deben tener en cuenta la relevancia del contexto en la educación estadística y seleccionar contextos adecuados al presentar a sus estudiantes los gráficos estadísticos.\n\n ",
+        "date" : 1544140800000,
+        "end" : 1544196600000,
+        "eventype" : "PONENCIA",
+        "favorites" : 1,
+        "id" : "P06",
+        "location" : "Auditorio D3-01",
+        "people" : {
+          "-LP79mNTySVsJIsOcyzn" : true
+        },
+        "start" : 1544194800000,
+        "title" : "P06. CONTEXTO DE LOS GRÁFICOS ESTADÍSTICOS EN LIBROS DE TEXTO DE LA EDUCACIÓN PRIMARIA EN COSTA RICA."
+      },
+      "-LNRVslY6H98o7ZqBO7m" : {
+        "briefSpanish" : "\t\nA pesar de que los nuevos currículos de enseñanza básica y medio superior han incluido temas referidos a Probabilidad y Estadística, la enseñanza aún no les ha dado la suficiente importancia (Batanero, 2001). En los reportes de investigación sobre enseñanza de la estadística es frecuente encontrar descontento por el escaso tiempo escolar que se les dedica a estos temas o, incluso, porque no se llegan a impartir en clase por la falta de tiempo. También hay referencias que aluden a una enseñanza rutinaria, que enfatiza fórmulas y definiciones con problemas sin contexto (Batanero, Díaz, Contreras y Roa, 2013). De alguna forma, la enseñanza de la estadística ha recibido un gran impulso al ser incluida en prácticamente todos los niveles educativos, sin embargo, para hacerla real, los profesores requieren de recursos didácticos para la preparación de su clase. Uno de los documentos oficiales más socorridos por los profesores para auxiliarse en esto, son los libros de texto (Diaz-Levicoy, Gaicomone y Arteaga, 2017). En el presente trabajo, nos preguntamos por la forma como los libros de texto mexicanos proponen enseñar estadística en los niveles educativos básico y medio superior, en particular, nos enfocamos en los tiempos que sugieren dedicarle a estos temas y el tipo de actividades que recomiendan para enseñarlos.\n\nPara el desarrollo del trabajo se utilizó una metodología cualitativa, mediante el análisis de contenido. Se identificó el porcentaje de tiempo sugerido para dedicarle a la enseñanza de la Estadística siguiendo a Ruiz (2014). Las actividades se analizaron de acuerdo con tres criterios: tipo de técnicas estadísticas propuestas (tablas de frecuencia, gráficas y medidas estadísticas), tipo de prácticas que se solicita desarrollar y los niveles de lectura que se promueven de acuerdo con Curcio (1989). Los resultados obtenidos se compararon con lo que marca la reforma educativa, particularmente alrededor de las competencias estadísticas pretendidas.\n\nDentro de los resultados se destacan: Las actividades están planteadas con un predominio de los gráficos de barras y circulares; en tanto que otro tipo de gráficos como los de líneas y barras múltiples no tienen el énfasis requerido; las prácticas más frecuentes son leer el gráfico, calcular, responder y registrar. Mientras que mínimamente se plantea: interpretar, argumentar, comparar e inferir. Las prácticas de lectura se ubican fundamentalmente en los niveles leer los datos y leer entre los datos. Con referencia a los tiempos sugeridos para el estudio de la Estadística, es el nivel básico el que presenta el mayor porcentaje de tiempo sugerido, pero aun así resulta insuficiente.\n\nFinalmente se percibe que los libros de texto son una directriz de lo que planes y programas de estudio proponen para estos renglones educativos o como una guía para ello y, en cierta medida, esto permite esclarecer y valorar su alcance potencial (pues son editado por la subsecretaría de educación básica de la Secretaria de Educación Pública y el libro de nivel medio superior es una propuesta de este organismo). Sin embargo, dicho alcance se ve comprometido por la falta de actividades que promuevan prácticas asociadas a: contrastar, elegir, inferir, estimar, argumentar e interpretar; que comparados con lo habitual (identificar o calcular), se reconocen como las de mayor complejidad cognitiva, ya que tratan de construir juicios fundados en información, caracterizados por la utilización de un tipo de razonamiento, lo cual ayudaría al aprendizaje y enseñanza de la Estadística, como en sus posibles resultados.\n\n\nPalabras clave: libros de texto, niveles de lectura, educación básica y media superior, actividades de aprendizaje.",
+        "date" : 1544140800000,
+        "end" : 1544193000000,
+        "eventype" : "PONENCIA",
+        "favorites" : 1,
+        "id" : "P07",
+        "location" : "Auditorio D3-01",
+        "people" : {
+          "-LP79vWdZfKPkl4TtROx" : true,
+          "-LP7tr_iSoRNPPvHq57Z" : true
+        },
+        "start" : 1544191200000,
+        "title" : "P07.  Análisis de Actividades Estadísticas En Libros de Textos de Nivel Básico y Medio Superior en México."
+      },
+      "-LNRWeACsEKA4IeFii6N" : {
+        "briefSpanish" : "\t\nEn este trabajo presento una de las tareas que conforman una experiencia de enseñanza apoyada con TICs para el estudio de la Probabilidad en décimo año del contexto costarricense. La tarea forma parte de una secuencia de aprendizaje conformada por cinco tareas, las cuales hacen parte de una investigación de maestría que visa reforzar el aporte de las TICs en la enseñanza de conceptos probabilísticos, y como tal, dar al actual y futuro profesor de matemática de secundaria, como también al investigador en Educación Matemática, un panorama de los beneficios y dificultades a que se enfrenta el alumno al trabajar con software matemático, específicamente, con utilización de Geogebra.\n\nEl objetivo general de la investigación fue comprender cómo los alumnos costarricenses de 10.º año aprenden los conceptos básicos de Probabilidad con tareas exploratorias apoyadas con Geogebra, y cuáles son las contribuciones de este software como recurso didáctico para el aprendizaje de estos conceptos. En particular, se abordan los aprendizajes en referencia a los conceptos trabajados en la primera tarea, específicamente, los conceptos de aleatoriedad, casos favorables, casos totales y eventos, y las contribuciones de Geogebra al trabajar dichos conceptos.\n\nEl estudio fue realizado durante el 1.º semestre del año lectivo 2017 con alumnos costarricenses de 10.º año de un colegio científico del valle central, durante las clases de la unidad de Probabilidad. La metodología utilizada fue de tipo cualitativa e interpretativa, siendo utilizados como instrumentos de recolección de datos la observación participante, la recolección documental, y el cuestionario.\n\nLos resultados evidencian que la mayor parte de los alumnos tienen noción de lo que representa la aleatoriedad, asociando el concepto con experiencias de su día a día, sin embargo, presentan dificultades para utilizar dicho concepto en el cálculo de probabilidades. Por su lado, los conceptos de casos favorables, casos totales y eventos, aunque son conocidos por la mayor parte de los alumnos, no son identificados correctamente al inicio del trabajo de la tarea, confundiendo dichos conceptos entre sí al trabajar con experiencias aleatorias compuestas. En cuanto a las contribuciones de la tecnología, el trabajo con Geogebra permitió detectar, por un lado, que la mayor parte de los alumnos no están acostumbrados a trabajar con software matemático, demorando algunos más que otros para entender cómo utilizar Geogebra en la simulación de la experiencia aleatoria propuesta del lanzamiento de dos dados, no obstante, el trabajo con Geogebra representó una fuente de motivación de aprendizaje para toda la clase. Además, el trabajo con Geogebra permitió detectar que los alumnos infieren patrones incorrectos al explorar la simulación de la experiencia aleatoria del lanzamiento de dos monedas y repetirla un número grande de veces, evidenciando así dificultades en la comprensión del concepto de aleatoriedad. Por último, Geogebra contribuyó positivamente para que, a partir de la simulación de la experiencia, el alumno reflexionase sobre los conceptos trabajados, encontrando relaciones entre ellos que ayudaron a superar así las dificultades iniciales asociadas a diferenciar un concepto de otro.\n\nDe esta forma, los resultados obtenidos permiten hacer una evaluación positiva del uso de tareas exploratorias con recurso a Geogebra para la enseñanza y aprendizaje de conceptos de Probabilidad en secundaria. Durante la ponencia del trabajo se busca presentar estos resultados y mostrar la simulación de Geogebra utilizada en la tarea.",
+        "date" : 1544140800000,
+        "end" : 1544194800000,
+        "eventype" : "PONENCIA",
+        "favorites" : 1,
+        "id" : "P08",
+        "location" : "Auditorio D3-01",
+        "people" : {
+          "-LP7AT7cN6KKJR5h4_FJ" : true,
+          "-LP7BI91YrjJ3MZxTL9K" : true
+        },
+        "start" : 1544193000000,
+        "title" : "P08. Aprendizaje de la aleatoriedad y conceptos asociados al espacio muestral: un estudio de la\nprobabilidad en secundaria con apoyo de Geogebra"
+      },
+      "-LNRXI03Xd4gSMypFLCO" : {
+        "briefSpanish" : "\t\nLa enseñanza de la estadística va más allá de solo la transmisión de conocimientos teóricos. La enseñanza de esta debe estár enfocada en la aplicabilidad, siendo la investigación cuantitativa, el principal escenario para poder aplicarle.\n\nEl colegio científico interamericano CATIE, conociendo la importancia de la estadística en la formación básica de los estudiantes, adjuntó el curso de ESTADÍSTICA en su maya curricular, dando oportunidad a que los estudiantes puedan realizar investigaciones donde se aplique el uso de la estadística.\n\nApoyados en investigaciones realizadas en el Tecnológico de Costa Rica, replicamos con éxito los estudios sobre ansiedad matemática en la comunidad educativa; siendo los estudiantes los principales actores en el planteamiento, ejecución, análisis y desarrollo de la investigación.",
+        "date" : 1544054400000,
+        "end" : 1544110200000,
+        "eventype" : "PONENCIA",
+        "favorites" : 0,
+        "id" : "P09",
+        "location" : "Auditorio  Biblioteca",
+        "people" : {
+          "-LP7BxqSiD8PKRzHSso6" : true,
+          "-LP7CMArBudnIH2icT26" : true,
+          "-LP7C_gJVMUcGBJvkNw3" : true
+        },
+        "start" : 1544108400000,
+        "title" : "P09. Estudio de la ansiedad matemática en estudiantes de segundo ciclo, tercer ciclo y educación diversificada del Colegio Científico Interamericano CATIE, durante el tercer periodo del 2017."
+      },
+      "-LNRYBMg3r55NzHQjO7N" : {
+        "briefSpanish" : "\t\nLa implementación de la Reforma Matemática Costarricense en 2012 ha planteado un reto a los educadores nacionales, pues genera la necesidad de reinventarse en la preparación de estrategias de mediación que permitan responder a las necesidades educativas de las nuevas generaciones, más aún cuando la temática ha sufrido modificaciones, como lo es el caso de Estadística en Secundaria.\n\nEsta propuesta pretende que, mediante el trabajo con una base de datos, dada por el docente, el estudiante profundice en la utilización de medidas estadísticas de posición y variabilidad, para así favorecer la capacidad de análisis de datos y no en el cálculo algorítmico mecánico. El estudiante calcula medidas de posición y variabilidad, confecciona diagramas de cajas y estandarizaciones. Se trabaja en lograr las habilidades de décimo y undécimo año.\n\nEl propósito al utilizar el programa libre PSPP es enlazar la Estadística con uno de los ejes transversales propuestos por el Ministerio de Educación Pública, el uso inteligente de la tecnología, para una clase más dinámica, que los estudiantes se interesen y despierten las competencias necesarias para ser mejores ciudadanos en la era digital.",
+        "date" : 1544054400000,
+        "end" : 1544110200000,
+        "eventype" : "PONENCIA",
+        "favorites" : 1,
+        "id" : "P10",
+        "location" : "Aula B2-03",
+        "people" : {
+          "-LP7CnWh14AiDSClINyP" : true,
+          "-LP7CyPwUVDVKT8T6n2Y" : true
+        },
+        "start" : 1544108400000,
+        "title" : "P10. Propuesta Didáctica para Habilidades de Estadística en Educación Diversificada utilizando PSPP"
+      },
+      "-LNRYf-tIpjyKLivVgFB" : {
+        "briefSpanish" : "La Reforma Matemática Costarricense incorpora en sus planteamientos la necesidad de nuevas y mejores estrategias de mediación que permitan responder a las necesidades educativas de las nuevas generaciones. Este trabajo es una propuesta para Probabilidad,  recientemente incluida en el currículo de Secundaria.\n\nPensando en esto y en busca de clases más dinámicas, se crea una aplicación con Kahoot la cual permite que el docente pueda evaluar las habilidades que los estudiantes deben lograr durante las lecciones del tema de Probabilidad. La misma se enmarca como parte del trabajo cotidiano, el cual tiene un peso mayor en la evaluación sumativa según las nuevas directrices ministeriales.\n\nLa interfaz de usuario que presenta Kahoot es intuitiva y agradable, permite que el docente interactúe fácilmente con la aplicación, manipule los diferentes comandos y genere diferentes instrumentos o herramientas didácticas, que le darán un enfoque diferente a la evaluación sumativa tradicional. La implementación de esta herramienta tecnológica es un elemento atractivo que motiva a los estudiantes a aprender matemática.",
+        "date" : 1544054400000,
+        "end" : 1544112600000,
+        "eventype" : "PONENCIA",
+        "favorites" : 1,
+        "id" : "P11",
+        "location" : "Aula B2-03",
+        "people" : {
+          "-LP7CnWh14AiDSClINyP" : true,
+          "-LP7CyPwUVDVKT8T6n2Y" : true
+        },
+        "start" : 1544110800000,
+        "title" : "P11. Kahoot  para  Habilidades  de Probabilidad en  Décimo año."
+      },
+      "-LNRZAczstiHmFx_DoWD" : {
+        "briefSpanish" : "El Ministerio de Educación Pública (MEP) propone una serie de actividades para los temas de Estadística y Probabilidad para abarcar las habilidades que desean que los estudiantes alcancen. Resulta de gran importancia verificar si estas actividades realmente cumplen con las características necesarias para alcanzar los objetivos, ya que, como tal la Estadística y la Probabilidad son materias que hasta hace algunos años se comenzaron a impartir de manera profunda en los centros educativos costarricenses, por esto, existen pocas guías para los docentes en las cuales expliquen cómo impartir dichas lecciones. Así que, en el presente trabajo se exploran las habilidades para Undécimo y Duodécimo año, se proponen alternativas didácticas a las presentadas por el MEP, donde se aplican diversas metodologías de modo que los estudiantes puedan no sólo entender, sino aplicar los conceptos aprendidos a situaciones de la vida cotidiana y toma de decisiones",
+        "date" : 1544140800000,
+        "end" : 1544202600000,
+        "eventype" : "PONENCIA",
+        "favorites" : 1,
+        "id" : "P12",
+        "location" : "Auditorio D3-01",
+        "people" : {
+          "-LP7DJeFhQ1unh6umz0T" : true,
+          "-LP7DTZMM6zhcgphPYYM" : true,
+          "-LP7YjwAdomEuX39Ux4E" : true
+        },
+        "start" : 1544200800000,
+        "title" : "P12.  Propuesta Didáctica Para La Enseñanza De La Estadística y Probabilidad Para Noveno (9°) y Décimo (10°) año."
+      },
+      "-LNR_SdhXtG4JsHn8y9e" : {
+        "briefSpanish" : "\t\nLo presentado en esta ponencia corresponde a los resultados obtenidos en el trabajo final de graduación para optar por el grado de Licenciatura en Enseñanza de la Matemática con Entornos Tecnológicos del Instituto Tecnológico de Costa Rica realizado  en el 2017.\n\nEn el año 2012 el Consejo Superior de Educación aprobó nuevos programas de matemática para la educación primaria y secundaria. Con el objetivo de caracterizar los sistemas de creencias de los/as profesores/as de matemática de la educación media sobre estos nuevos programas, en la Escuela de Matemática del Instituto Tecnológico de Costa Rica  se formuló el proyecto de investigación “REMEyC: Reforma de la Educación Matemática en Costa Rica: Evaluación de avance a tres años de aplicación y sistemas de creencias de los profesores sobre la reforma” a cargo del equipo de investigación integrado por el Dr. Luis Gerardo Meza Cascante, la Dra. Evelyn Agüero Calvo y la Dra. Zuleyka Suárez Valdés-Ayala.\n\nComo objetivo específico de esa investigación se propuso “Identificar creencias que sobre los nuevos programas de matemática sustentan los/as profesores de matemática de la educación media”, lo que requiere de la elaboración de un instrumento de medida técnicamente diseñado y validado. Esta tesis responde precisamente a ese cometido: se ha elaborado y validado un instrumento para la medición de las creencias de los profesores y las profesoras de matemática de la educación media costarricense sobre la reforma educativa que se deriva de la aprobación de los nuevos programas de matemática por parte del Consejo Superior de Educación en el año 2012.\n\nEl diseño del instrumento se realizó mediante la ejecución de dos etapas secuenciales. En la primera se procedió a la redacción de 70 ítems a partir de la revisión de instrumentos de medida, de temáticas similares, y que habían sido utilizados en otras investigaciones; además del análisis de planteamientos de docentes obtenidos de grabaciones que el proyecto REMEyC generó para el logro de otro de sus objetivos. Este listado original fue reducido a uno de 30 ítems gracias a un primer filtro realizado por el Director de la tesis Dr. Luis Gerardo Meza Cascante, y con los ítems así seleccionados se conformó la primera versión del instrumento. Esta primera versión fue sometida al  juicio de 15 expertos, dentro de los cuales destacaron profesionales en educación matemática de la Universidad Estatal a Distancia, la Universidad de Costa Rica, el Instituto Tecnológico de Costa Rica y asesores del Ministerio de Educación Pública, los cuales colaboraron en la etapa de evaluación de ítems, conservando, eliminando y modificando el contenido del instrumento que se tenía. Como resultado de esta etapa el instrumento quedó integrado por 25 ítems.\n\nEn la segunda etapa se realizó una prueba piloto con la participación de 51 docentes de matemáticas de 24 instituciones públicas distintas.  Con los datos recabados se realizó un estudio psicométrico del instrumento tomando en cuenta los siguientes parámetros:\n\nCálculo del índice de discriminación de los ítems\n\nDespués de realizar el cálculo de este parámetro para cada uno de los ítems, 5 de ellos discriminaban poco, por ende se procedió a eliminarlos. Se calculó nuevamente el índice de discriminación para los 20 ítems restantes, obteniendo resultados aceptables que permitieron concluir que todos los ítems discriminan muy bien.\n\nConfiabilidad del instrumento\n\nLa versión final del instrumento muestra una confiabilidad excelente al tener un “Alfa de Cronbach” de 0,932.\n\nEl análisis de la unidimensionalidad de la escala por medio del análisis factorial\n\nPrimero se procedió a calcular los índices de Kaiser-Meyer-Olkin (KMO) y la prueba de esfericidad de Bartlett para evidenciar la adecuación de la muestra para realizar el análisis factorial. El índice de KMO que se obtuvo fue de 0.810, interpretándose como una buena adecuación muestral.\n\nCon base en los resultados del estudio psicométrico se conformó la versión definitiva del instrumento de medida, que consta de 20 ítems.",
+        "date" : 1544140800000,
+        "end" : 1544193000000,
+        "eventype" : "PONENCIA",
+        "favorites" : 0,
+        "id" : "P13",
+        "location" : "Auditorio Biblioteca",
+        "people" : {
+          "-LP7YxUGtUGUWiyZ5Z9M" : true,
+          "-LP7Z3Aiui0RZvrcfjLK" : true
+        },
+        "start" : 1544191200000,
+        "title" : "P13.  Elaboración de un instrumento de medición de las creencias de los docentes hacia los nuevos programas de estudio de matemáticas en secundaria."
+      },
+      "-LNRaqC4QSLGkk_tHLC6" : {
+        "briefSpanish" : "Se presentan detalles del proceso de reflexión hecho al interior del área de Estadística del Departamento de Ciencias Básicas en lo concerniente al papel que está desempeñando el docente que asume cursos de estadística y/o probabilidad en los pregrados de ingeniería. Como paso inicial, se ha realizado una revisión no exhaustiva sobre algunos métodos empleados en la enseñanza de la estadística; así como de alfabetización, razonamiento y pensamiento estadístico, constructos ampliamente explorados en investigación sobre educación estadística y que representan algunas de las metas que mejor describen a los ideales de formación estadística.\n\nEn el proceso se llevó a cabo la revisión del estado del arte de los  programas de estadística para ingeniería en diferentes universidades de Bogotá, con el objetivo de realizar un análisis comparativo de los programas que se recopilan de las diferentes entidades educativas,  y con él establecer qué se está trabajando en la enseñanza de la estadística para ingeniería en el entorno de pregrado y con esto tener un criterio definido y objetivo, para revisar el trabajo que se realiza en este tema, en la universidad Católica de Colombia.\n\nSe visualizaron los contenidos programáticos de las asignaturas Estadística y probabilidad, y Estadística Inferencial en nueve universidades de Bogotá, aquí el análisis se centra en la reflexión sobre los contenidos, herramientas computacionales, forma de evaluación y metodologías que se están empleando, para llevar a cabo la enseñanza de la estadística en ingeniería\n\nDe otra parte, investigadores en el campo de la estadística consideran que las actitudes que tengan los estudiantes hacia la estadística pueden influir negativa o positivamente sobre su desempeño académico en dicha asignatura, creemos necesario dimensionar dichas actitudes. Para este fin, se analizó la escala de actitudes hacia la estadística (EAEE) propuesta por Estrada (2002), con una muestra de 588 estudiantes de diferentes programas. Para la validación del instrumento se usaron como técnicas la teoría clásica de test y el modelo de Rasch RSM con solo 18 de los 25 ítems del instrumento. Con los resultados se analizan qué modificaciones son necesarias en metodologías, estrategias y diseño de los cursos.\n\nFinalmente se realizar un análisis exploratorio del perfil del docente de las asignaturas de estadística. La investigación se realizó desde una metodología cuantitativa, se aplicó un cuestionario estructurado (encuesta) a los docentes pertenecientes al área. Con los datos recogidos se realizó un análisis univariariado y multivariado de las variables, utilizando el software SPSS y el Software de análisis de datos estadístico y gráfico Statgraphics.\n\n \n\nLa reflexión desarrollada en conjunto, permitió entre otras conclusiones que en los objetivos propuestos en la enseñanza de la estadística son comunes se hace énfasis en utilizar el lenguaje simbólico estadístico, emplear ejemplos prácticos, realizar recolección de datos y llevar a cabo un análisis exploratorio de ellos, interpretar resultados, representación de realidades en lenguaje estadístico, utilizar adecuadamente programas estadísticos y software para trabajar la realidad estadística.\n\nSe establece que en el quehacer docente es importante desarrollar e implementar diversas estrategias y herramientas, propiciando experiencias educativas significativas, este tipo de experiencias corresponden al desarrollo de proyectos de aula, acción considerada por los docentes del área como una experiencia educativa que propicia y promueve el gusto por aprender, investigar, transformar, descubrir, y  reflexionar. Por consiguiente al realizar la relación de la estadística con otras áreas o temáticas en los proyectos de aplicación se está totalmente de acuerdo en que estos proyectos contribuyen a la generación de conocimiento en los estudiantes.\n\n",
+        "date" : 1544140800000,
+        "end" : 1544196600000,
+        "eventype" : "PONENCIA",
+        "favorites" : 1,
+        "id" : "P14",
+        "location" : "Aula B2-03",
+        "people" : {
+          "-LP7ZFSWTg_TG88CHrs9" : true,
+          "-LP7ZMOFAxAGDlshzgE4" : true,
+          "-LP7_RwLW94FrJkT2nf0" : true,
+          "-LP7_rdQVbmPgpeLgU9k" : true,
+          "-LP7aH-Jgd6BKyRKkZFB" : true,
+          "-LP7aQuL0BWw9PqMwSXK" : true
+        },
+        "start" : 1544194800000,
+        "title" : "P14. Reflexiones sobre la enseñanza de la estadística en pregrados profesionales de ingeniería"
+      },
+      "-LNRcGoY_k5pPaXuz9ky" : {
+        "briefSpanish" : "\t\nSe ha señalado en repetidas ocaciones que la enseñanza de la estadística a travez de proyectos de investigación es una estrategia didáctica altamente recomendada, en medida que ofrece grandes beneficios a nivel de apropiación, fortalecimiento y aplicación de contenidos estadísticos, así como en cuanto que permite un acercamiento con la realidad y la forma en las que los conocimientos se pueden aplicar a ésta. Además se fomentan, entre otras, las competencias de investigación y análisis de información, permitiendo al mismo tiempo promover el uso de las TIC, incluir temas transversales o incluso realizar trabajos interdisciplinarios. Es por ello que se decidió aplicar esta estrategia en un curso universitario creado para formar a futuros docentes de primaria en las áreas de estadística y probabilidad. En el presente trabajo se pretende mostrar la fundamentación de la elección de la estrategia, la metodología de aplicación de la misma, algunos resultados referentes a las apreciaciones de los alumnos participantes en el curso, algunos ejemplos de resultados de los trabajos elaborados por los mismos, así como un análisis de las bondades de la estrategia. El objetivo principal representa facilitar un ejemplo de la utilización de esta estrategia didáctica y evidenciar sus beneficios para promover su uso en grupos de distintos niveles educativos al trabajar el tema de estadística.",
+        "date" : 1544140800000,
+        "end" : 1544202600000,
+        "eventype" : "PONENCIA",
+        "favorites" : 1,
+        "id" : "P15",
+        "location" : "Auditorio Biblioteca",
+        "people" : {
+          "-LP784_2w0r6kdSgWfpZ" : true
+        },
+        "start" : 1544200800000,
+        "title" : "P15. Enseñanza de la Estadística a travéz de Proyectos de Investigación, una Experiencia de su Aplicación como Estrategia Didáctica con Futuros Docentes de Primaria."
+      },
+      "-LNRd5BJfT-UpdZ0ib_6" : {
+        "briefSpanish" : "\tEl parámetro juega un papel protagónico en la Estadística, pero una serie de dificultades con este concepto limitan a los estudiantes de apropiarse de las ideas importantes de la estadística. En esta investigación se muestran algunas de las más importantes dificultades cognitivas, epistemológicas y didácticas que se presentan alrededor del concepto de parámetro a lo largo de un curso de probabilidad y estadística.",
+        "date" : 1544054400000,
+        "end" : 1544116200000,
+        "eventype" : "PONENCIA",
+        "favorites" : 1,
+        "id" : "P17",
+        "location" : "Auditorio D3-01",
+        "people" : {
+          "-LP7b-MBna85vuAjvfcn" : true
+        },
+        "start" : 1544114400000,
+        "title" : "P17. El papel del parámetro en la construcción escolar de ideas estadística."
+      },
+      "-LNRdTplquw4fL13Bazj" : {
+        "briefSpanish" : "\t\nEl presente trabajo analiza las respuestas de docentes en formación, que ya cursaron un curso sobre probabilidad y son estudiantes del TEC de Costa Rica, en un test de situaciones problema de probabilidad con el fin de valorar el manejo que hacen de la aleatoriedad. En las respuestas se evidencia que algunos: no saben hacer explícito el espacio muestral ni la experiencia aleatoria, descuidan las hipótesis que se necesitan para utilizar la probabilidad como un modelo y dan respuestas deterministas a situaciones aleatorias. ¿Será que se enseña la probabilidad de forma determinista?",
+        "date" : 1543968000000,
+        "end" : 1544032200000,
+        "eventype" : "PONENCIA",
+        "favorites" : 1,
+        "id" : "P18",
+        "location" : "Auditorio D3-01 ",
+        "people" : {
+          "-LP7bE5po5Hi3Cgx3voO" : true
+        },
+        "start" : 1544030400000,
+        "title" : "P18. La Enseñanza determinista de la probabilidad"
+      },
+      "-LNRfsipf09FUOU7kKJn" : {
+        "briefSpanish" : "\tEn el presente trabajo se describe la experiencia vivida en el curso de Estadística y Probabilidad impartido para la carrera de Ingeniería de Informática, durante el II Cuatrimestre del 2018. Como proyecto de aplicación, se propuso interrelacionar conceptos de la carrera con los de la estadística; enfocándose en la aprehensión de los conceptos de la disciplina estadística. Por ello, en esta investigación se destacan aspectos generales en cuanto a la importancia que tiene la Estadística, no sólo en la sociedad actual, sino como necesidad de formación para, específicamente, futuros profesionales de la Ingeniería en Informática. Se resalta, además, la trascendencia y necesidad de la implementación de proyectos atractivos y aplicados, basándose en la formación por competencias, para la enseñanza de la Estadística en la Educación Superior; lo que lleva a un reflexionar sobre un cambio en el desarrollo y evaluación del curso de Estadística.",
+        "date" : 1544140800000,
+        "end" : 1544205000000,
+        "eventype" : "PONENCIA",
+        "favorites" : 1,
+        "id" : "P20",
+        "location" : "Auditorio D3-01",
+        "people" : {
+          "-LP7bvFfLaKkTrJWrQxu" : true,
+          "-LP7ceGfu40bIJhoXX9X" : true
+        },
+        "start" : 1544203200000,
+        "title" : "P20. Enseñanza de la Estadística para la Carrera de Informática, descripción de una experiencia"
+      },
+      "-LNRg_ACBNUcxHBzCWF5" : {
+        "briefSpanish" : "\t\nA diferencia del comportamiento que suelen tener lo que Newton llamaba: “cuerpos comunes” y que se rigen por sus tres leyes para el movimiento y que son objeto de estudio de la Mecánica Clásica, las partículas subatómicas muestran un comportamiento menos predecible, algunas ocasiones como partículas y otras como una onda. Probabilísticamente hablando, se ha estudiado ese comportamiento con lo que se conoce como un “Campo de Born”, ya que para tratar de aclarar algunas cuestiones físicas esto se vuelve muy importante.\n\nEste trabajo tiene como uno de sus objetivos, dar una explicación simple al fenómeno del movimiento en Mecánica Cuántica, para finalizar haciendo un abordaje probabilístico del mismo.",
+        "date" : 1544140800000,
+        "end" : 1544205000000,
+        "eventype" : "PONENCIA",
+        "favorites" : 1,
+        "id" : "P21",
+        "location" : "Auditorio Biblioteca",
+        "people" : {
+          "-LP7csAXpuy6uz54ujl3" : true
+        },
+        "start" : 1544203200000,
+        "title" : "P21.  Ondas Probabilísticas: Una aplicación de la Probabilidad a la Mecánica Cuántica"
+      },
+      "-LNRh2yVDkraHFnzE25a" : {
+        "briefSpanish" : "\tEn esta investigación se analiza y explica el fenómeno de empoderamiento docente desde la perspectiva de la teoría Socioepistemológica de la Matemática Educativa, recordando la profesión docente como la más importante en la sociedad pues es la encargada de formar en distintas áreas a sus estudiantes. Es a partir del Programa Interdisciplinario para el Desarrollo Profesional Docente (CINVESTAV, México) que se crean guías de trabajo en el área de la probabilidad y estadística para ser aplicadas en docente de matemáticas de educación secundaria en Costa Rica. Las cuales buscan generar un rediseño en el discurso Matemático Escolar y a su vez le permita afrontar nuevos retos de la disciplina y logre apropiarse del saber que enseña mediante la problematización del mismo y generar las interacciones didácticas con sus discentes creando significados del saber matemático escolar de ese momento. A través del empoderamiento docente se busca desarrollar dicha innovación educativa, la cuál es necesaria para los procesos educativos del país y específicamente en la enseñanza de las matemáticas.",
+        "date" : 1544140800000,
+        "end" : 1544194800000,
+        "eventype" : "PONENCIA",
+        "favorites" : 0,
+        "id" : "P22",
+        "location" : "Auditorio  Biblioteca",
+        "people" : {
+          "-LP7dGPPz0zadC6dX-S4" : true
+        },
+        "start" : 1544193000000,
+        "title" : "P22. La necesidad del Empoderamiento docente en Costa Rica, desde un enfoque socioepistemológico"
+      },
+      "-LNRhpssc6GtMxRc8FTp" : {
+        "briefSpanish" : "Dentro del área de la probabilidad, nacieron los Procesos de Decisión de Markov (PDM) quienes desde sus inicios han sido relevantes por la diversidad de aplicaciones a las que da solución, una de ellas es en el área de finanzas en la optimización de un sistema de inventarios. En un sistema de inventarios el problema consiste en determinar cuál es la cantidad óptima de artículos a producir (o comprar) en cada periodo de observación de tal manera que se generen los menores costos, considerando que existe incertidumbre en la demanda de los productos llevándonos así a buscar respuesta dentro de la probabilidad. En este trabajo mostramos la solución del problema mediante la teoría de PDM y el uso de la técnica de programación dinámica que determinará una estrategia óptima de operación.",
+        "date" : 1544054400000,
+        "end" : 1544112600000,
+        "eventype" : "PONENCIA",
+        "favorites" : 1,
+        "id" : "P23",
+        "location" : "Auditorio Biblioteca",
+        "people" : {
+          "-LP7dhu_bo2o-3R0QNlJ" : true,
+          "-LP7dvioGkMg85o9nTAD" : true,
+          "-LP7e8r6QlZkVYh5nqAv" : true
+        },
+        "start" : 1544110800000,
+        "title" : "P23. EL SISTEMA DE INVENTARIOS. UNA APLICACIÓN DE LOS PROCESOS DE DECISIÓN DE MARKOV"
+      },
+      "-LNRmH7tTKA_WKtSnFIv" : {
+        "briefSpanish" : "\t\nIntroducción y planteamiento del problema\n\nUno de los propósitos de la educación básica en primaria es: Buscar, organizar, analizar e interpretar datos con un propósito específico, y luego comunicar la información que resulte de este proceso, este propósito se encuentra estructurado desde el primer ciclo de educación primaria, en el eje temático Análisis de datos, el cual responde a un contenido curricular del campo de formación: Pensamiento Matemático.\n\nCon frecuencia, la escuela primaria es más severa que su antecesor, el jardín de niños, por esta razón se suele pensar que quienes asisten a ella son alumnos cuyas únicas acciones válidas son la obligación de aprender y cumplir con sus tareas. Bajo esta premisa, las escuelas, algunas veces, no tienen en cuenta que estos “estudiantes” aún son niños para quienes el juego es un vehículo importante de sus aprendizajes.\n\nSi bien la intervención del docente desempeña un papel fundamental para impulsar el aprendizaje de los niños, es importante reconocer que, a sus escasos seis años, al comenzar la educación primaria, los alumnos ya cuentan con vastos conocimientos, los cuales pueden haber adquirido en una diversidad de ambientes (en el preescolar, la familia o en su comunidad) y por múltiples vías, como la escolaridad formal, el diálogo informal, los medios de comunicación, entre otros.\n\nPara identificar el nivel cognitivo que tiene el alumno del primer ciclo de educación primaria (primero y segundo grado) con respecto al eje temático de Análisis de Datos, se plantea el uso del marco teórico de la Representaciones semióticas expuesta por Duval, de esta manera se pretende describir la transición entre varios registros de Estadística (figuras, gráficas, escritura simbólica, etc.), así como la organización y coordinación con la que cuenta en cada uno de los registros propuestos.",
+        "date" : 1544054400000,
+        "end" : 1544116200000,
+        "eventype" : "PONENCIA",
+        "favorites" : 1,
+        "id" : "P24",
+        "location" : "Auditorio Biblioteca",
+        "people" : {
+          "-LP7dvioGkMg85o9nTAD" : true,
+          "-LP7eQ554lqTLTDDFEgy" : true
+        },
+        "start" : 1544112600000,
+        "title" : "P24. INICIACIÓN A LA ESTADÍSTICA: REPRESENTACIONES SEMIÓTICAS EN EL PRIMER CICLO DE PRIMARIA"
+      },
+      "-LNRmgaC1OgBlzjeM4yj" : {
+        "briefEnglish" : "Modelling is playing an increasing role in mathematics education due to its high importance\nfor the current and future real life of students. Modelling is especially important in order to\neducate students to become responsible citizens.\nThe development of a model can either start from theoretical reflections on how to best\ncharacterise a given real-world situation, the mathematical model is then developed based on\ntheoretical considerations. On the other hand a model can be developed for situations, which\nare mainly described by data, which then refer to statistical knowledge.\nThe workshop will start with a description various kinds of models focusing on data-based\nmodels and their relevance for mathematics education. Afterwards, various examples will be\ndescribed embedded in modelling activities, which are adequate to foster modelling\ncompetencies. Afterwards the workshop participants will have the chance to carry out own\nmodelling examples within small group activities.",
+        "briefSpanish" : "\t\nLa modelación está jugando un papel creciente en educación matemática debido a su gran importancia para la vida actual y futura de los estudiantes. Modelar es especialmente importante para educar, a los estudiantes, a convertirse en ciudadanos responsables.\n\nEl desarrollo de un modelo puede iniciar de reflexiones teóricas sobre cómo caracterizar mejor una situación dada del mundo real, entonces el modelo matemático se desarrolla a partir de consideraciones teóricas. Por otro lado, un modelo puede ser desarrollado por situaciones, las cuales son descritas principalmente por datos que luego refieren al conocimiento estadístico.\n\nEl taller iniciará con una descripción de varios tipos de modelos enfocados sobre modelos basados en datos y su importancia para la educación matemática. Posteriormente, se describirán varios ejemplos integrados en actividades de modelado, las cuales son adecuadas para fomentar las competencias de modelación.  Por último, los participantes del taller tendrán la oportunidad de llevar a cabo ejemplos propios de modelado dentro de actividades desarrolladas en grupos pequeños.",
+        "date" : 1543968000000,
+        "end" : 1544050800000,
+        "eventype" : "TALLER",
+        "favorites" : 1,
+        "id" : "T01",
+        "location" : "Laboratorio C1-03",
+        "people" : {
+          "-LP765JsOB0FFX5q6Cnx" : true
+        },
+        "start" : 1544045400000,
+        "title" : "T01. Modelado basado en datos"
+      },
+      "-LNRnDE_XRV6lyh4JKPE" : {
+        "briefSpanish" : "\tEl Ministerio de Educación Pública (MEP) propone una serie de actividades para los temas de Estadística y Probabilidad para abarcar las habilidades que desean que los estudiantes alcancen. Resulta de gran importancia verificar si estas actividades realmente cumplen con las características necesarias para alcanzar los objetivos, ya que, como tal la Estadística y la Probabilidad son materias que hasta hace algunos años se comenzaron a impartir de manera profunda en los centros educativos costarricenses, por esto, existen pocas guías para los docentes en las cuales expliquen cómo impartir dichas lecciones. Así que, en el presente trabajo se exploran las habilidades para Undécimo y Duodécimo año, se proponen alternativas didácticas a las presentadas por el MEP, donde se aplican diversas metodologías de modo que los estudiantes puedan no sólo entender, sino aplicar los conceptos aprendidos a situaciones de la vida cotidiana y toma de decisiones.",
+        "date" : 1543968000000,
+        "end" : 1544050800000,
+        "eventype" : "TALLER",
+        "favorites" : 1,
+        "id" : "T02",
+        "location" : "Laboratorio Electrónica",
+        "people" : {
+          "-LP7DJeFhQ1unh6umz0T" : true,
+          "-LP7DTZMM6zhcgphPYYM" : true,
+          "-LP7YjwAdomEuX39Ux4E" : true
+        },
+        "start" : 1544045400000,
+        "title" : "T02. Propuesta Didáctica Para La Enseñanza De La Estadística y Probabilidad Para Noveno Quinto (11°) y Duodécimo (12°) año."
+      },
+      "-LNRoJ73-CHyfe1MMy_O" : {
+        "briefSpanish" : "Resumen: En este taller se realizará una propuesta didáctica utilizando diferentes alternativas de juego como herramienta para la enseñanza de contenidos en el área de estadística y probabilidad. Las actividades serán dirigidas a los niveles de I y II ciclos de educación general básica y estas involucran utilización de material concreto que facilite la compresión del estudiante de las situaciones y además la tecnología que permitirá hacer experimentos más complejos, creando un ambiente de aprendizaje diferente a la clase tradicional o bien complementándola. Algunas de las actividades serán juegos donde los estudiantes podrán manipular la situación y mediante estas se aplicarán conceptos sobre estadística y probabilidad, otras serán páginas web creadas por diferentes autores, donde se encuentran recursos didácticos que los estudiantes pueden manipular para el aprendizaje de estos contenidos.",
+        "date" : 1543968000000,
+        "end" : 1544043600000,
+        "eventype" : "TALLER",
+        "favorites" : 3,
+        "id" : "T03",
+        "location" : "Laboratorio Laimi 2",
+        "people" : {
+          "-LP7eqxv_0gcYmcetwAt" : true,
+          "-LP7f0TCQWp3z_XU4cBi" : true
+        },
+        "start" : 1544038200000,
+        "title" : "T03. El Juego, herramienta de apoyo para la enseñanza de la estadística y probabilidad."
+      },
+      "-LNRoebbXB90OsMf8GhS" : {
+        "briefSpanish" : "\t\nEl objetivo de este trabajo es mostrar propuestas didácticas de enseñanza, sobre el tema de Análisis de Datos y Probabilidad de las Etapas de 9 -12 de la secundaria del sistema educativo estadounidense. Esta propuesta está basada en el programa “National Council of Teachers of Mathematics” (NCTM). Además mediante este trabajo se busca motivar la implementación de distintas propuestas didácticas tomando en cuenta la visión, los principios y estándares para la enseñanza de la matemática de la propuesta curricular NCTM. Teniendo en cuenta que la NCTM no sugiere una guía de momentos para el desarrollo de la clase, nuestras propuestas son adaptadas a los momentos de clase que propone el Ministerio de Educación Pública de Costa Rica (MEP), pero pueden ser aplicables en otros currículos.",
+        "date" : 1543968000000,
+        "end" : 1575579600000,
+        "eventype" : "TALLER",
+        "favorites" : 2,
+        "id" : "T04",
+        "location" : "Laboratorio C1-03",
+        "people" : {
+          "-LP7fOx1sHm01wYqST3P" : true,
+          "-LP7fiw6jn_w1uymw7B1" : true
+        },
+        "start" : 1544038200000,
+        "title" : "T04.  Propuestas Didácticas para el Análisis de Datos y Probabilidad para las Etapas 9-12 de la NCTM"
+      },
+      "-LNRp446Ix_VbtgqGUcv" : {
+        "briefSpanish" : "\t\nÚltimamente la estrategia de la Simulación está mostrando ser muy eficiente para el desarrollo de ideas probabilísticas y de mostrar la vinculación esencial entre probabilidad y Estadística. El taller permitirá explorar algunas técnicas de simulación así como de su incorporación a actividades de aprendizaje por parte del profesor participante",
+        "date" : 1543968000000,
+        "end" : 1544050800000,
+        "eventype" : "TALLER",
+        "favorites" : 2,
+        "id" : "T05",
+        "location" : "Laboratorio H-Rojo",
+        "people" : {
+          "-LP76Y_uyjZWVnQGcvgf" : true,
+          "-LP7b-MBna85vuAjvfcn" : true
+        },
+        "start" : 1544038200000,
+        "title" : "T05. Herramientas de simulación para el diseño de actividades de aprendizaje de Probabilidad y Estadística"
+      },
+      "-LNRpYQJeXOqmmvwJULv" : {
+        "briefSpanish" : "\t\nPara que el aprendizaje ocurra, es necesario que los estudiantes se unen momentos de exploración, al realizar experimentos contextualizados en el mundo físico, con momentos de reflexión. En este sentido, el objetivo de este taller es presentar Proyectos de Aprendizaje como una alternativa pedagógica para promover la construcción del conocimiento Estadístico de los estudiantes. Vamos a abordar la forma de desarrollar Proyectos de Aprendizaje en la enseñanza de Estadística. Para orientar las acciones futuras de los participantes, se presentarán las estrategias metodológicas con manejo de programas de cómputo que ya se aplican en la conducción del desarrollo de Proyectos de Aprendizaje en la Enseñanza de la Estadística en los cursos de licenciatura en diversas áreas del conocimiento en Brasil.",
+        "date" : 1543968000000,
+        "end" : 1544050800000,
+        "eventype" : "TALLER",
+        "favorites" : 1,
+        "id" : "T06",
+        "location" : "Laboratorio C1-06",
+        "people" : {
+          "-LP76sPhD8c0VbQQPZ5s" : true,
+          "-LP7g3M_0refQ_H9LMhS" : true,
+          "-LP7gF94aVNckh34sOp5" : true
+        },
+        "start" : 1544038200000,
+        "title" : "T06. Modelos de Pérdida Esperada y No Esperada en Riesgo de Crédito con nociones de Scoring"
+      },
+      "-LQF6vXQGx819IP2Ci5L" : {
+        "briefSpanish" : "La idea es brindar un panorama de la evolución del papel de la visualización en la estadístico. Clarificación de procesos de data cleaning , tipos de visualización y principios fundamentales de la visualización. Además de conocer algunas herramientas para el análisis, visualización y exploración de datos.",
+        "date" : 1543881600000,
+        "end" : 1543945800000,
+        "eventype" : "CONFERENCIA",
+        "favorites" : 1,
+        "id" : "C06 ",
+        "location" : "Auditorio D3-01",
+        "people" : {
+          "-LQFbzSZ0323R-NLA-6c" : true
+        },
+        "start" : 1543938000000,
+        "title" : "C06 . Visualización y Análisis Estadístico de Datos\n"
+      },
+      "-LQFdrMcAVzafjMPWFln" : {
+        "briefSpanish" : "En los nuevos programas de matemática de secundaria en Costa Rica se incluyeron contenidos de probabilidad y estadística, y además una metodología nueva para el abordaje de tales temas, en la que el estudiante es protagónico en este enfoque, pues se espera que él  descubra el conocimiento a partir de la solución a una situación problema que se le propone. Es importante por tanto que el docente cuente con ideas teóricas acerca de cómo un estudiante piensa una vez enfrentado a una situación. Concretamente, se brindan algunas ideas de la Teoría de Campos Conceptuales explicados en el contexto de la probabilidad y de la estadística. Por tanto, con el fin  de comentar los cambios que se han generado en los programas de estudio en secundaria, comentar los resultados en bachillerato en estos temas de estocástica del año 2017 y de generar conocimiento teórico acerca de cómo un estudiante procede una vez que se enfrenta a una situación problema, se ha realizado este trabajo. Veremos que los resultados en bachillerato en estos temas son deficitarios en general, por lo que es importante conocer propuestas que aporten en la mejora de esta problemática, por lo que también se comentan algunos trabajos realizados recientemente en Costa Rica sobre la didáctica de la probabilidad y la estadística.",
+        "date" : 1543968000000,
+        "end" : 1544032200000,
+        "eventype" : "PONENCIA",
+        "favorites" : 2,
+        "id" : "P25",
+        "location" : "Auditorio  Biblioteca ",
+        "people" : {
+          "-LQFeGMZYZCylWzPgzHc" : true
+        },
+        "start" : 1544030400000,
+        "title" : "P25. Algunos aspectos relacionados con la didáctica de la probabilidad y de la estadística en secundaria en Costa Rica\n"
+      }
+    },
+    "schedule_comments" : {
+      "-LKnn6ANJ533JSPX8hzn" : {
+        "-LMtQ9giWKLg_lRMS8E4" : {
+          "content" : "bien bien",
+          "time" : 1537487975305,
+          "userid" : "J5oUpZO7EbT2ChY0whwwmTpRl7w1"
+        }
+      },
+      "-LKnn6ARZEafVXmESSrF" : {
+        "-LMso5DuOM7S3dUYyZrP" : {
+          "content" : "hola ",
+          "time" : 1537477731870,
+          "userid" : "5FgsR45LsRcEBtRIbU66yPi8X143"
+        }
+      },
+      "-LKnn6AcKtpjjb6HKumz" : {
+        "-LMsiZnU5vkIz5kC4O48" : {
+          "content" : "Estuvo muy interesante",
+          "time" : 1537476285742,
+          "userid" : "J5oUpZO7EbT2ChY0whwwmTpRl7w1"
+        },
+        "-LMsilJ70yssT99an3_z" : {
+          "content" : "Cierto, estuvo muy interesante",
+          "time" : 1537476336938,
+          "userid" : "EutHxEyAoCYzzkaKcqm0sMnVMM42"
+        },
+        "-LMtQCKP67Km6l-Aq2LY" : {
+          "content" : "Muuuy interesante ",
+          "time" : 1537487982763,
+          "userid" : "hZEvEfGtXZgmMWCiziihjk1RJ5g1"
+        }
+      },
+      "-LMuHfhQaXPJIbHC8-vk" : {
+        "-LMuaFHEGhSqpNPInHtN" : {
+          "content" : "nope",
+          "time" : 1537507659174,
+          "userid" : "J5oUpZO7EbT2ChY0whwwmTpRl7w1"
+        }
+      }
+    },
+    "users" : {
+      "5FgsR45LsRcEBtRIbU66yPi8X143" : {
+        "allowPhoto" : true,
+        "email" : "greivinra@gmail.com",
+        "photoUrl" : "https://lh3.googleusercontent.com/-nBtE00xucCI/AAAAAAAAAAI/AAAAAAAAAPo/Esh549BIoMM/s96-c/photo.jpg",
+        "userid" : "5FgsR45LsRcEBtRIbU66yPi8X143",
+        "username" : "Greivin Ramírez"
+      },
+      "5XSKB4igTDOKP06CNxpdEvAHTUg1" : {
+        "allowPhoto" : false,
+        "email" : "alao-17@hotmail.com",
+        "userid" : "5XSKB4igTDOKP06CNxpdEvAHTUg1",
+        "username" : "Ana Laura"
+      },
+      "6dM915xz7rU6IWTqExW1DAEpz7u2" : {
+        "allowPhoto" : false,
+        "email" : "bdinarte1996@gmail.com",
+        "username" : "Brandon Dinarte"
+      },
+      "8mUijiYrosYgyod7UIcpGKyCqdP2" : {
+        "allowPhoto" : true,
+        "email" : "cjim309@gmail.com",
+        "userid" : "8mUijiYrosYgyod7UIcpGKyCqdP2",
+        "username" : "Carlos Jimenez"
+      },
+      "8zEHnUZamNQtwjQEIsQODnEG58Z2" : {
+        "allowPhoto" : true,
+        "email" : "carochaves70@gmail.com",
+        "photoUrl" : "https://lh3.googleusercontent.com/-6Qb0-xJWH08/AAAAAAAAAAI/AAAAAAAAAAA/ABtNlbCzy9HEqqdZsZ7yTG_2mMBJq9qeDw/s96-c/photo.jpg",
+        "userid" : "8zEHnUZamNQtwjQEIsQODnEG58Z2",
+        "username" : "carolina chaves"
+      },
+      "9GfXTTxop7ftw7eNxVcyVBG1OWe2" : {
+        "allowPhoto" : true,
+        "email" : "kavasomu@costarricense.cr",
+        "userid" : "9GfXTTxop7ftw7eNxVcyVBG1OWe2",
+        "username" : "Karen Solano Murillo"
+      },
+      "COEpdPUuTDM7tbvT6vvorIh6Kcr1" : {
+        "allowPhoto" : true,
+        "email" : "elicedeno29@gmail.com",
+        "photoUrl" : "https://lh5.googleusercontent.com/-BtZEfu0lLN8/AAAAAAAAAAI/AAAAAAAAAAA/ABtNlbBYI6j4bke8kZj73Ikv5OJihofAvg/s96-c/photo.jpg",
+        "userid" : "COEpdPUuTDM7tbvT6vvorIh6Kcr1",
+        "username" : "Elizabeth Cedeño Ortega"
+      },
+      "EdNsIBNla1ehypGorCKZbhLZuim1" : {
+        "allowPhoto" : true,
+        "email" : "jeremyvega711@gmail.com",
+        "userid" : "EdNsIBNla1ehypGorCKZbhLZuim1",
+        "username" : "Jeremy Vega Sánchez "
+      },
+      "EutHxEyAoCYzzkaKcqm0sMnVMM42" : {
+        "allowPhoto" : true,
+        "email" : "julian4001@outlook.com",
+        "photoUrl" : "https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=2007974552827983&height=50&width=50&ext=1539402999&hash=AeRNofqhlsAfaPck",
+        "username" : "Julian desde Facebook"
+      },
+      "J5oUpZO7EbT2ChY0whwwmTpRl7w1" : {
+        "allowPhoto" : true,
+        "email" : "july12sali@gmail.com",
+        "photoUrl" : "https://lh6.googleusercontent.com/-oTdIG01e2ps/AAAAAAAAAAI/AAAAAAAAAIo/kpHvh9mW0Bk/s96-c/photo.jpg",
+        "userid" : "J5oUpZO7EbT2ChY0whwwmTpRl7w1",
+        "username" : "Julian Salinas"
+      },
+      "KB2IvKlO1GepJrDmoqq0MUBspui2" : {
+        "allowPhoto" : true,
+        "email" : "carlosmadrigalg21@gmail.com",
+        "photoUrl" : "https://lh3.googleusercontent.com/-JVQ7wAseziY/AAAAAAAAAAI/AAAAAAAAAAA/AGDgw-hzqGn8tRP_dsTnuywHjK029i7jRQ/s96-c/photo.jpg",
+        "userid" : "KB2IvKlO1GepJrDmoqq0MUBspui2",
+        "username" : "Carlos Madrigal"
+      },
+      "MG4xHnyk5ZPo4tBmPxpPVJYLgX72" : {
+        "allowPhoto" : true,
+        "email" : "msolanobenavides@gmail.com",
+        "photoUrl" : "https://lh5.googleusercontent.com/-DDzq5tIJ79w/AAAAAAAAAAI/AAAAAAAABQ0/oAQ6ViyypTU/s96-c/photo.jpg",
+        "userid" : "MG4xHnyk5ZPo4tBmPxpPVJYLgX72",
+        "username" : "Marisol Solano Benavides"
+      },
+      "P3oWlfbWUAXvEQXe13IGBDUXveC3" : {
+        "allowPhoto" : true,
+        "email" : "jorgeajq@gmail.com",
+        "photoUrl" : "https://lh3.googleusercontent.com/-VMmjFgtE6OQ/AAAAAAAAAAI/AAAAAAAAC1M/niX7b9f0ydY/s96-c/photo.jpg",
+        "userid" : "P3oWlfbWUAXvEQXe13IGBDUXveC3",
+        "username" : "Jorge Jiménez Q."
+      },
+      "RP42HM9y82WKEsirlMCDLX1xXl92" : {
+        "allowPhoto" : true,
+        "email" : "leoccalvo@gmail.com",
+        "userid" : "RP42HM9y82WKEsirlMCDLX1xXl92",
+        "username" : "Leonardo Camacho Calvo "
+      },
+      "VL35gANawEStWHeZQKxO7YdXdrS2" : {
+        "allowPhoto" : true,
+        "email" : "arianatec26@hotmail.com",
+        "userid" : "VL35gANawEStWHeZQKxO7YdXdrS2",
+        "username" : "Ariana Rodríguez Flores"
+      },
+      "YDsjrEOao3b8GDymWxypCHVjaYh1" : {
+        "allowPhoto" : true,
+        "email" : "susanbre97@gmail.com",
+        "userid" : "YDsjrEOao3b8GDymWxypCHVjaYh1",
+        "username" : "Susana Brenes "
+      },
+      "YiW592uPXNRd0cQjnloxlvs042p1" : {
+        "allowPhoto" : true,
+        "email" : "a.r.redalo64204733@gmail.com",
+        "photoUrl" : "https://lh4.googleusercontent.com/-qzJ15fSD1sQ/AAAAAAAAAAI/AAAAAAAAAAA/APUIFaOOtv6vNE1PeGeB6AaSq0b_65J34A/s96-c/photo.jpg",
+        "userid" : "YiW592uPXNRd0cQjnloxlvs042p1",
+        "username" : "Andreina Rodriguez Rojas"
+      },
+      "YtDtKuFKZROeyuIFbifvHBACJ6N2" : {
+        "allowPhoto" : true,
+        "email" : "mariojmb@gmail.com",
+        "photoUrl" : "https://lh6.googleusercontent.com/-kvNtB_gYzXs/AAAAAAAAAAI/AAAAAAAAEF8/KmvKfJdniiU/s96-c/photo.jpg",
+        "userid" : "YtDtKuFKZROeyuIFbifvHBACJ6N2",
+        "username" : "Mario José Morales Barquero"
+      },
+      "bCoRNnatPKOglSONObMVHOXIKAj2" : {
+        "allowPhoto" : true,
+        "email" : "jose7000@gmail.com",
+        "userid" : "bCoRNnatPKOglSONObMVHOXIKAj2",
+        "username" : "Jose Cascante Beita"
+      },
+      "hZEvEfGtXZgmMWCiziihjk1RJ5g1" : {
+        "allowPhoto" : true,
+        "email" : "jimmfallas@gmail.com",
+        "photoUrl" : "https://lh6.googleusercontent.com/-dFYl3mRNyNM/AAAAAAAAAAI/AAAAAAAAAAA/APUIFaNK-9fSe8S8R9VlTrTksmAh5w_Vvw/s96-c/photo.jpg",
+        "username" : "Jimmy Fallas"
+      },
+      "kXhUQYuVdEQf4k9BhHOhzWZBoJq2" : {
+        "allowPhoto" : true,
+        "email" : "solbenavidesmari@gmail.com",
+        "photoUrl" : "https://lh4.googleusercontent.com/-bgJ02W9Yjyo/AAAAAAAAAAI/AAAAAAAAAAU/6NkBjEYhlCM/s96-c/photo.jpg",
+        "userid" : "kXhUQYuVdEQf4k9BhHOhzWZBoJq2",
+        "username" : "Mari SolBenavides"
+      },
+      "klo6vO7dT8SvYD3FDq7AwIsaAmw1" : {
+        "allowPhoto" : true,
+        "email" : "maripaul.ma@gmail.com",
+        "userid" : "klo6vO7dT8SvYD3FDq7AwIsaAmw1",
+        "username" : "Paula Aguilar "
+      },
+      "rcLY51VEgnfw9R7COGkc19OQUOq1" : {
+        "allowPhoto" : true,
+        "email" : "gramirez@itcr.ac.cr",
+        "userid" : "rcLY51VEgnfw9R7COGkc19OQUOq1",
+        "username" : "Greivin"
+      },
+      "txruZvAluSSYWRDvRU8RPr2t1I02" : {
+        "allowPhoto" : true,
+        "email" : "salinasreyesjavier@gmail.com",
+        "photoUrl" : "https://lh5.googleusercontent.com/-GKUN8d020HI/AAAAAAAAAAI/AAAAAAAAAAA/AAnnY7p4hKdwTeT4IdTlx_AAxANpvxSgbw/s96-c/photo.jpg",
+        "userid" : "txruZvAluSSYWRDvRU8RPr2t1I02",
+        "username" : "Dennis Salinas"
+      },
+      "vpql6bF5otYeiX8TUpDY6nKdKJQ2" : {
+        "allowPhoto" : true,
+        "email" : "areorozco18@gmail.com",
+        "photoUrl" : "https://lh6.googleusercontent.com/-PQZR0SWxF-w/AAAAAAAAAAI/AAAAAAAADH0/vkIAnFWOFJA/s96-c/photo.jpg",
+        "userid" : "vpql6bF5otYeiX8TUpDY6nKdKJQ2",
+        "username" : "Are :3 Orozco"
+      },
+      "zQaAwL9UTZY0U3xVjVT2eHqHYkF3" : {
+        "allowPhoto" : true,
+        "email" : "kelachaconbonilla@gmail.com",
+        "userid" : "zQaAwL9UTZY0U3xVjVT2eHqHYkF3",
+        "username" : "Raquel Chacón Bonilla"
+      }
+    }
+  }
+}
