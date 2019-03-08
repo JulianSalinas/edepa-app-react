@@ -1,17 +1,21 @@
 import React from 'react';
-import { ExpoLinksView } from '@expo/samples';
-import {Title} from "react-native-paper";
+import SettingsLayout from './SettingsLayout';
+import DatabaseTypes from '../types/DatabaseTypes';
+
 
 export default class SettingsScreen extends React.Component {
 
+    static propTypes = {
+        database: DatabaseTypes
+    };
+
     static navigationOptions = {
         title: 'Configuración',
+        headerTitleStyle: { flexGrow: 1, textAlign: 'center'}
     };
 
     render() {
-        /* Go ahead and delete ExpoConfigView and replace it with your
-         * content, we just wanted to give you a quick view of your config */
-        return <Title> Ya se jodio está mierda </Title>;
+        return <SettingsLayout {...this.props}/>;
     }
 
 }

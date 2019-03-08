@@ -1,16 +1,21 @@
 import React from 'react';
-import { ExpoConfigView } from '@expo/samples';
+import HomeLayout from './HomeLayout';
+import DatabaseTypes from '../types/DatabaseTypes';
+
 
 export default class HomeScreen extends React.Component {
 
+    static propTypes = {
+        database: DatabaseTypes
+    };
+
     static navigationOptions = {
         title: 'Inicio',
+        headerTitleStyle: { flexGrow: 1, textAlign: 'center'}
     };
 
     render() {
-        /* Go ahead and delete ExpoConfigView and replace it with your
-         * content, we just wanted to give you a quick view of your config */
-        return <ExpoConfigView />;
+        return <HomeLayout {...this.props}/>;
     }
 
 }

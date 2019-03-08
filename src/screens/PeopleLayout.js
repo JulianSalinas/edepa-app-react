@@ -1,10 +1,10 @@
 import React from 'react';
-import PersonTypes from "../types/PersonTypes";
-import DatabaseTypes from "../types/DatabaseTypes";
+import PersonTypes from '../types/PersonTypes';
+import DatabaseTypes from '../types/DatabaseTypes';
 import withAppContext from '../controller/AppContext';
 
 import { View, ScrollView } from 'react-native';
-import { Title, Text } from "react-native-paper";
+import { Text } from 'react-native-paper';
 
 
 const Person = props =>

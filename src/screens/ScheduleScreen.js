@@ -1,16 +1,21 @@
 import React from 'react';
-import { ExpoConfigView } from '@expo/samples';
+import ScheduleLayout from './ScheduleLayout';
+import DatabaseTypes from '../types/DatabaseTypes';
+
 
 export default class ScheduleScreen extends React.Component {
 
+    static propTypes = {
+        database: DatabaseTypes
+    };
+
     static navigationOptions = {
         title: 'Cronograma',
+        headerTitleStyle: { flexGrow: 1, textAlign: 'center'}
     };
 
     render() {
-        /* Go ahead and delete ExpoConfigView and replace it with your
-         * content, we just wanted to give you a quick view of your config */
-        return <ExpoConfigView />;
+        return <ScheduleLayout {...this.props}/>;
     }
 
 }
