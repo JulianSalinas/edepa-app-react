@@ -10,8 +10,7 @@ export default class SettingsScreen extends React.Component {
     };
 
     static navigationOptions = {
-        title: 'Configuración',
-        headerTitleStyle: { flexGrow: 1, textAlign: 'center'}
+        title: 'Configuración'
     };
 
     render() {

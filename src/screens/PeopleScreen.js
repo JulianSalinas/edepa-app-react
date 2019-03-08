@@ -10,8 +10,7 @@ export default class PeopleScreen extends React.Component {
     };
 
     static navigationOptions = {
-        title: 'Expositores',
-        headerTitleStyle: { flexGrow: 1, textAlign: 'center'}
+        title: 'Expositores'
     };
 
     render() {

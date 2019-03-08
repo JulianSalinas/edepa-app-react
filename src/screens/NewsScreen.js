@@ -10,8 +10,7 @@ export default class NewsScreen extends React.Component {
     };
 
     static navigationOptions = {
-        title: 'Noticias',
-        headerTitleStyle: { flexGrow: 1, textAlign: 'center'}
+        title: 'Noticias'
     };
 
     render() {

@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
+import AppThemed from './AppThemed';
 import AppProvider from './AppProvider';
-import AppNavigator from '../navigation/MainNavigator';
 import FirebaseDatabse from '../model/FirebaseDatabase';
 
 
-export default class AppController extends Component {
+export default class AppController extends React.Component {
 
     state = {
         people: {},
@@ -51,7 +51,7 @@ export default class AppController extends Component {
     render() {
         return (
             <AppProvider database={this.getDatabase()}>
-                <AppNavigator/>
+                <AppThemed/>
             </AppProvider>
         );
     }

@@ -10,8 +10,7 @@ export default class HomeScreen extends React.Component {
     };
 
     static navigationOptions = {
-        title: 'Inicio',
-        headerTitleStyle: { flexGrow: 1, textAlign: 'center'}
+        title: 'Inicio'
     };
 
     render() {

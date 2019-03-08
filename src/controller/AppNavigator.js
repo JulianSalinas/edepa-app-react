@@ -1,44 +1,48 @@
 import React from 'react';
-import { createStackNavigator } from 'react-navigation';
-import { createMaterialBottomTabNavigator } from "react-navigation-material-bottom-tabs";
+import Icons from '@expo/vector-icons';
 
 import HomeScreen from '../screens/HomeScreen';
 import NewsScreen from '../screens/NewsScreen';
 import PeopleScreen from '../screens/PeopleScreen';
 import ScheduleScreen from '../screens/ScheduleScreen';
 import SettingsScreen from '../screens/SettingsScreen';
-import { Ionicons, Feather, SimpleLineIcons, Entypo } from "@expo/vector-icons";
+import EventScreen from '../screens/EventScreen';
+
+import { withTheme} from 'react-native-elements';
+import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
+import { createAppContainer, createStackNavigator, createSwitchNavigator } from 'react-navigation';
+
 
 const tabBarIconIonicons = name => ({ tintColor }) =>
-    <Ionicons
+    <Icons.Ionicons
         size={24}
         name={name}
         color={tintColor}
     />;
 
 const tabBarIconFeather = name => ({ tintColor }) =>
-    <Feather
+    <Icons.Feather
         size={24}
         name={name}
         color={tintColor}
     />;
 
 const tabBarIconEntypo = name => ({ tintColor }) =>
-    <Entypo
+    <Icons.Entypo
         size={24}
         name={name}
         color={tintColor}
     />;
 
 const tabBarIconLineIcons = name => ({ tintColor }) =>
-    <SimpleLineIcons
+    <Icons.SimpleLineIcons
         size={24}
         name={name}
         color={tintColor}
     />;
 
 const HomeStack = createStackNavigator({
-    Home: HomeScreen,
+    HomeScreen,
 });
 
 HomeStack.navigationOptions = {
@@ -47,7 +51,7 @@ HomeStack.navigationOptions = {
 };
 
 const NewsStack = createStackNavigator({
-    Links: NewsScreen,
+    NewsScreen,
 });
 
 NewsStack.navigationOptions = {
@@ -56,7 +60,7 @@ NewsStack.navigationOptions = {
 };
 
 const PeopleStack = createStackNavigator({
-    Links: PeopleScreen,
+    PeopleScreen,
 });
 
 PeopleStack.navigationOptions = {
@@ -65,7 +69,7 @@ PeopleStack.navigationOptions = {
 };
 
 const ScheduleStack = createStackNavigator({
-    Links: ScheduleScreen,
+    ScheduleScreen,
 });
 
 ScheduleStack.navigationOptions = {
@@ -74,7 +78,7 @@ ScheduleStack.navigationOptions = {
 };
 
 const SettingsStack = createStackNavigator({
-    Settings: SettingsScreen,
+    SettingsScreen,
 });
 
 SettingsStack.navigationOptions = {
@@ -82,18 +86,43 @@ SettingsStack.navigationOptions = {
     tabBarIcon: tabBarIconIonicons('ios-options')
 };
 
-const RouteConfigs = {
-    HomeStack,
-    NewsStack,
-    ScheduleStack,
-    PeopleStack,
-    SettingsStack
-};
+export default withTheme(props => {
 
-const BottomTabNavigatorOptions = {
-    activeColor: '#F12',
-    initialRouteName: 'ScheduleStack',
-    barStyle: { backgroundColor: '#FFF' }
-};
+    const NavigatorRoutes = {
+        HomeStack,
+        NewsStack,
+        ScheduleStack,
+        PeopleStack,
+        SettingsStack
+    };
 
-export default createMaterialBottomTabNavigator(RouteConfigs, BottomTabNavigatorOptions);
+    // Navigation options are for each screen in Navigator
+    const NavigatorOptions = {
+        initialRouteName: 'ScheduleStack',
+        barStyle: { backgroundColor: '#FFF' },
+        activeColor: props.theme.colors.primary
+    };
+
+    const NavigatorScreen = createMaterialBottomTabNavigator(
+        NavigatorRoutes,
+        NavigatorOptions
+    );
+
+    // Navigation options are for Navigator itself
+    NavigatorScreen.navigationOptions = {
+        header: null
+    };
+
+    const MainScreen = createStackNavigator({
+        NavigatorScreen,
+        EventScreen
+    });
+
+    const Component = createAppContainer(createSwitchNavigator({
+        // Login or details screens go here.
+        MainScreen
+    }));
+
+    return <Component/>;
+
+});

@@ -10,8 +10,7 @@ export default class ScheduleScreen extends React.Component {
     };
 
     static navigationOptions = {
-        title: 'Cronograma',
-        headerTitleStyle: { flexGrow: 1, textAlign: 'center'}
+        title: 'Cronograma'
     };
 
     render() {
