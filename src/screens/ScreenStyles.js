@@ -13,6 +13,10 @@ export default  {
     header: {
         backgroundColor: appTheme.container
     },
+    headerSearch: {
+        paddingLeft: appTheme.spacing * 2,
+        backgroundColor: appTheme.decoration,
+    },
     gutterBottom: {
         marginBottom: appTheme.spacing * 2
     },

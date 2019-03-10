@@ -5,12 +5,24 @@ import ScheduleLayout from './ScheduleLayout';
 
 export default class ScheduleScreen extends React.Component {
 
-    static propTypes = {
-        // navigation: PropTypes.object
+    state = {
+        isSearchBarOpen: true
+    };
+
+    showSearchBar = () => {
+        this.setState({ isSearchBarOpen: true });
+    };
+
+    hideSearchBar = () => {
+        this.setState({ isSearchBarOpen: false });
     };
 
     render() {
-        return <ScheduleLayout {...this.props}/>;
+        return <ScheduleLayout {...this.props}
+                               showSearchBar={this.showSearchBar}
+                               hideSearchBar={this.hideSearchBar}
+                               isSeachBarOpen={this.state.isSearchBarOpen}
+        />;
     }
 
 }

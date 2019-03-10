@@ -9,6 +9,8 @@ export default PropTypes.shape({
     primary: PropTypes.string.isRequired,
     secondary: PropTypes.string.isRequired,
     container: PropTypes.string.isRequired,
+    background: PropTypes.string.isRequired,
+    decoration: PropTypes.string.isRequired,
 
     greyFont: PropTypes.string.isRequired,
     darkFont: PropTypes.string.isRequired,

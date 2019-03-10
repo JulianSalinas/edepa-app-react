@@ -6,6 +6,7 @@
     "secondary": "#212121",
     "container": "#FFFFFF",
     "background": "#FAFAFA",
+    "decoration": "#EEEEEE",
 
     "greyFont": "#757575",
     "darkFont": "#212121",
