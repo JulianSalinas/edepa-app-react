@@ -1,26 +1,51 @@
 import React from 'react';
+import styles from './ScreenStyles';
 import withAppContext from '../controller/AppContext';
 
-import { ScrollView, View } from 'react-native';
-import { Button } from 'react-native-elements';
+
+import {
+    Tab,
+    Tabs,
+    Icon,
+    Container,
+    TabHeading,
+    ScrollableTab
+} from 'native-base';
+
+import { ExpoConfigView } from "@expo/samples";
+
 
 const ScheduleLayout = props =>
-    <ScrollView>
-        <View style={{
-            padding: 16,
-            display: 'flex'
-        }}>
-            <Button
-                raised
-                type={'outline'}
-                title={'Take to the Wonderland!'}
-                onPress={
-                    () => props.navigation.navigate('EventScreen', {
-                        message: 'The police is cumming'
-                    })
-                }
-            />
-        </View>
-    </ScrollView>;
+    <Container>
+        <Tabs
+            tabBarUnderlineStyle={styles.tabUnderLine}
+            tabBarBackgroundColor={props.appTheme.lightFont}
+            renderTabBar={()=> <ScrollableTab/>}>
+            <Tab heading={'Eventos'}
+                 tabStyle={styles.tabStyle}
+                 activeTabStyle={styles.tabStyle}
+                 textStyle={styles.tabTextStyle}
+                 activeTextStyle={styles.activeTabTextStyle}>
+                <ExpoConfigView/>
+            </Tab>
+            <Tab heading={'Favoritos'}
+                 tabStyle={styles.tabStyle}
+                 activeTabStyle={styles.tabStyle}
+                 textStyle={styles.tabTextStyle}
+                 activeTextStyle={styles.activeTabTextStyle}>
+                <ExpoConfigView/>
+            </Tab>
+            <Tab heading={
+                <TabHeading
+                    style={styles.tabStyle}
+                    tabStyle={styles.tabStyle}
+                    activeTabStyle={styles.tabStyle}>
+                    <Icon name="md-search" fontSize={24} style={styles.tabTextStyle}/>
+                </TabHeading>
+            }>
+                <ExpoConfigView/>
+            </Tab>
+        </Tabs>
+    </Container>;
 
 export default withAppContext(ScheduleLayout);

@@ -1,16 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import NewsLayout from './NewsLayout';
-import DatabaseTypes from '../types/DatabaseTypes';
 
 
 export default class NewsScreen extends React.Component {
 
     static propTypes = {
-        database: DatabaseTypes
-    };
-
-    static navigationOptions = {
-        title: 'Noticias'
+        navigation: PropTypes.object
     };
 
     render() {

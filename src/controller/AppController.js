@@ -1,6 +1,6 @@
 import React from 'react';
-import AppThemed from './AppThemed';
 import AppProvider from './AppProvider';
+import AppNavigator from './AppNavigator';
 import FirebaseDatabse from '../model/FirebaseDatabase';
 
 
@@ -10,7 +10,8 @@ export default class AppController extends React.Component {
         people: {},
         events: {},
         congress: {},
-        user: require('../json/LocalUser')
+        user: require('../json/LocalUser'),
+        appTheme: require('../json/AppTheme')
     };
 
     componentDidMount(){
@@ -44,14 +45,11 @@ export default class AppController extends React.Component {
         this.setState({ congress: congress });
     };
 
-    getDatabase = () => {
-        return { ...this.state };
-    };
-
     render() {
+        const appTheme = this.state.appTheme;
         return (
-            <AppProvider database={this.getDatabase()}>
-                <AppThemed/>
+            <AppProvider database={this.state} appTheme={appTheme}>
+            <AppNavigator/>
             </AppProvider>
         );
     }

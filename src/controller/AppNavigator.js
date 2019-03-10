@@ -8,7 +8,7 @@ import ScheduleScreen from '../screens/ScheduleScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import EventScreen from '../screens/EventScreen';
 
-import { withTheme} from 'react-native-elements';
+import withAppContext from './AppContext';
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
 import { createAppContainer, createStackNavigator, createSwitchNavigator } from 'react-navigation';
 
@@ -41,9 +41,13 @@ const tabBarIconLineIcons = name => ({ tintColor }) =>
         color={tintColor}
     />;
 
+const StackNavigatorConfig = {
+    headerMode: 'none'
+};
+
 const HomeStack = createStackNavigator({
-    HomeScreen,
-});
+    HomeScreen
+}, StackNavigatorConfig);
 
 HomeStack.navigationOptions = {
     title: 'Inicio',
@@ -51,8 +55,8 @@ HomeStack.navigationOptions = {
 };
 
 const NewsStack = createStackNavigator({
-    NewsScreen,
-});
+    NewsScreen
+}, StackNavigatorConfig);
 
 NewsStack.navigationOptions = {
     title: 'Noticias',
@@ -60,8 +64,8 @@ NewsStack.navigationOptions = {
 };
 
 const PeopleStack = createStackNavigator({
-    PeopleScreen,
-});
+    PeopleScreen
+}, StackNavigatorConfig);
 
 PeopleStack.navigationOptions = {
     title: 'Expositores',
@@ -69,8 +73,8 @@ PeopleStack.navigationOptions = {
 };
 
 const ScheduleStack = createStackNavigator({
-    ScheduleScreen,
-});
+    ScheduleScreen
+}, StackNavigatorConfig);
 
 ScheduleStack.navigationOptions = {
     title: 'Eventos',
@@ -79,14 +83,14 @@ ScheduleStack.navigationOptions = {
 
 const SettingsStack = createStackNavigator({
     SettingsScreen,
-});
+}, StackNavigatorConfig);
 
 SettingsStack.navigationOptions = {
     title: 'Config',
     tabBarIcon: tabBarIconIonicons('ios-options')
 };
 
-export default withTheme(props => {
+export default withAppContext(props => {
 
     const NavigatorRoutes = {
         HomeStack,
@@ -99,8 +103,9 @@ export default withTheme(props => {
     // Navigation options are for each screen in Navigator
     const NavigatorOptions = {
         initialRouteName: 'ScheduleStack',
-        barStyle: { backgroundColor: '#FFF' },
-        activeColor: props.theme.colors.primary
+        activeColor: props.appTheme.primary,
+        inactiveColor: props.appTheme.greyFont,
+        barStyle: { backgroundColor: props.appTheme.container }
     };
 
     const NavigatorScreen = createMaterialBottomTabNavigator(

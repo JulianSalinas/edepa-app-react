@@ -1,26 +1,26 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import styles from './ScreenStyles';
 import withAppContext from '../controller/AppContext';
 
-import { ScrollView, View} from 'react-native';
-import {Button, Divider, Text} from 'react-native-elements';
+import {Container, Content, Button, View, Text} from "native-base";
+
 
 const EventLayout = props =>
-    <ScrollView>
-        <View style={{
-            padding: 16,
-            display: 'flex'
-        }}>
-            <Text h4 style={{ marginBottom: 16 }}>
+    <Container>
+        <Content style={styles.content}>
+            <Text style={styles.gutterBottom}>
                 {props.message}
             </Text>
-            <Divider style={{ backgroundColor: 'blue' }} />
-            <Button
-                raised
-                type={'outline'}
-                title={'Fuck go back!'}
-                onPress={() => props.navigation.navigate('ScheduleScreen')}
-            />
-        </View>
-    </ScrollView>;
+            <Button bordered onPress={props.closeDetail}>
+                <Text> Fuck go back! </Text>
+            </Button>
+        </Content>
+    </Container>;
+
+EventLayout.propTypes = {
+    message: PropTypes.string.isRequired,
+    closeDetail: PropTypes.func.isRequired
+};
 
 export default withAppContext(EventLayout);

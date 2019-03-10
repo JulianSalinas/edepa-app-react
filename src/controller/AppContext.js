@@ -1,5 +1,6 @@
-import React from "react";
-import DatabaseTypes from "../types/DatabaseTypes"
+import React from 'react';
+import ThemeTypes from '../types/ThemeTypes';
+import DatabaseTypes from '../types/DatabaseTypes';
 
 
 export default Component => {
@@ -8,6 +9,7 @@ export default Component => {
         <Component { ...props } { ...context } />;
 
     GetContext.contextTypes = {
+        appTheme: ThemeTypes,
         database: DatabaseTypes
     };
 

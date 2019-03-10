@@ -1,16 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ScheduleLayout from './ScheduleLayout';
-import DatabaseTypes from '../types/DatabaseTypes';
 
 
 export default class ScheduleScreen extends React.Component {
 
     static propTypes = {
-        database: DatabaseTypes
-    };
-
-    static navigationOptions = {
-        title: 'Cronograma'
+        // navigation: PropTypes.object
     };
 
     render() {

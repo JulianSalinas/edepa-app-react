@@ -1,16 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import PeopleLayout from './PeopleLayout';
-import DatabaseTypes from '../types/DatabaseTypes';
 
 
 export default class PeopleScreen extends React.Component {
 
     static propTypes = {
-        database: DatabaseTypes
-    };
-
-    static navigationOptions = {
-        title: 'Expositores'
+        navigation: PropTypes.object
     };
 
     render() {

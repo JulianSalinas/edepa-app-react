@@ -1,16 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import SettingsLayout from './SettingsLayout';
-import DatabaseTypes from '../types/DatabaseTypes';
 
 
 export default class SettingsScreen extends React.Component {
 
     static propTypes = {
-        database: DatabaseTypes
-    };
-
-    static navigationOptions = {
-        title: 'Configuración'
+        navigation: PropTypes.object
     };
 
     render() {
