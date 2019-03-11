@@ -102,7 +102,7 @@ export default withAppContext(props => {
 
     // Navigation options are for each screen in Navigator
     const NavigatorOptions = {
-        initialRouteName: 'ScheduleStack',
+        initialRouteName: 'HomeStack',
         activeColor: props.appTheme.primary,
         inactiveColor: props.appTheme.greyFont,
         barStyle: { backgroundColor: props.appTheme.container }

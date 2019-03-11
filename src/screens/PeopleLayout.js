@@ -1,64 +1,84 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import PersonTypes from '../types/PersonTypes';
-import DatabaseTypes from '../types/DatabaseTypes';
 
-import materialColors from '../json/Material';
+import UserAvatar from "../components/Avatar";
 import withAppContext from '../controller/AppContext';
 
-import { ScrollView, View, Text } from "react-native";
+import {
+    Icon,
+    View,
+    Text,
+    List,
+    Left,
+    Body,
+    Right,
+    Content,
+    ListItem,
+    Container,
+} from 'native-base';
 
 
-function hashCode(key){
-    let hash = 0, i, chr;
-    if (key.length === 0) return hash;
-    for (i = 0; i < key.length; i++) {
-        chr   = key.charCodeAt(i);
-        hash  = ((hash << 5) - hash) + chr;
-        hash |= 0;
-    }
-    return hash;
-}
+const PersonAbout = props => props.about !== null ?
+    <Right>
+        <Icon name="md-arrow-dropright"/>
+    </Right>: null;
 
-function randomColor(key){
-    const value = Math.abs(hashCode(key));
-    return materialColors.length > 0 ? materialColors[value % materialColors.length] : 0;
-}
-
-const styles = {
-    container: {
-        padding: 8,
-        backgroundColor: '#fbfbfb'
-    },
-    personCard: {
-        padding: 16,
-        marginBottom: 8
-    }
+PersonAbout.propTypes = {
+    about: PropTypes.string
 };
 
 const Person = props =>
-    <Text>{props.person.completeName}</Text>;
+    <ListItem iconRight thumbnail>
+        <Left>
+            <UserAvatar size={36} name={props.person.completeName}/>
+        </Left>
+        <Body>
+            <Text>{props.person.completeName}</Text>
+            <Text note>{props.person.personalTitle}</Text>
+        </Body>
+        <PersonAbout about={props.person.about}/>
+    </ListItem>;
 
 Person.propTypes = {
     person: PersonTypes
 };
 
-const People = props => Object.keys(props.database.people).map(key =>
-    <Person key={key} person={props.database.people[key]}/>
+const PeopleDivider = props =>
+    <ListItem itemDivider>
+        <Text>{props.group}</Text>
+    </ListItem>;
+
+PeopleDivider.propTypes = {
+    group: PropTypes.string.isRequired
+};
+
+const PeopleGroup = props => props.people.map((person, index) =>
+    <Person key={index} person={person}/>
 );
 
-People.propTypes = {
-    database: DatabaseTypes
+PeopleGroup.propTypes = {
+    people: PropTypes.array.isRequired
+};
+
+const PeopleItems = props => props.formattedPeople.map((item, index) =>
+    <View key={index}>
+        <PeopleDivider group={item.group}/>
+        <PeopleGroup people={item.children}/>
+    </View>
+);
+
+PeopleItems.propTypes = {
+    formattedPeople: PropTypes.array.isRequired
 };
 
 const PeopleLayout = props =>
-    <ScrollView>
-        <View style={styles.container}>
-            <People {...props}/>
-        </View>
-    </ScrollView>;
-
-PeopleLayout.propTypes = {
-    database: DatabaseTypes
-};
+    <Container>
+        <Content>
+            <List>
+                <PeopleItems {...props}/>
+            </List>
+        </Content>
+    </Container>;
 
 export default withAppContext(PeopleLayout);

@@ -21,7 +21,7 @@ import {
 const SearchBar = props => props.isSeachBarOpen ?
     <Header searchBar rounded hasTabs style={styles.header}>
         <Item style={styles.headerSearch}>
-            <Input placeholder={'Search'}/>
+            <Input placeholder={'¿Qué quieres encontrar?'}/>
         </Item>
     </Header> : null;
 

@@ -11,6 +11,7 @@
         "@expo/samples": "2.1.1",
         "@expo/vector-icons": "latest",
         "expo": "^32.0.0",
+        "js-joda": "^1.9.3",
         "native-base": "^2.12.1",
         "prop-types": "^15.7.2",
         "react": "16.5.0",
