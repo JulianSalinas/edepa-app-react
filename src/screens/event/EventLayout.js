@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from '../constants/Styles';
-import withAppContext from '../app/Context';
+import styles from '../../constants/Styles';
+import withAppContext from '../../app/Context';
 
 import {Container, Content, Button, View, Text} from "native-base";
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import EventLayout from './EventLayout';
-import NavigationTypes from '../types/Navigation';
+import NavigationTypes from '../../types/Navigation';
 
 
 export default class EventScreen extends React.Component {

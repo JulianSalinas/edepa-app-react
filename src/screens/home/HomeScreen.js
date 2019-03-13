@@ -1,8 +1,8 @@
 import React from 'react';
 import HomeLayout from './HomeLayout';
-import NavigationTypes from '../types/Navigation';
-import withAppContext from '../app/Context';
-import DatabaseTypes from "../types/Database";
+import NavigationTypes from '../../types/Navigation';
+import withAppContext from '../../app/Context';
+import DatabaseTypes from "../../types/Database";
 import PropTypes from "prop-types";
 
 class HomeScreen extends React.Component {
