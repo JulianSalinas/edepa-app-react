@@ -1,17 +1,7 @@
 import React from 'react';
+import Flat from '../constants/Flat';
 import { View, Image, Text } from 'react-native';
-import { hashColor } from '../utils/utils-colors';
-
-// from https://flatuicolors.com/
-const defaultColors = [
-    '#2ecc71', // emerald
-    '#3498db', // peter river
-    '#8e44ad', // wisteria
-    '#e67e22', // carrot
-    '#e74c3c', // alizarin
-    '#1abc9c', // turquoise
-    '#2c3e50', // midnight blue
-];
+import { hashColor } from '../utils/Colors';
 
 export default class UserAvatar extends React.PureComponent {
     render() {
@@ -20,7 +10,7 @@ export default class UserAvatar extends React.PureComponent {
             name,
             color,
             textColor = '#fff',
-            colors = defaultColors,
+            colors = Flat,
             fontDecrease,
             size,
             containerStyle,

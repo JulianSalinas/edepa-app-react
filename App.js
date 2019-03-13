@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { AppLoading, Asset, Font, Icon } from 'expo';
 import { Platform, StatusBar, StyleSheet, View } from 'react-native';
-import AppController from './src/controller/AppController';
+import Controller from './src/app/Controller';
 
 // noinspection JSUnusedGlobalSymbols
 export default class App extends Component {
@@ -29,7 +29,7 @@ export default class App extends Component {
             return (
                 <View style={styles.container}>
                     {Platform.OS === 'ios' && <StatusBar barStyle="default"/>}
-                    <AppController/>
+                    <Controller/>
                 </View>
             );
         }
