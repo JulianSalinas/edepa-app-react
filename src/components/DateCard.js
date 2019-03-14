@@ -44,7 +44,7 @@ const DateLeft = () =>
 
 const DateRight = props =>
     <Col style={classes.cardRight}>
-        <Badge text={'Fecha'} color={theme.secondary} style={classes.marginBottom}/>
+        <Badge text={'Fecha'} style={classes.marginBottom}/>
         <Divider style={[classes.marginBottom, classes.marginTop]}/>
         <DateGrid {...props}/>
     </Col>;

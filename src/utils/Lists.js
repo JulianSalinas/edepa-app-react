@@ -20,10 +20,11 @@ const split = prop => (list, item) => {
  * @returns {[{ group: string, children: array }]}
  */
 export function splitByProp(prop, data){
-    const formatted = data.reduce(split(prop), {});
+    const formatted = data.reduce(split(prop), []);
     return Object.values(formatted);
 }
 
+// console.log(splitByProp('name', rawData));
 
 const sort = prop => (a, b) => {
     if(a[prop] < b[prop]) { return -1; }

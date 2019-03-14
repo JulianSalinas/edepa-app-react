@@ -16,4 +16,6 @@ export default PropTypes.shape({
     briefSpanish: PropTypes.string,
     briefEnglish: PropTypes.string,
 
+    dateString: PropTypes.string
+
 })

@@ -1,9 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import DatabaseTypes from '../../types/Database';
+
 import ScheduleLayout from './ScheduleLayout';
+import withAppContext from '../../app/Context';
 
 
-export default class ScheduleScreen extends React.Component {
+class ScheduleScreen extends React.Component {
+
+    static propTypes = {
+        database: DatabaseTypes
+    };
 
     state = {
         isSearchBarOpen: true
@@ -17,8 +23,14 @@ export default class ScheduleScreen extends React.Component {
         this.setState({ isSearchBarOpen: false });
     };
 
+    getEvents = () => {
+        const events = this.props.database.events;
+        return Object.keys(events).map(key => events[key]);
+    };
+
     render() {
         return <ScheduleLayout {...this.props}
+                               events={this.getEvents()}
                                showSearchBar={this.showSearchBar}
                                hideSearchBar={this.hideSearchBar}
                                isSeachBarOpen={this.state.isSearchBarOpen}
@@ -26,3 +38,5 @@ export default class ScheduleScreen extends React.Component {
     }
 
 }
+
+export default withAppContext(ScheduleScreen);

@@ -4,7 +4,7 @@ import { View } from 'native-base';
 const Divider = props =>
     <View style={{
         ...props.style,
-        height: 2,
+        height: 1,
         backgroundColor: '#EEEEEE',
     }}/>;
 

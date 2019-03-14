@@ -25,7 +25,7 @@ class PeopleScreen extends React.Component {
         return {...person, completeName: capitalize(name) }
     };
 
-    formatPeople = () => {
+    groupPeople = () => {
         const prop = 'completeName';
         let people = this.getPeople();
         people = people.map(this.formatPerson);
@@ -34,10 +34,7 @@ class PeopleScreen extends React.Component {
     };
 
     render() {
-        return <PeopleLayout {...this.props}
-                             people={this.getPeople()}
-                             formattedPeople={this.formatPeople()}
-        />;
+        return <PeopleLayout {...this.props} peopleGroups={this.groupPeople()}/>;
     }
 
 }

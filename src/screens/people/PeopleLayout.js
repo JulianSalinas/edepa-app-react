@@ -62,7 +62,7 @@ PeopleGroup.propTypes = {
     people: PropTypes.array.isRequired
 };
 
-const PeopleItems = props => props.formattedPeople.map((item, index) =>
+const PeopleItems = props => props.peopleGroups.map((item, index) =>
     <View key={index}>
         <PeopleDivider group={item.group}/>
         <PeopleGroup people={item.children}/>
@@ -70,7 +70,7 @@ const PeopleItems = props => props.formattedPeople.map((item, index) =>
 );
 
 PeopleItems.propTypes = {
-    formattedPeople: PropTypes.array.isRequired
+    peopleGroups: PropTypes.array.isRequired
 };
 
 const PeopleLayout = props =>

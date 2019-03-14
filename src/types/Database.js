@@ -4,7 +4,8 @@ import UserTypes from "./User"
 export default PropTypes.shape({
 
     user: UserTypes,
-    people: PropTypes.object.isRequired,
+    events: PropTypes.object.isRequired,
+    events: PropTypes.object.isRequired,
     congress: PropTypes.object.isRequired
 
 });

@@ -10,34 +10,36 @@ const classes = {
     badgeText: {
         flex: 1,
         fontSize: 12,
-        color: 'white'
+        textAlign: 'center'
     },
     badgeStyle: {
         height: 24,
         borderRadius: 0,
         marginBottom: theme.spacing * 2,
-        backgroundColor: theme.container
     }
 };
 
-const GetClass = props => [
-    classes.badgeStyle,
-    { backgroundColor: props.color !== undefined ? props.color : theme.secondary }
-];
-
 const ColorBadge = props =>
-    <Badge style={[GetClass(props.color), props.style]}>
-        <Text uppercase style={classes.badgeText}> { props.text } </Text>
+    <Badge style={[
+        classes.badgeStyle, props.style,
+        { backgroundColor: props.background },
+    ]}>
+        <Text style={[
+            classes.badgeText,
+            { color: props.color },
+        ]}> { props.text } </Text>
     </Badge>;
 
 ColorBadge.defaultProps ={
     style: {},
-    color: theme.secondary
+    color: 'white',
+    background: theme.secondary
 };
 
 ColorBadge.propTypes = {
     style: PropTypes.object,
     color: PropTypes.string,
+    background: PropTypes.string,
     text: PropTypes.string.isRequired
 };
 

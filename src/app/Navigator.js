@@ -93,16 +93,16 @@ SettingsStack.navigationOptions = {
 export default withAppContext(props => {
 
     const NavigatorRoutes = {
-        HomeStack,
-        NewsStack,
-        ScheduleStack,
-        PeopleStack,
-        SettingsStack
+        Home: HomeStack,
+        News: NewsStack,
+        Schedule: ScheduleStack,
+        People: PeopleStack,
+        Settings: SettingsStack
     };
 
     // Navigation options are for each screen in Navigator
     const NavigatorOptions = {
-        initialRouteName: 'HomeStack',
+        initialRouteName: 'Schedule',
         activeColor: props.appTheme.primary,
         inactiveColor: props.appTheme.greyFont,
         barStyle: { backgroundColor: props.appTheme.container }
@@ -119,8 +119,8 @@ export default withAppContext(props => {
     };
 
     const MainScreen = createStackNavigator({
-        NavigatorScreen,
-        EventScreen
+        Navigator: NavigatorScreen,
+        Event: EventScreen
     });
 
     const Component = createAppContainer(createSwitchNavigator({
