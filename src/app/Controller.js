@@ -2,7 +2,7 @@ import React from 'react';
 import Theme from '../constants/Theme';
 import Provider from './Provider';
 import AppNavigator from './Navigator';
-import FirebaseDatabse from '../database/Firebase';
+import FirebaseDatabase from '../database/Firebase';
 
 
 export default class Controller extends React.Component {
@@ -16,7 +16,7 @@ export default class Controller extends React.Component {
     };
 
     componentDidMount(){
-        this.database = new FirebaseDatabse();
+        this.database = new FirebaseDatabase();
         this.database.synchPeople(this.readPerson);
         this.database.synchEvents(this.readEvent);
         this.database.synchCongress(this.readCongress);
@@ -28,7 +28,7 @@ export default class Controller extends React.Component {
 
     readEvent = (key, event, action) => {
         const events = this.state.events;
-        action === FirebaseDatabse.DELETE ?
+        action === FirebaseDatabase.DELETE ?
             delete events[key]:
             events[key] = event;
         this.setState({ events: events});
@@ -36,7 +36,7 @@ export default class Controller extends React.Component {
 
     readPerson = (key, person, action) => {
         const people = this.state.people;
-        action === FirebaseDatabse.DELETE ?
+        action === FirebaseDatabase.DELETE ?
             delete people[key]:
             people[key] = person;
         this.setState({ people: people});
@@ -45,12 +45,12 @@ export default class Controller extends React.Component {
     readCongress = congress => {
         this.setState({ congress: congress });
     };
-
+    
     render() {
         const appTheme = this.state.appTheme;
         return (
             <Provider database={this.state} appTheme={appTheme}>
-            <AppNavigator/>
+                <AppNavigator/>
             </Provider>
         );
     }

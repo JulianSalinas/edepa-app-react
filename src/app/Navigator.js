@@ -51,7 +51,7 @@ const HomeStack = createStackNavigator({
 
 HomeStack.navigationOptions = {
     title: 'Inicio',
-    tabBarIcon: tabBarIconFeather('home')
+    // tabBarIcon: tabBarIconEntypo('news')
 };
 
 const NewsStack = createStackNavigator({
@@ -60,7 +60,7 @@ const NewsStack = createStackNavigator({
 
 NewsStack.navigationOptions = {
     title: 'Noticias',
-    tabBarIcon: tabBarIconEntypo('news')
+    // tabBarIcon: tabBarIconEntypo('news')
 };
 
 const PeopleStack = createStackNavigator({
@@ -69,7 +69,7 @@ const PeopleStack = createStackNavigator({
 
 PeopleStack.navigationOptions = {
     title: 'Expositores',
-    tabBarIcon: tabBarIconLineIcons('people')
+    // tabBarIcon: tabBarIconLineIcons('people')
 };
 
 const ScheduleStack = createStackNavigator({
@@ -78,7 +78,7 @@ const ScheduleStack = createStackNavigator({
 
 ScheduleStack.navigationOptions = {
     title: 'Eventos',
-    tabBarIcon: tabBarIconFeather('calendar')
+    // tabBarIcon: tabBarIconFeather('calendar')
 };
 
 const SettingsStack = createStackNavigator({
@@ -87,7 +87,7 @@ const SettingsStack = createStackNavigator({
 
 SettingsStack.navigationOptions = {
     title: 'Config',
-    tabBarIcon: tabBarIconIonicons('ios-options')
+    // tabBarIcon: tabBarIconIonicons('ios-options')
 };
 
 export default withAppContext(props => {
