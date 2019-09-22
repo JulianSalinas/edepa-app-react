@@ -2,8 +2,9 @@
   "devToolsPort": 19002,
   "expoServerPort": 19000,
   "packagerPort": 19001,
-  "packagerPid": 11932,
-  "expoServerNgrokUrl": "https://w6-zz8.anonymous.edepa-app-react.exp.direct",
-  "packagerNgrokUrl": "https://packager.w6-zz8.anonymous.edepa-app-react.exp.direct",
-  "ngrokPid": 6488
+  "packagerPid": 7388,
+  "expoServerNgrokUrl": "https://vq-eim.anonymous.edepa-app-react.exp.direct",
+  "packagerNgrokUrl": "https://packager.vq-eim.anonymous.edepa-app-react.exp.direct",
+  "ngrokPid": 10848,
+  "webpackServerPort": 19006
 }

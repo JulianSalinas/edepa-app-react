@@ -1,8 +1,11 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import AppNavigator from './navigation/Navigator';
 
-import Controller from './src/app/Controller';
-import { AppLoading, Asset, Font, Icon } from 'expo';
+import * as Font from 'expo-font';
+import { Asset } from 'expo-asset';
+import { AppLoading } from 'expo';
+import { Ionicons } from '@expo/vector-icons';
 import { Platform, StatusBar, View } from 'react-native';
 
 
@@ -27,11 +30,17 @@ export default class App extends Component {
     ];
 
     fonts = {
-        ...Icon.Ionicons.font,
+        ...Ionicons.font,
         Roboto: require("native-base/Fonts/Roboto.ttf"),
         Roboto_medium: require("native-base/Fonts/Roboto_medium.ttf"),
         Ionicons: require("native-base/Fonts/Ionicons.ttf")
-    }
+    };
+
+    loadResources = async () => {
+        const fonts = Font.loadAsync(this.fonts);
+        const assets = Asset.loadAsync(this.assets);
+        await Promise.all([fonts, assets]);
+    };
 
     loading = () => <AppLoading
         startAsync={this.loadResources}
@@ -41,16 +50,10 @@ export default class App extends Component {
 
     started = () => <View style={this.styles}>
         {Platform.OS === 'ios' && <StatusBar barStyle="default"/>}
-        <Controller/>
+        <AppNavigator />
     </View>;
 
-    loadResources = async () => {
-        const fonts = Font.loadAsync(this.fonts);
-        const assets = Asset.loadAsync(this.assets);
-        return Promise.all([fonts, assets]);
-    };
-
-    render() {
+    render(){
         const condition = !this.state.isLoadingComplete && !this.props.skipLoadingScreen;
         return condition ? this.loading() : this.started();
     }
