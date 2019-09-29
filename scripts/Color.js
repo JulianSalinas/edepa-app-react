@@ -44,7 +44,7 @@ function fixLight(color, amount){
 /**
  * Lighten a hex color according to the given percentage
  */
-const lighten = (color, amount)=> {
+function lighten(color, amount) {
     color = (color.indexOf('#') >= 0) ? color.substring(1,color.length) : color;
     amount = parseInt((255 * amount) / 100);
     const h = fixLight(color.substring(0,2), amount);
@@ -56,7 +56,7 @@ const lighten = (color, amount)=> {
 /**
  * Darken a hex color according to the given percentage
  */
-const darken = (color, amount) =>{
+function darken(color, amount) {
     color = (color.indexOf('#') >= 0) ? color.substring(1,color.length) : color;
     amount = parseInt((255 * amount) / 100) * - 1;
     const h = fixLight(color.substring(0,2), amount);
@@ -65,4 +65,11 @@ const darken = (color, amount) =>{
     return `#${h}${e}${x}`;
 };
 
-export { rgbToHex, colorFor, lighten, darken };
+/**
+ * Creates a gradient with two hex colors
+ */
+function gradient(top, bottom){
+    return `linear-gradient(to bottom right, ${top}, ${bottom})`;
+}
+
+export { rgbToHex, colorFor, lighten, darken, gradient };
