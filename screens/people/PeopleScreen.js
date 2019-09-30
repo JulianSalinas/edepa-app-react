@@ -1,42 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import PeopleLayout from './PeopleLayout';
-import DatabaseTypes from "../../types/Database";
-import withAppContext from '../../app/Context';
 
-import { capitalize } from '../../utils/Strings';
-import { splitByProp, sortByProp } from '../../utils/Lists';
+import styled from 'styled-components/native';
+import { View, Text } from 'react-native';
 
 
-class PeopleScreen extends React.Component {
+const StyledView = styled(View)`
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f1c40f
+`
 
-    static propTypes = {
-        database: DatabaseTypes,
-        navigation: PropTypes.object
-    };
+const StyledText = styled(Text)`
+    color: #FFF;
+    margin-end: 12px;
+    font-size: 18px;
+    letter-spacing: 2.5;
+    text-transform: uppercase;
+`
 
-    getPeople = () => {
-        const people = this.props.database.people;
-        return Object.keys(people).map(key => people[key]);
-    };
+const PeopleScreen = props => 
+    <StyledView>
+        <StyledText>People</StyledText>
+    </StyledView>
 
-    formatPerson = person => {
-        const name = person.completeName.toLowerCase();
-        return {...person, completeName: capitalize(name) }
-    };
-
-    groupPeople = () => {
-        const prop = 'completeName';
-        let people = this.getPeople();
-        people = people.map(this.formatPerson);
-        people = sortByProp(prop, people);
-        return splitByProp(prop, people);
-    };
-
-    render() {
-        return <PeopleLayout {...this.props} peopleGroups={this.groupPeople()}/>;
-    }
-
-}
-
-export default withAppContext(PeopleScreen);
+export default PeopleScreen;

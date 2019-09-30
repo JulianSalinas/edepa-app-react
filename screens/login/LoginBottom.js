@@ -6,7 +6,7 @@ import { View, Text, Switch } from 'react-native';
 
 
 const StyledView = styled(View)`
-    padding: 16px;
+    padding: 8px 16px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -16,9 +16,10 @@ const StyledView = styled(View)`
 
 const StyledText = styled(Text)`
     color: #FFF;
-    margin-end: 12px;
-    font-size: 12px;
-    letter-spacing: 2.5;
+    font-size: 10;
+    font-weight: bold;
+    margin-end: 12;
+    letter-spacing: 2.4;
     text-transform: uppercase;
 `
 

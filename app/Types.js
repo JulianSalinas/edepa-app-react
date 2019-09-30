@@ -45,30 +45,11 @@ const Engine = PropTypes.shape({
     changeDarkMode: PropTypes.func.isRequired,
 })
 
-const Custom = PropTypes.shape({
-
-    margin: PropTypes.number.isRequired,
-    padding: PropTypes.number.isRequired,
-    spacing: PropTypes.number.isRequired,
-    
-    darkMode: PropTypes.bool.isRequired,
-    primary: PropTypes.string.isRequired,
-    secondary: PropTypes.string.isRequired,
-
-    container: PropTypes.string.isRequired,
-    background: PropTypes.string.isRequired,
-    decoration: PropTypes.string.isRequired,
-
-    greyFont: PropTypes.string.isRequired,
-    darkFont: PropTypes.string.isRequired,
-    lightFont: PropTypes.string.isRequired
-
-})
-
 const Store = PropTypes.shape({
+    darkMode: PropTypes.bool.isRequired,
     home: Home,
     events: PropTypes.arrayOf(Event),
     people: PropTypes.arrayOf(Person)
 })
 
-export { Position, Home, Event, User, Person, Custom, Store, Engine }
+export { Position, Home, Event, User, Person, Store, Engine }

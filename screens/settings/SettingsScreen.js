@@ -1,16 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import SettingsLayout from './SettingsLayout';
+
+import styled from 'styled-components/native';
+import { View, Text } from 'react-native';
 
 
-export default class SettingsScreen extends React.Component {
+const StyledView = styled(View)`
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #16a085
+`
 
-    static propTypes = {
-        navigation: PropTypes.object
-    };
+const StyledText = styled(Text)`
+    color: #FFF;
+    margin-end: 12px;
+    font-size: 18px;
+    letter-spacing: 2.5;
+    text-transform: uppercase;
+`
 
-    render() {
-        return <SettingsLayout {...this.props}/>;
-    }
+const SettingsScreen = props => 
+    <StyledView>
+        <StyledText>Settings</StyledText>
+    </StyledView>
 
-}
+export default SettingsScreen;

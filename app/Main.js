@@ -1,8 +1,9 @@
 import { Context } from './Context';
 import React, { Component } from 'react';
 
-import Theme from '../constants/Theme';
+import { ThemeValues } from './Theme';
 import Firebase from '../services/Firebase';
+import Navigator from '../navigation/Navigator';
 import Login from '../screens/login/LoginScreen';
 
 
@@ -23,7 +24,7 @@ export default class Main extends Component {
      * Additionally, dark mode can be changed.
      */
     theme = {
-        ...Theme, 
+        ...ThemeValues, 
         darkMode: this.state.darkMode
     }
     
@@ -38,9 +39,14 @@ export default class Main extends Component {
     /**
      * Adjusts the app's appearance to dark or light mode 
      */
-    changeDarkMode = value => this.setState({ 
-        darkMode: value 
-    }, () => { this.theme.darkMode = value})
+    changeDarkMode = value => {
+        return this.setState({ darkMode: value }, () => this.darkModeChanged());
+    }
+
+    darkModeChanged = () => {
+        this.theme.darkMode = this.state.darkMode;
+        console.log(`Dark mode changed to ${this.state.darkMode}!`);
+    }
 
     /**
      * All the functions that can be used along the app
@@ -107,6 +113,7 @@ export default class Main extends Component {
      */
     renderApp = () => 
         <Context store={this.state} custom={this.theme} engine={this.engine}>
+            {/* <Navigator /> */}
             <Login />
         </Context>
 

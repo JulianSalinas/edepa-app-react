@@ -1,4 +1,5 @@
-import { Store, Custom, Engine } from './Types';
+import { ThemeTypes } from './Theme';
+import { Store, Engine } from './Types';
 import React, { Children, Component } from 'react';
 
 /**
@@ -6,8 +7,8 @@ import React, { Children, Component } from 'react';
  */
 const contextTypes = {
     store: Store,
-    custom: Custom,
-    engine: Engine
+    engine: Engine,
+    custom: ThemeTypes
 }
 
 /**
@@ -36,8 +37,8 @@ class Context extends Component {
     getChildContext() {
         return {
             store: this.props.store,
-            custom: this.props.custom,
-            engine: this.props.engine
+            engine: this.props.engine,
+            custom: this.props.custom
         }
     }
 

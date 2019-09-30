@@ -1,41 +1,31 @@
 import React from 'react';
-import HomeLayout from './HomeLayout';
-import NavigationTypes from '../../types/Navigation';
-import withAppContext from '../../app/Context';
-import DatabaseTypes from "../../types/Database";
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
-class HomeScreen extends React.Component {
+import styled from 'styled-components/native';
+import { View, Text } from 'react-native';
 
-    static propTypes = {
-        database: DatabaseTypes,
-        navigation: PropTypes.object
-    };
+const StyledView = styled(View)`
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2c3e50
+`
 
-    openDetail = () => {
-        this.props.navigation.navigate('EventScreen', {
-            message: 'Hello, I am your home view'
-        });
-    };
+const StyledText = styled(Text)`
+    color: #FFF;
+    margin-end: 12px;
+    font-size: 18px;
+    letter-spacing: 2.5;
+    text-transform: uppercase;
+`
 
-    getCongress = () => {
-        return this.props.database.congress;
-    };
+const HomeScreen = props => {
 
-    formatCongress = () => {
-        const congress = this.getCongress();
-        const start = congress.start;
-        const end = congress.end;
-        return congress;
-    };
-
-    render() {
-        return <HomeLayout {...this.props}
-                           openDetail={this.openDetail}
-                           congress={this.formatCongress()}
-        />;
-    }
-
+    console.log(props)
+    return <StyledView>
+        <StyledText>Home</StyledText>
+    </StyledView>
 }
 
-export default withAppContext(HomeScreen);
+export default HomeScreen;

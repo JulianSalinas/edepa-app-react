@@ -1,5 +1,3 @@
-console.ignoredYellowBox = true;
-
 import Main from './app/Main';
 import React, { Component } from 'react';
 
@@ -7,8 +5,10 @@ import * as Font from 'expo-font';
 import { Asset } from 'expo-asset';
 import { AppLoading } from 'expo';
 import { Ionicons } from '@expo/vector-icons';
-import { Platform, StatusBar, View } from 'react-native';
+import { Platform, StatusBar, View, YellowBox } from 'react-native';
 
+YellowBox.ignoreWarnings(['Setting a timer']);
+console.disableYellowBox = true;
 
 export default class App extends Component {
 

@@ -10,7 +10,7 @@ import { View } from 'react-native';
 
 
 const LoginItem = styled(View)`
-    margin-bottom: 16px
+    margin-bottom: 16
 `
 
 const StyledView = styled(View)`

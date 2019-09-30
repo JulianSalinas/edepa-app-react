@@ -20,8 +20,9 @@ const buttonStyle = {
 }
 
 const textStyle = {
-    fontSize: 12,
-    letterSpacing: 2.5,
+    fontSize: 10,
+    fontWeight: 'bold',
+    letterSpacing: 2.4,
     textTransform: 'uppercase'
 }
 
@@ -35,7 +36,7 @@ const ButtonIcon = ({ color }) =>
 
 const ButtonText = ({ color }) =>
     <Text style={[textStyle, { color }]}>
-        Ingresar con Google
+        Sign in with Google
     </Text>
 
 const ButtonView = ({ backgroundColor, ...props }) =>
