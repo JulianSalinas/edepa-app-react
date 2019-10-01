@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { ThemeTypes } from './Theme';
 
 const Common = {
     title: PropTypes.string,
@@ -36,20 +37,22 @@ const User = PropTypes.shape({
 
 const Person = PropTypes.shape({
     key: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
+    name: PropTypes.string,
+    personalName: PropTypes.string,
     title: PropTypes.string,
     about: PropTypes.string,
 })
 
-const Engine = PropTypes.shape({
-    changeDarkMode: PropTypes.func.isRequired,
-})
-
 const Store = PropTypes.shape({
-    darkMode: PropTypes.bool.isRequired,
     home: Home,
     events: PropTypes.arrayOf(Event),
     people: PropTypes.arrayOf(Person)
 })
 
-export { Position, Home, Event, User, Person, Store, Engine }
+const KFeel = PropTypes.shape({
+    ...ThemeTypes,
+    darkMode: PropTypes.bool.isRequired,
+    changeDarkMode: PropTypes.func.isRequired
+})
+
+export { Position, Home, Event, User, Person, Store, KFeel }

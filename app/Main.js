@@ -1,59 +1,49 @@
-import { Context } from './Context';
 import React, { Component } from 'react';
 
 import { ThemeValues } from './Theme';
 import Firebase from '../services/Firebase';
 import Navigator from '../navigation/Navigator';
-import Login from '../screens/login/LoginScreen';
 
 
 export default class Main extends Component {
     
+
+    static DARK_MODE_CHANGED_TIMES = 0;
+
     /**
      * Contains all the information that can be used 
      * along the app.
      */
     state = {
         people: [],
-        events: [],
+        events: [], 
         darkMode: true
     }
-    
-    /**
-     * All the theme's properties must be here. 
-     * Additionally, dark mode can be changed.
-     */
-    theme = {
-        ...ThemeValues, 
-        darkMode: this.state.darkMode
-    }
-    
+
     /**
      * Gets ready the Database connection
+     * TODO: Active database
      */
     constructor(props){
         super(props);
-        this.database = new Firebase();
+        // this.database = new Firebase();
     }
 
     /**
      * Adjusts the app's appearance to dark or light mode 
      */
+    isDarkMode = () => {
+        return this.state.darkMode;
+    }
+
     changeDarkMode = value => {
         return this.setState({ darkMode: value }, () => this.darkModeChanged());
     }
 
     darkModeChanged = () => {
-        this.theme.darkMode = this.state.darkMode;
-        console.log(`Dark mode changed to ${this.state.darkMode}!`);
-    }
-
-    /**
-     * All the functions that can be used along the app
-     * must be here. Functions must be above.
-     */
-    engine = {
-        changeDarkMode: this.changeDarkMode
+        Main.DARK_MODE_CHANGED_TIMES += 1;
+        const message = `Dark Mode changed to ${this.state.darkMode}`;
+        console.log(`${Main.DARK_MODE_CHANGED_TIMES} time: ${message}`);
     }
     
     /**
@@ -108,20 +98,30 @@ export default class Main extends Component {
     }
 
     /**
-     * Renders the entire app passing its state to make it available
-     * for each component by using withContext HOC. 
+     * All the functions that can be used along the app
+     * to change the look and feel must be here 
      */
-    renderApp = () => 
-        <Context store={this.state} custom={this.theme} engine={this.engine}>
-            {/* <Navigator /> */}
-            <Login />
-        </Context>
+    getStore = () => ({
+        people: this.state.people,
+        events: this.state.events 
+    })
+
+    getKFeel = () => ({
+        ...ThemeValues, 
+        isDarkMode: this.isDarkMode,
+        changeDarkMode: this.changeDarkMode
+    })
 
     /**
-     * TODOL: Whatever component can be tested here.
+     * Renders the entire app passing its state to make it available
+     * for each component by using withContext HOC. 
+     * TODO: Whatever component can be tested here.
      */
     render() {
-        return this.renderApp();
+        return <Navigator screenProps={{
+            kFeel: this.getKFeel(),
+            store: this.getStore()
+        }}/>
     }
 
 }
