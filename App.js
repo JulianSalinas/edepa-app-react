@@ -7,7 +7,7 @@ import { AppLoading } from 'expo';
 import { Ionicons } from '@expo/vector-icons';
 import { Platform, StatusBar, View, YellowBox } from 'react-native';
 
-YellowBox.ignoreWarnings(['Setting a timer']);
+YellowBox.ignoreWarnings(['Setting a timer', "Warning: Using the"]);
 console.disableYellowBox = true;
 
 export default class App extends Component {

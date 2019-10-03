@@ -1,67 +1,63 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Background from '../../shared/background/Background';
 
 import { Store } from '../../app/Types';
-import LoginBottom from './LoginBottom';
-import LoginContent from './LoginContent';
+import Logo from '../../customs/Edepa';
+import DarkModder from '../../shared/dark-modder/DarkModder';
+import GoogleButton from '../../shared/buttons/GoogleButton';
+import FacebookButton from '../../shared/buttons/FacebookButton';
 
 import styled from 'styled-components/native';
-import { gradient } from '../../scripts/Color';
-
+import { View } from 'react-native';
 import { Container } from 'native-base';
-import { Platform, View } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
 
 
-const PaintedView = styled(LinearGradient)`
-    flex: 1;
+const LoginItem = styled(View)`
+    margin-bottom: 16
 `
 
-const StyledView = styled(View)`
-    flex: 1;
+const StyledContent = styled(View)`
+    flex: 3;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 `
 
-const LoginDefault = ({ darkMode, changeDarkMode, style }) =>
-    <StyledView style={style}>
+const LoginLogo = props => 
+    <LoginItem>
+        <Logo color={props.darkMode ? "#FFF" : null }/>  
+    </LoginItem>
+
+const LoginButtons = props => 
+    <LoginItem>
+        <GoogleButton darkMode={props.darkMode} style={{ marginBottom: 12 }}/>           
+        <FacebookButton darkMode={props.darkMode}/>      
+    </LoginItem>
+
+const LoginContent = props => 
+    <StyledContent>
+        <LoginLogo {...props}/>
+        <LoginButtons {...props}/>
+    </StyledContent>
+
+const LoginView = ({ darkMode, changeDarkMode, ...props }) => 
+    <Background darkMode={darkMode} {...props}>
         <LoginContent darkMode={darkMode} />
-        <LoginBottom darkMode={darkMode} changeDarkMode={changeDarkMode} />
-    </StyledView>
+        <DarkModder darkMode={darkMode} changeDarkMode={changeDarkMode} />
+    </Background>
 
-const LoginDark = props =>
-    <StyledView>
-        <PaintedView start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
-            colors={[props.darkPrimary, props.darkSecondary]}>
-            <LoginDefault {...props} />
-        </PaintedView>
-    </StyledView>
-
-const LoginMobile = props => props.darkMode ?
-    <LoginDark {...props} /> :
-    <LoginDefault {...props} style={{
-        backgroundColor: '#FFFFFF'
-    }} />
-
-const LoginView = props => props.mobileMode ?
-    <LoginMobile {...props} /> :
-    <LoginDefault {...props} style={!props.darkMode ? {} : {
-        backgroundImage: gradient(props.darkPrimary, props.darkSecondary)
-    }} />
-
-const LoginPlatform = props =>
-    <LoginView
-        {...props}
+const LoginLayout = props => 
+    <LoginView         
         darkMode={props.kFeel.isDarkMode()}
         darkPrimary={props.kFeel.darkPrimary}
         darkSecondary={props.kFeel.darkSecondary}
         changeDarkMode={props.kFeel.changeDarkMode}
-        mobileMode={Platform.OS === 'android' || Platform.OS === 'ios'}
     />
 
 const LoginScreen = props => 
     <Container>
-        <LoginPlatform {...props} {...props.screenProps}/>
+        <LoginLayout {...props.screenProps} />
     </Container>
 
 LoginScreen.propTypes = {

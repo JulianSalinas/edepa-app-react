@@ -17,21 +17,25 @@ const StyledView = styled(View)`
 const StyledText = styled(Text)`
     color: #FFF;
     font-size: 10;
-    font-weight: bold;
     margin-end: 12;
     letter-spacing: 2.4;
     text-transform: uppercase;
 `
 
-const LoginBottom = props => 
+const DarkModder = props => 
     <StyledView>
         <StyledText>Dark Mode</StyledText>
         <Switch value={props.darkMode} onValueChange={props.changeDarkMode}/>
     </StyledView>
 
-LoginBottom.propsTypes = {
+DarkModder.propsTypes = {
     darkMode: PropTypes.bool.isRequired,
     changeDarkMode: PropTypes.func.isRequired
 }
 
-export default LoginBottom;
+DarkModder.defaultProps = {
+    darkMode: true,
+    changeDarkMode: () => console.log('You should pass changeDarkMode(value)')
+}
+
+export default DarkModder;

@@ -1,30 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import styled from 'styled-components/native';
 import { Text, View } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 
 
-const buttonSize = {
-    height: 48,
-    borderRadius: 24,
-    paddingHorizontal: 24
-}
+const StyledButton = styled(View)`
+    height: 48;
+    border-radius: 24;
+    padding-horizontal: 24;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: flex-start;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+`
 
-const buttonStyle = {
-    display: 'flex',
-    alignItems: 'center',
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
-    boxShadow: '0px 8px 15px rgba(0, 0, 0, 0.1)',
-}
-
-const textStyle = {
-    fontSize: 10,
-    fontWeight: 'bold',
-    letterSpacing: 2.4,
-    textTransform: 'uppercase'
-}
+const StyledText = styled(Text)`
+    fontSize: 10;
+    letterSpacing: 2.4;
+    textTransform: uppercase;
+`
 
 const ButtonIcon = ({ color }) =>
     <FontAwesome
@@ -35,17 +32,17 @@ const ButtonIcon = ({ color }) =>
     />
 
 const ButtonText = ({ color }) =>
-    <Text style={[textStyle, { color }]}>
+    <StyledText style={{ color }}>
         Sign in with Google
-    </Text>
+    </StyledText>
 
 const ButtonView = ({ backgroundColor, ...props }) =>
-    <View
+    <StyledButton
         onClick={props.onClick}
-        style={[props.style, buttonStyle, buttonSize, { backgroundColor }]}>
+        style={[props.style, { backgroundColor }]}>
         <ButtonIcon color={props.color} />
         <ButtonText color={props.color} />
-    </View>
+    </StyledButton>
 
 const GoogleButton = props =>
     <ButtonView
