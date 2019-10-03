@@ -7,9 +7,9 @@ import { createBrowserApp } from '@react-navigation/web';
 import { createSwitchNavigator } from 'react-navigation';
 
 const routes = {
-    Login: LoginScreen,
+    // Login: LoginScreen,
     // Main: TabNavigator, 
-    // People: PeopleScreen
+    People: PeopleScreen
     // Loading: Loading
 }
 

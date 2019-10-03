@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { ThemeValues } from './Theme';
 import Firebase from '../services/Firebase';
 import Navigator from '../navigation/Navigator';
-
+import { reduceBy } from '../scripts/Utils';
 
 export default class Main extends Component {
     
@@ -17,7 +17,8 @@ export default class Main extends Component {
     state = {
         people: [],
         events: [], 
-        darkMode: true
+        darkMode: true,
+        indexedPeople: []
     }
 
     /**
@@ -26,7 +27,7 @@ export default class Main extends Component {
      */
     constructor(props){
         super(props);
-        // this.database = new Firebase();
+        this.database = new Firebase();
     }
 
     /**
@@ -52,7 +53,7 @@ export default class Main extends Component {
      * TODO: Active database listeners 
      */
     componentDidMount(){
-        // this.database.synchPeople(this.synchList('people'));
+        this.database.synchPeople(this.synchPeople('people'));
         // this.database.synchEvents(this.synchList('events'));
     }
 
@@ -90,12 +91,23 @@ export default class Main extends Component {
     /**
      * Callback used to update items from the database 
      */
-    synchList = list => (key, item, action) => {
+    synchList = listName => (key, item, action) => {
         item.key = key; 
-        action === Firebase.READ ? this.onItemRead(list, item):
-        action === Firebase.DELETE ? this.onItemDeleted(list, item):
-        this.onItemUpdated(list, item);
+        action === Firebase.READ ? this.onItemRead(listName, item):
+        action === Firebase.DELETE ? this.onItemDeleted(listName, item):
+        this.onItemUpdated(listName, item);
     }
+    
+    synchPeople = listName => (key, person, action) => this.setState(state => {    
+        person.key = key; 
+        let initial = person.completeName === null ? '#' : person.completeName[0];
+        let group = state.indexedPeople[initial];
+        group ? group.children.push(person) : 
+        group = { group: initial, children: [person] };
+        return { ...state, indexedPeople: group };
+    }, () => {
+        console.log(this.state.indexedPeople);
+    })
 
     /**
      * All the functions that can be used along the app

@@ -1,4 +1,4 @@
-import latin from './latin';
+import latin from './Latin';
 
 /**
  * Replaces ticks and not unrecognizable characters for 
@@ -71,7 +71,7 @@ function reduceBy(groups, item, key) {
  * which part of the prop must be used. 
  * Ej. groupBy(data, prop, (item, prop) => item[prop][0], true)
  */
-function groupBy(data, prop, key, desc) {
+function groupBy(data, prop, key, desc=true) {
     if (key === null) key = (item, prop) => item[prop];
     const reducer = (groups, item) => reduceBy(groups, item, key(item, prop));
     const grouped = data.reduce(reducer, []);
