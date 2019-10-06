@@ -16,8 +16,5 @@ const routes = {
 }
 
 const SwitchNavigator = createSwitchNavigator(routes);
-
 const WebNavigator = createBrowserApp(SwitchNavigator, { history: 'hash' });
-
-// export default LoginScreen;
 export default WebNavigator;

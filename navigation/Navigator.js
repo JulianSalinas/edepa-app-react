@@ -1,22 +1,20 @@
 import TabNavigator from './TabNavigator';
 import LoginScreen from '../screens/login/LoginScreen';
-import SettingsScreen from '../screens/settings/SettingsScreen';
 import PeopleScreen from '../screens/people/PeopleScreen';
+import Loading from '../shared/loading/Loading';
+import TestScreen from '../screens/test/TestScreen';
 
 import { createAppContainer } from 'react-navigation';
 import { createSwitchNavigator } from 'react-navigation';
 
-const screens = {
+const routes = {
     // Login: LoginScreen,
-    // Main: TabNavigator. 
-    // Settings: SettingsScreen,
+    // Main: TabNavigator, 
     People: PeopleScreen
-}
-
-const options = {
-    // initialRouteName: 'Login'
+    // Loading: Loading
+    // Test: TestScreen 
 }
 
 export default createAppContainer(
-    createSwitchNavigator(screens, options)
+    createSwitchNavigator(routes)
 );

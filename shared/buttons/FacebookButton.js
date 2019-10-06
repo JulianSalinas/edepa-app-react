@@ -6,6 +6,17 @@ import { Text, View } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 
 
+const buttonShadow = {
+    shadowColor: "#000",
+    shadowOffset: {
+        width: 0,
+        height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5
+}
+
 const StyledButton = styled(View)`
     height: 48;
     border-radius: 24;
@@ -39,7 +50,7 @@ const ButtonText = ({ color }) =>
 const ButtonView = ({ backgroundColor, ...props }) =>
     <StyledButton
         onClick={props.onClick}
-        style={[props.style, { backgroundColor }]}>
+        style={[props.style, { backgroundColor }, buttonShadow]}>
         <ButtonIcon color={props.color} />
         <ButtonText color={props.color} />
     </StyledButton>
@@ -47,8 +58,8 @@ const ButtonView = ({ backgroundColor, ...props }) =>
 const FacebookButton = props =>
     <ButtonView
         {...props}
-        color={props.darkMode ? '#3B5998' : '#FFFFFF'}
-        backgroundColor={props.darkMode ? '#FFFFFF' : '#3B5998'}
+        color={props.darkMode ? '#FFFFFF' : '#3B5998'}
+        backgroundColor={props.darkMode ? '#3B5998' : '#FFFFFF'}
     />
 
 FacebookButton.propTypes = {

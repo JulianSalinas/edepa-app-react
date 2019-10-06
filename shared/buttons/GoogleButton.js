@@ -6,6 +6,17 @@ import { Text, View } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 
 
+const buttonShadow = {
+    shadowColor: "#000",
+    shadowOffset: {
+        width: 0,
+        height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5
+}
+
 const StyledButton = styled(View)`
     height: 48;
     border-radius: 24;
@@ -14,7 +25,6 @@ const StyledButton = styled(View)`
     align-items: center;
     flex-direction: row;
     justify-content: flex-start;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 `
 
 const StyledText = styled(Text)`
@@ -39,7 +49,7 @@ const ButtonText = ({ color }) =>
 const ButtonView = ({ backgroundColor, ...props }) =>
     <StyledButton
         onClick={props.onClick}
-        style={[props.style, { backgroundColor }]}>
+        style={[props.style, { backgroundColor }, buttonShadow]}>
         <ButtonIcon color={props.color} />
         <ButtonText color={props.color} />
     </StyledButton>
@@ -47,8 +57,8 @@ const ButtonView = ({ backgroundColor, ...props }) =>
 const GoogleButton = props =>
     <ButtonView
         {...props}
-        color={props.darkMode ? '#d34836' : '#FFFFFF'}
-        backgroundColor={props.darkMode ? '#FFFFFF' : '#d34836'}
+        color={props.darkMode ? '#FFFFFF' : '#d34836'}
+        backgroundColor={props.darkMode ? '#d34836' : '#FFFFFF'}
     />
 
 GoogleButton.propTypes = {
