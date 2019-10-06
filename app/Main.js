@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import { ThemeValues } from './Theme';
 import Firebase from '../services/Firebase';
 import Navigator from '../navigation/Navigator';
-import { reduceBy } from '../scripts/Utils';
 
 export default class Main extends Component {
     
@@ -18,7 +17,6 @@ export default class Main extends Component {
         people: [],
         events: [], 
         darkMode: true,
-        indexedPeople: []
     }
 
     /**
@@ -53,7 +51,7 @@ export default class Main extends Component {
      * TODO: Active database listeners 
      */
     componentDidMount(){
-        this.database.synchPeople(this.synchPeople('people'));
+        this.database.synchPeople(this.synchList('people'));
         // this.database.synchEvents(this.synchList('events'));
     }
 
@@ -98,17 +96,6 @@ export default class Main extends Component {
         this.onItemUpdated(listName, item);
     }
     
-    synchPeople = listName => (key, person, action) => this.setState(state => {    
-        person.key = key; 
-        let initial = person.completeName === null ? '#' : person.completeName[0];
-        let group = state.indexedPeople[initial];
-        group ? group.children.push(person) : 
-        group = { group: initial, children: [person] };
-        return { ...state, indexedPeople: group };
-    }, () => {
-        console.log(this.state.indexedPeople);
-    })
-
     /**
      * All the functions that can be used along the app
      * to change the look and feel must be here 

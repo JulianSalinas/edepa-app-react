@@ -38,11 +38,10 @@ function truncate(string, size){
  * Ej. 'Julian Salinas Rojas' -> JS
  */
 function initials(string){
-    if (string === null || string === '') return string;
-    const name = capitalize(string);
-    const letters = name.match(/\b\w/g) || [];
-    const result = ((letters.shift() || '') + (letters.pop() || '')).toUpperCase();
-    return result === '' ? 'A' : result;
+    if (string === null || string === '') return '#';
+    if (string.length === 1) return string.toUpperCase();
+    const x = string.match(/\b\w/g) || [];
+    return (x.length === 1 ? x[0] : x.length > 1 ? x[0] + x[1]: '#').toUpperCase();
 }
 
 /**
@@ -50,7 +49,7 @@ function initials(string){
  * Ej. orderBy(rawData, 'id')
  */
 function orderBy(data, prop, desc){
-    const factor = desc ? - 1 : 1;
+    const factor = desc ? 1 : - 1;
     const order = (a, b) => a < b ? -factor : a > b ? factor : 0
     data.sort((a, b) => order(a[prop], b[prop]));
     return data;

@@ -9,15 +9,15 @@ let ThemeValues = {
 
     primary: '#E74C3C',
     // darkPrimary: '#EE0979',
-    darkPrimary: '#e96443',
+    // darkPrimary: '#e96443',
     // darkPrimary: '#7474BF',
-    // darkPrimary: '#E55D87',
+    darkPrimary: '#E55D87',
 
     secondary: '#2C3E50',
     // darkSecondary: '#FF6A00',
-    darkSecondary: '#904e95',
+    // darkSecondary: '#904e95',
     // darkSecondary: '#348AC7',
-    // darkSecondary: '#5FC3E4',
+    darkSecondary: '#5FC3E4',
 
     container: '#FFFFFF',
     darkContainer: '#000000',

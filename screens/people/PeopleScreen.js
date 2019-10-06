@@ -1,122 +1,114 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 
-import { Person, Store } from '../../app/Types';
-import Avatar from '../../shared/avatar/Avatar';
+import Item from '../../shared/common/Item';
+import Section from '../../shared/common/Section';
+import Modder from '../../shared/modder/Modder';
 
-import flat from '../../constants/Flat';
-import { colorFor } from '../../scripts/Color';
-import { groupBy } from '../../scripts/Utils';
-
-import styled from 'styled-components/native';
-import { View, Text } from 'react-native';
-
-
-import {
-    Icon,
-    List,
-    Left,
-    Body,
-    Right,
-    Content,
-    ListItem,
-    Container,
-} from 'native-base';
-
-const StyledView = styled(View)`
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f1c40f
-`
-
-const StyledText = styled(Text)`
-    color: #FFF;
-    margin-end: 12px;
-    font-size: 18px;
-    letter-spacing: 2.5;
-    text-transform: uppercase;
-`
-
-const PersonAbout = props => props.about !== null ?
-    <Right>
-        <Icon name='md-arrow-dropright'/>
-    </Right>: null
-
-PersonAbout.propTypes = {
-    about: PropTypes.string
-};
-
-const PersonView = props =>
-    <ListItem iconRight thumbnail>
-        <Left>
-            <Avatar size={36} name={props.person.completeName} colors={flat} colorFor={colorFor}/>
-        </Left>
-        <Body>
-            <Text>{props.person.completeName}</Text>
-            <Text>{props.person.personalTitle}</Text>
-        </Body>
-        <PersonAbout about={props.person.about}/>
-    </ListItem>
-
-PersonView.propTypes = {
-    person: Person
-};
-
-const PeopleDivider = props =>
-    <ListItem itemDivider>
-        <Text>{props.group}</Text>
-    </ListItem>
-
-PeopleDivider.propTypes = {
-    group: PropTypes.string.isRequired
-};
-
-const PeopleGroup = props => props.people.map((person, index) =>
-    <PersonView key={index} person={person}/>
-);
-
-PeopleGroup.propTypes = {
-    people: PropTypes.array.isRequired
-};
-
-const PeopleItems = props => props.peopleGroups.map((item, index) =>
-    <View key={index}>
-        <PeopleDivider group={item.group}/>
-        <PeopleGroup people={item.children}/>
-    </View>
-);
-
-PeopleItems.propTypes = {
-    peopleGroups: PropTypes.array.isRequired
-};
-
-const PeopleScreen3 = props => 
-    <Container>
-        <Content>
-            <List>
-                <PeopleItems {...props}/>
-            </List>
-        </Content>
-    </Container>
+import { Store } from '../../app/Types';
+import { SectionList } from 'react-native';
+import { Container } from 'native-base';
+import Background from '../../shared/background/Background';
 
 
-const PeopleScreen2 = props => {
-    
-    // console.log(props);
-    const peopleGroups = groupBy(props.people, 'completeName', (item, prop) => item[prop][0])
-    return <PeopleScreen3 peopleGroups={peopleGroups} />
-}
-
-const PeopleScreen = props => 
-    <PeopleScreen2
-        {...props.screenProps.store}
+const PeopleList = props => 
+    <SectionList
+        style={{ flex: 3 }}
+        sections={props.people}
+        keyExtractor={item => item.key } 
+        renderSectionHeader={({ section }) => 
+            <Section darkMode={props.darkMode} title={section.title}/>
+        }
+        renderItem={({ item }) => 
+            <Item darkMode={props.darkMode} title={item.completeName} subtitle={item.personalTitle}/>
+        }
     />
 
-PeopleScreen.propTypes = {
-    screenProps: Store,
-    navigation: PropTypes.object.isRequired
+const PeopleView = props => 
+    <Background {...props}>
+        <PeopleList {...props}/>
+        <Modder darkMode={props.darkMode} changeDarkMode={props.changeDarkMode} />
+    </Background>
+
+const PeopleLayout = props => 
+    <PeopleView    
+        people={props.people}   
+        darkMode={props.kFeel.isDarkMode()}
+        darkPrimary={props.kFeel.darkPrimary}
+        darkSecondary={props.kFeel.darkSecondary}
+        changeDarkMode={props.kFeel.changeDarkMode}
+    />
+
+class PeopleScreen extends Component {
+
+    /**
+     * People  has the next format: 
+     * [{1}, { title: string, data: array }, {3}]
+     */
+    state = { 
+        people: [] 
+    }
+
+    static propTypes = {
+        screenProps: Store,
+        navigation: PropTypes.object.isRequired
+    }
+
+    /**
+     * Gets the first letter from a person's name 
+     */
+    static getInitial = (item, prop='completeName') => {
+        return item[prop] ? item[prop][0] : '#';
+    }
+
+    /**
+     * Updates people by adding the person in the corresponding 
+     * group in the state
+     * ? The people are ordered alphabetically
+     */
+    static getDerivedStateFromProps(props, state) {
+
+        // First time, there is nothing to update 
+        const people = props.screenProps.store.people;
+
+        if (people.length <= 0 || people.length === state.people.length) {
+            return null;
+        }
+
+        const person = people[people.length - 1];
+        const title = PeopleScreen.getInitial(person);
+
+        // List is initialized with the first group
+        if (state.people.length === 0){
+            return { people: [{ title, data: [person] }]}
+        }
+
+        // Last generated group to attach our new person
+        const group = state.people[state.people.length - 1];
+
+        if (group.data.some(item => item.key === person.key)){
+            return null;
+        }
+
+        // If the group exists, we attach the item to it,
+        // otherwise, we create a new group 
+        group.title === title ? 
+        group.data = [...group.data, person] : 
+        state.people = [...state.people, { title, data: [person]}];
+
+        return state;
+
+    }
+
+    render(){
+        return (
+            <Container>
+                <PeopleLayout people={this.state.people} {...this.props.screenProps}/>
+            </Container>
+        )
+    }
+
+
 }
 
 export default PeopleScreen;

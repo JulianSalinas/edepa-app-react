@@ -4,7 +4,8 @@ import Background from '../background/Background';
 
 import styled from 'styled-components/native';
 import { View, Text, ActivityIndicator } from 'react-native';
-import DarkModder from '../dark-modder/DarkModder';
+
+import DarkModder from '../modder/Modder';
 import { Container } from 'native-base';
 
 

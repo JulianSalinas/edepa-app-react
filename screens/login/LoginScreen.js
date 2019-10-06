@@ -4,7 +4,7 @@ import Background from '../../shared/background/Background';
 
 import { Store } from '../../app/Types';
 import Logo from '../../customs/Edepa';
-import DarkModder from '../../shared/dark-modder/DarkModder';
+import Modder from '../../shared/modder/Modder';
 import GoogleButton from '../../shared/buttons/GoogleButton';
 import FacebookButton from '../../shared/buttons/FacebookButton';
 
@@ -44,7 +44,7 @@ const LoginContent = props =>
 const LoginView = ({ darkMode, changeDarkMode, ...props }) => 
     <Background darkMode={darkMode} {...props}>
         <LoginContent darkMode={darkMode} />
-        <DarkModder darkMode={darkMode} changeDarkMode={changeDarkMode} />
+        <Modder darkMode={darkMode} changeDarkMode={changeDarkMode} />
     </Background>
 
 const LoginLayout = props => 

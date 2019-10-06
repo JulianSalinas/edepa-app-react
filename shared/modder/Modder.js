@@ -22,20 +22,20 @@ const StyledText = styled(Text)`
     text-transform: uppercase;
 `
 
-const DarkModder = props => 
+const Modder = props => 
     <StyledView>
         <StyledText>Dark Mode</StyledText>
         <Switch value={props.darkMode} onValueChange={props.changeDarkMode}/>
     </StyledView>
 
-DarkModder.propsTypes = {
+Modder.propsTypes = {
     darkMode: PropTypes.bool.isRequired,
     changeDarkMode: PropTypes.func.isRequired
 }
 
-DarkModder.defaultProps = {
+Modder.defaultProps = {
     darkMode: true,
     changeDarkMode: () => console.log('You should pass changeDarkMode(value)')
 }
 
-export default DarkModder;
+export default Modder;

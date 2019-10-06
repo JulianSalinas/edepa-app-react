@@ -5,14 +5,14 @@ import { Constants } from 'expo';
 import { View } from 'native-base';
 import { Platform } from 'react-native';
 
-const StatusBar = props => Platform.OS === 'android' ?
+const Status = props => Platform.OS === 'android' ?
     <View style={{
         height: Constants.statusBarHeight,
         backgroundColor: props.color || '#FFFFFF',
     }}/> : null;
 
-StatusBar.propsTypes = {
+Status.propsTypes = {
     color: PropTypes.string
 };
 
-export default StatusBar;
+export default Status;
