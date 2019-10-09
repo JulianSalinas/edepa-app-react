@@ -5,7 +5,7 @@ import styled from 'styled-components/native';
 import { View, Text, Switch } from 'react-native';
 
 
-const StyledView = styled(View)`
+const StyledSwitch = styled(View)`
     padding: 8px 16px;
     display: flex;
     flex-direction: row;
@@ -22,20 +22,25 @@ const StyledText = styled(Text)`
     text-transform: uppercase;
 `
 
-const Modder = props => 
-    <StyledView>
-        <StyledText>Dark Mode</StyledText>
-        <Switch value={props.darkMode} onValueChange={props.changeDarkMode}/>
-    </StyledView>
+const DarkText = props => 
+    <StyledText>
+        MODO OSCURO
+    </StyledText>
 
-Modder.propsTypes = {
+const DarkSwitch = props => 
+    <StyledSwitch>
+        <DarkText darkMode={props.darkMode}/>
+        <Switch value={props.darkMode} onValueChange={props.changeDarkMode}/>
+    </StyledSwitch>
+
+DarkSwitch.propsTypes = {
     darkMode: PropTypes.bool.isRequired,
     changeDarkMode: PropTypes.func.isRequired
 }
 
-Modder.defaultProps = {
+DarkSwitch.defaultProps = {
     darkMode: true,
     changeDarkMode: () => console.log('You should pass changeDarkMode(value)')
 }
 
-export default Modder;
+export default DarkSwitch;

@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-
 import { ThemeValues } from './Theme';
+
 import Firebase from '../services/Firebase';
 import Navigator from '../navigation/Navigator';
 
+
 export default class Main extends Component {
-    
+
 
     static DARK_MODE_CHANGED_TIMES = 0;
 
@@ -15,7 +16,7 @@ export default class Main extends Component {
      */
     state = {
         people: [],
-        events: [], 
+        events: [],
         darkMode: true,
     }
 
@@ -23,7 +24,7 @@ export default class Main extends Component {
      * Gets ready the Database connection
      * TODO: Active database
      */
-    constructor(props){
+    constructor(props) {
         super(props);
         this.database = new Firebase();
     }
@@ -44,13 +45,13 @@ export default class Main extends Component {
         const message = `Dark Mode changed to ${this.state.darkMode}`;
         console.log(`${Main.DARK_MODE_CHANGED_TIMES} time: ${message}`);
     }
-    
+
     /**
      * Activates listeners to update the state according 
      * to the database 
      * TODO: Active database listeners 
      */
-    componentDidMount(){
+    componentDidMount() {
         this.database.synchPeople(this.synchList('people'));
         // this.database.synchEvents(this.synchList('events'));
     }
@@ -61,7 +62,7 @@ export default class Main extends Component {
     componentWillUnmount() {
         this.database.closeConnection();
     }
-    
+
     /**
      * Function used by synchList
      * Adds the read item to its corresponding list
@@ -75,9 +76,9 @@ export default class Main extends Component {
      * Updates an item in its corresponding list
      */
     onItemUpdated = (list, item) => this.setState(state => ({
-        [list]: state[list].map(old => old.key === key ? item : old )
+        [list]: state[list].map(old => old.key === key ? item : old)
     }))
-    
+
     /**
      * Function used by synchList
      * Removes and item from its corresponding list
@@ -90,23 +91,23 @@ export default class Main extends Component {
      * Callback used to update items from the database 
      */
     synchList = listName => (key, item, action) => {
-        item.key = key; 
-        action === Firebase.READ ? this.onItemRead(listName, item):
-        action === Firebase.DELETE ? this.onItemDeleted(listName, item):
+        item.key = key;
+        action === Firebase.READ ? this.onItemRead(listName, item) :
+        action === Firebase.DELETE ? this.onItemDeleted(listName, item) :
         this.onItemUpdated(listName, item);
     }
-    
+
     /**
      * All the functions that can be used along the app
      * to change the look and feel must be here 
      */
     getStore = () => ({
         people: this.state.people,
-        events: this.state.events 
+        events: this.state.events
     })
 
     getKFeel = () => ({
-        ...ThemeValues, 
+        ...ThemeValues,
         isDarkMode: this.isDarkMode,
         changeDarkMode: this.changeDarkMode
     })
@@ -120,7 +121,7 @@ export default class Main extends Component {
         return <Navigator screenProps={{
             kFeel: this.getKFeel(),
             store: this.getStore()
-        }}/>
+        }} />
     }
 
 }

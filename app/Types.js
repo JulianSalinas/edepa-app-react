@@ -43,16 +43,22 @@ const Person = PropTypes.shape({
     about: PropTypes.string,
 })
 
-const Store = PropTypes.shape({
-    home: Home,
-    events: PropTypes.arrayOf(Event),
-    people: PropTypes.arrayOf(Person)
-})
-
 const KFeel = PropTypes.shape({
     ...ThemeTypes,
     darkMode: PropTypes.bool.isRequired,
     changeDarkMode: PropTypes.func.isRequired
 })
 
-export { Position, Home, Event, User, Person, Store, KFeel }
+const Store = PropTypes.shape({
+    home: Home,
+    events: PropTypes.arrayOf(Event),
+    people: PropTypes.arrayOf(Person)
+})
+
+const Screen = PropTypes.shape({
+    KFeel: KFeel,
+    store: Store
+})
+
+
+export { Position, Home, Event, User, Person, Store, KFeel, Screen }

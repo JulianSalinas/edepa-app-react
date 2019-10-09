@@ -1,20 +1,13 @@
-import TabNavigator from './TabNavigator';
-import LoginScreen from '../screens/login/LoginScreen';
-import PeopleScreen from '../screens/people/PeopleScreen';
-import Loading from '../shared/loading/Loading';
-import TestScreen from '../screens/test/TestScreen';
+import Loading from '../screens/loading/Loading';
 
-import { createBrowserApp } from '@react-navigation/web';
+import { createAppContainer } from 'react-navigation';
 import { createSwitchNavigator } from 'react-navigation';
 
 const routes = {
-    // Login: LoginScreen,
-    // Main: TabNavigator, 
-    People: PeopleScreen
-    // Loading: Loading
-    // Test: TestScreen 
+    // Loading: Loading,
+    Login: LoginScreen
 }
 
-const SwitchNavigator = createSwitchNavigator(routes);
-const WebNavigator = createBrowserApp(SwitchNavigator, { history: 'hash' });
-export default WebNavigator;
+export default createAppContainer(
+    createSwitchNavigator(routes), { history: 'hash' }
+)

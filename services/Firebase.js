@@ -50,7 +50,7 @@ export default class AppDatabase {
     synchPeople(receive){
         const reference = this.database.child('people');
         const callback = action => this.createSynchCallback(action, receive);
-        reference.orderByChild('completeName').limitToFirst(10).on('child_added', callback(AppDatabase.READ));
+        reference.orderByChild('completeName').on('child_added', callback(AppDatabase.READ));
         reference.on('child_changed', callback(AppDatabase.UPDATE));
         reference.on('child_removed', callback(AppDatabase.DELETE));
     }

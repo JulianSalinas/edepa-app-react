@@ -1,67 +1,57 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Background from '../../shared/background/Background';
 
-import { Store } from '../../app/Types';
+import { Screen } from '../../app/Types';
+import DarkModder from '../../shared/modder/DarkModder';
+
 import Logo from '../../customs/Edepa';
-import Modder from '../../shared/modder/Modder';
 import GoogleButton from '../../shared/buttons/GoogleButton';
 import FacebookButton from '../../shared/buttons/FacebookButton';
 
 import styled from 'styled-components/native';
 import { View } from 'react-native';
-import { Container } from 'native-base';
 
 
-const LoginItem = styled(View)`
-    margin-bottom: 16
+const StyledItem = styled(View)`
+    marginBottom: 16
 `
 
-const StyledContent = styled(View)`
-    flex: 3;
+const StyledLayout = styled(View)`
+    flex: 1;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    alignItems: center;
+    justifyContent: center;
 `
 
 const LoginLogo = props => 
-    <LoginItem>
+    <StyledItem>
         <Logo color={props.darkMode ? "#FFF" : null }/>  
-    </LoginItem>
+    </StyledItem>
 
 const LoginButtons = props => 
-    <LoginItem>
+    <StyledItem>
         <GoogleButton darkMode={props.darkMode} style={{ marginBottom: 12 }}/>           
         <FacebookButton darkMode={props.darkMode}/>      
-    </LoginItem>
-
-const LoginContent = props => 
-    <StyledContent>
-        <LoginLogo {...props}/>
-        <LoginButtons {...props}/>
-    </StyledContent>
-
-const LoginView = ({ darkMode, changeDarkMode, ...props }) => 
-    <Background darkMode={darkMode} {...props}>
-        <LoginContent darkMode={darkMode} />
-        <Modder darkMode={darkMode} changeDarkMode={changeDarkMode} />
-    </Background>
+    </StyledItem>
 
 const LoginLayout = props => 
-    <LoginView         
-        darkMode={props.kFeel.isDarkMode()}
-        darkPrimary={props.kFeel.darkPrimary}
-        darkSecondary={props.kFeel.darkSecondary}
-        changeDarkMode={props.kFeel.changeDarkMode}
-    />
+    <StyledLayout>
+        <LoginLogo {...props}/>
+        <LoginButtons {...props}/>
+    </StyledLayout>
 
-const LoginScreen = props => 
-    <Container>
-        <LoginLayout {...props.screenProps} />
-    </Container>
+const LoginModded = props => 
+    <DarkModder {...props} style={{ flex: 1 }}>
+        <LoginLayout {...props}/>
+    </DarkModder>
+
+const LoginScreen = props => <LoginModded 
+    darkMode={props.screenProps.kFeel.isDarkMode()} 
+    changeDarkMode={props.screenProps.kFeel.changeDarkMode}
+/>
 
 LoginScreen.propTypes = {
-    screenProps: Store,
+    screenProps: Screen,
     navigation: PropTypes.object.isRequired
 }
 

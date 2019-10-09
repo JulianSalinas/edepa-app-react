@@ -3,41 +3,42 @@ import React, { Component } from 'react';
 
 import Item from '../../shared/common/Item';
 import Section from '../../shared/common/Section';
-import Modder from '../../shared/modder/Modder';
+import DarkModder from '../../shared/modder/DarkModder';
 
-import { Store } from '../../app/Types';
+import { Screen } from '../../app/Types';
 import { SectionList } from 'react-native';
-import { Container } from 'native-base';
-import Background from '../../shared/background/Background';
 
 
-const PeopleList = props => 
+const getInitial = (item, prop = 'completeName') => {
+    return item[prop] ? item[prop][0] : '#';
+}
+
+const getItem = darkMode => ({ item }) =>
+    <Item
+        darkMode={darkMode}
+        title={item.completeName}
+        subtitle={item.personalTitle}
+    />
+
+const getSection = darkMode => ({ section }) =>
+    <Section
+        darkMode={darkMode}
+        title={section.title}
+    />
+
+const PeopleList = props =>
     <SectionList
-        style={{ flex: 3 }}
+        style={{ flex: 1 }}
         sections={props.people}
-        keyExtractor={item => item.key } 
-        renderSectionHeader={({ section }) => 
-            <Section darkMode={props.darkMode} title={section.title}/>
-        }
-        renderItem={({ item }) => 
-            <Item darkMode={props.darkMode} title={item.completeName} subtitle={item.personalTitle}/>
-        }
+        keyExtractor={item => item.key}
+        renderItem={getItem(props.darkMode)}
+        renderSectionHeader={getSection(props.darkMode)}
     />
 
-const PeopleView = props => 
-    <Background {...props}>
-        <PeopleList {...props}/>
-        <Modder darkMode={props.darkMode} changeDarkMode={props.changeDarkMode} />
-    </Background>
-
-const PeopleLayout = props => 
-    <PeopleView    
-        people={props.people}   
-        darkMode={props.kFeel.isDarkMode()}
-        darkPrimary={props.kFeel.darkPrimary}
-        darkSecondary={props.kFeel.darkSecondary}
-        changeDarkMode={props.kFeel.changeDarkMode}
-    />
+const PeopleLayout = props =>
+    <DarkModder {...props} style={{ flex: 1 }}>
+        <PeopleList {...props} />
+    </DarkModder>
 
 class PeopleScreen extends Component {
 
@@ -45,20 +46,13 @@ class PeopleScreen extends Component {
      * People  has the next format: 
      * [{1}, { title: string, data: array }, {3}]
      */
-    state = { 
-        people: [] 
+    state = {
+        people: []
     }
 
     static propTypes = {
-        screenProps: Store,
+        screenProps: Screen,
         navigation: PropTypes.object.isRequired
-    }
-
-    /**
-     * Gets the first letter from a person's name 
-     */
-    static getInitial = (item, prop='completeName') => {
-        return item[prop] ? item[prop][0] : '#';
     }
 
     /**
@@ -71,41 +65,44 @@ class PeopleScreen extends Component {
         // First time, there is nothing to update 
         const people = props.screenProps.store.people;
 
-        if (people.length <= 0 || people.length === state.people.length) {
-            return null;
+        // Get the amount of items we have, if it is equals the list does not update
+        const current = state.people.reduce((acc, next) => acc + next.data.length, 0);
+
+        if (people.length <= 0 || people.length === current) {
+            return state;
         }
 
         const person = people[people.length - 1];
-        const title = PeopleScreen.getInitial(person);
+        const title = getInitial(person);
 
         // List is initialized with the first group
-        if (state.people.length === 0){
-            return { people: [{ title, data: [person] }]}
+        if (current === 0) {
+            return { people: [{ title, data: [person] }] }
         }
 
         // Last generated group to attach our new person
         const group = state.people[state.people.length - 1];
 
-        if (group.data.some(item => item.key === person.key)){
-            return null;
+        if (group.data.some(item => item.key === person.key)) {
+            return state;
         }
 
         // If the group exists, we attach the item to it,
         // otherwise, we create a new group 
-        group.title === title ? 
-        group.data = [...group.data, person] : 
-        state.people = [...state.people, { title, data: [person]}];
+        group.title === title ?
+            group.data = [...group.data, person] :
+            state.people = [...state.people, { title, data: [person] }];
 
         return state;
 
     }
 
-    render(){
-        return (
-            <Container>
-                <PeopleLayout people={this.state.people} {...this.props.screenProps}/>
-            </Container>
-        )
+    render() {
+        return <PeopleLayout
+            people={this.state.people}
+            darkMode={this.props.screenProps.kFeel.isDarkMode()}
+            changeDarkMode={this.props.screenProps.kFeel.changeDarkMode}
+        />
     }
 
 

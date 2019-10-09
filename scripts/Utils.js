@@ -60,7 +60,7 @@ function orderBy(data, prop, desc){
  */
 function reduceBy(groups, item, key) {
     groups[key] ? groups[key].children.push(item): 
-    groups[key] = { group: key, children: [item] };
+    groups[key] = { title: key, data: [item] };
     return groups;
 };
 

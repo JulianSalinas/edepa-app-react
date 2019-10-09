@@ -18,7 +18,7 @@ function TabBarIcon(props) {
       style={{ marginBottom: -3 }}
       color={props.focused ? '#E74C3C' : '#2C3E50'}
     />
-  );
+  )
 }
 
 const config = Platform.select({
