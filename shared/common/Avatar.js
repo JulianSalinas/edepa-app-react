@@ -1,19 +1,22 @@
-import React from 'react';
+// Core 
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 
-import flat from '../../constants/Flat';
+// Libs
 import styled from 'styled-components/native';
+import { View, Text } from 'react-native';
 
+// Local 
+import flat from '../../constants/Flat';
 import { initials } from '../../scripts/Utils';
 import { colorFor } from '../../scripts/Color';
-import { View, Text } from 'react-native';
 
 
 const StyledView = styled(View)`
-    align-items: center;
-    justify-content: center;
-    border-width: 1;
-    border-color: transparent;
+    alignItems: center;
+    justifyContent: center;
+    borderWidth: 1;
+    borderColor: transparent;
 `
 
 const AvatarText = ({ title, size, color }) =>
@@ -47,4 +50,4 @@ Avatar.defaultProps = {
     shape: 'circle'
 }
 
-export default Avatar;
+export default memo(Avatar);

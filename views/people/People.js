@@ -1,6 +1,6 @@
 // Core
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
 // Libs
 import { SectionList } from 'react-native';
@@ -41,7 +41,7 @@ const PeopleLayout = props => <SectionList
  * People  has the next format: 
  * [{1}, { title: string, data: array }, {3}]
  */
-class People extends Component {
+class People extends PureComponent {
 
     state = { people: [] }
 

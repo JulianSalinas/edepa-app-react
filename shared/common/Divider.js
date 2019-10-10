@@ -1,6 +1,8 @@
-import React from 'react';
+// Core
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 
+// Libs 
 import styled from 'styled-components/native';
 import { View } from 'react-native';
 
@@ -25,4 +27,4 @@ Divider.defaultProps = {
     darkMode: false
 }
 
-export default Divider;
+export default memo(Divider);

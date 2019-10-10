@@ -1,6 +1,8 @@
-import React from 'react';
+// Core 
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 
+// Libs 
 import styled from 'styled-components/native';
 import { View, Text, Switch } from 'react-native';
 
@@ -8,21 +10,21 @@ import { View, Text, Switch } from 'react-native';
 const StyledSwitch = styled(View)`
     padding: 8px 16px;
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    background-color: #2c3e50
+    flexDirection: row;
+    alignItems: center;
+    justifyContent: flex-start;
+    backgroundColor: #2c3e50
 `
 
 const StyledText = styled(Text)`
     color: #FFF;
-    font-size: 10;
-    margin-end: 12;
-    letter-spacing: 2.4;
-    text-transform: uppercase;
+    fontSize: 10;
+    marginEnd: 12;
+    letterSpacing: 2.4;
+    textTransform: uppercase;
 `
 
-const DarkText = props => 
+const DarkText = () => 
     <StyledText>
         MODO OSCURO
     </StyledText>
@@ -43,4 +45,4 @@ Switcher.defaultProps = {
     changeDarkMode: () => console.log('You should pass changeDarkMode(value)')
 }
 
-export default Switcher;
+export default memo(Switcher);

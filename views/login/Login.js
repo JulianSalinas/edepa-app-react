@@ -1,8 +1,8 @@
 // Core 
-import React from 'react';
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 
-// Libs 
+// Libs
 import styled from 'styled-components/native';
 import { View } from 'react-native';
 
@@ -48,4 +48,4 @@ Login.defaultProps = {
     darkMode: true
 }
 
-export default Login;
+export default memo(Login);

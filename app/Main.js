@@ -1,5 +1,5 @@
 // Core 
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
 // Libs 
 import styled from 'styled-components/native';
@@ -19,7 +19,7 @@ const DarkModder = styled(Modder)`
     paddingTop: 24px;
 `
 
-export default class Main extends Component {
+export default class Main extends PureComponent {
 
 
     static DARK_MODE_CHANGED_TIMES = 0;

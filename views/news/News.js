@@ -1,6 +1,8 @@
-import React from 'react';
+// Core 
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 
+// Libs
 import styled from 'styled-components/native';
 import { View, Text } from 'react-native';
 
@@ -26,4 +28,4 @@ const News = props =>
         <StyledText>News</StyledText>
     </StyledView>
 
-export default News;
+export default memo(News);

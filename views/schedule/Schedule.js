@@ -1,14 +1,14 @@
+// Core
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
 
-import { Screen } from '../../app/Types';
-import Background from '../../shared/modder/Background';
-import Modder from '../../shared/modder/Modder';
-
+// Libs 
 import styled from 'styled-components/native';
-import { View } from 'native-base';
-import { Text } from 'react-native';
+import { Text, View } from 'react-native';
 import { SimpleLineIcons } from '@expo/vector-icons';
+
+// Local 
+import Background from '../../shared/modder/Background';
 
 
 const StyledView = styled(View)`
@@ -107,4 +107,4 @@ Schedule.defaultProps = {
     darkMode: true
 }
 
-export default Schedule;
+export default memo(Schedule);

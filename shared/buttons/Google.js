@@ -1,4 +1,5 @@
-import React from 'react';
+// Core 
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 
 import styled from 'styled-components/native';
@@ -19,12 +20,13 @@ const buttonShadow = {
 
 const StyledButton = styled(View)`
     height: 48;
-    border-radius: 24;
-    padding-horizontal: 24;
+    borderRadius: 24;
+    paddingHorizontal: 24;
     display: flex;
-    align-items: center;
-    flex-direction: row;
-    justify-content: flex-start;
+    alignItems: center;
+    flexDirection: row;
+    justifyContent: flex-start;
+    boxShadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 `
 
 const StyledText = styled(Text)`
@@ -73,5 +75,5 @@ GoogleButton.defaultProps = {
     style: {}
 }
 
-export default GoogleButton;
+export default memo(GoogleButton);
 

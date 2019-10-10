@@ -1,19 +1,22 @@
-import React from 'react';
+// Core
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 
+// Libs 
 import styled from 'styled-components/native';
 import { Text, View } from 'react-native';
 
-const semitransparent = 'rgba(255, 255, 255, 0.1)';
+// Constants
+const SEMI_TRANSPARENT = 'rgba(255, 255, 255, 0.1)';
 
 const StyledView = styled(View)`
     padding: 8px 16px;
-    margin-bottom: 8px;
+    marginBottom: 8px;
 `
 
 const StyledText = styled(Text)`
-    font-size: 14;
-    font-weight: bold;
+    fontSize: 14;
+    fontWeight: bold;
 `
 
 const SectionText = ({ title, darkMode }) => 
@@ -25,7 +28,7 @@ const SectionText = ({ title, darkMode }) =>
 
 const Section = props => 
     <StyledView style={{
-        backgroundColor: props.darkMode ? semitransparent : '#EEE'
+        backgroundColor: props.darkMode ? SEMI_TRANSPARENT : '#EEE'
     }}>
         <SectionText {...props}/>
     </StyledView>
@@ -39,4 +42,4 @@ Section.propTypes = {
     title: PropTypes.string.isRequired
 }
 
-export default Section;
+export default memo(Section);

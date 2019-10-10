@@ -1,6 +1,8 @@
-import React from 'react';
+// Core 
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 
+// Local 
 import Switcher from './Switcher';
 import Background from './Background';
 
@@ -36,4 +38,4 @@ Modder.defaultProps = {
     style: {}
 }
 
-export default Modder; 
+export default memo(Modder); 

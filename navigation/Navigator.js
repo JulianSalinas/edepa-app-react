@@ -18,9 +18,9 @@ const routes = {
     // Loading: LoadingScreen,
     // Login: LoginScreen,
     // News: NewsScreen,
-    // People: PeopleScreen,
+    People: PeopleScreen,
     // Schedule: ScheduleScreen,
-    Settings: SettingsScreen
+    // Settings: SettingsScreen
 }
 
 export default createAppContainer(

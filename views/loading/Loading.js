@@ -1,5 +1,5 @@
 // Core 
-import React from 'react';
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 
 // Libs 
@@ -47,4 +47,4 @@ Loading.defaultProps = {
     text: 'ESPERE'
 }
 
-export default Loading; 
+export default memo(Loading); 

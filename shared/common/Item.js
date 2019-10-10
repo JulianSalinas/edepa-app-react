@@ -1,44 +1,58 @@
-import React, { Component } from 'react';
+// Core
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
-import Avatar from './Avatar';
 
+// Libs
 import styled from 'styled-components/native';
 import { Text, View } from 'react-native';
 
+//Local 
+import Avatar from './Avatar';
+
 
 const StyledItem = styled(View)`
-    padding-right: 16px;
-    padding-left: 16px;
-    padding-bottom: 8px;
+    paddingRight: 16px;
+    paddingLeft: 16px;
+    paddingBottom: 8px;
 `
 
 const StyledRow = styled(View)`
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
+    flexDirection: row;
+    justifyContent: flex-start;
+    alignItems: center;
 `
 
 const StyledCol = styled(View)`
     display: flex;
     padding: 8px 12px;
-    flex-direction: column;
+    flexDirection: column;
 `
 
 const StyledTitle = styled(Text)`
-    font-size: 14;
-    font-weight: bold;
+    fontSize: 14;
+    fontWeight: bold;
 `
 
 const StyledSubtitle = styled(Text)`
-    font-size: 12;
-    font-weight: 300;
+    fontSize: 12;
+    fontWeight: 300;
 `
 
-const ItemCol = ({ title, subtitle, darkMode }) => 
+const ItemTitle = ({ title, darkMode }) => 
+    <StyledTitle style={{ color: darkMode ? '#FFF' : '#000'}}>
+        {title}
+    </StyledTitle>
+
+const ItemSubtitle = ({ subtitle, darkMode }) => 
+    <StyledSubtitle style={{ color: darkMode ? '#FFF' : '#000'}}>
+        {subtitle}
+    </StyledSubtitle>
+
+const ItemCol = props => 
     <StyledCol>
-        <StyledTitle style={{ color: darkMode ? '#FFF' : '#000'}}>{title}</StyledTitle>
-        <StyledSubtitle style={{ color: darkMode ? '#FFF' : '#000'}}>{subtitle}</StyledSubtitle>
+        <ItemTitle {...props}/>
+        <ItemSubtitle {...props}/>
     </StyledCol>
 
 const ItemRow = props => 
@@ -64,4 +78,4 @@ Item.defaultProps = {
     subtitle: 'Software Engineer'
 }
 
-export default Item;
+export default memo(Item);

@@ -1,6 +1,8 @@
-import React from 'react';
+// Core 
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 
+// Libs 
 import { Constants } from 'expo';
 import { View } from 'native-base';
 import { Platform } from 'react-native';
@@ -15,4 +17,4 @@ Status.propsTypes = {
     color: PropTypes.string
 };
 
-export default Status;
+export default memo(Status);

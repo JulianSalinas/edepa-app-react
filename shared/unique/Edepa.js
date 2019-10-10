@@ -1,7 +1,10 @@
-import React from 'react';
+// Core 
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 
+// Libs 
 import Svg, { Path } from 'react-native-svg';
+
 
 const Edepa = props => 
 
@@ -41,4 +44,4 @@ Edepa.defaultProps = {
     color: null
 }
   
-export default Edepa;
+export default memo(Edepa);

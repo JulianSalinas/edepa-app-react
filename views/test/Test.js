@@ -1,8 +1,14 @@
-import React from 'react';
+// Core 
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
+
+// Libs
 import { View } from 'native-base';
+
+// Locals
 import Item from '../../shared/common/Item';
 import Section from '../../shared/common/Section';
+
 
 const person = {
     title: 'Julian Salinas',
@@ -26,4 +32,4 @@ TestScreen.defaultProps = {
     darkMode: false
 }
 
-export default TestScreen;
+export default memo(TestScreen);

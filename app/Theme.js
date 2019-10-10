@@ -31,27 +31,27 @@ let ThemeValues = {
 
 const ThemeTypes = PropTypes.shape({
 
-    margin: PropTypes.number.isRequired,
-    padding: PropTypes.number.isRequired,
-    spacing: PropTypes.number.isRequired,
+    margin: PropTypes.number,
+    padding: PropTypes.number,
+    spacing: PropTypes.number,
     
-    primary: PropTypes.string.isRequired,
-    darkPrimary: PropTypes.string.isRequired,
+    primary: PropTypes.string,
+    darkPrimary: PropTypes.string,
     
-    secondary: PropTypes.string.isRequired,
-    darkSecondary: PropTypes.string.isRequired,
+    secondary: PropTypes.string,
+    darkSecondary: PropTypes.string,
 
-    container: PropTypes.string.isRequired,
-    darkContainer: PropTypes.string.isRequired,
+    container: PropTypes.string,
+    darkContainer: PropTypes.string,
     
-    background: PropTypes.string.isRequired,
-    darkBackground: PropTypes.string.isRequired,
+    background: PropTypes.string,
+    darkBackground: PropTypes.string,
 
-    decoration: PropTypes.string.isRequired,
-    darkDecoration: PropTypes.string.isRequired,
+    decoration: PropTypes.string,
+    darkDecoration: PropTypes.string,
 
-    primaryFont: PropTypes.string.isRequired,
-    secondaryFont: PropTypes.string.isRequired
+    primaryFont: PropTypes.string,
+    secondaryFont: PropTypes.string
 
 })
 

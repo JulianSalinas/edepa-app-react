@@ -1,11 +1,14 @@
-import React from 'react';
+// Core 
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 
+// Libs 
 import styled from 'styled-components/native';
-import { gradient } from '../../scripts/Color';
-
 import { Platform, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+
+// Local 
+import { gradient } from '../../scripts/Color';
 
 
 const StyledView = styled(View)`
@@ -20,16 +23,16 @@ const StyledGradient = styled(LinearGradient)`
     justifyContent: flex-start;
 `
 
-const DefaultView = props => 
+const DefaultView = props =>
     <StyledView style={props.style}>
-        { props.children }
+        {props.children}
     </StyledView>
 
-const DarkWeb = props => 
+const DarkWeb = props =>
     <StyledView style={[props.style, {
         backgroundImage: gradient(props.darkPrimary, props.darkSecondary)
     }]}>
-        { props.children }
+        {props.children}
     </StyledView>
 
 const DarkMobile = props =>
@@ -37,19 +40,19 @@ const DarkMobile = props =>
         style={props.style}
         start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
         colors={[props.darkPrimary, props.darkSecondary]}>
-        { props.children }
+        {props.children}
     </StyledGradient>
 
-const BackgroundWeb = props => props.darkMode ? 
-    <DarkWeb {...props} /> : 
-    <DefaultView {...props} /> 
+const BackgroundWeb = props => props.darkMode ?
+    <DarkWeb {...props} /> :
+    <DefaultView {...props} />
 
 const BackgroundMobile = props => props.darkMode ?
     <DarkMobile {...props} /> :
     <DefaultView {...props} />
 
 const Background = props => Platform.OS === 'web' ?
-    <BackgroundWeb {...props} /> : 
+    <BackgroundWeb {...props} /> :
     <BackgroundMobile {...props} />
 
 Background.propsTypes = {
@@ -64,4 +67,4 @@ Background.defaultProps = {
     darkSecondary: '#904e95'
 }
 
-export default Background;
+export default memo(Background);
