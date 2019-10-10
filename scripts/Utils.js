@@ -59,7 +59,7 @@ function orderBy(data, prop, desc){
  * Used by groupBy to split the groups according to its key function
  */
 function reduceBy(groups, item, key) {
-    groups[key] ? groups[key].children.push(item): 
+    groups[key] ? groups[key].data.push(item): 
     groups[key] = { title: key, data: [item] };
     return groups;
 };

@@ -1,17 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import DarkSwitch from './DarkSwitch';
+import Switcher from './Switcher';
 import Background from './Background';
 
 
 const DarkLayout = ({ darkMode, changeDarkMode, ...props }) =>
     <Background darkMode={darkMode} style={props.style} {...props}>
         {props.children}
-        <DarkSwitch darkMode={darkMode} changeDarkMode={changeDarkMode} />
+        <Switcher darkMode={darkMode} changeDarkMode={changeDarkMode} />
     </Background>
 
-const DarkModder = props =>
+const Modder = props =>
     <DarkLayout
         {...props}
         darkMode={props.darkMode}
@@ -20,7 +20,7 @@ const DarkModder = props =>
         changeDarkMode={props.changeDarkMode}
     />
 
-DarkModder.propsTypes = {
+Modder.propsTypes = {
     changeDarkMode: PropTypes.func,
     darkMode: PropTypes.bool,
     darkPrimary: PropTypes.string,
@@ -28,7 +28,7 @@ DarkModder.propsTypes = {
     style: PropTypes.object
 }
 
-DarkModder.defaultProps = {
+Modder.defaultProps = {
     changeDarkMode: () => console.log('You should pass changeDarkMode(value)'),
     darkMode: true,
     darkPrimary: '#141E30',
@@ -36,4 +36,4 @@ DarkModder.defaultProps = {
     style: {}
 }
 
-export default DarkModder; 
+export default Modder; 

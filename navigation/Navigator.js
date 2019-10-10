@@ -1,16 +1,26 @@
-import Loading from '../screens/loading/Loading';
-import LoginScreen from '../screens/login/LoginScreen';
-import PeopleScreen from '../screens/people/PeopleScreen';
-import ScheduleScreen from '../screens/schedule/ScheduleScreen';
-
+// Libs
 import { createAppContainer } from 'react-navigation';
 import { createSwitchNavigator } from 'react-navigation';
 
+// Local 
+import { 
+    HomeScreen,
+    LoadingScreen,
+    LoginScreen,
+    NewsScreen,
+    PeopleScreen,
+    ScheduleScreen,
+    SettingsScreen
+} from './Screens';
+
 const routes = {
-    // Loading: Loading,
+    // Home: HomeScreen,
+    // Loading: LoadingScreen,
     // Login: LoginScreen,
-    // People: PeopleScreen
-    Schedule: ScheduleScreen
+    // News: NewsScreen,
+    // People: PeopleScreen,
+    // Schedule: ScheduleScreen,
+    Settings: SettingsScreen
 }
 
 export default createAppContainer(

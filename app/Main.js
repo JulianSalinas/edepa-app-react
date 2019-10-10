@@ -1,9 +1,23 @@
+// Core 
 import React, { Component } from 'react';
-import { ThemeValues } from './Theme';
 
+// Libs 
+import styled from 'styled-components/native';
+import { SafeAreaView } from 'react-native';
+
+// Local 
+import { ThemeValues } from './Theme';
 import Firebase from '../services/Firebase';
 import Navigator from '../navigation/Navigator';
+import Modder from '../shared/modder/Modder';
 
+/**
+ * Wraps the modder to respect the statusbar position 
+ */
+const DarkModder = styled(Modder)`
+    flex: 1;
+    paddingTop: 24px;
+`
 
 export default class Main extends Component {
 
@@ -32,10 +46,6 @@ export default class Main extends Component {
     /**
      * Adjusts the app's appearance to dark or light mode 
      */
-    isDarkMode = () => {
-        return this.state.darkMode;
-    }
-
     changeDarkMode = value => {
         return this.setState({ darkMode: value }, () => this.darkModeChanged());
     }
@@ -106,9 +116,9 @@ export default class Main extends Component {
         events: this.state.events
     })
 
-    getKFeel = () => ({
+    getLook = () => ({
         ...ThemeValues,
-        isDarkMode: this.isDarkMode,
+        darkMode: this.state.darkMode,
         changeDarkMode: this.changeDarkMode
     })
 
@@ -118,10 +128,20 @@ export default class Main extends Component {
      * TODO: Whatever component can be tested here.
      */
     render() {
-        return <Navigator screenProps={{
-            kFeel: this.getKFeel(),
+
+        const params = {
+            look: this.getLook(),
             store: this.getStore()
-        }} />
+        };
+
+        return (
+            <SafeAreaView style={{ flex: 1 }}>
+                <DarkModder {...params.look}>
+                    <Navigator screenProps={params} />
+                </DarkModder>
+            </SafeAreaView>
+        );
+
     }
 
 }

@@ -8,22 +8,22 @@ import { View, Text } from 'react-native';
 const StyledView = styled(View)`
     flex: 1;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #8e44ad
+    alignItems: center;
+    justifyContent: center;
+    backgroundColor: #f1c40f
 `
 
 const StyledText = styled(Text)`
     color: #FFF;
-    margin-end: 12px;
-    font-size: 18px;
-    letter-spacing: 2.5;
-    text-transform: uppercase;
+    marginEnd: 12px;
+    fontSize: 18px;
+    letterSpacing: 2.5;
+    textTransform: uppercase;
 `
 
-const NewsScreen = props => 
+const Home = props => 
     <StyledView>
-        <StyledText>News</StyledText>
+        <StyledText>Home</StyledText>
     </StyledView>
 
-export default NewsScreen;
+export default Home;

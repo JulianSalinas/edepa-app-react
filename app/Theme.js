@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 
+// * Consider these dark colors too! 
+// * Dark Blue -> '#0F2027' && '#203A43'
 
 let ThemeValues = {
     
@@ -8,18 +10,10 @@ let ThemeValues = {
     spacing: 4,
 
     primary: '#E74C3C',
-    // darkPrimary: '#e96443',
-    // darkPrimary: '#7474BF',
-    // darkPrimary: '#E55D87',
-    // darkPrimary: '#0F2027', // Dark Blue 
-    darkPrimary: '#141E30', // Dark Real 
+    darkPrimary: '#141E30',
     
     secondary: '#2C3E50',
-    // darkSecondary: '#904e95',
-    // darkSecondary: '#348AC7',
-    // darkSecondary: '#5FC3E4',
-    // darkSecondary: '#203A43', // Dark Blue 
-    darkSecondary: '#243B55', // Dark Real 
+    darkSecondary: '#243B55',
 
     container: '#FFFFFF',
     darkContainer: '#000000',

@@ -27,20 +27,20 @@ const DarkText = props =>
         MODO OSCURO
     </StyledText>
 
-const DarkSwitch = props => 
+const Switcher = props => 
     <StyledSwitch>
         <DarkText darkMode={props.darkMode}/>
         <Switch value={props.darkMode} onValueChange={props.changeDarkMode}/>
     </StyledSwitch>
 
-DarkSwitch.propsTypes = {
+Switcher.propsTypes = {
     darkMode: PropTypes.bool.isRequired,
     changeDarkMode: PropTypes.func.isRequired
 }
 
-DarkSwitch.defaultProps = {
+Switcher.defaultProps = {
     darkMode: true,
     changeDarkMode: () => console.log('You should pass changeDarkMode(value)')
 }
 
-export default DarkSwitch;
+export default Switcher;

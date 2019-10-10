@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 
 import { Screen } from '../../app/Types';
 import Background from '../../shared/modder/Background';
-import DarkModder from '../../shared/modder/DarkModder';
+import Modder from '../../shared/modder/Modder';
 
 import styled from 'styled-components/native';
 import { View } from 'native-base';
@@ -11,7 +11,7 @@ import { Text } from 'react-native';
 import { SimpleLineIcons } from '@expo/vector-icons';
 
 
-const StyledView = styled(DarkModder)`
+const StyledView = styled(View)`
     display: flex;
     flex: 1; 
     flexDirection: column;
@@ -29,7 +29,7 @@ const DayText = styled(Text)`
     color: #FFF;
     fontSize: 10;
     letterSpacing: 2.4;
-    marginTop: 32;
+    marginTop: 16;
     textTransform: uppercase;
 `
 
@@ -94,21 +94,17 @@ const ScheduleHeader = props =>
         <MonthView month={'Noviembre 2019'}/>
     </Background>
 
-const ScheduleLayout = props =>
+const Schedule = props =>
     <StyledView {...props} style={{ flex: 1 }}>
         <ScheduleHeader {...props} />
     </StyledView>
 
-const ScheduleScreen = props =>
-    <ScheduleLayout 
-        events={props.screenProps.store.events}
-        darkMode={props.screenProps.kFeel.isDarkMode()}
-        changeDarkMode={props.screenProps.kFeel.changeDarkMode}
-    />
-
-ScheduleScreen.propTypes = {
-    screenProps: Screen,
-    navigation: PropTypes.object.isRequired
+Schedule.propTypes = {
+    darkMode: PropTypes.bool
 }
 
-export default ScheduleScreen;
+Schedule.defaultProps = {
+    darkMode: true
+}
+
+export default Schedule;

@@ -1,64 +1,73 @@
 import PropTypes from 'prop-types';
 import { ThemeTypes } from './Theme';
 
-const Common = {
+
+const CommonTypes = {
     title: PropTypes.string,
     brief: PropTypes.string,
-    end: PropTypes.number.isRequired,
-    start: PropTypes.number.isRequired,
-    location: PropTypes.string.isRequired
+    end: PropTypes.number,
+    start: PropTypes.number,
+    location: PropTypes.string
 }
 
-const Position = PropTypes.shape({
-    x: PropTypes.number.isRequired,
-    y: PropTypes.number.isRequired
-})
+const PositionTypes = PropTypes.shape({
+    x: PropTypes.number,
+    y: PropTypes.number
+}).isRequired;
 
-const Home = PropTypes.shape({
-    ...Common,
-    position: Position,
-    tag: PropTypes.string.isRequired
-})
+const HomeTypes = PropTypes.shape({
+    ...CommonTypes,
+    position: PositionTypes,
+    tag: PropTypes.string
+}).isRequired;
 
-const Event = PropTypes.shape({
-    ...Common,
-    id: PropTypes.string.isRequired,
-    key: PropTypes.string.isRequired,
-    eventype: PropTypes.string.isRequired
-})
+const EventTypes = PropTypes.shape({
+    ...CommonTypes,
+    id: PropTypes.string,
+    key: PropTypes.string,
+    eventype: PropTypes.string
+}).isRequired;
 
-const User = PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    username: PropTypes.string.isRequired,
+const UserTypes = PropTypes.shape({
+    id: PropTypes.string,
+    username: PropTypes.string,
     email: PropTypes.string,
     photoUrl: PropTypes.string,
     allowPhoto: PropTypes.bool
-})
+}).isRequired;
 
-const Person = PropTypes.shape({
-    key: PropTypes.string.isRequired,
+const PersonTypes = PropTypes.shape({
+    key: PropTypes.string,
     name: PropTypes.string,
     personalName: PropTypes.string,
     title: PropTypes.string,
     about: PropTypes.string,
-})
+}).isRequired;
 
-const KFeel = PropTypes.shape({
+const FeelTypes = PropTypes.shape({
     ...ThemeTypes,
-    darkMode: PropTypes.bool.isRequired,
-    changeDarkMode: PropTypes.func.isRequired
-})
+    darkMode: PropTypes.bool,
+    changeDarkMode: PropTypes.func
+}).isRequired;
 
-const Store = PropTypes.shape({
-    home: Home,
-    events: PropTypes.arrayOf(Event),
-    people: PropTypes.arrayOf(Person)
-})
+const StoreTypes = PropTypes.shape({
+    // home: HomeTypes,
+    events: PropTypes.arrayOf(EventTypes),
+    people: PropTypes.arrayOf(PersonTypes)
+}).isRequired;
 
-const Screen = PropTypes.shape({
-    KFeel: KFeel,
-    store: Store
-})
+const ScreenTypes = PropTypes.shape({
+    feel: FeelTypes,
+    store: StoreTypes
+}).isRequired;
 
-
-export { Position, Home, Event, User, Person, Store, KFeel, Screen }
+export { 
+    PositionTypes, 
+    HomeTypes, 
+    EventTypes, 
+    UserTypes, 
+    PersonTypes, 
+    StoreTypes, 
+    FeelTypes, 
+    ScreenTypes 
+}
