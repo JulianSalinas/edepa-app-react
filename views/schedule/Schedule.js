@@ -1,14 +1,17 @@
 // Core
-import React, { memo } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
 // Libs 
 import styled from 'styled-components/native';
 import { Text, View } from 'react-native';
 import { SimpleLineIcons } from '@expo/vector-icons';
+import { TouchableHighlight } from 'react-native-gesture-handler';
 
 // Local 
+import Loading from '../loading/Loading';
 import Background from '../../shared/modder/Background';
+import { addTime, timeInfo, getStart, getWeekDay } from '../../scripts/Time';
 
 
 const StyledView = styled(View)`
@@ -63,41 +66,110 @@ const StyledMonth = styled(View)`
     padding: 16px;
 `
 
-const MoveIcon = ({ name }) => 
+const StyledTouchable = styled(TouchableHighlight)`
+    padding: 16px;
+`
+
+const MoveIcon = ({ name, isPressed }) =>
     <SimpleLineIcons
         name={name}
         size={26}
-        color={'rgba(255, 255, 255, 0.5)'}
+        color={isPressed ? '#FFF' : 'rgba(255, 255, 255, 0.5)'}
     />
 
-const DayView = ({ day }) => 
+const DayView = ({ day }) =>
     <StyledDay>
         <DayText>{day}</DayText>
     </StyledDay>
 
-const DateView = ({ date }) => 
+const DateLayout = props => 
+    <StyledTouchable 
+        onPress={props.onPress} 
+        onHideUnderlay={props.onHideUnderlay}
+        onShowUnderlay={props.onShowUnderlay}
+        underlayColor={'#FFFFFF00'}>
+        <MoveIcon name={props.icon} isPressed={props.isPressed}/>
+    </StyledTouchable>
+
+
+class DateRow extends PureComponent {
+
+    state = { isPressed: false }
+
+    onHideUnderlay = () => this.setState({
+        isPressed: false
+    })
+
+    onShowUnderlay = () => this.setState({
+        isPressed: true 
+    })
+
+    render() {
+        return (
+            <DateLayout
+                {...this.props}
+                isPressed={this.state.isPressed}
+                onHideUnderlay={this.onHideUnderlay}
+                onShowUnderlay={this.onShowUnderlay}
+            />
+        )
+    }
+
+}
+
+const DateView = ({ weekDay, next, prev }) =>
     <StyledDate>
-        <MoveIcon name={'arrow-left'}/>
-        <DateText>{date}</DateText>
-        <MoveIcon name={'arrow-right'}/>
+        <DateRow onPress={prev} icon={'arrow-left'} />
+        <DateText>{weekDay}</DateText>
+        <DateRow onPress={next} icon={'arrow-right'} />
     </StyledDate>
 
-const MonthView = ({ month }) =>
+const BottomView = ({ month, year }) =>
     <StyledMonth>
-        <MonthText>{month}</MonthText>
+        <MonthText>{`${month} ${year}`}</MonthText>
     </StyledMonth>
 
 const ScheduleHeader = props =>
     <Background darkMode darkPrimary={'#4568DC'} darkSecondary={'#B06AB3'}>
-        <DayView day={'Lunes'}/>
-        <DateView date={'26'}/>
-        <MonthView month={'Noviembre 2019'}/>
+        <DayView day={props.time.day} />
+        <DateView weekDay={props.time.weekDay} next={props.next} prev={props.prev} />
+        <BottomView month={props.time.month} year={props.time.year} />
     </Background>
 
-const Schedule = props =>
+const ScheduleLayout = props => 
     <StyledView {...props} style={{ flex: 1 }}>
-        <ScheduleHeader {...props} />
+        <ScheduleHeader {...props}/>
     </StyledView>
+
+
+class Schedule extends PureComponent {
+
+    state = {
+        dates: [],
+        index: 0,
+    }
+
+    componentDidMount(){
+        this.setState({ dates: [1570939200000, 1571025600000, 1570852800000] })
+    }
+
+    next = () => this.setState(state => {
+        const restart = state.index === state.dates.length - 1;
+        return { index: restart ? 0 : state.index + 1 };
+    })
+
+    prev = () => this.setState(state => {
+        const restart = state.index === 0;
+        return { index: restart ? state.dates.length - 1 : state.index - 1 };
+    })
+
+    render() {
+        const { dates, index } = this.state;
+        const time = timeInfo(dates.length > 0 ? dates[index] : getStart());
+        return <ScheduleLayout {...this.props} next={this.next} prev={this.prev} time={time}/>
+    }
+
+}
 
 Schedule.propTypes = {
     darkMode: PropTypes.bool
@@ -107,4 +179,4 @@ Schedule.defaultProps = {
     darkMode: true
 }
 
-export default memo(Schedule);
+export default Schedule;

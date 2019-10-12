@@ -18,8 +18,8 @@ const routes = {
     // Loading: LoadingScreen,
     // Login: LoginScreen,
     // News: NewsScreen,
-    People: PeopleScreen,
-    // Schedule: ScheduleScreen,
+    // People: PeopleScreen,
+    Schedule: ScheduleScreen,
     // Settings: SettingsScreen
 }
 
