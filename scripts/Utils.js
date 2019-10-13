@@ -29,7 +29,7 @@ function truncate(string, size){
     if (string === null || string === '') return string;
     const length = string.length;
     const truncated = length <= size ? string : string.substring(0, size) + '...';
-    return truncated.toLowerCase();
+    return truncated;
 }
 
 /**

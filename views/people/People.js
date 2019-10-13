@@ -27,6 +27,7 @@ const getSection = darkMode => ({ section }) =>
     <Section
         darkMode={darkMode}
         title={section.title}
+        style={{ marginBottom: 8 }}
     />
 
 const PeopleLayout = props => <SectionList

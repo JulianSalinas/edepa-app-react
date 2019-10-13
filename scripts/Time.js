@@ -95,6 +95,12 @@ function addTime(datetime, amount, unit='days'){
     return moment(datetime).add(amount, unit).valueOf();
 }
 
+function getLapse(from, to) {
+    const start = `${getHour(from)} ${getMeridiem(from)}`;
+    const end = `${getHour(to)} ${getMeridiem(to)}`;
+    return `${start} - ${end}`.toUpperCase();
+}
+
 /**
  * Takes a datime and splits it into different components
  * like weekDay, day, month, year 
@@ -120,5 +126,6 @@ export {
     getStart,
     getEnd,
     addTime,
+    getLapse,
     timeInfo
 }

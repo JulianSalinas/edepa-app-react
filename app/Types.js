@@ -25,7 +25,8 @@ const EventTypes = PropTypes.shape({
     ...CommonTypes,
     id: PropTypes.string,
     key: PropTypes.string,
-    eventype: PropTypes.string
+    eventype: PropTypes.string,
+    favorites: PropTypes.number
 }).isRequired;
 
 const UserTypes = PropTypes.shape({

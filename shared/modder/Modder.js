@@ -2,6 +2,9 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 
+// Libs
+import { Platform } from 'react-native';
+
 // Local 
 import Switcher from './Switcher';
 import Background from './Background';
@@ -9,6 +12,12 @@ import Background from './Background';
 
 const DarkLayout = ({ darkMode, changeDarkMode, ...props }) =>
     <Background darkMode={darkMode} style={props.style} {...props}>
+        <Background 
+            darkMode 
+            darkPrimary={'#4568DC'} 
+            darkSecondary={'#B06AB3'} 
+            style={{ height: Platform.OS === 'android' ? 24 : 0 }}    
+        />
         {props.children}
         <Switcher darkMode={darkMode} changeDarkMode={changeDarkMode} />
     </Background>

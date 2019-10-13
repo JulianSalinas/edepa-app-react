@@ -11,7 +11,6 @@ const SEMI_TRANSPARENT = 'rgba(255, 255, 255, 0.1)';
 
 const StyledView = styled(View)`
     padding: 8px 16px;
-    marginBottom: 8px;
 `
 
 const StyledText = styled(Text)`
@@ -19,27 +18,29 @@ const StyledText = styled(Text)`
     fontWeight: bold;
 `
 
-const SectionText = ({ title, darkMode }) => 
+const SectionText = ({ title, darkMode }) =>
     <StyledText style={{
         color: darkMode ? '#FFF' : '#000'
     }}>
         {title}
     </StyledText>
 
-const Section = props => 
-    <StyledView style={{
+const Section = props =>
+    <StyledView style={[props.style, {
         backgroundColor: props.darkMode ? SEMI_TRANSPARENT : '#EEE'
-    }}>
-        <SectionText {...props}/>
+    }]}>
+        <SectionText {...props} />
     </StyledView>
 
 Section.defaultProps = {
     darkMode: false,
+    style: {},
 }
 
 Section.propTypes = {
     darkMode: PropTypes.bool,
-    title: PropTypes.string.isRequired
+    title: PropTypes.string.isRequired,
+    style: PropTypes.object
 }
 
 export default memo(Section);

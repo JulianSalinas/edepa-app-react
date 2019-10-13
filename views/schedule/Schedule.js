@@ -4,11 +4,12 @@ import PropTypes from 'prop-types';
 
 // Libs 
 import styled from 'styled-components/native';
-import { Text, View } from 'react-native';
+import { Text, View, Platform } from 'react-native';
 import { SimpleLineIcons } from '@expo/vector-icons';
-import { TouchableHighlight } from 'react-native-gesture-handler';
+import { TouchableHighlight, ScrollView } from 'react-native-gesture-handler';
 
 // Local 
+import Event from './Event';
 import Loading from '../loading/Loading';
 import Background from '../../shared/modder/Background';
 import { addTime, timeInfo, getStart, getWeekDay } from '../../scripts/Time';
@@ -70,6 +71,11 @@ const StyledTouchable = styled(TouchableHighlight)`
     padding: 16px;
 `
 
+const StyledClickable = styled(View)`
+    cursor: pointer;
+    padding: 16px;
+`
+
 const MoveIcon = ({ name, isPressed }) =>
     <SimpleLineIcons
         name={name}
@@ -82,7 +88,13 @@ const DayView = ({ day }) =>
         <DayText>{day}</DayText>
     </StyledDay>
 
-const DateLayout = props => 
+const DateLayout = props => Platform.OS === 'web' ? 
+    <StyledClickable
+        onClick={props.onPress}
+        onMouseEnter={props.onShowUnderlay}
+        onMouseLeave={props.onHideUnderlay}>
+        <MoveIcon name={props.icon} isPressed={props.isPressed}/>
+    </StyledClickable> : 
     <StyledTouchable 
         onPress={props.onPress} 
         onHideUnderlay={props.onHideUnderlay}
@@ -139,6 +151,19 @@ const ScheduleHeader = props =>
 const ScheduleLayout = props => 
     <StyledView {...props} style={{ flex: 1 }}>
         <ScheduleHeader {...props}/>
+        <View style={{
+            flex: 1,
+            display: "flex",
+            flexDirection: "column"
+        }}>
+            <ScrollView>
+                <Event darkMode={props.darkMode} type={'odd'} eventype={'TALLER'}/>
+                <Event darkMode={props.darkMode} type={'even'} eventype={'FERIA'}/>
+                <Event darkMode={props.darkMode} type={'odd'} eventype={'PONENCIA'}/>
+                <Event darkMode={props.darkMode} type={'even'} eventype={'CONFERENCIA'}/>
+                {/* <Item darkMode={props.darkMode} title={person.title} subtitle={person.subtitle}/> */}
+            </ScrollView>
+        </View>
     </StyledView>
 
 

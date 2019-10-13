@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 
 // * Consider these dark colors too! 
 // * Dark Blue -> '#0F2027' && '#203A43'
+// * Dark Real -> '#141E30' && '#243B55'
 
 let ThemeValues = {
     

@@ -10,7 +10,7 @@ import News from '../views/news/News';
 import People from '../views/people/People';
 import Settings from '../views/settings/Settings';
 import Schedule from '../views/schedule/Schedule';
-
+import Test from '../views/test/Test';
 
 const HomeScreen = props => <Home
     darkMode={props.screenProps.look.darkMode} 
@@ -55,6 +55,12 @@ const ScheduleScreen = props => <Schedule
 
 ScheduleScreen.propTypes = ScreenTypes;
 
+const TestScreen = props => <Test
+    darkMode={props.screenProps.look.darkMode}
+/>
+
+TestScreen.propTypes = ScreenTypes;
+
 export { 
     HomeScreen,
     LoadingScreen, 
@@ -62,5 +68,6 @@ export {
     NewsScreen,
     PeopleScreen,
     SettingsScreen,
-    ScheduleScreen
+    ScheduleScreen,
+    TestScreen
 }

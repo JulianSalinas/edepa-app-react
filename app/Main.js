@@ -3,7 +3,7 @@ import React, { PureComponent } from 'react';
 
 // Libs 
 import styled from 'styled-components/native';
-import { SafeAreaView } from 'react-native';
+import { Platform, SafeAreaView } from 'react-native';
 
 // Local 
 import { ThemeValues } from './Theme';
@@ -16,7 +16,6 @@ import Modder from '../shared/modder/Modder';
  */
 const DarkModder = styled(Modder)`
     flex: 1;
-    paddingTop: 24px;
 `
 
 export default class Main extends PureComponent {
@@ -31,7 +30,7 @@ export default class Main extends PureComponent {
     state = {
         people: [],
         events: [],
-        darkMode: true,
+        darkMode: Platform.OS === 'web'
     }
 
     /**

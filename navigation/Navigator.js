@@ -10,7 +10,8 @@ import {
     NewsScreen,
     PeopleScreen,
     ScheduleScreen,
-    SettingsScreen
+    SettingsScreen,
+    TestScreen,
 } from './Screens';
 
 const routes = {
@@ -20,7 +21,8 @@ const routes = {
     // News: NewsScreen,
     // People: PeopleScreen,
     Schedule: ScheduleScreen,
-    // Settings: SettingsScreen
+    // Settings: SettingsScreen,
+    // Test: TestScreen
 }
 
 export default createAppContainer(
