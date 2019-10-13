@@ -26,7 +26,8 @@ const EventTypes = PropTypes.shape({
     id: PropTypes.string,
     key: PropTypes.string,
     eventype: PropTypes.string,
-    favorites: PropTypes.number
+    favorites: PropTypes.number,
+    isFavorite: PropTypes.bool,
 }).isRequired;
 
 const UserTypes = PropTypes.shape({

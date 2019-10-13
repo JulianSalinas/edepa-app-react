@@ -1,22 +1,24 @@
 // Core 
-import React, { memo } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
 // Libs
 import styled from 'styled-components/native';
-import { Text, View } from 'react-native';
-import { FontAwesome } from '@expo/vector-icons';
+import { Text, View, Animated, Easing } from 'react-native';
+import { FontAwesome, AntDesign } from '@expo/vector-icons';
 
 // Locals
 import Decoration from './Decoration';
 import { EventTypes } from '../../app/Types';
 import { getLapse } from '../../scripts/Time';
+import Favorite from './Favorite';
+import Enrolled from './Enrolled';
 
 // Constants
 const LIGHT_TRANSPARENT = 'rgba(0, 0, 0, 0.6)';
 const DARK_TRANSPARENT = 'rgba(255, 255, 255, 0.6)';
 
-const eventColors = {
+const EVENT_COLORS = {
     'TALLER': '#1976D2',
     'FERIA': '#F44336',
     'PONENCIA': '#4CAF50',
@@ -24,7 +26,7 @@ const eventColors = {
 };
 
 const getEventColor = eventype => {
-    return eventColors[eventype];
+    return EVENT_COLORS[eventype];
 }
 
 const getOpacity = (type, darkMode) => {
@@ -59,6 +61,7 @@ const StyledHeader = styled(View)`
     display: flex;
     flexDirection: row;
     justifyContent: space-between;
+    marginEnd: 16px;
     marginBottom: 4px;
 `
 
@@ -68,9 +71,9 @@ const EventHeader = ({ color, darkMode, event, eventype }) =>
         <EventTime darkMode={darkMode} event={event} />
     </StyledHeader>
 
-const StyledTitle = styled(StyledLabel)`
+const StyledTitle = styled(Text)`
     fontSize: 14;
-    fontWeight: bold;
+    marginEnd: 16px;
     marginBottom: 4px;
 `
 
@@ -83,33 +86,53 @@ const StyledLocation = styled(View)`
     alignItems: center;
     display: flex;
     flexDirection: row;
+    marginBottom: 4px;
 `
 
 const EventLocation = ({ color, event }) =>
     <StyledLocation>
-        <FontAwesome color={color} name={'map-marker'} size={14} style={{ marginEnd: 8 }}/>
+        <FontAwesome color={color} name={'map-marker'} size={14} style={{ marginEnd: 8 }} />
         <Text style={{ color }}> {event.location} </Text>
     </StyledLocation>
+
+
+const EventButton = props => props.eventype === 'TALLER' ?
+    <Enrolled darkMode={props.darkMode} {...props} /> :
+    <Favorite darkMode={props.darkMode} {...props} />
+
+const StyledFooter = styled(View)`
+    display: flex;
+    flexDirection: row;
+    alignItems: flex-end;
+    marginEnd: 8px;
+`
+
+const EventFooter = ({ darkMode, event, ...props }) =>
+    <StyledFooter>
+        <View style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+            <EventLocation event={event} color={darkMode ? DARK_TRANSPARENT : LIGHT_TRANSPARENT} />
+            <Text style={{ color: '#448AFF', marginStart: -4 }}> Leer más </Text>
+        </View>
+        <EventButton darkMode={darkMode} {...props} />
+    </StyledFooter>
 
 const StyledContent = styled(View)`
     display: flex;
     flex: 1;
     flexDirection: column;
-    paddingEnd: 16px;
-    paddingVertical: 16px;
+    padding: 16px 0px 16px 0px;
 `
 
 const EventContent = ({ event, color, darkMode, ...props }) =>
     <StyledContent>
         <EventHeader color={color} darkMode={darkMode} event={event} eventype={props.eventype} />
         <EventTitle event={event} darkMode={darkMode} />
-        <EventLocation event={event} color={darkMode ? DARK_TRANSPARENT : LIGHT_TRANSPARENT} />
+        <EventFooter darkMode={darkMode} event={event} {...props} />
     </StyledContent>
 
 const StyledEvent = styled(View)`
     display: flex;
     flexDirection: row;
-    minHeight: 124;
 `
 const EventLayout = props =>
     <StyledEvent style={[props.style, { backgroundColor: props.background }]}>
@@ -118,11 +141,31 @@ const EventLayout = props =>
         <EventContent {...props} />
     </StyledEvent>
 
-const Event = props => {
-    const eventype = props.eventype;
-    const color = getEventColor(eventype);
-    const background = getOpacity(props.type, props.darkMode);
-    return <EventLayout {...props} background={background} color={color} eventype={eventype} />
+class Event extends PureComponent {
+
+
+    state = {
+        isActive: false
+    }
+
+    toggleActive = () => this.setState(state => {
+        return { isActive: !state.isActive }
+    })
+
+    render() {
+        const eventype = this.props.eventype;
+        const color = getEventColor(eventype);
+        const background = getOpacity(this.props.type, this.props.darkMode);
+        return <EventLayout
+            {...this.props}
+            background={background}
+            color={color}
+            eventype={eventype}
+            isActive={this.state.isActive}
+            toggleActive={this.toggleActive}
+        />
+    }
+
 }
 
 Event.propTypes = {
@@ -141,15 +184,16 @@ Event.defaultProps = {
         eventype: 'CONFERENCIA',
         favorites: 12,
         id: 'C01',
+        isActive: true,
         key: '-A9D8F3GE5DFVT8',
-        location: 'CENTRO DE LAS ARTES',
+        location: 'Centro de las Artes',
         people: ['Julian Salinas', 'Brandon Dinarte'],
         start: 1544024400000,
-        title: 'Competencias profesionales de profesores de matemática, aproximaciones cognitivas versus situadas',
+        title: 'Investigación basada en videos para estudios comparativos y transferencia de metodologías de una cultura a otra',
     },
     eventype: 'CONFERENCIA',
     type: 'odd',
     style: {}
 }
 
-export default memo(Event);
+export default Event;
