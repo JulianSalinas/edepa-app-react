@@ -29,7 +29,7 @@ const DefaultView = props =>
     </StyledView>
 
 const DarkWeb = props =>
-    <StyledView style={[props.style, {
+    <StyledView onLayout={props.onLayout} style={[props.style, {
         backgroundImage: gradient(props.darkPrimary, props.darkSecondary)
     }]}>
         {props.children}
@@ -37,6 +37,7 @@ const DarkWeb = props =>
 
 const DarkMobile = props =>
     <StyledGradient
+        onLayout={props.onLayout}
         style={props.style}
         start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
         colors={[props.darkPrimary, props.darkSecondary]}>
@@ -56,15 +57,17 @@ const Background = props => Platform.OS === 'web' ?
     <BackgroundMobile {...props} />
 
 Background.propsTypes = {
-    darkMode: PropTypes.bool.isRequired,
-    darkPrimary: PropTypes.string.isRequired,
-    darkSecondary: PropTypes.string.isRequired
+    darkMode: PropTypes.bool,
+    darkPrimary: PropTypes.string,
+    darkSecondary: PropTypes.string,
+    onLayout: PropTypes.func
 }
 
 Background.defaultProps = {
     darkMode: true,
     darkPrimary: '#e96443',
-    darkSecondary: '#904e95'
+    darkSecondary: '#904e95',
+    onLayout: () => {}
 }
 
 export default memo(Background);

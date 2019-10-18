@@ -27,25 +27,25 @@ function getMeridiem(datetime){
 
 /**
  * Returns just the day's string of the day 
- * Ej. (22/09/2019 03:00 PM)  -> '22'
+ * Ej. (22/09/2019 03:00 PM)  -> 'Domingo'
  */
-function getDay(datetime) {
+function getWeekDay(datetime) {
     const dayMoment = datetime ? moment(datetime) : moment();
     return dayMoment.format('dddd');
 }
 
 /**
  * Returns just the week day's string of the day 
- * Ej. (22/09/2019 03:00 PM)  -> 'Domingo'
+ * Ej. (22/09/2019 03:00 PM)  -> '22'
  */
-function getWeekDay(datetime) {
+function getDay(datetime) {
     const dayMoment = datetime ? moment(datetime) : moment();
     return dayMoment.format('D');
 }
 
 /**
  * Returns just the month's string of the day 
- * Ej. (22/09/2019 03:00 PM)  -> 'Domingo'
+ * Ej. (22/09/2019 03:00 PM)  -> 'Octubre'
  */
 function getMonth(datetime) {
     const dayMoment = datetime ? moment(datetime) : moment();
@@ -54,7 +54,7 @@ function getMonth(datetime) {
 
 /**
  * Returns just the year's string of the day 
- * Ej. (22/09/2019 03:00 PM)  -> 'Domingo'
+ * Ej. (22/09/2019 03:00 PM)  -> '2019'
  */
 function getYear(datetime) {
     const dayMoment = datetime ? moment(datetime) : moment();
