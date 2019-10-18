@@ -4,23 +4,23 @@ import { createSwitchNavigator } from 'react-navigation';
 
 // Local 
 import { 
-    HomeScreen,
-    LoadingScreen,
+    // HomeScreen,
+    // LoadingScreen,
     LoginScreen,
-    NewsScreen,
-    PeopleScreen,
-    ScheduleScreen,
-    SettingsScreen,
-    TestScreen,
+    // NewsScreen,
+    // PeopleScreen,
+    // ScheduleScreen,
+    // SettingsScreen,
+    // TestScreen,
 } from './Screens';
 
 const routes = {
     // Home: HomeScreen,
     // Loading: LoadingScreen,
-    // Login: LoginScreen,
+    Login: LoginScreen,
     // News: NewsScreen,
     // People: PeopleScreen,
-    Schedule: ScheduleScreen,
+    // Schedule: ScheduleScreen,
     // Settings: SettingsScreen,
     // Test: TestScreen
 }

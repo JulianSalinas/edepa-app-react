@@ -7,18 +7,13 @@ import { AppLoading } from 'expo';
 import { Ionicons } from '@expo/vector-icons';
 import { Platform, StatusBar, View, YellowBox } from 'react-native';
 
-YellowBox.ignoreWarnings(['Setting a timer', "Warning: Using the"]);
+YellowBox.ignoreWarnings(['Setting a timer', "Warning: Using the", "C:/Users/GB-LT-DESANTLM/"]);
 console.disableYellowBox = true;
 
 export default class App extends Component {
 
     state = {
         isLoadingComplete: false,
-    }
-
-    styles = {
-        flex: 1,
-        backgroundColor: '#fff'
     }
 
     assets = [
@@ -39,17 +34,17 @@ export default class App extends Component {
         await Promise.all([fonts, assets]);
     }
 
-    loading = () => 
+    loading = () =>
         <AppLoading
             startAsync={this.loadResources}
             onError={console.warn}
             onFinish={() => this.setState({ isLoadingComplete: true })}
         />
 
-    started = () => 
-        <View style={this.styles}>
+    started = () =>
+        <View style={{ flex: 1 }}>
             {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
-            <Main/>
+            <Main />
         </View>
 
     render() {

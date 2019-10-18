@@ -1,51 +1,34 @@
 // Core 
-import React, { memo } from 'react';
 import PropTypes from 'prop-types';
-
-// Libs
-import styled from 'styled-components/native';
-import { View } from 'react-native';
+import React, { PureComponent } from 'react';
 
 // Local 
-import Logo from '../../shared/unique/Edepa';
-import GoogleButton from '../../shared/buttons/Google';
-import FacebookButton from '../../shared/buttons/Facebook';
+import Layout from './Layout';
 
 
-const StyledItem = styled(View)`
-    marginBottom: 16
-`
+class Login extends PureComponent {
 
-const StyledLayout = styled(View)`
-    flex: 1;
-    display: flex;
-    alignItems: center;
-    justifyContent: center;
-`
+    login = () => {
+        this.props.print('LOGIN PRESSED')
+    }
 
-const LoginLogo = props =>
-    <StyledItem>
-        <Logo color={props.darkMode ? "#FFF" : null} />
-    </StyledItem>
+    render() {
+        return <Layout 
+            login={this.login} 
+            darkMode={this.props.darkMode} 
+        />
+    }
 
-const LoginButtons = props =>
-    <StyledItem>
-        <GoogleButton {...props} style={{ marginBottom: 12 }} />
-        <FacebookButton {...props} />
-    </StyledItem>
-
-const Login = props =>
-    <StyledLayout>
-        <LoginLogo {...props} />
-        <LoginButtons {...props} />
-    </StyledLayout>
+}
 
 Login.propTypes = {
-    darkMode: PropTypes.bool
+    darkMode: PropTypes.bool,
+    print: PropTypes.func,
 }
 
 Login.defaultProps = {
-    darkMode: true
+    darkMode: true,
+    print: () => console.warn('Required function: print')
 }
 
-export default memo(Login);
+export default Login;

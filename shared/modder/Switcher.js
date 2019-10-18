@@ -6,6 +6,9 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components/native';
 import { View, Text, Switch } from 'react-native';
 
+// Local
+import Theme from '../../app/Theme';
+
 
 const StyledSwitch = styled(View)`
     padding: 8px 16px;
@@ -13,7 +16,6 @@ const StyledSwitch = styled(View)`
     flexDirection: row;
     alignItems: center;
     justifyContent: flex-start;
-    backgroundColor: #2c3e50
 `
 
 const StyledText = styled(Text)`
@@ -24,25 +26,26 @@ const StyledText = styled(Text)`
     textTransform: uppercase;
 `
 
-const DarkText = () => 
+const DarkText = () =>
     <StyledText>
         MODO OSCURO
     </StyledText>
 
-const Switcher = props => 
-    <StyledSwitch>
-        <DarkText darkMode={props.darkMode}/>
-        <Switch value={props.darkMode} onValueChange={props.changeDarkMode}/>
+const Switcher = props =>
+    <StyledSwitch style={{ backgroundColor: props.darkBackground[0] }}>
+        <DarkText darkMode={props.darkMode} />
+        <Switch value={props.darkMode} onValueChange={props.changeDarkMode} />
     </StyledSwitch>
 
 Switcher.propsTypes = {
-    darkMode: PropTypes.bool.isRequired,
-    changeDarkMode: PropTypes.func.isRequired
+    darkMode: PropTypes.bool,
+    changeDarkMode: PropTypes.func.isRequired,
+    darkBackground: PropTypes.arrayOf(PropTypes.string)
 }
 
 Switcher.defaultProps = {
     darkMode: true,
-    changeDarkMode: () => console.log('You should pass changeDarkMode(value)')
+    darkBackground: Theme.darkBackground
 }
 
 export default memo(Switcher);

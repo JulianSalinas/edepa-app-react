@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import { ThemeTypes } from './Theme';
 
 
 const CommonTypes = {
@@ -38,22 +37,22 @@ const UserTypes = PropTypes.shape({
     allowPhoto: PropTypes.bool
 }).isRequired;
 
+// TODO: Remove personalName
 const PersonTypes = PropTypes.shape({
     key: PropTypes.string,
     name: PropTypes.string,
     personalName: PropTypes.string,
     title: PropTypes.string,
     about: PropTypes.string,
-}).isRequired;
+});
 
 const FeelTypes = PropTypes.shape({
-    ...ThemeTypes,
     darkMode: PropTypes.bool,
     changeDarkMode: PropTypes.func
 }).isRequired;
 
 const StoreTypes = PropTypes.shape({
-    // home: HomeTypes,
+    home: HomeTypes,
     events: PropTypes.arrayOf(EventTypes),
     people: PropTypes.arrayOf(PersonTypes)
 }).isRequired;

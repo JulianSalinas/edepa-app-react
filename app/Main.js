@@ -2,26 +2,19 @@
 import React, { PureComponent } from 'react';
 
 // Libs 
-import styled from 'styled-components/native';
-import { Platform, SafeAreaView } from 'react-native';
+import { Platform } from 'react-native';
 
 // Local 
-import { ThemeValues } from './Theme';
 import Firebase from '../services/Firebase';
 import Navigator from '../navigation/Navigator';
 import Modder from '../shared/modder/Modder';
+import Theme from './Theme';
 
-/**
- * Wraps the modder to respect the statusbar position 
- */
-const DarkModder = styled(Modder)`
-    flex: 1;
-`
 
 export default class Main extends PureComponent {
 
 
-    static DARK_MODE_CHANGED_TIMES = 0;
+    static COMMAND_COUNT = 0;
 
     /**
      * Contains all the information that can be used 
@@ -40,19 +33,18 @@ export default class Main extends PureComponent {
     constructor(props) {
         super(props);
         this.database = new Firebase();
+        this.print('APP STARTED');
     }
 
     /**
      * Adjusts the app's appearance to dark or light mode 
      */
     changeDarkMode = value => {
-        return this.setState({ darkMode: value }, () => this.darkModeChanged());
+        return this.setState({ darkMode: value }, this.darkModeChanged);
     }
 
     darkModeChanged = () => {
-        Main.DARK_MODE_CHANGED_TIMES += 1;
-        const message = `Dark Mode changed to ${this.state.darkMode}`;
-        console.log(`${Main.DARK_MODE_CHANGED_TIMES} time: ${message}`);
+        this.print(`DARK MODE ${this.state.darkMode ? 'ON' : 'OFF'}`);
     }
 
     /**
@@ -61,7 +53,7 @@ export default class Main extends PureComponent {
      * TODO: Active database listeners 
      */
     componentDidMount() {
-        this.database.synchPeople(this.synchList('people'));
+        // this.database.synchPeople(this.synchList('people'));
         // this.database.synchEvents(this.synchList('events'));
     }
 
@@ -116,10 +108,16 @@ export default class Main extends PureComponent {
     })
 
     getLook = () => ({
-        ...ThemeValues,
+        ...Theme,
         darkMode: this.state.darkMode,
         changeDarkMode: this.changeDarkMode
     })
+
+    print = message => {
+        Main.COMMAND_COUNT += 1;
+        const output = `%c[${Main.COMMAND_COUNT}]: %c${message}`;
+        console.log(output, 'color: DodgerBlue', 'color: Orange');
+    }
 
     /**
      * Renders the entire app passing its state to make it available
@@ -130,15 +128,14 @@ export default class Main extends PureComponent {
 
         const params = {
             look: this.getLook(),
-            store: this.getStore()
+            store: this.getStore(),
+            print: this.print
         };
 
         return (
-            <SafeAreaView style={{ flex: 1 }}>
-                <DarkModder {...params.look}>
-                    <Navigator screenProps={params} />
-                </DarkModder>
-            </SafeAreaView>
+            <Modder {...params.look} style={{ flex: 1 }}>
+                <Navigator screenProps={params} />
+            </Modder>
         );
 
     }

@@ -1,59 +1,19 @@
-import PropTypes from 'prop-types';
-
-// * Consider these dark colors too! 
+// * Consider these dark background colors too! 
 // * Dark Blue -> '#0F2027' && '#203A43'
 // * Dark Real -> '#141E30' && '#243B55'
 
-let ThemeValues = {
+export default {
     
-    margin: 16,
-    padding: 16,
-    spacing: 4,
+    // MATERIAL RED 
+    primary: '#F44336',
 
-    primary: '#E74C3C',
-    darkPrimary: '#141E30',
-    
-    secondary: '#2C3E50',
-    darkSecondary: '#243B55',
+    // MATERIAL DEEP PURPLE 
+    darkPrimary: '#673AB7',
 
-    container: '#FFFFFF',
-    darkContainer: '#000000',
+    // GRADIENT DARK REAL 
+    darkBackground: ['#141E30', '#243B55'],
 
-    background: '#FAFAFA',
-    darkBackground: '0A0A0A',
-
-    decoration: '#EEEEEE',
-    darkDecoration: '#EEEEEE',
-
-    primaryFont: '#505050',
-    secondaryFont: '#FFFFFF'
+    // GRADIENT DARK PURPLE
+    darkForeground: ['#141E30', '#243B55']
 
 }
-
-const ThemeTypes = PropTypes.shape({
-
-    margin: PropTypes.number,
-    padding: PropTypes.number,
-    spacing: PropTypes.number,
-    
-    primary: PropTypes.string,
-    darkPrimary: PropTypes.string,
-    
-    secondary: PropTypes.string,
-    darkSecondary: PropTypes.string,
-
-    container: PropTypes.string,
-    darkContainer: PropTypes.string,
-    
-    background: PropTypes.string,
-    darkBackground: PropTypes.string,
-
-    decoration: PropTypes.string,
-    darkDecoration: PropTypes.string,
-
-    primaryFont: PropTypes.string,
-    secondaryFont: PropTypes.string
-
-})
-
-export { ThemeTypes, ThemeValues };

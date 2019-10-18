@@ -8,6 +8,7 @@ import { Platform, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 // Local 
+import Theme from '../../app/Theme';
 import { gradient } from '../../scripts/Color';
 
 
@@ -23,53 +24,45 @@ const StyledGradient = styled(LinearGradient)`
     justifyContent: flex-start;
 `
 
-const DefaultView = props =>
+const BackgroundImage = props => ([props.style, {
+    backgroundImage: gradient('#234', '#234')
+}])
+
+const LightBackground = props =>
     <StyledView style={props.style}>
         {props.children}
     </StyledView>
 
-const DarkWeb = props =>
-    <StyledView onLayout={props.onLayout} style={[props.style, {
-        backgroundImage: gradient(props.darkPrimary, props.darkSecondary)
-    }]}>
+const WebBackground = props =>
+    <StyledView onLayout={props.onLayout} style={BackgroundImage(props)}>
         {props.children}
     </StyledView>
 
-const DarkMobile = props =>
+const MobileBackground = props =>
     <StyledGradient
         onLayout={props.onLayout}
         style={props.style}
         start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
-        colors={[props.darkPrimary, props.darkSecondary]}>
+        colors={props.darkBackground}>
         {props.children}
     </StyledGradient>
 
-const BackgroundWeb = props => props.darkMode ?
-    <DarkWeb {...props} /> :
-    <DefaultView {...props} />
-
-const BackgroundMobile = props => props.darkMode ?
-    <DarkMobile {...props} /> :
-    <DefaultView {...props} />
-
-const Background = props => Platform.OS === 'web' ?
-    <BackgroundWeb {...props} /> :
-    <BackgroundMobile {...props} />
+const Background = props => !props.darkMode ?
+    <LightBackground {...props} /> : Platform.OS === 'web' ? 
+    <WebBackground {...props} /> : 
+    <MobileBackground {...props} />
 
 Background.propsTypes = {
-    darkMode: PropTypes.bool,
-    darkPrimary: PropTypes.string,
-    darkSecondary: PropTypes.string,
+    style: PropTypes.object,
     onLayout: PropTypes.func,
-    style: PropTypes.object
+    darkMode: PropTypes.bool,
+    darkBackground: PropTypes.arrayOf(PropTypes.string)
 }
 
 Background.defaultProps = {
+    style: {},
     darkMode: true,
-    darkPrimary: '#e96443',
-    darkSecondary: '#904e95',
-    onLayout: () => { },
-    style: {}
+    darkBackground: Theme.darkBackground
 }
 
 export default memo(Background);

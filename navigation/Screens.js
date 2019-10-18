@@ -25,6 +25,7 @@ const LoadingScreen = props => <Loading
 LoadingScreen.propTypes = ScreenTypes;
 
 const LoginScreen = props => <Login 
+    print={props.screenProps.print}
     darkMode={props.screenProps.look.darkMode} 
 />
 
