@@ -72,4 +72,11 @@ function gradient(top, bottom){
     return `linear-gradient(to bottom right, ${top}, ${bottom})`;
 }
 
-export { rgbToHex, colorFor, lighten, darken, gradient };
+// ITEM OPACITY 
+function opacityFor(percentage, isDark, isEven){
+    const opacity = isEven ? 0 : percentage;
+    const contrast = isDark ? 255 : 0;
+    return `rgba(${contrast}, ${contrast}, ${contrast}, ${opacity})`
+}
+
+export { rgbToHex, colorFor, lighten, darken, gradient, opacityFor };

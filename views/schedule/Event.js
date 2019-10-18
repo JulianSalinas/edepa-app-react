@@ -11,6 +11,7 @@ import { FontAwesome, AntDesign } from '@expo/vector-icons';
 import Decoration from './Decoration';
 import { EventTypes } from '../../app/Types';
 import { getLapse } from '../../scripts/Time';
+import { opacityFor } from '../../scripts/Color';
 import Favorite from './Favorite';
 import Enrolled from './Enrolled';
 
@@ -52,7 +53,7 @@ const StyledTime = styled(Text)`
 `
 
 const EventTime = ({ darkMode, event }) =>
-    <StyledTime numberOfLines={1} style={{ color: darkMode ? DARK_TRANSPARENT : LIGHT_TRANSPARENT }}>
+    <StyledTime numberOfLines={1} style={{ color: opacityFor(0.6, darkMode) }}>
         {getLapse(event.start, event.end)}
     </StyledTime>
 
@@ -110,7 +111,7 @@ const StyledFooter = styled(View)`
 const EventFooter = ({ darkMode, event, ...props }) =>
     <StyledFooter>
         <View style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
-            <EventLocation event={event} color={darkMode ? DARK_TRANSPARENT : LIGHT_TRANSPARENT} />
+            <EventLocation event={event} color={opacityFor(0.6, darkMode)} />
             <Text style={{ color: '#448AFF', marginStart: -4 }}> Leer más </Text>
         </View>
         <EventButton darkMode={darkMode} {...props} />

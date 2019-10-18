@@ -9,6 +9,7 @@ import { Animated, View, ScrollView } from 'react-native';
 // Local 
 import Event from './Event';
 import Header from './Header';
+import Theme from '../../app/Theme';
 import { getStart } from '../../scripts/Time';
 
 
@@ -106,12 +107,17 @@ class Schedule extends PureComponent {
 
 }
 
+
 Schedule.propTypes = {
-    darkMode: PropTypes.bool
+    darkMode: PropTypes.bool,
+    look: PropTypes.object,
+    print: PropTypes.func
 }
 
 Schedule.defaultProps = {
-    darkMode: true
+    darkMode: true,
+    look: Theme,
+    print: () => console.warn('Required function: print')
 }
 
 export default Schedule;

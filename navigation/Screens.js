@@ -51,6 +51,7 @@ const SettingsScreen = props => <Settings
 SettingsScreen.propTypes = ScreenTypes;
 
 const ScheduleScreen = props => <Schedule
+    print={props.screenProps.print}
     darkMode={props.screenProps.look.darkMode} 
 />
 

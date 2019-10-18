@@ -6,10 +6,10 @@ import { createSwitchNavigator } from 'react-navigation';
 import { 
     // HomeScreen,
     // LoadingScreen,
-    LoginScreen,
+    // LoginScreen,
     // NewsScreen,
     // PeopleScreen,
-    // ScheduleScreen,
+    ScheduleScreen,
     // SettingsScreen,
     // TestScreen,
 } from './Screens';
@@ -17,10 +17,10 @@ import {
 const routes = {
     // Home: HomeScreen,
     // Loading: LoadingScreen,
-    Login: LoginScreen,
+    // Login: LoginScreen,
     // News: NewsScreen,
     // People: PeopleScreen,
-    // Schedule: ScheduleScreen,
+    Schedule: ScheduleScreen,
     // Settings: SettingsScreen,
     // Test: TestScreen
 }

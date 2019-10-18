@@ -14,6 +14,12 @@ export default {
     darkBackground: ['#141E30', '#243B55'],
 
     // GRADIENT DARK PURPLE
-    darkForeground: ['#141E30', '#243B55']
+    darkForeground: ['#141E30', '#243B55'],
+
+    // ITEM OPACITY 
+    itemOpacity: 0.03,
+
+    // FONT OPACITY 
+    fontOpacity: 0.6
 
 }
