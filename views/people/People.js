@@ -36,6 +36,7 @@ const PeopleLayout = props => <SectionList
     keyExtractor={item => item.key}
     renderItem={getItem(props.darkMode)}
     renderSectionHeader={getSection(props.darkMode)}
+    stickySectionHeadersEnabled
 />
 
 /**

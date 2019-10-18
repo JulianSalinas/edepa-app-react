@@ -60,14 +60,16 @@ Background.propsTypes = {
     darkMode: PropTypes.bool,
     darkPrimary: PropTypes.string,
     darkSecondary: PropTypes.string,
-    onLayout: PropTypes.func
+    onLayout: PropTypes.func,
+    style: PropTypes.object
 }
 
 Background.defaultProps = {
     darkMode: true,
     darkPrimary: '#e96443',
     darkSecondary: '#904e95',
-    onLayout: () => {}
+    onLayout: () => { },
+    style: {}
 }
 
 export default memo(Background);

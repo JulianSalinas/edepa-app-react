@@ -6,8 +6,6 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components/native';
 import { Text, View } from 'react-native';
 
-// Constants
-const SEMI_TRANSPARENT = 'rgba(255, 255, 255, 0.1)';
 
 const StyledView = styled(View)`
     padding: 8px 16px;
@@ -27,7 +25,7 @@ const SectionText = ({ title, darkMode }) =>
 
 const Section = props =>
     <StyledView style={[props.style, {
-        backgroundColor: props.darkMode ? SEMI_TRANSPARENT : '#EEE'
+        backgroundColor: props.darkMode ? '#303C4E' : '#EEE'
     }]}>
         <SectionText {...props} />
     </StyledView>

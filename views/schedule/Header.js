@@ -1,15 +1,15 @@
 // Core
-import React from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
 // Libs 
 import styled from 'styled-components/native';
-import { Text, View } from 'react-native';
+import { Text, View, Animated } from 'react-native';
 
 // Local 
 import Switcher from './Switcher';
 import Background from '../../shared/modder/Background';
-import { getWeekDay, getMonth, getYear } from '../../scripts/Time';
+import { getWeekDay, getMonth, getYear, getDay } from '../../scripts/Time';
 
 
 const StyledTop = styled(View)`
@@ -27,12 +27,12 @@ const TopText = styled(Text)`
     textTransform: uppercase;
 `
 
-const TopView = ({ day }) =>
+const TopView = ({ datetime }) =>
     <StyledTop>
-        <TopText>{day}</TopText>
+        <TopText>{getWeekDay(datetime)}</TopText>
     </StyledTop>
 
-const StyledCenter = styled(View)`
+const StyledCenter = styled(Animated.View)`
     alignItems: center;
     display: flex;
     flexDirection: row;
@@ -46,10 +46,10 @@ const CenterText = styled(Text)`
     letterSpacing: 2.4;
 `
 
-const CenterView = ({ datetime, next, prev }) =>
-    <StyledCenter>
+const CenterView = ({ datetime, next, prev, centerStyle }) =>
+    <StyledCenter style={centerStyle}>
         <Switcher onPress={prev} direction={'left'} />
-        <CenterText>{getWeekDay(datetime)}</CenterText>
+        <CenterText>{getDay(datetime)}</CenterText>
         <Switcher onPress={next} direction={'right'} />
     </StyledCenter>
 
@@ -75,19 +75,71 @@ const BottomView = ({ datetime }) =>
         <BottomText>{`${getMonth(datetime)} ${getYear(datetime)}`}</BottomText>
     </StyledBottom>
 
-const Header = ({ darkPrimary, darkSecondary, ...props }) =>
-    <Background darkMode darkPrimary={darkPrimary} darkSecondary={darkSecondary}>
+const HeaderLayout = props =>
+    <Background
+        darkMode
+        style={props.style}
+        onLayout={props.onHeightLayout}
+        darkPrimary={props.darkPrimary}
+        darkSecondary={props.darkSecondary}>
         <TopView {...props} />
         <CenterView {...props} />
         <BottomView {...props} />
     </Background>
+
+
+class Header extends PureComponent {
+
+    state = {
+        heightH: new Animated.Value(200)
+    }
+
+    onHeightLayout = Animated.event(
+        [{ nativeEvent: { layout: { height: this.state.heightH } } } ]
+    )
+
+    render() {
+
+
+        // const fontScale = this.state.fontScale.interpolate({
+        //     inputRange: [0, 200 - 166],
+        //     outputRange: [1, 0],
+        //     extrapolate: 'clamp'
+        // })
+
+        const fontOpacity = this.state.heightH.interpolate({
+            inputRange: [200 - 45, 200],
+            outputRange: [0.01, 1],
+            extrapolate: 'clamp'
+        });
+
+        const fontScale = this.state.heightH.interpolate({
+            inputRange: [200 - 45, 200],
+            outputRange: [0.9, 1],
+            extrapolate: 'clamp'
+        });
+
+        return <HeaderLayout 
+            {...this.props} 
+            onHeightLayout={this.onHeightLayout}
+            centerStyle={{
+                opacity: fontOpacity,
+                transform: [
+                    { scale: fontScale }
+                ]
+            }}
+        />
+    }
+
+}
 
 Header.propTypes = {
     darkPrimary: PropTypes.string,
     darkSecondary: PropTypes.string,
     datetime: PropTypes.number,
     next: PropTypes.func,
-    prev: PropTypes.func
+    prev: PropTypes.func,
+    style: PropTypes.object
 }
 
 Header.defaultProps = {
@@ -95,7 +147,8 @@ Header.defaultProps = {
     darkSecondary: '#B06AB3',
     datetime: 1570939200000,
     next: () => console.log('Next pressed'),
-    prev: () => console.log('Prev pressed')
+    prev: () => console.log('Prev pressed'),
+    style: {}
 }
 
 export default Header;
