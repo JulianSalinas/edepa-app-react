@@ -1,6 +1,5 @@
-// * Consider these dark background colors too! 
-// * Dark Blue -> '#0F2027' && '#203A43'
-// * Dark Real -> '#141E30' && '#243B55'
+import Gradients from '../colors/Gradients';
+
 
 export default {
     
@@ -11,10 +10,10 @@ export default {
     darkPrimary: '#673AB7',
 
     // GRADIENT DARK REAL 
-    darkBackground: ['#141E30', '#243B55'],
+    darkBackground: Gradients.DARK_REAL,
 
-    // GRADIENT DARK PURPLE
-    darkForeground: ['#4568DC', '#B06AB3'],
+    // GRADIENT VICE CITY 
+    darkForeground: Gradients.KASHMIR,
 
     // ITEM OPACITY (FOR LISTS)
     itemOpacity: 0.03,

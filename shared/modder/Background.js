@@ -12,8 +12,8 @@ import Theme from '../../app/Theme';
 import { gradient } from '../../scripts/Color';
 
 
-const BackgroundImage = props => ([props.style, {
-    backgroundImage: gradient(props.darkBackground[0], props.darkBackground[1])
+const BackgroundImage = ({ style, darkBackground }) => ([style, {
+    backgroundImage: gradient(darkBackground[0], darkBackground[1], darkBackground[2])
 }])
 
 const StyledView = styled(View)`

@@ -4,94 +4,124 @@ import PropTypes from 'prop-types';
 
 // Libs 
 import styled from 'styled-components/native';
-import { Animated, View, ScrollView } from 'react-native';
+import { Animated, View } from 'react-native';
+import { getStatusBarHeight } from 'react-native-status-bar-height';
 
 // Local 
 import Event from './items/Event';
 import Header from './header/Header';
 import Theme from '../../app/Theme';
-import { getStart } from '../../scripts/Time';
+import Gradients from '../../colors/Gradients';
+import { getStart, addTime } from '../../scripts/Time';
 
 
-const StyledView = styled(View)`
-    flex: 1; 
-    display: flex;
-    justify-content: space-between;
+const StyledHeader = styled(Animated.View)`
+    top: 0;
+    left: 0;
+    width: 100%;
+    position: absolute;
 `
 
-const ScheduleView = props =>
-    <StyledView {...props} style={{ flex: 1 }}>
-        <Animated.View style={props.style}>
-            <Header
-                next={props.next}
-                prev={props.prev}
-                datetime={props.datetime}
-                style={{ flex: 1, justifyContent: 'space-between', flexDirection: 'column-reverse' }}
-            />
-        </Animated.View>
-        <ScrollView
-            style={{ flex: 1 }}
+const HeaderStyle = {
+    flex: 1, 
+    justifyContent: 'space-between',
+    flexDirection: 'column-reverse',
+    paddingTop: getStatusBarHeight()
+}
+
+const ScheduleHeader = props => 
+    <StyledHeader style={{ height: props.heightH }}>
+        <Header 
+            next={props.next} 
+            prev={props.prev} 
+            datetime={props.datetime} 
+            foreground={props.foreground} 
+            style={HeaderStyle}/>
+    </StyledHeader>
+
+const StyledLayout = styled(View)`
+    flex: 1; 
+    display: flex;
+`
+
+const ScheduleLayout = props =>
+    <StyledLayout>
+        <Animated.ScrollView
+            onScroll={props.onScroll}
             scrollEventThrottle={16}
-            onScroll={props.onScroll}>
+            contentContainerStyle={{ paddingTop: props.maxH }}>
             <Event darkMode={props.darkMode} eventype={'TALLER'} />
-            <Event darkMode={props.darkMode} eventype={'FERIA'} isEven/>
+            <Event darkMode={props.darkMode} eventype={'FERIA'} isEven />
             <Event darkMode={props.darkMode} eventype={'PONENCIA'} />
-            <Event darkMode={props.darkMode} eventype={'CONFERENCIA'} isEven/>
+            <Event darkMode={props.darkMode} eventype={'CONFERENCIA'} isEven />
             <Event darkMode={props.darkMode} eventype={'TALLER'} />
-            <Event darkMode={props.darkMode} eventype={'CONFERENCIA'} isEven/>
+            <Event darkMode={props.darkMode} eventype={'CONFERENCIA'} isEven />
             <Event darkMode={props.darkMode} eventype={'PONENCIA'} />
-            <Event darkMode={props.darkMode} eventype={'CONFERENCIA'} isEven/>
-        </ScrollView>
-    </StyledView>
+            <Event darkMode={props.darkMode} eventype={'CONFERENCIA'} isEven />
+        </Animated.ScrollView>
+        <ScheduleHeader {...props}/>
+    </StyledLayout>
+
 
 class Schedule extends PureComponent {
 
+    maxH = 200; // 166
+    minH = 45 + getStatusBarHeight();
+
     state = {
         dates: [],
-        index: 0,
-        minH: 45, // 45
-        maxH: 210, // 166
-        scrollY: new Animated.Value(0),
+        colors: Object.values(Gradients),
+        current: 0,
+        scrollY: new Animated.Value(0)
     }
 
     componentDidMount() {
-        this.setState({ dates: [1570939200000, 1571025600000, 1570852800000] })
+        const base = 1570939200000; 
+        const dates = Object.keys(Gradients).map((_, index) => addTime(base, index));
+        this.setState({ dates });
     }
 
     next = () => this.setState(state => {
-        const restart = state.index === state.dates.length - 1;
-        return { index: restart ? 0 : state.index + 1 };
-    })
-
+        const restart = state.current === state.dates.length - 1;
+        return { current: restart ? 0 : state.current + 1 };
+    }, this.foregroundChanged)
+    
     prev = () => this.setState(state => {
-        const restart = state.index === 0;
-        return { index: restart ? state.dates.length - 1 : state.index - 1 };
-    })
+        const restart = state.current === 0;
+        return { current: restart ? state.dates.length - 1 : state.current - 1 };
+    }, this.foregroundChanged)
+
+    foregroundChanged = () => {
+        const colors = Object.keys(Gradients);
+        this.props.print(`Foreground changed to ${colors[this.state.current]}`);
+    }
 
     onScroll = Animated.event(
         [{ nativeEvent: { contentOffset: { y: this.state.scrollY } } }]
     )
 
+    heightH = this.state.scrollY.interpolate({
+        inputRange: [0, this.maxH - this.minH],
+        outputRange: [this.maxH, this.minH],
+        extrapolate: 'clamp'
+    })
+
     render() {
 
-        const { maxH, minH } = this.state; 
+        const { dates, colors, current } = this.state;
+        const foreground = colors[current];
+        const datetime = dates.length > 0 ? dates[current] : getStart();
 
-        const heightH = this.state.scrollY.interpolate({
-            inputRange: [0, maxH - minH],
-            outputRange: [maxH, minH],
-            extrapolate: 'clamp'
-        })
-
-        const { dates, index } = this.state;
-        const datetime = dates.length > 0 ? dates[index] : getStart();
-
-        return <ScheduleView
+        return <ScheduleLayout
             {...this.props}
             next={this.next}
             prev={this.prev}
+            maxH={this.maxH}
+            minH={this.minH}
+            heightH={this.heightH}
             datetime={datetime}
+            foreground={foreground}
             onScroll={this.onScroll}
-            style={{ height: heightH }}
         />
 
     }

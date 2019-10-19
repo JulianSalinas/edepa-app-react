@@ -40,27 +40,40 @@ const StyledCenter = styled(Animated.View)`
     justify-content: space-around;
 `
 
-const CenterText = styled(Text)`
+const CenterText = styled(Animated.Text)`
     color: #FFF;
     font-size: 70;
-    font-weight: 300;
+    font-weight: 700;
     letter-spacing: 2.4;
 `
 
-const Center = ({ datetime, next, prev, centerStyle }) =>
-    <StyledCenter style={centerStyle}>
+const FontOpacity = ({ height }) => height.interpolate({
+    inputRange: [200 - 45 * 2, 200 - 45],
+    outputRange: [0.01, 1],
+    extrapolate: 'clamp'
+})
+
+const FontScale = ({ height }) => height.interpolate({
+    inputRange: [200 - 45, 200],
+    outputRange: [0.7, 1],
+    extrapolate: 'clamp'
+})
+
+const Center = ({ datetime, next, prev, ...props }) =>
+    <StyledCenter style={{ opacity: FontOpacity(props) }}>
         <Switcher onPress={prev} direction={'left'} />
-        <CenterText>{getDay(datetime)}</CenterText>
+        <CenterText style={{ transform: [{ scale: FontScale(props) }] }}>
+            {getDay(datetime)}
+        </CenterText>
         <Switcher onPress={next} direction={'right'} />
     </StyledCenter>
-
 
 const StyledBottom = styled(View)`
     align-items: center;
     background-color: rgba(255, 255, 255, 0.1);
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     padding: 16px;
 `
 
@@ -81,30 +94,28 @@ const Layout = props =>
         darkMode
         style={props.style}
         onLayout={props.onHeightLayout}
-        darkBackground={props.darkForeground}>
+        darkBackground={props.foreground}>
         <Bottom {...props} />
         <Center {...props} />
         <Upper {...props} />
     </Background>
 
 Layout.propTypes = {
-    darkForeground: PropTypes.arrayOf(PropTypes.string),
-    datetime: PropTypes.number,
     next: PropTypes.func,
     prev: PropTypes.func,
     style: PropTypes.object,
-    onHeightLayout: PropTypes.func,
-    centerStyle: PropTypes.object
+    datetime: PropTypes.number,
+    height: PropTypes.object.isRequired,
+    onHeightLayout: PropTypes.func.isRequired,
+    foreground: PropTypes.arrayOf(PropTypes.string),
 }
 
 Layout.defaultProps = {
-    darkForeground: Theme.darkForeground,
+    style: {},
     datetime: 1570939200000,
     next: () => console.log('Next pressed'),
     prev: () => console.log('Prev pressed'),
-    style: {},
-    onHeightLayout: () => console.warn('OnHeightLaout must be implemented'),
-    centerStyle: {}
+    foreground: Theme.foreground,
 }
 
 export default memo(Layout);

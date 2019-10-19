@@ -7,48 +7,25 @@ import { Animated } from 'react-native';
 
 // Local 
 import Layout from './Layout';
+import Theme from '../../../app/Theme';
 
 
 class Header extends PureComponent {
 
     state = {
-        heightH: new Animated.Value(200)
+        height: new Animated.Value(200)
     }
 
     onHeightLayout = Animated.event(
-        [{ nativeEvent: { layout: { height: this.state.heightH } } } ]
+        [{ nativeEvent: { layout: { height: this.state.height } } }]
     )
 
     render() {
 
-
-        // const fontScale = this.state.fontScale.interpolate({
-        //     inputRange: [0, 200 - 166],
-        //     outputRange: [1, 0],
-        //     extrapolate: 'clamp'
-        // })
-
-        const fontOpacity = this.state.heightH.interpolate({
-            inputRange: [200 - 45, 200],
-            outputRange: [0.01, 1],
-            extrapolate: 'clamp'
-        });
-
-        const fontScale = this.state.heightH.interpolate({
-            inputRange: [200 - 45, 200],
-            outputRange: [0.9, 1],
-            extrapolate: 'clamp'
-        });
-
-        return <Layout 
-            {...this.props} 
+        return <Layout
+            {...this.props}
+            height={this.state.height}
             onHeightLayout={this.onHeightLayout}
-            centerStyle={{
-                opacity: fontOpacity,
-                transform: [
-                    { scale: fontScale }
-                ]
-            }}
         />
     }
 
@@ -58,14 +35,16 @@ Header.propTypes = {
     datetime: PropTypes.number,
     next: PropTypes.func,
     prev: PropTypes.func,
-    style: PropTypes.object
+    style: PropTypes.object,
+    foreground: PropTypes.arrayOf(PropTypes.string),
 }
 
 Header.defaultProps = {
+    style: {},
     datetime: 1570939200000,
     next: () => console.log('Next pressed'),
     prev: () => console.log('Prev pressed'),
-    style: {}
+    foreground: Theme.foreground,
 }
 
 export default Header;
