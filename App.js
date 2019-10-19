@@ -1,16 +1,20 @@
+// Core 
 import Main from './app/Main';
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
+// Libs
 import * as Font from 'expo-font';
 import { Asset } from 'expo-asset';
 import { AppLoading } from 'expo';
 import { Ionicons } from '@expo/vector-icons';
 import { Platform, StatusBar, View, YellowBox } from 'react-native';
 
-YellowBox.ignoreWarnings(['Setting a timer', "Warning: Using the", "C:/Users/GB-LT-DESANTLM/"]);
+// Ignore 
+YellowBox.ignoreWarnings(['Setting a timer', 'Warning: Using the']);
 console.disableYellowBox = true;
 
-export default class App extends Component {
+
+export default class App extends PureComponent {
 
     state = {
         isLoadingComplete: false,
@@ -23,9 +27,8 @@ export default class App extends Component {
 
     fonts = {
         ...Ionicons.font,
-        Roboto: require("native-base/Fonts/Roboto.ttf"),
-        Roboto_medium: require("native-base/Fonts/Roboto_medium.ttf"),
-        Ionicons: require("native-base/Fonts/Ionicons.ttf")
+        Roboto: require('native-base/Fonts/Roboto.ttf'),
+        Roboto_medium: require('native-base/Fonts/Roboto_medium.ttf'),
     }
 
     loadResources = async () => {
@@ -43,7 +46,7 @@ export default class App extends Component {
 
     started = () =>
         <View style={{ flex: 1 }}>
-            {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
+            {Platform.OS === 'ios' && <StatusBar barStyle='default' />}
             <Main />
         </View>
 

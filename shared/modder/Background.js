@@ -12,21 +12,15 @@ import Theme from '../../app/Theme';
 import { gradient } from '../../scripts/Color';
 
 
+const BackgroundImage = props => ([props.style, {
+    backgroundImage: gradient(props.darkBackground[0], props.darkBackground[1])
+}])
+
 const StyledView = styled(View)`
     display: flex;
-    flexDirection: column;
-    justifyContent: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
 `
-
-const StyledGradient = styled(LinearGradient)`
-    display: flex;
-    flexDirection: column;
-    justifyContent: flex-start;
-`
-
-const BackgroundImage = props => ([props.style, {
-    backgroundImage: gradient('#234', '#234')
-}])
 
 const LightBackground = props =>
     <StyledView style={props.style}>
@@ -37,6 +31,12 @@ const WebBackground = props =>
     <StyledView onLayout={props.onLayout} style={BackgroundImage(props)}>
         {props.children}
     </StyledView>
+
+const StyledGradient = styled(LinearGradient)`
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+`
 
 const MobileBackground = props =>
     <StyledGradient

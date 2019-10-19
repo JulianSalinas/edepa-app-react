@@ -7,17 +7,16 @@ import styled from 'styled-components/native';
 import { Animated, View, ScrollView } from 'react-native';
 
 // Local 
-import Event from './Event';
-import Header from './Header';
+import Event from './items/Event';
+import Header from './header/Header';
 import Theme from '../../app/Theme';
 import { getStart } from '../../scripts/Time';
 
 
 const StyledView = styled(View)`
-    display: flex;
     flex: 1; 
-    flexDirection: column;
-    justifyContent: space-between;
+    display: flex;
+    justify-content: space-between;
 `
 
 const ScheduleView = props =>
@@ -27,21 +26,21 @@ const ScheduleView = props =>
                 next={props.next}
                 prev={props.prev}
                 datetime={props.datetime}
-                style={{ flex: 1, justifyContent: 'space-between' }}
+                style={{ flex: 1, justifyContent: 'space-between', flexDirection: 'column-reverse' }}
             />
         </Animated.View>
         <ScrollView
             style={{ flex: 1 }}
             scrollEventThrottle={16}
             onScroll={props.onScroll}>
-            <Event darkMode={props.darkMode} type={'odd'} eventype={'TALLER'} />
-            <Event darkMode={props.darkMode} type={'even'} eventype={'FERIA'} />
-            <Event darkMode={props.darkMode} type={'odd'} eventype={'PONENCIA'} />
-            <Event darkMode={props.darkMode} type={'even'} eventype={'CONFERENCIA'} />
-            <Event darkMode={props.darkMode} type={'odd'} eventype={'PONENCIA'} />
-            <Event darkMode={props.darkMode} type={'even'} eventype={'CONFERENCIA'} />
-            <Event darkMode={props.darkMode} type={'odd'} eventype={'PONENCIA'} />
-            <Event darkMode={props.darkMode} type={'even'} eventype={'CONFERENCIA'} />
+            <Event darkMode={props.darkMode} eventype={'TALLER'} />
+            <Event darkMode={props.darkMode} eventype={'FERIA'} isEven/>
+            <Event darkMode={props.darkMode} eventype={'PONENCIA'} />
+            <Event darkMode={props.darkMode} eventype={'CONFERENCIA'} isEven/>
+            <Event darkMode={props.darkMode} eventype={'TALLER'} />
+            <Event darkMode={props.darkMode} eventype={'CONFERENCIA'} isEven/>
+            <Event darkMode={props.darkMode} eventype={'PONENCIA'} />
+            <Event darkMode={props.darkMode} eventype={'CONFERENCIA'} isEven/>
         </ScrollView>
     </StyledView>
 
@@ -72,14 +71,6 @@ class Schedule extends PureComponent {
     onScroll = Animated.event(
         [{ nativeEvent: { contentOffset: { y: this.state.scrollY } } }]
     )
-
-    onMaxHeightLayout = event => this.setState({
-        maxH: event.nativeEvent.layout.height
-    }, () => console.log(`Max Height Fixed: ${this.state.maxH}`))
-
-    onMinHeightLayout = event => this.setState({
-        minH: event.nativeEvent.layout.height
-    }, () => console.log(`Min Height Fixed: ${this.state.minH}`))
 
     render() {
 

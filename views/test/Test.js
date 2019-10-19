@@ -6,11 +6,11 @@ import PropTypes from 'prop-types';
 import { View } from 'react-native';
 
 // Locals
-import Item from '../../shared/common/Item';
-import Section from '../../shared/common/Section';
-import Event from '../schedule/Event';
-import Decoration from '../schedule/Decoration';
-import Edepa from '../../shared/unique/Edepa';
+import Item from '../people/Person';
+import Section from '../../shared/Section';
+import Event from '../schedule/items/Event';
+import Decoration from '../schedule/items/Sideway';
+import Edepa from '../../shared/Edepa';
 import Background from '../../shared/modder/Background';
 
 const person = {

@@ -7,7 +7,7 @@ import styled from 'styled-components/native';
 import { View } from 'react-native';
 
 // Local 
-import Logo from '../../shared/unique/Edepa';
+import Logo from '../../shared/Edepa';
 import Google from '../../shared/buttons/Google';
 import Facebook from '../../shared/buttons/Facebook';
 
@@ -15,8 +15,8 @@ import Facebook from '../../shared/buttons/Facebook';
 const StyledLogin = styled(View)`
     flex: 1;
     display: flex;
-    alignItems: center;
-    justifyContent: center;
+    align-items: center;
+    justify-content: center;
 `
 
 const Layout = props =>

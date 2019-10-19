@@ -2,38 +2,19 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 
+// Libs
 import styled from 'styled-components/native';
-import { Text, View } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
+import { Text, View } from 'react-native';
 
 
 const buttonShadow = {
+    elevation: 5,
     shadowColor: "#000",
-    shadowOffset: {
-        width: 0,
-        height: 2,
-    },
-    shadowOpacity: 0.25,
     shadowRadius: 3.84,
-    elevation: 5
+    shadowOpacity: 0.25,
+    shadowOffset: { width: 0, height: 2 }
 }
-
-const StyledButton = styled(View)`
-    height: 48;
-    borderRadius: 24;
-    paddingHorizontal: 24;
-    display: flex;
-    alignItems: center;
-    flexDirection: row;
-    justifyContent: flex-start;
-    boxShadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-`
-
-const StyledText = styled(Text)`
-    fontSize: 10;
-    letterSpacing: 2.4;
-    textTransform: uppercase;
-`
 
 const ButtonIcon = ({ color }) =>
     <FontAwesome
@@ -43,10 +24,27 @@ const ButtonIcon = ({ color }) =>
         style={{ marginEnd: 16 }}
     />
 
+const StyledText = styled(Text)`
+    font-size: 10;
+    letter-spacing: 2.4;
+    text-transform: uppercase;
+`
+
 const ButtonText = ({ color }) =>
     <StyledText style={{ color }}>
         Sign in with Google
     </StyledText>
+
+const StyledButton = styled(View)`
+    height: 48;
+    border-radius: 24;
+    padding-left: 24;
+    padding-right: 24;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+`
 
 const ButtonView = ({ backgroundColor, ...props }) =>
     <StyledButton

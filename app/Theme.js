@@ -14,12 +14,12 @@ export default {
     darkBackground: ['#141E30', '#243B55'],
 
     // GRADIENT DARK PURPLE
-    darkForeground: ['#141E30', '#243B55'],
+    darkForeground: ['#4568DC', '#B06AB3'],
 
-    // ITEM OPACITY 
+    // ITEM OPACITY (FOR LISTS)
     itemOpacity: 0.03,
 
-    // FONT OPACITY 
+    // FONT OPACITY (FOR FONTS)
     fontOpacity: 0.6
 
 }

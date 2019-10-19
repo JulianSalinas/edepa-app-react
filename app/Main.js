@@ -116,7 +116,7 @@ export default class Main extends PureComponent {
     print = message => {
         Main.COMMAND_COUNT += 1;
         const output = `%c[${Main.COMMAND_COUNT}]: %c${message}`;
-        console.log(output, 'color: DodgerBlue', 'color: Orange');
+        console.log(output, 'color: DodgerBlue', 'color: Purple');
     }
 
     /**

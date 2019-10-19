@@ -7,36 +7,12 @@ import styled from 'styled-components/native';
 import { Text, View } from 'react-native';
 
 //Local 
-import Avatar from './Avatar';
+import Avatar from '../../shared/Avatar';
 
-
-const StyledItem = styled(View)`
-    paddingRight: 16px;
-    paddingLeft: 16px;
-    paddingBottom: 8px;
-`
-
-const StyledRow = styled(View)`
-    display: flex;
-    flexDirection: row;
-    justifyContent: flex-start;
-    alignItems: center;
-`
-
-const StyledCol = styled(View)`
-    display: flex;
-    padding: 8px 12px;
-    flexDirection: column;
-`
 
 const StyledTitle = styled(Text)`
-    fontSize: 14;
-    fontWeight: bold;
-`
-
-const StyledSubtitle = styled(Text)`
-    fontSize: 12;
-    fontWeight: 300;
+    font-size: 14;
+    font-weight: bold;
 `
 
 const ItemTitle = ({ title, darkMode }) => 
@@ -44,10 +20,21 @@ const ItemTitle = ({ title, darkMode }) =>
         {title}
     </StyledTitle>
 
+const StyledSubtitle = styled(Text)`
+    font-size: 12;
+    font-weight: 300;
+`
+
 const ItemSubtitle = ({ subtitle, darkMode }) => 
     <StyledSubtitle style={{ color: darkMode ? '#FFF' : '#000'}}>
         {subtitle}
     </StyledSubtitle>
+
+const StyledCol = styled(View)`
+    display: flex;
+    padding: 8px 12px;
+    flex-direction: column;
+`
 
 const ItemCol = props => 
     <StyledCol>
@@ -55,11 +42,24 @@ const ItemCol = props =>
         <ItemSubtitle {...props}/>
     </StyledCol>
 
+const StyledRow = styled(View)`
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+`
+
 const ItemRow = props => 
     <StyledRow>
         <Avatar size={36} title={props.title}/>
         <ItemCol {...props}/>
     </StyledRow>
+
+const StyledItem = styled(View)`
+    padding-right: 16px;
+    padding-left: 16px;
+    padding-bottom: 8px;
+`
 
 const Item = props =>
     <StyledItem>

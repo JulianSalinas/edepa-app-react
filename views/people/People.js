@@ -7,8 +7,8 @@ import { SectionList } from 'react-native';
 
 // Local 
 import { PersonTypes } from '../../app/Types';
-import Item from '../../shared/common/Item';
-import Section from '../../shared/common/Section';
+import Item from './Person';
+import Section from '../../shared/Section';
 import { groupBy } from '../../scripts/Utils';
 
 
