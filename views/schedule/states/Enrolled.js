@@ -20,8 +20,8 @@ const ClickableEnrolled = styled(View)`
     width: 40;
     height: 40;
     display: flex;
-    alignItems: center;
-    justifyContent: flex-end; 
+    align-items: center;
+    justify-content: flex-end; 
     transform: translateY(2px); 
 `
 
@@ -29,8 +29,8 @@ const TouchableEnrolled = styled(TouchableWithoutFeedback)`
     width: 40;
     height: 40;
     display: flex;
-    alignItems: center;
-    justifyContent: flex-end; 
+    align-items: center;
+    justify-content: flex-end; 
     transform: translateY(2px); 
 `
 
@@ -68,7 +68,8 @@ class Enrolled extends PureComponent {
 
     spring = {
         toValue: 1,
-        friction: 1
+        friction: 1,
+        useNativeDriver: true
     }
 
     onPress = () => {

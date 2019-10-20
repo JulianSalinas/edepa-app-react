@@ -10,10 +10,10 @@ export default {
     darkPrimary: '#673AB7',
 
     // GRADIENT DARK REAL 
-    darkBackground: Gradients.DARK_REAL,
+    darkBackground: Gradients.CARBON,
 
-    // GRADIENT VICE CITY 
-    darkForeground: Gradients.KASHMIR,
+    // GRADIENT VICE CITY, RED_SUNSET
+    darkForeground: Gradients.DARK_REAL,
 
     // ITEM OPACITY (FOR LISTS)
     itemOpacity: 0.03,

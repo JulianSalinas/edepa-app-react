@@ -1,4 +1,5 @@
 export default {
+    CARBON: ['#1C1C1C', '#101010'],
     CRIMSON_TIDE: ['#642B73', '#C6426E'], // Cool 
     CRISTAL_CLEAR: ['#159957', '#155799'], // Aceptable
     VICE_CITY: ['#4568DC', '#B06AB3'], // Cool 
@@ -12,5 +13,11 @@ export default {
     MEMARIANI: ['#aa4b6b', '#6b6b83', '#3b8d99'], // Aceptable
     LAWREMCIUM: ['#0f0c29', '#302b63', '#24243e'], // Aceptable
     KASHMIR: ['#614385', '#516395'], // Cool 
+    SELENIUM: ['#3C3B3F', '#605C3C'], // Ugly
+    DEEP_SPACE: ['#000000', '#434343'], // Cool 
+    MIDNIGHT_CITY: ['#232526', '#414345'], // Cool 
+    SOMEONE_TIE: ['#28313B', '#485461'], // Ugly 
+    NIGHT_SHIFT: ['#2b4162', '#12100e'], // Ugly
     DARK_REAL: ['#141E30', '#243B55'],  // Transparent
+    MOONLIT_ASTEROID: ['#0F2027', '#203A43', '#2C5364']
 }

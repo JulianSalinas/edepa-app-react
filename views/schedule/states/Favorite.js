@@ -20,16 +20,16 @@ const ClickableFavorite = styled(View)`
     width: 40;
     height: 40;
     display: flex;
-    alignItems: center;
-    justifyContent: flex-end; 
+    align-items: center;
+    justify-content: flex-end; 
 `
 
 const TouchableFavorite = styled(TouchableWithoutFeedback)`
     width: 40;
     height: 40;
     display: flex;
-    alignItems: center;
-    justifyContent: flex-end; 
+    align-items: center;
+    justify-content: flex-end; 
 `
 
 const FavoriteIcon = ({ darkMode, isActive }) =>
@@ -67,7 +67,8 @@ class Favorite extends PureComponent {
     timing = {
         toValue: 1,
         duration: 500,
-        easing: Easing.linear
+        easing: Easing.linear,
+        useNativeDriver: true
     }
 
     interpolate = {

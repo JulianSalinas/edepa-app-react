@@ -4,14 +4,32 @@ import PropTypes from 'prop-types';
 
 // Libs 
 import styled from 'styled-components/native';
-import { Text, View, Animated } from 'react-native';
+import { View, Animated } from 'react-native';
+import GestureRecognizer from 'react-native-swipe-gestures';
 
 // Local 
-import Switcher from './Switcher';
+import Switcher from './Switch';
 import Theme from '../../../app/Theme';
 import Background from '../../../shared/modder/Background';
+import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 import { getWeekDay, getMonth, getYear, getDay } from '../../../scripts/Time';
 
+
+const FontScale = ({ height }) => height.interpolate({
+    inputRange: [200 - 45, 200],
+    outputRange: [0.7, 1],
+    extrapolate: 'clamp'
+})
+
+const Transform = props => ([
+    { translateX: props.moveAnimation.x },
+    { translateY: props.moveAnimation.y }
+])
+
+const TextStyle = props => ({
+    opacity: props.opacityAnimation,
+    transform: Transform(props)
+})
 
 const StyledTop = styled(View)`
     align-items: center;
@@ -20,7 +38,7 @@ const StyledTop = styled(View)`
     justify-content: center;
 `
 
-const TopText = styled(Text)`
+const TopText = styled(Animated.Text)`
     color: #FFF;
     font-size: 10;
     letter-spacing: 2.4;
@@ -28,9 +46,11 @@ const TopText = styled(Text)`
     text-transform: uppercase;
 `
 
-const Upper = ({ datetime }) =>
+const Upper = ({ datetime, ...props }) =>
     <StyledTop>
-        <TopText>{getWeekDay(datetime)}</TopText>
+        <TopText style={TextStyle(props)}>
+            {getWeekDay(datetime)}
+        </TopText>
     </StyledTop>
 
 const StyledCenter = styled(Animated.View)`
@@ -47,28 +67,27 @@ const CenterText = styled(Animated.Text)`
     letter-spacing: 2.4;
 `
 
-const FontOpacity = ({ height }) => height.interpolate({
+const CenterOpacity = ({ height }) => height.interpolate({
     inputRange: [200 - 45 * 2, 200 - 45],
     outputRange: [0.01, 1],
     extrapolate: 'clamp'
 })
 
-const FontScale = ({ height }) => height.interpolate({
-    inputRange: [200 - 45, 200],
-    outputRange: [0.7, 1],
-    extrapolate: 'clamp'
+const CenterStyle = props => ({
+    opacity: props.opacityAnimation,
+    transform: [...Transform(props), { scale: FontScale(props) }]
 })
 
 const Center = ({ datetime, next, prev, ...props }) =>
-    <StyledCenter style={{ opacity: FontOpacity(props) }}>
+    <StyledCenter style={{ opacity: CenterOpacity(props) }}>
         <Switcher onPress={prev} direction={'left'} />
-        <CenterText style={{ transform: [{ scale: FontScale(props) }] }}>
+        <CenterText style={CenterStyle(props)}>
             {getDay(datetime)}
         </CenterText>
         <Switcher onPress={next} direction={'right'} />
     </StyledCenter>
 
-const StyledBottom = styled(View)`
+const StyledBottom = styled(TouchableWithoutFeedback)`
     align-items: center;
     background-color: rgba(255, 255, 255, 0.1);
     display: flex;
@@ -77,16 +96,18 @@ const StyledBottom = styled(View)`
     padding: 16px;
 `
 
-const BottomText = styled(Text)`
+const BottomText = styled(Animated.Text)`
     color: #FFF;
     font-size: 10;
     letter-spacing: 2.4;
     text-transform: uppercase;
 `
 
-const Bottom = ({ datetime }) =>
-    <StyledBottom>
-        <BottomText>{`${getMonth(datetime)} ${getYear(datetime)}`}</BottomText>
+const Bottom = ({ datetime, next, ...props }) =>
+    <StyledBottom onPress={next}>
+        <BottomText style={TextStyle(props)}>
+            {`${getDay(datetime)}° ${getMonth(datetime)}, ${getYear(datetime)}`}
+        </BottomText>
     </StyledBottom>
 
 const Layout = props =>
@@ -95,9 +116,14 @@ const Layout = props =>
         style={props.style}
         onLayout={props.onHeightLayout}
         darkBackground={props.foreground}>
-        <Bottom {...props} />
-        <Center {...props} />
-        <Upper {...props} />
+        <GestureRecognizer
+            style={props.style}
+            onSwipeLeft={props.next}
+            onSwipeRight={props.prev}>
+            <Bottom {...props} />
+            <Center {...props} />
+            <Upper {...props} />
+        </GestureRecognizer>
     </Background>
 
 Layout.propTypes = {
@@ -108,6 +134,8 @@ Layout.propTypes = {
     height: PropTypes.object.isRequired,
     onHeightLayout: PropTypes.func.isRequired,
     foreground: PropTypes.arrayOf(PropTypes.string),
+    moveAnimation: PropTypes.any.isRequired,
+    opacityAnimation: PropTypes.any.isRequired,
 }
 
 Layout.defaultProps = {

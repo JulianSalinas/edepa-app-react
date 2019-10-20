@@ -84,17 +84,12 @@ class Schedule extends PureComponent {
     next = () => this.setState(state => {
         const restart = state.current === state.dates.length - 1;
         return { current: restart ? 0 : state.current + 1 };
-    }, this.foregroundChanged)
+    })
     
     prev = () => this.setState(state => {
         const restart = state.current === 0;
         return { current: restart ? state.dates.length - 1 : state.current - 1 };
-    }, this.foregroundChanged)
-
-    foregroundChanged = () => {
-        const colors = Object.keys(Gradients);
-        this.props.print(`Foreground changed to ${colors[this.state.current]}`);
-    }
+    })
 
     onScroll = Animated.event(
         [{ nativeEvent: { contentOffset: { y: this.state.scrollY } } }]
@@ -108,8 +103,7 @@ class Schedule extends PureComponent {
 
     render() {
 
-        const { dates, colors, current } = this.state;
-        const foreground = colors[current];
+        const { dates, current } = this.state;
         const datetime = dates.length > 0 ? dates[current] : getStart();
 
         return <ScheduleLayout
@@ -120,7 +114,6 @@ class Schedule extends PureComponent {
             minH={this.minH}
             heightH={this.heightH}
             datetime={datetime}
-            foreground={foreground}
             onScroll={this.onScroll}
         />
 
