@@ -1,10 +1,10 @@
 // Core
-import React, { memo } from 'react';
+import React, { memo, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
 // Libs 
 import styled from 'styled-components/native';
-import { View, Animated } from 'react-native';
+import { View, Animated, Text } from 'react-native';
 import GestureRecognizer from 'react-native-swipe-gestures';
 
 // Local 
@@ -79,13 +79,16 @@ const CenterStyle = props => ({
 })
 
 const Center = ({ datetime, next, prev, ...props }) =>
-    <StyledCenter style={{ opacity: CenterOpacity(props) }}>
-        <Switcher onPress={prev} direction={'left'} />
-        <CenterText style={CenterStyle(props)}>
-            {getDay(datetime)}
-        </CenterText>
-        <Switcher onPress={next} direction={'right'} />
-    </StyledCenter>
+    <Animated.View style={{ marginBottom: 16, opacity: CenterOpacity(props) }}>
+        <StyledCenter style={{  }}>
+            <Switcher onPress={prev} direction={'left'} />
+            <CenterText style={CenterStyle(props)}>
+                {getDay(datetime)}
+            </CenterText>
+            <Switcher onPress={next} direction={'right'} />
+        </StyledCenter>
+        <FilterOptions {...props}/>
+    </Animated.View>
 
 const StyledBottom = styled(TouchableWithoutFeedback)`
     align-items: center;
@@ -109,6 +112,80 @@ const Bottom = ({ datetime, next, ...props }) =>
             {`${getDay(datetime)}° ${getMonth(datetime)}, ${getYear(datetime)}`}
         </BottomText>
     </StyledBottom>
+
+const buttonShadow = {
+    elevation: 5,
+    shadowColor: "#000",
+    shadowRadius: 3.84,
+    shadowOpacity: 0.25,
+    shadowOffset: { width: 0, height: 2 }
+}
+
+const ToggleFilter = props => 
+    <TouchableWithoutFeedback onPressOut={props.onPress} style={[{
+        minWidth: 96,
+        display: 'flex',
+        alignItems: 'center',
+        backgroundColor: props.isFocused ? '#FFF' : '#FFFFFF00',
+        borderRadius: 48,
+        paddingVertical: 4,
+        paddingHorizontal: 16,
+    }, props.isFocused ? buttonShadow : {} ]}>
+        <BottomText style={{ 
+            color: props.isFocused ? '#000' : '#FFF'
+        }}>
+            { props.text }
+        </BottomText>
+
+    </TouchableWithoutFeedback>
+
+const Filter = props => 
+    <View style={{
+        display: 'flex',
+        alignItems: 'center',
+    }}>
+        <View style={{
+            display: 'flex',
+            flexDirection: 'row',
+            borderRadius: 48,
+        }}>
+            {
+                props.filters.map((filter, index) => 
+                    <ToggleFilter 
+                        key={filter} 
+                        text={filter} 
+                        isFocused={index === props.active} 
+                        onPress={() => props.onPress(index)}/>
+                )
+            }
+        </View>
+    </View>
+
+
+class FilterOptions extends PureComponent {
+
+    state = {
+        active: 0,
+        filters: ['Todos', 'Favoritos']
+    }
+
+    onPress = index => {
+        console.log('Toggle pressed')
+        this.setState({ 
+            active: index 
+        })
+    }
+
+    render() {
+        return <Filter 
+            {...this.props}
+            onPress={this.onPress}
+            active={this.state.active} 
+            filters={this.state.filters} 
+        />
+    }
+
+}
 
 const Layout = props =>
     <Background

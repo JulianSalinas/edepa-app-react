@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Expo Example",
-    "slug": "expo-playground",
+    "slug": "edepa-test",
     "privacy": "public",
     "sdkVersion": "35.0.0",
     "platforms": [
@@ -25,6 +25,8 @@
     ],
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "description": "This is my first screen in react native. It is just to show it to my partners ",
+    "githubUrl": "https://github.com/JulianSalinas/edepa-app-react"
   }
 }

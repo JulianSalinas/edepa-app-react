@@ -11,7 +11,7 @@ import { getStatusBarHeight } from 'react-native-status-bar-height';
 import Event from './items/Event';
 import Header from './header/Header';
 import Theme from '../../app/Theme';
-import Gradients from '../../colors/Gradient';
+import Gradient from '../../colors/Gradient';
 import { getStart, addTime } from '../../scripts/Time';
 
 
@@ -65,19 +65,19 @@ const ScheduleLayout = props =>
 
 class Schedule extends PureComponent {
 
-    maxH = 200; // 166
+    maxH = 220; // 166
     minH = 45 + getStatusBarHeight();
 
     state = {
         dates: [],
-        colors: Object.values(Gradients),
+        colors: Object.values(Gradient),
         current: 0,
         scrollY: new Animated.Value(0)
     }
 
     componentDidMount() {
         const base = 1570939200000; 
-        const dates = Object.keys(Gradients).map((_, index) => addTime(base, index));
+        const dates = Object.keys(Gradient).map((_, index) => addTime(base, index));
         this.setState({ dates });
     }
 
@@ -115,6 +115,7 @@ class Schedule extends PureComponent {
             heightH={this.heightH}
             datetime={datetime}
             onScroll={this.onScroll}
+            foreground={this.props.darkMode ? Gradient.KASHMIR : Gradient.CRIMSON_TIDE}
         />
 
     }
