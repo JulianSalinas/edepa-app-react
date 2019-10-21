@@ -3,14 +3,14 @@ import React from 'react';
 
 // Local 
 import { ScreenTypes } from '../app/Types';
-import Home from '../views/home/Home';
-import Loading from '../views/loading/Loading';
-import Login from '../views/login/Login';
-import News from '../views/news/News';
-import People from '../views/people/People';
-import Settings from '../views/settings/Settings';
-import Schedule from '../views/schedule/Schedule';
-import Test from '../views/test/Test';
+import Home from './home/Home';
+import Loading from './loading/Loading';
+import Login from './login/Login';
+import News from './news/News';
+import People from './people/People';
+import Settings from './settings/Settings';
+import Schedule from './schedule/Schedule';
+import Test from './test/Test';
 
 const HomeScreen = props => <Home
     darkMode={props.screenProps.look.darkMode} 

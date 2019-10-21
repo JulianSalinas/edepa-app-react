@@ -12,7 +12,7 @@ import {
     ScheduleScreen,
     // SettingsScreen,
     // TestScreen,
-} from './Screens';
+} from '../../screens/Screens';
 
 const routes = {
     // Home: HomeScreen,

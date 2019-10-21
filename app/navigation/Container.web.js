@@ -12,7 +12,9 @@ import {
     ScheduleScreen,
     // SettingsScreen,
     // TestScreen,
-} from './Screens';
+} from '../../screens/Screens';
+
+import Bottom from './Navigation';
 
 const routes = {
     // Home: HomeScreen,
@@ -23,6 +25,7 @@ const routes = {
     Schedule: ScheduleScreen,
     // Settings: SettingsScreen,
     // Test: TestScreen
+    // TabNavigation: Bottom
 }
 
 

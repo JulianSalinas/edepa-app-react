@@ -1,9 +1,9 @@
 import React from 'react';
 
-import Home from '../screens/home/HomeScreen';
-import News from '../screens/news/NewsScreen';
-import People from '../screens/people/PeopleScreen';
-import Settings from '../screens/settings/SettingsScreen';
+import Home from '../../screens/home/Home';
+import Settings from '../../screens/settings/Settings';
+import Schedule from '../../screens/schedule/Schedule';
+import News from '../../screens/news/News';
 
 import { Platform } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
@@ -55,9 +55,34 @@ SettingsStack.navigationOptions = {
 
 SettingsStack.path = '';
 
+
+const ScheduleStack = createStackNavigator({ Schedule }, config );
+
+ScheduleStack.navigationOptions = {
+  tabBarLabel: 'Schedule',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-calendar' : 'md-calendar'} />
+  ),
+};
+
+ScheduleStack.path = '';
+
+const NewsStack = createStackNavigator({ News }, config );
+
+NewsStack.navigationOptions = {
+  tabBarLabel: 'Schedule',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-calendar' : 'md-calendar'} />
+  )
+};
+
+NewsStack.path = '';
+
 const tabNavigator = createBottomTabNavigator({
   HomeStack,
   SettingsStack,
+  NewsStack,
+  ScheduleStack,
 });
 
 tabNavigator.path = '';

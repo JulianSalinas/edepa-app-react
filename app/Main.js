@@ -6,7 +6,7 @@ import { Platform } from 'react-native';
 
 // Local 
 import Firebase from '../services/Firebase';
-import Navigator from '../navigation/Navigator';
+import Container from './navigation/Container';
 import Modder from '../shared/modder/Modder';
 import Theme from './Theme';
 
@@ -134,7 +134,7 @@ export default class Main extends PureComponent {
 
         return (
             <Modder {...params.look} style={{ flex: 1 }}>
-                <Navigator screenProps={params} />
+                <Container screenProps={params} />
             </Modder>
         );
 

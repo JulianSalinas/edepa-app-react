@@ -11,7 +11,7 @@ import { getStatusBarHeight } from 'react-native-status-bar-height';
 import Event from './items/Event';
 import Header from './header/Header';
 import Theme from '../../app/Theme';
-import Gradients from '../../colors/Gradients';
+import Gradients from '../../colors/Gradient';
 import { getStart, addTime } from '../../scripts/Time';
 
 

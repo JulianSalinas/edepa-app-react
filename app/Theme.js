@@ -1,4 +1,4 @@
-import Gradients from '../colors/Gradients';
+import Gradient from '../colors/Gradient';
 
 
 export default {
@@ -10,10 +10,10 @@ export default {
     darkPrimary: '#673AB7',
 
     // GRADIENT DARK REAL 
-    darkBackground: Gradients.CARBON,
+    darkBackground: Gradient.CARBON,
 
     // GRADIENT VICE CITY, RED_SUNSET
-    darkForeground: Gradients.DARK_REAL,
+    darkForeground: Gradient.DARK_REAL,
 
     // ITEM OPACITY (FOR LISTS)
     itemOpacity: 0.03,
