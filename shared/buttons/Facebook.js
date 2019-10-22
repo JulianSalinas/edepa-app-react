@@ -8,7 +8,7 @@ import { Entypo } from '@expo/vector-icons';
 import { Text, View } from 'react-native';
 
 
-const buttonShadow = {
+const ButtonShadow = {
     elevation: 5,
     shadowColor: "#000",
     shadowRadius: 3.84,
@@ -49,7 +49,7 @@ const StyledButton = styled(View)`
 const ButtonView = ({ backgroundColor, ...props }) =>
     <StyledButton
         onClick={props.onClick}
-        style={[props.style, { backgroundColor }, buttonShadow]}>
+        style={[props.style, { backgroundColor }, ButtonShadow]}>
         <ButtonIcon color={props.color} />
         <ButtonText color={props.color} />
     </StyledButton>

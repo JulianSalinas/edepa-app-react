@@ -11,6 +11,7 @@ import GestureRecognizer from 'react-native-swipe-gestures';
 import Switcher from './Switch';
 import Theme from '../../../app/Theme';
 import Background from '../../../shared/modder/Background';
+import Filter from '../../../shared/Filter';
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 import { getWeekDay, getMonth, getYear, getDay } from '../../../scripts/Time';
 
@@ -87,7 +88,14 @@ const Center = ({ datetime, next, prev, ...props }) =>
             </CenterText>
             <Switcher onPress={next} direction={'right'} />
         </StyledCenter>
-        <FilterOptions {...props}/>
+        <View style={{
+            display: 'flex',
+            flexDirection: 'row', 
+            justifyContent: 'center'
+            // backgroundColor: '#F12'
+        }}>
+            <Filter options={['Todos', 'Favoritos']} onActiveChanged={index => console.log(`Index changed to ${index}`)}/>
+        </View>
     </Animated.View>
 
 const StyledBottom = styled(TouchableWithoutFeedback)`
@@ -112,80 +120,6 @@ const Bottom = ({ datetime, next, ...props }) =>
             {`${getDay(datetime)}° ${getMonth(datetime)}, ${getYear(datetime)}`}
         </BottomText>
     </StyledBottom>
-
-const buttonShadow = {
-    elevation: 5,
-    shadowColor: "#000",
-    shadowRadius: 3.84,
-    shadowOpacity: 0.25,
-    shadowOffset: { width: 0, height: 2 }
-}
-
-const ToggleFilter = props => 
-    <TouchableWithoutFeedback onPressOut={props.onPress} style={[{
-        minWidth: 96,
-        display: 'flex',
-        alignItems: 'center',
-        backgroundColor: props.isFocused ? '#FFF' : '#FFFFFF00',
-        borderRadius: 48,
-        paddingVertical: 4,
-        paddingHorizontal: 16,
-    }, props.isFocused ? buttonShadow : {} ]}>
-        <BottomText style={{ 
-            color: props.isFocused ? '#000' : '#FFF'
-        }}>
-            { props.text }
-        </BottomText>
-
-    </TouchableWithoutFeedback>
-
-const Filter = props => 
-    <View style={{
-        display: 'flex',
-        alignItems: 'center',
-    }}>
-        <View style={{
-            display: 'flex',
-            flexDirection: 'row',
-            borderRadius: 48,
-        }}>
-            {
-                props.filters.map((filter, index) => 
-                    <ToggleFilter 
-                        key={filter} 
-                        text={filter} 
-                        isFocused={index === props.active} 
-                        onPress={() => props.onPress(index)}/>
-                )
-            }
-        </View>
-    </View>
-
-
-class FilterOptions extends PureComponent {
-
-    state = {
-        active: 0,
-        filters: ['Todos', 'Favoritos']
-    }
-
-    onPress = index => {
-        console.log('Toggle pressed')
-        this.setState({ 
-            active: index 
-        })
-    }
-
-    render() {
-        return <Filter 
-            {...this.props}
-            onPress={this.onPress}
-            active={this.state.active} 
-            filters={this.state.filters} 
-        />
-    }
-
-}
 
 const Layout = props =>
     <Background

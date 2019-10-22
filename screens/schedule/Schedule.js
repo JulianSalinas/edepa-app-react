@@ -65,7 +65,7 @@ const ScheduleLayout = props =>
 
 class Schedule extends PureComponent {
 
-    maxH = 220; // 166
+    maxH = 220;
     minH = 45 + getStatusBarHeight();
 
     state = {
