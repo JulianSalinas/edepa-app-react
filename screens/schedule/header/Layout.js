@@ -1,5 +1,5 @@
 // Core
-import React, { memo, PureComponent } from 'react';
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 
 // Libs 
@@ -10,11 +10,16 @@ import GestureRecognizer from 'react-native-swipe-gestures';
 // Local 
 import Switcher from './Switch';
 import Theme from '../../../app/Theme';
-import Background from '../../../shared/modder/Background';
 import Filter from '../../../shared/Filter';
+import Background from '../../../shared/modder/Background';
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 import { getWeekDay, getMonth, getYear, getDay } from '../../../scripts/Time';
 
+
+const TextStyle = props => ({
+    opacity: props.opacityAnimation,
+    transform: Movement(props)
+})
 
 const FontScale = ({ height }) => height.interpolate({
     inputRange: [200 - 45, 200],
@@ -22,24 +27,12 @@ const FontScale = ({ height }) => height.interpolate({
     extrapolate: 'clamp'
 })
 
-const Transform = props => ([
+const Movement = props => ([
     { translateX: props.moveAnimation.x },
     { translateY: props.moveAnimation.y }
 ])
 
-const TextStyle = props => ({
-    opacity: props.opacityAnimation,
-    transform: Transform(props)
-})
-
-const StyledTop = styled(View)`
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-`
-
-const TopText = styled(Animated.Text)`
+const StyledUpperText = styled(Animated.Text)`
     color: #FFF;
     font-size: 10;
     letter-spacing: 2.4;
@@ -47,26 +40,22 @@ const TopText = styled(Animated.Text)`
     text-transform: uppercase;
 `
 
-const Upper = ({ datetime, ...props }) =>
-    <StyledTop>
-        <TopText style={TextStyle(props)}>
-            {getWeekDay(datetime)}
-        </TopText>
-    </StyledTop>
+const UpperText = props =>
+    <StyledUpperText style={TextStyle(props)}>
+        {getWeekDay(props.datetime)}
+    </StyledUpperText>
 
-const StyledCenter = styled(Animated.View)`
+const StyledUpper = styled(View)`
     align-items: center;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
 `
 
-const CenterText = styled(Animated.Text)`
-    color: #FFF;
-    font-size: 70;
-    font-weight: 700;
-    letter-spacing: 2.4;
-`
+const UpperView = props =>
+    <StyledUpper>
+        <UpperText {...props} />
+    </StyledUpper>
 
 const CenterOpacity = ({ height }) => height.interpolate({
     inputRange: [200 - 45 * 2, 200 - 45],
@@ -74,52 +63,91 @@ const CenterOpacity = ({ height }) => height.interpolate({
     extrapolate: 'clamp'
 })
 
-const CenterStyle = props => ({
+const CenterTextStyle = props => ({
     opacity: props.opacityAnimation,
-    transform: [...Transform(props), { scale: FontScale(props) }]
+    transform: [...Movement(props), { scale: FontScale(props) }]
 })
 
-const Center = ({ datetime, next, prev, ...props }) =>
-    <Animated.View style={{ marginBottom: 16, opacity: CenterOpacity(props) }}>
-        <StyledCenter style={{  }}>
-            <Switcher onPress={prev} direction={'left'} />
-            <CenterText style={CenterStyle(props)}>
-                {getDay(datetime)}
-            </CenterText>
-            <Switcher onPress={next} direction={'right'} />
-        </StyledCenter>
-        <View style={{
-            display: 'flex',
-            flexDirection: 'row', 
-            justifyContent: 'center'
-            // backgroundColor: '#F12'
-        }}>
-            <Filter options={['Todos', 'Favoritos']} onActiveChanged={index => console.log(`Index changed to ${index}`)}/>
-        </View>
-    </Animated.View>
+const StyledCenterText = styled(Animated.Text)`
+    color: #FFF;
+    font-size: 70;
+    font-weight: 700;
+    letter-spacing: 2.4;
+`
 
-const StyledBottom = styled(TouchableWithoutFeedback)`
+const CenterText = props =>
+    <StyledCenterText style={CenterTextStyle(props)}>
+        {getDay(props.datetime)}
+    </StyledCenterText>
+
+const StyledCenterTitle = styled(Animated.View)`
+    display: flex;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.1);
+    flex-direction: row;
+    justify-content: space-around;
+`
+
+const CenterTitle = props =>
+    <StyledCenterTitle>
+        <Switcher onPress={props.prev} direction={'left'} />
+        <CenterText {...props} />
+        <Switcher onPress={props.next} direction={'right'} />
+    </StyledCenterTitle>
+
+const StyledCenterFilter = styled(View)`
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding: 16px;
 `
 
-const BottomText = styled(Animated.Text)`
+const CenterFilter = props =>
+    <StyledCenterFilter>
+        <Filter
+            options={['Todos', 'Favoritos']}
+            onActiveChanged={index => console.log(`Index changed to ${index}`)} />
+    </StyledCenterFilter>
+
+const CenterView = props =>
+    <Animated.View style={{ marginBottom: 16, opacity: CenterOpacity(props) }}>
+        <CenterTitle {...props} />
+        <CenterFilter {...props} />
+    </Animated.View>
+
+const StyledBottomText = styled(Animated.Text)`
     color: #FFF;
     font-size: 10;
     letter-spacing: 2.4;
     text-transform: uppercase;
 `
 
-const Bottom = ({ datetime, next, ...props }) =>
-    <StyledBottom onPress={next}>
-        <BottomText style={TextStyle(props)}>
-            {`${getDay(datetime)}° ${getMonth(datetime)}, ${getYear(datetime)}`}
-        </BottomText>
+const BottomText = ({ datetime, ...props }) =>
+    <StyledBottomText style={TextStyle(props)}>
+        {`${getDay(datetime)}° ${getMonth(datetime)}, ${getYear(datetime)}`}
+    </StyledBottomText>
+
+const StyledBottom = styled(TouchableWithoutFeedback)`
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.1);
+`
+
+const BottomView = props =>
+    <StyledBottom onPress={props.next}>
+        <BottomText {...props} />
     </StyledBottom>
+
+const Recognizer = props =>
+    <GestureRecognizer
+        style={props.style}
+        onSwipeLeft={props.next}
+        onSwipeRight={props.prev}>
+        <BottomView {...props} />
+        <CenterView {...props} />
+        <UpperView {...props} />
+    </GestureRecognizer>
 
 const Layout = props =>
     <Background
@@ -127,14 +155,7 @@ const Layout = props =>
         style={props.style}
         onLayout={props.onHeightLayout}
         darkBackground={props.foreground}>
-        <GestureRecognizer
-            style={props.style}
-            onSwipeLeft={props.next}
-            onSwipeRight={props.prev}>
-            <Bottom {...props} />
-            <Center {...props} />
-            <Upper {...props} />
-        </GestureRecognizer>
+        <Recognizer {...props} />
     </Background>
 
 Layout.propTypes = {

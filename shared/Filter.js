@@ -41,14 +41,14 @@ const ButtonStyle = ({ isFocused }) => ({
 
 const TouchableButton = props =>
     <TouchableWithoutFeedback
-        onPressOut={props.onActiveChanged}
+        onPressOut={props.onPress}
         style={[ButtonStyle(props), props.isFocused ? ButtonShadow : {}]}>
         <ButtonText {...props} />
     </TouchableWithoutFeedback>
 
 const ClickableButton = props =>
     <View
-        onClick={props.onActiveChanged}
+        onClick={props.onPress}
         style={[ButtonStyle(props), props.isFocused ? ButtonShadow : {}]}>
         <ButtonText {...props} />
     </View>
@@ -65,12 +65,16 @@ const FilterItems = props => props.options.map((filter, index) =>
         onPress={() => props.onActiveChanged(index)} />
 )
 
-const StyledView = styled(View)`
+const StyledFilter = styled(View)`
     display: flex;
     flex-direction: row;
     border-radius: 48;
-    background-color: #F12;
 `
+
+const FilterLayout = props =>
+    <StyledFilter>
+        <FilterItems {...props} />
+    </StyledFilter>
 
 class Filter extends PureComponent {
 
@@ -84,19 +88,18 @@ class Filter extends PureComponent {
     }
 
     render() {
-        return (
-            <StyledView>
-                <FilterItems {...this.props} />
-            </StyledView>
-        )
+        return <FilterLayout
+            {...this.props}
+            active={this.state.active}
+            onActiveChanged={this.onActiveChanged} />
     }
 
 }
 
 Filter.propTypes = {
     active: PropTypes.number,
+    onActiveChanged: PropTypes.func.isRequired,
     options: PropTypes.arrayOf(PropTypes.string).isRequired,
-    onActiveChanged: PropTypes.func.isRequired
 }
 
 Filter.defaultProps = {
