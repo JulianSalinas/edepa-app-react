@@ -4,13 +4,13 @@ import PropTypes from 'prop-types';
 
 // Libs 
 import styled from 'styled-components/native';
-import { View, Animated, Text } from 'react-native';
+import { View, Animated } from 'react-native';
 import GestureRecognizer from 'react-native-swipe-gestures';
 
 // Local 
+import Filter from './Filter';
 import Switcher from './Switch';
 import Theme from '../../../app/Theme';
-import Filter from '../../../shared/Filter';
 import Background from '../../../shared/modder/Background';
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 import { getWeekDay, getMonth, getYear, getDay } from '../../../scripts/Time';
@@ -68,6 +68,19 @@ const CenterTextStyle = props => ({
     transform: [...Movement(props), { scale: FontScale(props) }]
 })
 
+const StyledCenterFilter = styled(View)`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+`
+
+const CenterFilter = props =>
+    <StyledCenterFilter>
+        <Filter
+            options={['Todos', 'Favoritos']}
+            onActiveChanged={index => console.log(`Index changed to ${index}`)} />
+    </StyledCenterFilter>
+
 const StyledCenterText = styled(Animated.Text)`
     color: #FFF;
     font-size: 70;
@@ -83,35 +96,28 @@ const CenterText = props =>
 const StyledCenterTitle = styled(Animated.View)`
     display: flex;
     align-items: center;
-    flex-direction: row;
-    justify-content: space-around;
 `
 
 const CenterTitle = props =>
     <StyledCenterTitle>
-        <Switcher onPress={props.prev} direction={'left'} />
         <CenterText {...props} />
-        <Switcher onPress={props.next} direction={'right'} />
+        <CenterFilter {...props} />
     </StyledCenterTitle>
 
-const StyledCenterFilter = styled(View)`
+const StyledCenterView = styled(Animated.View)`
     display: flex;
+    align-items: center;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
+    margin-bottom: 16px;
 `
 
-const CenterFilter = props =>
-    <StyledCenterFilter>
-        <Filter
-            options={['Todos', 'Favoritos']}
-            onActiveChanged={index => console.log(`Index changed to ${index}`)} />
-    </StyledCenterFilter>
-
 const CenterView = props =>
-    <Animated.View style={{ marginBottom: 16, opacity: CenterOpacity(props) }}>
+    <StyledCenterView style={{ opacity: CenterOpacity(props) }}>
+        <Switcher onPress={props.prev} direction={'left'} />
         <CenterTitle {...props} />
-        <CenterFilter {...props} />
-    </Animated.View>
+        <Switcher onPress={props.next} direction={'right'} />
+    </StyledCenterView>
 
 const StyledBottomText = styled(Animated.Text)`
     color: #FFF;

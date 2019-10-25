@@ -23,20 +23,20 @@ const StyledHeader = styled(Animated.View)`
 `
 
 const HeaderStyle = {
-    flex: 1, 
+    flex: 1,
     justifyContent: 'space-between',
     flexDirection: 'column-reverse',
     paddingTop: getStatusBarHeight()
 }
 
-const ScheduleHeader = props => 
+const ScheduleHeader = props =>
     <StyledHeader style={{ height: props.heightH }}>
-        <Header 
-            next={props.next} 
-            prev={props.prev} 
-            datetime={props.datetime} 
-            foreground={props.foreground} 
-            style={HeaderStyle}/>
+        <Header
+            next={props.next}
+            prev={props.prev}
+            datetime={props.datetime}
+            foreground={props.foreground}
+            style={HeaderStyle} />
     </StyledHeader>
 
 const StyledLayout = styled(View)`
@@ -59,13 +59,13 @@ const ScheduleLayout = props =>
             <Event darkMode={props.darkMode} eventype={'PONENCIA'} />
             <Event darkMode={props.darkMode} eventype={'CONFERENCIA'} isEven />
         </Animated.ScrollView>
-        <ScheduleHeader {...props}/>
+        <ScheduleHeader {...props} />
     </StyledLayout>
 
 
 class Schedule extends PureComponent {
 
-    maxH = 220;
+    maxH = 230;
     minH = 45 + getStatusBarHeight();
 
     state = {
@@ -76,7 +76,7 @@ class Schedule extends PureComponent {
     }
 
     componentDidMount() {
-        const base = 1570939200000; 
+        const base = 1570939200000;
         const dates = Object.keys(Gradient).map((_, index) => addTime(base, index));
         this.setState({ dates });
     }
@@ -85,7 +85,7 @@ class Schedule extends PureComponent {
         const restart = state.current === state.dates.length - 1;
         return { current: restart ? 0 : state.current + 1 };
     })
-    
+
     prev = () => this.setState(state => {
         const restart = state.current === 0;
         return { current: restart ? state.dates.length - 1 : state.current - 1 };

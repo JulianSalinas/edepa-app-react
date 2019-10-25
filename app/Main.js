@@ -15,6 +15,7 @@ export default class Main extends PureComponent {
 
 
     static COMMAND_COUNT = 0;
+    static DARK_MODE_DEBUG = false;
 
     /**
      * Contains all the information that can be used 
@@ -94,8 +95,8 @@ export default class Main extends PureComponent {
     synchList = listName => (key, item, action) => {
         item.key = key;
         action === Firebase.READ ? this.onItemRead(listName, item) :
-        action === Firebase.DELETE ? this.onItemDeleted(listName, item) :
-        this.onItemUpdated(listName, item);
+            action === Firebase.DELETE ? this.onItemDeleted(listName, item) :
+                this.onItemUpdated(listName, item);
     }
 
     /**
@@ -133,7 +134,7 @@ export default class Main extends PureComponent {
         };
 
         return (
-            <Modder {...params.look} style={{ flex: 1 }}>
+            <Modder {...params.look} debug={Main.DARK_MODE_DEBUG} style={{ flex: 1 }}>
                 <Container screenProps={params} />
             </Modder>
         );

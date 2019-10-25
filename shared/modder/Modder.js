@@ -7,15 +7,18 @@ import Switcher from './Switcher';
 import Background from './Background';
 import Theme from '../../app/Theme';
 
+const ModderSwitch = props => props.debug ?
+    <Switcher {...props} /> : null;
 
 const Modder = props =>
     <Background {...props}>
         {props.children}
-        <Switcher {...props} />
+        <ModderSwitch {...props} />
     </Background>
 
 Modder.propsTypes = {
     style: PropTypes.object,
+    debug: PropTypes.bool,
     darkMode: PropTypes.bool,
     darkBackground: PropTypes.arrayOf(PropTypes.string),
     changeDarkMode: PropTypes.func.isRequired
@@ -23,6 +26,7 @@ Modder.propsTypes = {
 
 Modder.defaultProps = {
     style: {},
+    debug: true,
     darkMode: true,
     darkBackground: Theme.darkBackground
 }
