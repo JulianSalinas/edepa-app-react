@@ -77,8 +77,8 @@ function gradient(top, middle, bottom) {
 }
 
 // ITEM OPACITY 
-function opacityFor(percentage, isDark, isEven) {
-    const opacity = isEven ? 0 : percentage;
+function opacityFor(percentage, isDark, isEven = true) {
+    const opacity = isEven ? percentage : 0;
     const contrast = isDark ? 255 : 0;
     return `rgba(${contrast}, ${contrast}, ${contrast}, ${opacity})`
 }

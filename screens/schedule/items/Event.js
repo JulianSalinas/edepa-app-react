@@ -130,8 +130,8 @@ const StyledEvent = styled(View)`
 `
 const EventLayout = props =>
     <StyledEvent style={[props.style, { backgroundColor: props.background }]}>
-        <View style={{ backgroundColor: props.color, width: 4 }} />
-        <Decoration {...props} active={props.isEven} />
+        {/* <View style={{ backgroundColor: props.color, width: 4 }} /> */}
+        <Decoration {...props} active={props.isEven} isLinked={!props.isFirst} />
         <EventContent {...props} />
     </StyledEvent>
 
@@ -148,7 +148,7 @@ class Event extends PureComponent {
 
     render() {
 
-        const { darkMode, isEven, eventype } = this.props; 
+        const { darkMode, isEven, eventype } = this.props;
         const color = Colors[eventype];
         const background = opacityFor(Theme.itemOpacity, darkMode, isEven);
 
@@ -169,13 +169,15 @@ Event.propTypes = {
     darkMode: PropTypes.bool,
     event: EventTypes,
     isEven: PropTypes.bool,
-    style: PropTypes.object
+    isFirst: PropTypes.bool,
+    style: PropTypes.object,
 }
 
 Event.defaultProps = {
     darkMode: false,
     event: Sample,
     isEven: false,
+    isFirst: false,
     style: {}
 }
 

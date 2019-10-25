@@ -8,6 +8,7 @@ import { Animated, View } from 'react-native';
 import { getStatusBarHeight } from 'react-native-status-bar-height';
 
 // Local 
+import Checks from './Checks';
 import Event from './items/Event';
 import Header from './header/Header';
 import Theme from '../../app/Theme';
@@ -50,12 +51,13 @@ const ScheduleLayout = props =>
             onScroll={props.onScroll}
             scrollEventThrottle={16}
             contentContainerStyle={{ paddingTop: props.maxH }}>
-            <Event darkMode={props.darkMode} eventype={'TALLER'} />
+            <Checks {...props} />
+            <Event darkMode={props.darkMode} eventype={'TALLER'} isFirst />
             <Event darkMode={props.darkMode} eventype={'FERIA'} isEven />
             <Event darkMode={props.darkMode} eventype={'PONENCIA'} />
             <Event darkMode={props.darkMode} eventype={'CONFERENCIA'} isEven />
             <Event darkMode={props.darkMode} eventype={'TALLER'} />
-            <Event darkMode={props.darkMode} eventype={'CONFERENCIA'} isEven />
+            <Event darkMode={props.darkMode} eventype={'FERIA'} isEven />
             <Event darkMode={props.darkMode} eventype={'PONENCIA'} />
             <Event darkMode={props.darkMode} eventype={'CONFERENCIA'} isEven />
         </Animated.ScrollView>
