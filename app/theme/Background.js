@@ -8,7 +8,7 @@ import { Platform, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 // Local 
-import Theme from '../../app/Theme';
+import Theme from './Theme';
 import { gradient } from '../../scripts/Color';
 
 
@@ -48,9 +48,9 @@ const MobileBackground = props =>
     </StyledGradient>
 
 const Background = props => !props.darkMode ?
-    <LightBackground {...props} /> : Platform.OS === 'web' ? 
-    <WebBackground {...props} /> : 
-    <MobileBackground {...props} />
+    <LightBackground {...props} /> : Platform.OS === 'web' ?
+        <WebBackground {...props} /> :
+        <MobileBackground {...props} />
 
 Background.propsTypes = {
     style: PropTypes.object,

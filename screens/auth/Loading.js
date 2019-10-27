@@ -1,13 +1,10 @@
 // Core 
 import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
-
-// Libs 
-import styled from 'styled-components/native';
-import { View, Text, ActivityIndicator } from 'react-native';
 
 // Local 
 import Indicator from '../loading/Indicator';
+import { withMode } from '../../app/theme/Mode';
+
 
 class Loading extends PureComponent {
 
@@ -19,4 +16,4 @@ class Loading extends PureComponent {
 
 }
 
-export default Loading;
+export default withMode(Loading);

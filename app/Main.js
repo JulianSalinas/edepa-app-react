@@ -7,8 +7,7 @@ import { Platform, SafeAreaView } from 'react-native';
 // Local 
 import Firebase from '../services/Firebase';
 import Container from './navigation/Container';
-import Modder from '../shared/modder/Modder';
-import Theme from './Theme';
+
 
 export default class Main extends PureComponent {
 
@@ -18,6 +17,7 @@ export default class Main extends PureComponent {
     /**
      * Contains all the information that can be used 
      * along the app.
+     * TODO: Remove these list when implemented in their views 
      */
     state = {
         people: [],
@@ -106,8 +106,7 @@ export default class Main extends PureComponent {
         events: this.state.events
     })
 
-    getLook = () => ({
-        ...Theme,
+    getMode = () => ({
         darkMode: this.state.darkMode,
         changeDarkMode: this.changeDarkMode
     })
@@ -120,21 +119,18 @@ export default class Main extends PureComponent {
 
     /**
      * Renders the entire app passing its state to make it available
-     * for each component by using withContext HOC. 
-     * TODO: Whatever component can be tested here.
+     * for each component
      */
     render() {
 
         const params = {
-            look: this.getLook(),
+            mode: this.getMode(),
             store: this.getStore()
         };
 
         return (
             <SafeAreaView style={{ flex: 1 }}>
-                <Modder {...params.look} debug={Main.DEBUG_DARK_MODE} style={{ flex: 1 }}>
-                    <Container screenProps={params} theme={this.state.darkMode ? 'dark' : 'light'} />
-                </Modder>
+                <Container screenProps={params} theme={this.state.darkMode ? 'dark' : 'light'} />
             </SafeAreaView>
         )
 

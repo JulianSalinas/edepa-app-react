@@ -14,12 +14,16 @@ const ScheduleStack = createStackNavigator({
     Schedule: {
         screen: Schedule,
     }
+}, {
+    headerMode: 'none',
 })
 
 const HomeStack = createStackNavigator({
     Home: {
         screen: Home,
     }
+}, {
+    headerMode: 'none'
 })
 
-export default HomeStack;
+export default ScheduleStack;

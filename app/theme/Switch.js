@@ -7,7 +7,7 @@ import styled from 'styled-components/native';
 import { Text, View, Switch } from 'react-native';
 
 // Local
-import Theme from '../../app/Theme';
+import Theme from './Theme';
 
 
 const StyledText = styled(Text)`
@@ -31,21 +31,21 @@ const StyledSwitch = styled(View)`
     padding: 8px 16px;
 `
 
-const Switcher = props =>
+const ModeSwitch = props =>
     <StyledSwitch style={{ backgroundColor: props.darkBackground[0] }}>
         <DarkText darkMode={props.darkMode} />
         <Switch value={props.darkMode} onValueChange={props.changeDarkMode} />
     </StyledSwitch>
 
-Switcher.propsTypes = {
+ModeSwitch.propsTypes = {
     darkMode: PropTypes.bool,
     changeDarkMode: PropTypes.func.isRequired,
     darkBackground: PropTypes.arrayOf(PropTypes.string)
 }
 
-Switcher.defaultProps = {
+ModeSwitch.defaultProps = {
     darkMode: true,
     darkBackground: Theme.darkBackground
 }
 
-export default memo(Switcher);
+export default memo(ModeSwitch);

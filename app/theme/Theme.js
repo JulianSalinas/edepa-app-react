@@ -1,8 +1,8 @@
-import Gradient from '../colors/Gradient';
+import Gradient from '../../colors/Gradient';
 
 
 export default {
-    
+
     // MATERIAL RED 
     primary: '#F44336',
 

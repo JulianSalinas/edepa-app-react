@@ -5,43 +5,20 @@ import PropTypes from 'prop-types';
 // Libs 
 import styled from 'styled-components/native';
 import { View, Platform, Text, FlatList } from 'react-native';
+import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 
 // Local 
-import Theme from '../../app/Theme';
+import Theme from '../../app/theme/Theme';
 import Events from '../../colors/Events';
-import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
-import { Entypo } from '@expo/vector-icons';
 import { opacityFor } from '../../scripts/Color';
 import { useTheme } from 'react-navigation';
 
-// Constants
-const LIGHT_TRANSPARENT = 'rgba(0, 0, 0, 0.6)';
-const DARK_TRANSPARENT = 'rgba(255, 255, 255, 0.6)';
-
-const ButtonShadow = {
-    elevation: 5,
-    shadowColor: "#000",
-    shadowRadius: 3.84,
-    shadowOpacity: 0.25,
-    shadowOffset: { width: 0, height: 2 }
-}
 
 const StyledText = styled(Text)`
     font-size: 10;
     letter-spacing: 2.4;
     text-transform: uppercase;
 `
-
-const ButtonDot = props =>
-    <Entypo
-        size={16}
-        name={'dot-single'}
-        style={{ marginEnd: 4 }}
-        color={
-            props.isFocused ? props.darkMode ? '#FFF' : '#000' :
-                opacityFor(Theme.fontOpacity, props.darkMode)
-        }
-    />
 
 const ButtonText = props =>
     <StyledText style={{
@@ -60,7 +37,6 @@ const StyledButtonView = styled(View)`
 
 const ButtonView = props =>
     <StyledButtonView>
-        {/* <ButtonDot {...props} /> */}
         <ButtonText {...props} />
     </StyledButtonView>
 
@@ -138,11 +114,6 @@ class Checks extends PureComponent {
     initActiveTypes(types, current) {
         types[current] = false;
         return types;
-    }
-
-    componentWillMount() {
-        console.log(this.state.types);
-        console.log(this.state.activeTypes);
     }
 
     toogleActiveType = type => this.setState(state => {

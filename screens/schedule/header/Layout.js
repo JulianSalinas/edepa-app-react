@@ -4,17 +4,17 @@ import PropTypes from 'prop-types';
 
 // Libs 
 import styled from 'styled-components/native';
-import { useTheme } from 'react-navigation';
-import { View, Animated } from 'react-native';
 import GestureRecognizer from 'react-native-swipe-gestures';
+import { getStatusBarHeight } from 'react-native-status-bar-height';
+import { View, Animated } from 'react-native';
+import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 
 // Local 
 import Filter from './Filter';
 import Switcher from './Switch';
-import Background from '../../../shared/modder/Background';
-import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
-import { getWeekDay, getMonth, getYear, getDay } from '../../../scripts/Time';
 import Gradient from '../../../colors/Gradient';
+import Background from '../../../app/theme/Background';
+import { getWeekDay, getMonth, getYear, getDay } from '../../../scripts/Time';
 
 
 const TextStyle = props => ({
@@ -146,9 +146,16 @@ const BottomView = props =>
         <BottomText {...props} />
     </StyledBottom>
 
+const HeaderStyle = {
+    flex: 1,
+    justifyContent: 'space-between',
+    flexDirection: 'column-reverse',
+    paddingTop: getStatusBarHeight()
+}
+
 const Recognizer = props =>
     <GestureRecognizer
-        style={props.style}
+        style={HeaderStyle}
         onSwipeLeft={props.next}
         onSwipeRight={props.prev}>
         <BottomView {...props} />
@@ -159,31 +166,30 @@ const Recognizer = props =>
 const Layout = props =>
     <Background
         darkMode
-        style={props.style}
+        style={HeaderStyle}
         onLayout={props.onHeightLayout}
         darkBackground={props.foreground}>
         <Recognizer {...props} />
     </Background>
 
 const Header = props => {
-    const darkMode = useTheme() === 'dark';
-    const foreground = darkMode ? Gradient.KASHMIR : Gradient.CRIMSON_TIDE;
+    const foreground = props.darkMode ? Gradient.KASHMIR : Gradient.CRIMSON_TIDE;
     return <Layout {...props} foreground={foreground} />
 }
 
 Header.propTypes = {
     next: PropTypes.func,
     prev: PropTypes.func,
-    style: PropTypes.object,
+    darkMode: PropTypes.bool,
     datetime: PropTypes.number,
     height: PropTypes.object.isRequired,
-    onHeightLayout: PropTypes.func.isRequired,
     moveAnimation: PropTypes.any.isRequired,
-    opacityAnimation: PropTypes.any.isRequired,
+    onHeightLayout: PropTypes.func.isRequired,
+    opacityAnimation: PropTypes.any.isRequired
 }
 
 Header.defaultProps = {
-    style: {},
+    darkMode: true,
     datetime: 1570939200000,
     next: () => console.log('Next pressed'),
     prev: () => console.log('Prev pressed')

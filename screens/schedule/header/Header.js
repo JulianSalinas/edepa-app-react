@@ -83,14 +83,14 @@ class Header extends PureComponent {
 }
 
 Header.propTypes = {
-    style: PropTypes.object,
     next: PropTypes.func,
     prev: PropTypes.func,
+    darkMode: PropTypes.bool,
     datetime: PropTypes.number,
 }
 
 Header.defaultProps = {
-    style: {},
+    darkMode: true,
     datetime: 1570939200000,
     next: () => console.log('Next pressed'),
     prev: () => console.log('Prev pressed'),

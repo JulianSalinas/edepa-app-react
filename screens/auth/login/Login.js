@@ -3,6 +3,7 @@ import React, { PureComponent } from 'react';
 
 // Local 
 import Layout from './Layout';
+import { withMode } from '../../../app/theme/Mode';
 
 
 class Login extends PureComponent {
@@ -12,9 +13,9 @@ class Login extends PureComponent {
     }
 
     render() {
-        return <Layout login={this.login} />
+        return <Layout {...this.props} login={this.login} />
     }
 
 }
 
-export default Login;
+export default withMode(Login);

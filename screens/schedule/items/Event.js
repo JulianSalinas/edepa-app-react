@@ -12,7 +12,7 @@ import Decoration from './Sideway';
 import Enrolled from '../states/Enrolled';
 import Favorite from '../states/Favorite';
 
-import Theme from '../../../app/Theme';
+import Theme from '../../../app/theme/Theme';
 import Sample from '../../../samples/Event';
 import Colors from '../../../colors/Events';
 
@@ -53,10 +53,10 @@ const StyledHeader = styled(View)`
     margin-bottom: 4px;
 `
 
-const Header = ({ color, event, eventype }) =>
+const Header = ({ darkMode, color, event, eventype }) =>
     <StyledHeader>
         <EventLabel event={event} color={color} eventype={eventype} />
-        <EventTime event={event} />
+        <EventTime event={event} darkMode={darkMode} />
     </StyledHeader>
 
 const StyledTitle = styled(Text)`
