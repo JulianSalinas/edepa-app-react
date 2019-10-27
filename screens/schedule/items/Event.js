@@ -20,6 +20,7 @@ import Colors from '../../../colors/Events';
 import { EventTypes } from '../../../app/Types';
 import { getLapse } from '../../../scripts/Time';
 import { opacityFor } from '../../../scripts/Color';
+import { useTheme } from 'react-navigation';
 
 
 const StyledLabel = styled(Text)`
@@ -52,10 +53,10 @@ const StyledHeader = styled(View)`
     margin-bottom: 4px;
 `
 
-const Header = ({ color, darkMode, event, eventype }) =>
+const Header = ({ color, event, eventype }) =>
     <StyledHeader>
         <EventLabel event={event} color={color} eventype={eventype} />
-        <EventTime darkMode={darkMode} event={event} />
+        <EventTime event={event} />
     </StyledHeader>
 
 const StyledTitle = styled(Text)`
@@ -84,8 +85,8 @@ const EventLocation = ({ color, event }) =>
 
 
 const EventButton = props => props.eventype === 'TALLER' ?
-    <Enrolled darkMode={props.darkMode} {...props} /> :
-    <Favorite darkMode={props.darkMode} {...props} />
+    <Enrolled {...props} /> :
+    <Favorite {...props} />
 
 const StyledReadMore = styled(View)`
     flex: 1;
@@ -130,13 +131,18 @@ const StyledEvent = styled(View)`
 `
 const EventLayout = props =>
     <StyledEvent style={[props.style, { backgroundColor: props.background }]}>
-        {/* <View style={{ backgroundColor: props.color, width: 4 }} /> */}
-        <Decoration {...props} active={props.isEven} isLinked={!props.isFirst} />
+        <Decoration color={props.color} active={props.isEven} isLinked={!props.isFirst} />
         <EventContent {...props} />
     </StyledEvent>
 
-class Event extends PureComponent {
+const WrappedEvent = props => {
+    const darkMode = useTheme() === 'dark';
+    const color = Colors[props.eventype];
+    const background = opacityFor(Theme.itemOpacity, darkMode, props.isEven);
+    return <EventLayout {...props} color={color} background={background} darkMode={darkMode} />
+}
 
+class Event extends PureComponent {
 
     state = {
         isActive: false
@@ -147,38 +153,27 @@ class Event extends PureComponent {
     })
 
     render() {
-
-        const { darkMode, isEven, eventype } = this.props;
-        const color = Colors[eventype];
-        const background = opacityFor(Theme.itemOpacity, darkMode, isEven);
-
-        return <EventLayout
+        return <WrappedEvent
             {...this.props}
-            color={color}
-            eventype={eventype}
-            background={background}
             isActive={this.state.isActive}
             toggleActive={this.toggleActive}
         />
-
     }
 
 }
 
 Event.propTypes = {
-    darkMode: PropTypes.bool,
-    event: EventTypes,
+    style: PropTypes.object,
     isEven: PropTypes.bool,
     isFirst: PropTypes.bool,
-    style: PropTypes.object,
+    event: EventTypes,
 }
 
 Event.defaultProps = {
-    darkMode: false,
-    event: Sample,
+    style: {},
     isEven: false,
     isFirst: false,
-    style: {}
+    event: Sample,
 }
 
 export default Event;

@@ -1,6 +1,6 @@
 // Core
-import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import React, { PureComponent } from 'react';
 
 // Libs 
 import styled from 'styled-components/native';
@@ -11,7 +11,6 @@ import { getStatusBarHeight } from 'react-native-status-bar-height';
 import Checks from './Checks';
 import Event from './items/Event';
 import Header from './header/Header';
-import Theme from '../../app/Theme';
 import Gradient from '../../colors/Gradient';
 import { getStart, addTime } from '../../scripts/Time';
 
@@ -36,7 +35,6 @@ const ScheduleHeader = props =>
             next={props.next}
             prev={props.prev}
             datetime={props.datetime}
-            foreground={props.foreground}
             style={HeaderStyle} />
     </StyledHeader>
 
@@ -52,14 +50,14 @@ const ScheduleLayout = props =>
             scrollEventThrottle={16}
             contentContainerStyle={{ paddingTop: props.maxH }}>
             <Checks {...props} />
-            <Event darkMode={props.darkMode} eventype={'TALLER'} isFirst />
-            <Event darkMode={props.darkMode} eventype={'FERIA'} isEven />
-            <Event darkMode={props.darkMode} eventype={'PONENCIA'} />
-            <Event darkMode={props.darkMode} eventype={'CONFERENCIA'} isEven />
-            <Event darkMode={props.darkMode} eventype={'TALLER'} />
-            <Event darkMode={props.darkMode} eventype={'FERIA'} isEven />
-            <Event darkMode={props.darkMode} eventype={'PONENCIA'} />
-            <Event darkMode={props.darkMode} eventype={'CONFERENCIA'} isEven />
+            <Event eventype={'TALLER'} isFirst />
+            <Event eventype={'FERIA'} isEven />
+            <Event eventype={'PONENCIA'} />
+            <Event eventype={'CONFERENCIA'} isEven />
+            <Event eventype={'TALLER'} />
+            <Event eventype={'FERIA'} isEven />
+            <Event eventype={'PONENCIA'} />
+            <Event eventype={'CONFERENCIA'} isEven />
         </Animated.ScrollView>
         <ScheduleHeader {...props} />
     </StyledLayout>
@@ -117,24 +115,10 @@ class Schedule extends PureComponent {
             heightH={this.heightH}
             datetime={datetime}
             onScroll={this.onScroll}
-            foreground={this.props.darkMode ? Gradient.KASHMIR : Gradient.CRIMSON_TIDE}
         />
 
     }
 
-}
-
-
-Schedule.propTypes = {
-    darkMode: PropTypes.bool,
-    look: PropTypes.object,
-    print: PropTypes.func
-}
-
-Schedule.defaultProps = {
-    darkMode: true,
-    look: Theme,
-    print: () => console.warn('Required function: print')
 }
 
 export default Schedule;

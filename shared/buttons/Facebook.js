@@ -4,8 +4,9 @@ import PropTypes from 'prop-types';
 
 // Libs 
 import styled from 'styled-components/native';
-import { Entypo } from '@expo/vector-icons';
+import { useTheme } from 'react-navigation';
 import { Text, View } from 'react-native';
+import { Entypo } from '@expo/vector-icons';
 
 
 const ButtonShadow = {
@@ -54,23 +55,26 @@ const ButtonView = ({ backgroundColor, ...props }) =>
         <ButtonText color={props.color} />
     </StyledButton>
 
-const FacebookButton = props =>
+const ButtonLayout = props =>
     <ButtonView
         {...props}
         color={props.darkMode ? '#FFFFFF' : '#3B5998'}
         backgroundColor={props.darkMode ? '#3B5998' : '#FFFFFF'}
     />
 
+const FacebookButton = props => {
+    const darkMode = useTheme() === 'dark';
+    return <ButtonLayout {...props} darkMode={darkMode} />
+}
+
 FacebookButton.propTypes = {
-    darkMode: PropTypes.bool,
+    style: PropTypes.object,
     onClick: PropTypes.func,
-    style: PropTypes.object
 }
 
 FacebookButton.defaultProps = {
-    darkMode: false,
-    onClick: () => console.log('Facebook button pressed!'),
-    style: {}
+    style: {},
+    onClick: () => console.log('Facebook button pressed!')
 }
 
 export default memo(FacebookButton);

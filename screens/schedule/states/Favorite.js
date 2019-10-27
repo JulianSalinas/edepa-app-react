@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 // Libs
 import styled from 'styled-components/native';
+import { useTheme } from 'react-navigation';
 import { AntDesign } from '@expo/vector-icons';
 import { View, Animated, Easing } from 'react-native';
 
@@ -56,6 +57,10 @@ const FavoritePlatform = props => Platform.OS === 'web' ?
     <FavoriteWeb {...props} /> :
     <FavoriteMobile {...props} />
 
+const FavoriteLayout = props => {
+    const darkMode = useTheme() === 'dark';
+    return <FavoritePlatform {...props} darkMode={darkMode} />
+}
 
 class Favorite extends PureComponent {
 
@@ -85,19 +90,17 @@ class Favorite extends PureComponent {
     render() {
         let rotation = this.rotateValue.interpolate(this.interpolate);
         let style = { transform: [{ rotate: rotation }] };
-        return <FavoritePlatform onPress={this.onPress} {...this.props} style={style} />
+        return <FavoriteLayout {...this.props} style={style} onPress={this.onPress} />
     }
 
 }
 
 Favorite.propTypes = {
-    darkMode: PropTypes.bool,
     isActive: PropTypes.bool,
     toggleActive: PropTypes.func,
 }
 
 Favorite.defaultProps = {
-    darkMode: false,
     isActive: true,
     toggleActive: () => console.log('Button pressed!')
 }

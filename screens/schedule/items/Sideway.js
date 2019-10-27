@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 // Libs 
 import styled from 'styled-components/native';
+import { useTheme } from 'react-navigation';
 import { View } from 'react-native';
 import Svg, { G, Circle } from 'react-native-svg'
 
@@ -35,7 +36,7 @@ const SidewayLayout = props =>
     </StyledView>
 
 const Sideway = props => {
-    const stroke = props.darkMode ? '#FFF' : '#000';
+    const stroke = useTheme() === 'dark' ? '#FFF' : '#000';
     const color = props.active ? props.color : stroke;
     const opacity = props.active ? 1 : 0.6;
 
@@ -50,18 +51,16 @@ const Sideway = props => {
 }
 
 Sideway.propTypes = {
-    active: PropTypes.bool,
-    darkMode: PropTypes.bool,
-    color: PropTypes.string,
     style: PropTypes.object,
+    active: PropTypes.bool,
+    color: PropTypes.string,
     isLinked: PropTypes.bool
 }
 
 Sideway.defaultProps = {
-    active: false,
-    darkMode: true,
-    color: '#f12',
     style: {},
+    active: false,
+    color: '#f12',
     isLinked: false
 }
 

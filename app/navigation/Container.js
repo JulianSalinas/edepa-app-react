@@ -3,26 +3,14 @@ import { createAppContainer } from 'react-navigation';
 import { createSwitchNavigator } from 'react-navigation';
 
 // Local 
-import { 
-    // HomeScreen,
-    // LoadingScreen,
-    // LoginScreen,
-    // NewsScreen,
-    // PeopleScreen,
-    ScheduleScreen,
-    // SettingsScreen,
-    // TestScreen,
-} from '../../screens/Screens';
+import Navigation from './Navigation';
+import Loading from '../../screens/auth/Loading';
+import Login from '../../screens/auth/login/Login';
 
 const routes = {
-    // Home: HomeScreen,
-    // Loading: LoadingScreen,
-    // Login: LoginScreen,
-    // News: NewsScreen,
-    // People: PeopleScreen,
-    Schedule: ScheduleScreen,
-    // Settings: SettingsScreen,
-    // Test: TestScreen
+    // Loading: Loading,
+    // Login: Login,
+    Navigation: Navigation
 }
 
 export default createAppContainer(

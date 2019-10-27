@@ -12,6 +12,7 @@ import Events from '../../colors/Events';
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 import { Entypo } from '@expo/vector-icons';
 import { opacityFor } from '../../scripts/Color';
+import { useTheme } from 'react-navigation';
 
 // Constants
 const LIGHT_TRANSPARENT = 'rgba(0, 0, 0, 0.6)';
@@ -87,16 +88,18 @@ const ClickableButton = props =>
         <ButtonView {...props} />
     </View>
 
-const CheckButton = props => Platform.OS === 'web' ?
-    <ClickableButton {...props} /> :
-    <TouchableButton {...props} />
+const CheckButton = props => {
+    const darkMode = useTheme() === 'dark';
+    return Platform.OS === 'web' ?
+        <ClickableButton {...props} darkMode={darkMode} /> :
+        <TouchableButton {...props} darkMode={darkMode} />
+}
 
 const CheckItem = props =>
     <CheckButton
         key={props.type}
         text={props.type}
         color={Events[props.type]}
-        darkMode={props.darkMode}
         isFocused={props.activeTypes[props.type]}
         onPress={() => props.toogleActiveType(props.type)} />
 
@@ -104,12 +107,19 @@ const StyledSeparator = styled(View)`
     margin: 4px;
 `
 
+const ChecksScrollStyle = {
+    paddingTop: 16,
+    paddingHorizontal: 16,
+    alignItems: 'center',
+    justifyContent: 'center'
+}
+
 const ChecksScroll = props =>
     <FlatList horizontal
         data={props.types}
         keyExtractor={item => item.type}
-        contentContainerStyle={{ paddingTop: 16, paddingHorizontal: 16, justifyContent: 'center', alignItems: 'center' }}
         showsHorizontalScrollIndicator={false}
+        contentContainerStyle={ChecksScrollStyle}
         renderItem={({ item }) => <CheckItem {...props} type={item.type} />}
         ItemSeparatorComponent={() => <StyledSeparator />}
     />
@@ -138,7 +148,7 @@ class Checks extends PureComponent {
     toogleActiveType = type => this.setState(state => {
         const isActive = state.activeTypes[type];
         return { activeTypes: { ...state.activeTypes, [type]: !isActive } }
-    }, () => console.log(this.state.activeTypes));
+    });
 
     render() {
         return <ChecksScroll
@@ -149,14 +159,6 @@ class Checks extends PureComponent {
         />
     }
 
-}
-
-Checks.propTypes = {
-    darkMode: PropTypes.bool,
-}
-
-Checks.defaultProps = {
-    darkMode: true
 }
 
 export default Checks;

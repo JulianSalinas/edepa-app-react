@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 // Libs
 import styled from 'styled-components/native';
+import { useTheme } from 'react-navigation';
 import { FontAwesome } from '@expo/vector-icons';
 import { Text, View } from 'react-native';
 
@@ -54,23 +55,26 @@ const ButtonView = ({ backgroundColor, ...props }) =>
         <ButtonText color={props.color} />
     </StyledButton>
 
-const GoogleButton = props =>
+const ButtonLayout = props =>
     <ButtonView
         {...props}
         color={props.darkMode ? '#FFFFFF' : '#d34836'}
         backgroundColor={props.darkMode ? '#d34836' : '#FFFFFF'}
     />
 
+const GoogleButton = props => {
+    const darkMode = useTheme() === 'dark';
+    return <ButtonLayout {...props} darkMode={darkMode} />
+}
+
 GoogleButton.propTypes = {
-    darkMode: PropTypes.bool,
-    onClick: PropTypes.func,
-    style: PropTypes.object
+    style: PropTypes.object,
+    onClick: PropTypes.func
 }
 
 GoogleButton.defaultProps = {
-    darkMode: false,
-    onClick: () => console.log('Google button pressed!'),
-    style: {}
+    style: {},
+    onClick: () => console.log('Google button pressed!')
 }
 
 export default memo(GoogleButton);

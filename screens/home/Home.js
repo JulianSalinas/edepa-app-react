@@ -10,20 +10,19 @@ import { View, Text } from 'react-native';
 const StyledView = styled(View)`
     flex: 1;
     display: flex;
-    alignItems: center;
-    justifyContent: center;
-    backgroundColor: #f1c40f
+    align-items: center;
+    justify-content: center;
+    background-color: #f1c40f;
 `
 
 const StyledText = styled(Text)`
-    color: #FFF;
-    marginEnd: 12px;
-    fontSize: 18px;
-    letterSpacing: 2.5;
-    textTransform: uppercase;
+    margin-right: 12px;
+    font-size: 18px;
+    letter-spacing: 2.5;
+    text-transform: uppercase;
 `
 
-const Home = props => 
+const Home = props =>
     <StyledView>
         <StyledText>Home</StyledText>
     </StyledView>

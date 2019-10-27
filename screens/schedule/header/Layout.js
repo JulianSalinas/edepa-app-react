@@ -4,16 +4,17 @@ import PropTypes from 'prop-types';
 
 // Libs 
 import styled from 'styled-components/native';
+import { useTheme } from 'react-navigation';
 import { View, Animated } from 'react-native';
 import GestureRecognizer from 'react-native-swipe-gestures';
 
 // Local 
 import Filter from './Filter';
 import Switcher from './Switch';
-import Theme from '../../../app/Theme';
 import Background from '../../../shared/modder/Background';
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 import { getWeekDay, getMonth, getYear, getDay } from '../../../scripts/Time';
+import Gradient from '../../../colors/Gradient';
 
 
 const TextStyle = props => ({
@@ -164,24 +165,28 @@ const Layout = props =>
         <Recognizer {...props} />
     </Background>
 
-Layout.propTypes = {
+const Header = props => {
+    const darkMode = useTheme() === 'dark';
+    const foreground = darkMode ? Gradient.KASHMIR : Gradient.CRIMSON_TIDE;
+    return <Layout {...props} foreground={foreground} />
+}
+
+Header.propTypes = {
     next: PropTypes.func,
     prev: PropTypes.func,
     style: PropTypes.object,
     datetime: PropTypes.number,
     height: PropTypes.object.isRequired,
     onHeightLayout: PropTypes.func.isRequired,
-    foreground: PropTypes.arrayOf(PropTypes.string),
     moveAnimation: PropTypes.any.isRequired,
     opacityAnimation: PropTypes.any.isRequired,
 }
 
-Layout.defaultProps = {
+Header.defaultProps = {
     style: {},
     datetime: 1570939200000,
     next: () => console.log('Next pressed'),
-    prev: () => console.log('Prev pressed'),
-    foreground: Theme.foreground,
+    prev: () => console.log('Prev pressed')
 }
 
-export default memo(Layout);
+export default memo(Header);

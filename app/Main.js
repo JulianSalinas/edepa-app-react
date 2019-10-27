@@ -2,7 +2,7 @@
 import React, { PureComponent } from 'react';
 
 // Libs 
-import { Platform } from 'react-native';
+import { Platform, SafeAreaView } from 'react-native';
 
 // Local 
 import Firebase from '../services/Firebase';
@@ -10,12 +10,10 @@ import Container from './navigation/Container';
 import Modder from '../shared/modder/Modder';
 import Theme from './Theme';
 
-
 export default class Main extends PureComponent {
 
-
     static COMMAND_COUNT = 0;
-    static DARK_MODE_DEBUG = false;
+    static DEBUG_DARK_MODE = true;
 
     /**
      * Contains all the information that can be used 
@@ -129,15 +127,16 @@ export default class Main extends PureComponent {
 
         const params = {
             look: this.getLook(),
-            store: this.getStore(),
-            print: this.print
+            store: this.getStore()
         };
 
         return (
-            <Modder {...params.look} debug={Main.DARK_MODE_DEBUG} style={{ flex: 1 }}>
-                <Container screenProps={params} />
-            </Modder>
-        );
+            <SafeAreaView style={{ flex: 1 }}>
+                <Modder {...params.look} debug={Main.DEBUG_DARK_MODE} style={{ flex: 1 }}>
+                    <Container screenProps={params} theme={this.state.darkMode ? 'dark' : 'light'} />
+                </Modder>
+            </SafeAreaView>
+        )
 
     }
 

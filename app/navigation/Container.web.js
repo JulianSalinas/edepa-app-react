@@ -1,34 +1,18 @@
 // Libs 
-import { createAppContainer } from 'react-navigation';
-import { createSwitchNavigator } from 'react-navigation';
+import { createBrowserApp } from '@react-navigation/web';
+import { SwitchRouter, createNavigator } from '@react-navigation/core';
 
 // Local 
-import { 
-    // HomeScreen,
-    // LoadingScreen,
-    // LoginScreen,
-    // NewsScreen,
-    // PeopleScreen,
-    ScheduleScreen,
-    // SettingsScreen,
-    // TestScreen,
-} from '../../screens/Screens';
+import Navigation from './Navigation';
+import Loading from '../../screens/auth/Loading';
+import Login from '../../screens/auth/login/Login';
 
-import Bottom from './Navigation';
+const AppNavigator = createNavigator({
+    // Loading: Loading,
+    // Login: Login,
+    Navigation: Navigation
+})
 
-const routes = {
-    // Home: HomeScreen,
-    // Loading: LoadingScreen,
-    // Login: LoginScreen,
-    // News: NewsScreen,
-    // People: PeopleScreen,
-    Schedule: ScheduleScreen,
-    // Settings: SettingsScreen,
-    // Test: TestScreen
-    // TabNavigation: Bottom
-}
-
-
-export default createAppContainer(
-    createSwitchNavigator(routes), { history: 'hash' }
+export default createBrowserApp(
+    createNavigator(AppNavigator)
 )

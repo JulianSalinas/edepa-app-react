@@ -7,7 +7,6 @@ import { Animated } from 'react-native';
 
 // Local 
 import Layout from './Layout';
-import Theme from '../../../app/Theme';
 
 
 class Header extends PureComponent {
@@ -84,11 +83,10 @@ class Header extends PureComponent {
 }
 
 Header.propTypes = {
-    datetime: PropTypes.number,
+    style: PropTypes.object,
     next: PropTypes.func,
     prev: PropTypes.func,
-    style: PropTypes.object,
-    foreground: PropTypes.arrayOf(PropTypes.string),
+    datetime: PropTypes.number,
 }
 
 Header.defaultProps = {
@@ -96,7 +94,6 @@ Header.defaultProps = {
     datetime: 1570939200000,
     next: () => console.log('Next pressed'),
     prev: () => console.log('Prev pressed'),
-    foreground: Theme.darkForeground,
 }
 
 export default Header;

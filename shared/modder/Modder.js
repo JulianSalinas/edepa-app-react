@@ -17,8 +17,8 @@ const Modder = props =>
     </Background>
 
 Modder.propsTypes = {
-    style: PropTypes.object,
     debug: PropTypes.bool,
+    style: PropTypes.object,
     darkMode: PropTypes.bool,
     darkBackground: PropTypes.arrayOf(PropTypes.string),
     changeDarkMode: PropTypes.func.isRequired

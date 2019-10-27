@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 // Libs 
 import styled from 'styled-components/native';
+import { useTheme } from 'react-navigation';
 import { View } from 'react-native';
 
 
@@ -16,17 +17,20 @@ const StyledView = styled(View)`
     width: 100%;
 `
 
-const Divider = props =>
-    <StyledView style={[props.style, DividerColor(props)]}/>
+const DividerLayout = props =>
+    <StyledView style={[props.style, DividerColor(props)]} />
+
+const Divider = props => {
+    const darkMode = useTheme() === 'dark';
+    return <DividerLayout {...props} darkMode={darkMode} />
+}
 
 Divider.propTypes = {
-    style: PropTypes.object,
-    darkMode: PropTypes.bool
+    style: PropTypes.object
 }
 
 Divider.defaultProps = {
-    style: {},
-    darkMode: false
+    style: {}
 }
 
 export default memo(Divider);
