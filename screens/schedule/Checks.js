@@ -9,7 +9,7 @@ import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 
 // Local 
 import Theme from '../../app/theme/Theme';
-import Events from '../../colors/Events';
+import Colors from '../../colors/Events';
 import { opacityFor } from '../../scripts/Color';
 import { useTheme } from 'react-navigation';
 
@@ -46,7 +46,7 @@ const ButtonStyle = ({ color, isFocused, darkMode }) => ({
     borderRadius: 48,
     paddingVertical: 4,
     paddingHorizontal: 16,
-    borderWidth: isFocused ? 2.5 : 0.5,
+    borderWidth: 1,
     borderColor: isFocused ? color : opacityFor(Theme.fontOpacity, darkMode),
 })
 
@@ -75,7 +75,7 @@ const CheckItem = props =>
     <CheckButton
         key={props.type}
         text={props.type}
-        color={Events[props.type]}
+        color={Colors[props.type][props.darkMode ? 'dark' : 'light']}
         isFocused={props.activeTypes[props.type]}
         onPress={() => props.toogleActiveType(props.type)} />
 
@@ -103,13 +103,19 @@ const ChecksScroll = props =>
 class Checks extends PureComponent {
 
     state = {
-        types: Object.entries(Events).map(this.initTypes),
-        activeTypes: Object.keys(Events).reduce(this.initActiveTypes, {})
+
+        types: Object.entries(Colors).map(entry => {
+            const color = entry[1][this.props.darkMode ? 'dark' : 'light'];
+            return { type: entry[0], color }
+        }),
+
+        activeTypes: Object.keys(Colors).reduce(this.initActiveTypes, {})
     }
 
-    initTypes(entry) {
-        return { type: entry[0], color: entry[1] }
+    componentDidMount() {
+        console.log(this.state.types)
     }
+
 
     initActiveTypes(types, current) {
         types[current] = false;

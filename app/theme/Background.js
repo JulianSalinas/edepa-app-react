@@ -47,16 +47,22 @@ const MobileBackground = props =>
         {props.children}
     </StyledGradient>
 
-const Background = props => !props.darkMode ?
+const BackgroundLayout = props => !props.darkMode ?
     <LightBackground {...props} /> : Platform.OS === 'web' ?
         <WebBackground {...props} /> :
         <MobileBackground {...props} />
+
+const Background = props => {
+    const isString = typeof (props.darkBackground) === 'string';
+    let background = isString ? [props.darkBackground, props.darkBackground] : props.darkBackground;
+    return <BackgroundLayout {...props} darkBackground={background} />
+}
 
 Background.propsTypes = {
     style: PropTypes.object,
     onLayout: PropTypes.func,
     darkMode: PropTypes.bool,
-    darkBackground: PropTypes.arrayOf(PropTypes.string)
+    darkBackground: PropTypes.string || PropTypes.arrayOf(PropTypes.string)
 }
 
 Background.defaultProps = {

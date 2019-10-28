@@ -1,5 +1,5 @@
 export default {
-    CARBON: ['#1C1C1C', '#101010'],
+    CARBON: ['#101010', '#1C1C1C'],
     CRIMSON_TIDE: ['#642B73', '#C6426E'], // Cool 
     CRISTAL_CLEAR: ['#159957', '#155799'], // Aceptable
     VICE_CITY: ['#4568DC', '#B06AB3'], // Cool 
@@ -19,5 +19,8 @@ export default {
     SOMEONE_TIE: ['#28313B', '#485461'], // Ugly 
     NIGHT_SHIFT: ['#2b4162', '#12100e'], // Ugly
     DARK_REAL: ['#141E30', '#243B55'],  // Transparent
-    MOONLIT_ASTEROID: ['#0F2027', '#203A43', '#2C5364']
+    MOONLIT_ASTEROID: ['#0F2027', '#203A43', '#2C5364'],
+    AMIN: ['#8E2DE2', '#4A00E0'],
+    SEA_BLUE: ['#2b5876', '#4e4376'],
+    BLOODY_MARY: ['#FF512F', '#DD2476']
 }

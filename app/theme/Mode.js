@@ -15,16 +15,19 @@ const ModeSwitch = props =>
 const Mode = props =>
     <Background darkMode={props.darkMode} style={{ flex: 1 }}>
         {props.component}
-        <ModeSwitch {...props} />
+        {
+            props.debug ? <ModeSwitch {...props} /> : null
+        }
     </Background>
 
-export function withMode(Component) {
+export function withMode(Component, debug = false) {
 
     return memo(props => {
 
         const { darkMode, changeDarkMode } = props.screenProps.mode;
 
         return <Mode
+            debug={debug}
             darkMode={darkMode}
             changeDarkMode={changeDarkMode}
             component={<Component darkMode={darkMode} />}

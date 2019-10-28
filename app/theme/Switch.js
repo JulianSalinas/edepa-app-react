@@ -11,15 +11,14 @@ import Theme from './Theme';
 
 
 const StyledText = styled(Text)`
-    color: #FFF;
     font-size: 10;
     letter-spacing: 2.4;
     margin-right: 12;
     text-transform: uppercase;
 `
 
-const DarkText = () =>
-    <StyledText>
+const DarkText = props =>
+    <StyledText style={{ color: props.darkMode ? '#FFF' : '#000' }}>
         MODO OSCURO
     </StyledText>
 
@@ -32,7 +31,12 @@ const StyledSwitch = styled(View)`
 `
 
 const ModeSwitch = props =>
-    <StyledSwitch style={{ backgroundColor: props.darkBackground[0] }}>
+    <StyledSwitch style={{
+        backgroundColor: props.darkMode ?
+            typeof (props.darkBackground) === 'string' ?
+                props.darkBackground :
+                props.darkBackground[0] : '#FFF'
+    }}>
         <DarkText darkMode={props.darkMode} />
         <Switch value={props.darkMode} onValueChange={props.changeDarkMode} />
     </StyledSwitch>

@@ -12,7 +12,7 @@ import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 // Local 
 import Filter from './Filter';
 import Switcher from './Switch';
-import Gradient from '../../../colors/Gradient';
+import Theme from '../../../app/theme/Theme';
 import Background from '../../../app/theme/Background';
 import { getWeekDay, getMonth, getYear, getDay } from '../../../scripts/Time';
 
@@ -46,7 +46,7 @@ const UpperText = props =>
         {getWeekDay(props.datetime)}
     </StyledUpperText>
 
-const StyledUpper = styled(View)`
+const StyledUpper = styled(Animated.View)`
     align-items: center;
     display: flex;
     flex-direction: row;
@@ -54,7 +54,7 @@ const StyledUpper = styled(View)`
 `
 
 const UpperView = props =>
-    <StyledUpper>
+    <StyledUpper style={{ opacity: CenterOpacity(props) }}>
         <UpperText {...props} />
     </StyledUpper>
 
@@ -173,7 +173,7 @@ const Layout = props =>
     </Background>
 
 const Header = props => {
-    const foreground = props.darkMode ? Gradient.KASHMIR : Gradient.CRIMSON_TIDE;
+    const foreground = props.darkMode ? Theme.darkForeground : Theme.foreground;
     return <Layout {...props} foreground={foreground} />
 }
 

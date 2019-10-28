@@ -137,7 +137,7 @@ const EventLayout = props =>
 
 const WrappedEvent = props => {
     const darkMode = useTheme() === 'dark';
-    const color = Colors[props.eventype];
+    const color = Colors[props.eventype][useTheme()];
     const background = opacityFor(Theme.itemOpacity, darkMode, props.isEven);
     return <EventLayout {...props} color={color} background={background} darkMode={darkMode} />
 }

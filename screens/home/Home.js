@@ -1,10 +1,11 @@
 // Core 
-import React, { memo } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 // Libs
 import styled from 'styled-components/native';
 import { View, Text } from 'react-native';
+import { withMode } from '../../app/theme/Mode';
 
 
 const StyledView = styled(View)`
@@ -12,7 +13,6 @@ const StyledView = styled(View)`
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #f1c40f;
 `
 
 const StyledText = styled(Text)`
@@ -24,7 +24,7 @@ const StyledText = styled(Text)`
 
 const Home = props =>
     <StyledView>
-        <StyledText>Home</StyledText>
+        <StyledText style={{ color: props.darkMode ? '#FFF' : '#000' }}>Home</StyledText>
     </StyledView>
 
-export default memo(Home);
+export default withMode(Home);

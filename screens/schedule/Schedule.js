@@ -43,14 +43,16 @@ class Schedule extends PureComponent {
         const { dates, current } = this.state;
         const datetime = dates.length > 0 ? dates[current] : getStart();
 
-        return <Layout
-            {...this.props}
-            datetime={datetime}
-            next={this.next}
-            prev={this.prev}
-            onScroll={this.onScroll}
-            scrollY={this.state.scrollY}
-        />
+        return (
+            <Layout
+                {...this.props}
+                datetime={datetime}
+                next={this.next}
+                prev={this.prev}
+                onScroll={this.onScroll}
+                scrollY={this.state.scrollY}
+            />
+        )
 
     }
 

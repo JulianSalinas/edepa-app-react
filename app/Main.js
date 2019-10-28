@@ -22,7 +22,7 @@ export default class Main extends PureComponent {
     state = {
         people: [],
         events: [],
-        darkMode: Platform.OS === 'web'
+        darkMode: true
     }
 
     /**
@@ -129,9 +129,9 @@ export default class Main extends PureComponent {
         };
 
         return (
-            <SafeAreaView style={{ flex: 1 }}>
-                <Container screenProps={params} theme={this.state.darkMode ? 'dark' : 'light'} />
-            </SafeAreaView>
+
+            <Container screenProps={params} theme={this.state.darkMode ? 'dark' : 'light'} />
+
         )
 
     }
