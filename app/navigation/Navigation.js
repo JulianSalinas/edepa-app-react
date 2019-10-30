@@ -63,6 +63,7 @@ const BottomNavigation = createMaterialBottomTabNavigator({
         }
     },
     Schedule: {
+        path: 'schedule',
         screen: ScheduleStack,
         navigationOptions: ({ theme, navigation, ...props }) => {
 
@@ -108,6 +109,7 @@ const BottomNavigation = createMaterialBottomTabNavigator({
         }
     }
 }, {
+    initialRouteName: 'Schedule', 
     defaultNavigationOptions: props => {
 
         const darkMode = props.theme === 'dark';
@@ -117,7 +119,6 @@ const BottomNavigation = createMaterialBottomTabNavigator({
         return {
             activeColor,
             inactiveColor,
-            initialRouteName: 'Schedule',
             barStyle: {
                 backgroundColor: darkMode ?
                     typeof (Theme.darkBackground) === 'string' ?

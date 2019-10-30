@@ -1,12 +1,12 @@
 // Core
-import React, { memo } from 'react';
+import React, { memo, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
 // Libs 
 import styled from 'styled-components/native';
 import GestureRecognizer from 'react-native-swipe-gestures';
 import { getStatusBarHeight } from 'react-native-status-bar-height';
-import { View, Animated } from 'react-native';
+import { View, Animated, TextInput } from 'react-native';
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 
 // Local 
@@ -15,6 +15,9 @@ import Switcher from './Switch';
 import Theme from '../../../app/theme/Theme';
 import Background from '../../../app/theme/Background';
 import { getWeekDay, getMonth, getYear, getDay } from '../../../scripts/Time';
+import { opacityFor } from '../../../scripts/Color';
+import { Ionicons, Entypo } from '@expo/vector-icons';
+import { Platform } from '@unimodules/core';
 
 
 const TextStyle = props => ({
@@ -37,7 +40,6 @@ const StyledUpperText = styled(Animated.Text)`
     color: #FFF;
     font-size: 10;
     letter-spacing: 2.4;
-    margin-top: 16;
     text-transform: uppercase;
 `
 
@@ -47,15 +49,27 @@ const UpperText = props =>
     </StyledUpperText>
 
 const StyledUpper = styled(Animated.View)`
-    align-items: center;
     display: flex;
+    align-items: center;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
+    padding: 8px 16px 8px 16px;
 `
 
 const UpperView = props =>
     <StyledUpper style={{ opacity: CenterOpacity(props) }}>
+        <Entypo
+            size={24}
+            color={'#FFF'}
+            name={'menu'}
+            onPress={props.navigation.openDrawer}
+        />
         <UpperText {...props} />
+        <Ionicons 
+            size={24}
+            color={'#FFF'}
+            name={`${Platform.OS ? 'ios' : 'md'}-search`}
+        />
     </StyledUpper>
 
 const CenterOpacity = ({ height }) => height.interpolate({
