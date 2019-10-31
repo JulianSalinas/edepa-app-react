@@ -15,5 +15,5 @@ const routes = {
 }
 
 export default createAppContainer(
-    createSwitchNavigator(routes), { history: 'hash' }
+    createSwitchNavigator(routes), { history: 'hash', initialRouteName: 'schedule' }
 )

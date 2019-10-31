@@ -13,7 +13,7 @@ import Event from './items/Event';
 import Header from './header/Header';
 
 // Constants 
-const MAX_HEIGHT = 230;
+const MAX_HEIGHT = 245;
 const MIN_HEIGHT = 45 + getStatusBarHeight();
 
 const AnimatedHeight = props => props.scrollY.interpolate({
@@ -32,6 +32,7 @@ const StyledHeader = styled(Animated.View)`
 const ScheduleHeader = props =>
     <StyledHeader style={{ height: AnimatedHeight(props) }}>
         <Header
+            {...props}
             next={props.next}
             prev={props.prev}
             datetime={props.datetime}

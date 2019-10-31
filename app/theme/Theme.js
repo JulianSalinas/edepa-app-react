@@ -9,7 +9,7 @@ export default {
     darkPrimary: Gradient.KASHMIR[0],
 
     background: '#000',
-    darkBackground: Gradient.CARBON,
+    darkBackground: Gradient.DARK_REAL,
 
     foreground: Gradient.CRIMSON_TIDE,
     darkForeground: Gradient.KASHMIR
