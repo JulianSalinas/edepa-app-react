@@ -32,7 +32,7 @@ const HomeStack = createStackNavigator({
 
 const BottomNavigation = createMaterialBottomTabNavigator({
     Home: {
-        screen: HomeStack,
+        screen: Home,
         navigationOptions: ({ theme, navigation, ...props }) => {
 
             return {
@@ -63,7 +63,7 @@ const BottomNavigation = createMaterialBottomTabNavigator({
         }
     },
     Schedule: {
-        screen: ScheduleStack,
+        screen: Schedule,
         navigationOptions: ({ theme, navigation, ...props }) => {
 
             return {

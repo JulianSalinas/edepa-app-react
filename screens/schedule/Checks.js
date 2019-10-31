@@ -112,11 +112,6 @@ class Checks extends PureComponent {
         activeTypes: Object.keys(Colors).reduce(this.initActiveTypes, {})
     }
 
-    componentDidMount() {
-        console.log(this.state.types)
-    }
-
-
     initActiveTypes(types, current) {
         types[current] = false;
         return types;

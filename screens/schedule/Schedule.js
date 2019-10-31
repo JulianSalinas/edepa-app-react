@@ -6,15 +6,16 @@ import { Animated } from 'react-native';
 
 // Local 
 import Layout from './Layout';
+import Loading from '../loading/Indicator';
 import { withMode } from '../../app/theme/Mode';
 import { getStart, addTime } from '../../scripts/Time';
-
 
 class Schedule extends PureComponent {
 
     state = {
         dates: [],
         current: 0,
+        isLoading: false,
         scrollY: new Animated.Value(0)
     }
 
@@ -43,16 +44,14 @@ class Schedule extends PureComponent {
         const { dates, current } = this.state;
         const datetime = dates.length > 0 ? dates[current] : getStart();
 
-        return (
-            <Layout
-                {...this.props}
-                datetime={datetime}
-                next={this.next}
-                prev={this.prev}
-                onScroll={this.onScroll}
-                scrollY={this.state.scrollY}
-            />
-        )
+        return this.state.isLoading ? <Loading /> : <Layout
+            {...this.props}
+            datetime={datetime}
+            next={this.next}
+            prev={this.prev}
+            onScroll={this.onScroll}
+            scrollY={this.state.scrollY}
+        />
 
     }
 

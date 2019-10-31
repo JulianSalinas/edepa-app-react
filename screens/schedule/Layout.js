@@ -40,7 +40,7 @@ const ScheduleHeader = props =>
 
 const Events = () => <>
     <Event eventype={'TALLER'} isFirst />
-    <Event eventype={'FERIA'} isEven />
+    {/* <Event eventype={'FERIA'} isEven />
     <Event eventype={'MERIENDA'} />
     <Event eventype={'CONFERENCIA'} isEven />
     <Event eventype={'FERIA'} />
@@ -48,7 +48,7 @@ const Events = () => <>
     <Event eventype={'CONFERENCIA'} />
     <Event eventype={'MERIENDA'} isEven />
     <Event eventype={'PONENCIA'} />
-    <Event eventype={'TALLER'} isEven />
+    <Event eventype={'TALLER'} isEven /> */}
 </>
 
 const ScrollView = props =>
