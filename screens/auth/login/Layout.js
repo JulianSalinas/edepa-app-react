@@ -21,7 +21,7 @@ const StyledLayout = styled(View)`
 
 const Login = props =>
     <StyledLayout>
-        <Logo color={props.darkMode ? '#FFF' : null} />
+        <Logo darkMode={props.darkMode} />
         <Google onClick={props.login} style={{ margin: 16 }} />
         <Facebook onClick={props.login} />
     </StyledLayout>

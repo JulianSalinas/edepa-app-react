@@ -1,5 +1,5 @@
 export default {
-    CARBON: ['#101010', '#1C1C1C'],
+    CARBON: ['#222222', '#222222'],
     CRIMSON_TIDE: ['#642B73', '#C6426E'], // Cool 
     CRISTAL_CLEAR: ['#159957', '#155799'], // Aceptable
     VICE_CITY: ['#4568DC', '#B06AB3'], // Cool 

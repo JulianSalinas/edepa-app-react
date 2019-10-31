@@ -131,7 +131,7 @@ const StyledEvent = styled(View)`
 `
 const EventLayout = props =>
     <StyledEvent style={[props.style, { backgroundColor: props.background }]}>
-        <Decoration color={props.color} active={props.isEven} isLinked={!props.isFirst} />
+        <Decoration color={props.color} active={props.isEven} isFirst={props.isFirst} isLast={props.isLast} />
         <EventContent {...props} />
     </StyledEvent>
 
@@ -166,6 +166,7 @@ Event.propTypes = {
     style: PropTypes.object,
     isEven: PropTypes.bool,
     isFirst: PropTypes.bool,
+    isLast: PropTypes.bool,
     event: EventTypes,
 }
 
@@ -173,6 +174,7 @@ Event.defaultProps = {
     style: {},
     isEven: false,
     isFirst: false,
+    isLast: false,
     event: Sample,
 }
 

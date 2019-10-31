@@ -41,10 +41,10 @@ const ScheduleHeader = props =>
 
 const Events = () => <>
     <Event eventype={'TALLER'} isFirst />
-    {/* <Event eventype={'FERIA'} isEven />
+    <Event eventype={'FERIA'} isEven />
     <Event eventype={'MERIENDA'} />
-    <Event eventype={'CONFERENCIA'} isEven />
-    <Event eventype={'FERIA'} />
+    <Event eventype={'CONFERENCIA'} isEven isLast/>
+    {/* <Event eventype={'FERIA'} />
     <Event eventype={'PONENCIA'} isEven />
     <Event eventype={'CONFERENCIA'} />
     <Event eventype={'MERIENDA'} isEven />

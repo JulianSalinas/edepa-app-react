@@ -4,80 +4,77 @@ import PropTypes from 'prop-types';
 
 // Libs
 import styled from 'styled-components/native';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
+import { Text, Title, Caption } from 'react-native-paper';
 import { withMode } from '../../app/theme/Mode';
 import AppDatabase from '../../services/Firebase';
 import { getStatusBarHeight } from 'react-native-status-bar-height';
 import Loading from '../loading/Indicator';
+import { opacityFor } from '../../scripts/Color';
+import Theme from '../../app/theme/Theme';
+import Logo from '../../shared/Edepa';
+import { ScrollView } from 'react-native-gesture-handler';
 
-const StyledView = styled(View)`
+const StyledView = styled(ScrollView)`
     flex: 1;
     display: flex;
-    /* align-items: center;
-    justify-content: center; */
 `
 
-const StyledText = styled(Text)`
-    margin-right: 12px;
-    font-size: 18px;
-    letter-spacing: 2.5;
-    text-transform: uppercase;
+const StyledUpper = styled(View)`
+    display: flex;
+    align-items: center;
+    justify-content: center;
 `
 
-const CardShadow = {
-    elevation: 2,
-    shadowColor: "#000",
-    shadowRadius: 3.14,
-    shadowOpacity: 0.1,
-    shadowOffset: { width: 0, height: 2 }
-}
+const StyledContent = styled(View)`
+    display: flex;
+`
 
 const Layout = props =>
-    <StyledView>
-        <View style={{ height: getStatusBarHeight() }} />
-        {/* <StyledText style={{ color: props.darkMode ? '#FFF' : '#000' }}>Home</StyledText> */}
+    <StyledView style={{ paddingTop: getStatusBarHeight() }} contentContainerStyle={{ padding: 16 }}>
 
-        <View style={[{
-            marginTop: 4,
-            marginHorizontal: 16,
-            backgroundColor: '#FFF',
-            minHeight: 200,
-            borderRadius: 4
-        }, CardShadow]}>
+        <StyledUpper>
+            <Logo darkMode={props.darkMode} />
+        </StyledUpper>
 
-            <Text style={{ color: '#F12' }}>
-                {props.local.start}
-            </Text>
+        <StyledContent>
+            <Caption style={{
+                color: opacityFor(Theme.fontOpacity, props.darkMode)
+            }}>
+                Bienvenido
+            </Caption>
+            <Title style={{ color: props.darkMode ? '#FFF' : '#000' }}>
+                {props.event.name}
+            </Title>
+        </StyledContent>
 
-            <Text>
-                {props.local.end}
-            </Text>
+        <Text style={{ color: '#F12' }}>
+            {props.event.start}
+        </Text>
 
-            <Text>
-                {props.local.name}
-            </Text>
+        <Text>
+            {props.event.end}
+        </Text>
 
-            <Text>
-                {props.local.locationTag}
-            </Text>
+        <Text>
+            {props.event.locationTag}
+        </Text>
 
-            <Text>
-                {props.local.location}
-            </Text>
+        <Text>
+            {props.event.location}
+        </Text>
 
-            <Text>
-                {props.local.description}
-            </Text>
+        <Text>
+            {props.event.description}
+        </Text>
 
-            <Text>
-                {props.local.xCoord}
-            </Text>
+        <Text>
+            {props.event.xCoord}
+        </Text>
 
-            <Text>
-                {props.local.yCoord}
-            </Text>
-
-        </View>
+        <Text>
+            {props.event.yCoord}
+        </Text>
 
     </StyledView>
 
@@ -86,7 +83,7 @@ class Home extends PureComponent {
 
 
     state = {
-        local: null,
+        event: null,
         isLoading: true
     }
 
@@ -97,13 +94,13 @@ class Home extends PureComponent {
 
     componentDidMount() {
         this.database.synchHome(value => this.setState({
-            local: value,
+            event: value,
             isLoading: false,
-        }, () => console.log(value)))
+        }))
     }
 
     render() {
-        return this.state.isLoading ? <Loading /> : <Layout {...this.props} local={this.state.local} />
+        return this.state.isLoading ? <Loading /> : <Layout {...this.props} event={this.state.event} />
     }
 
 }

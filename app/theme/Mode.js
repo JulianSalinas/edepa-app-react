@@ -25,12 +25,12 @@ export function withMode(Component, debug = false) {
     return memo(props => {
 
         const { darkMode, changeDarkMode } = props.screenProps.mode;
-        
+
         return <Mode
             debug={debug}
             darkMode={darkMode}
             changeDarkMode={changeDarkMode}
-            component={<Component darkMode={darkMode} navigation={props.navigation}/>}
+            component={<Component darkMode={darkMode} navigation={props.navigation} />}
         />
 
     })

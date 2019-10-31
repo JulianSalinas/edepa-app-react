@@ -30,9 +30,9 @@ const SidewayPicture = props =>
 
 const SidewayLayout = props =>
     <StyledView>
-        <View style={{ backgroundColor: props.stroke, opacity: (props.isLinked ? 0.1 : 0), width: 1.5, height: 17 }} />
+        <View style={{ backgroundColor: props.stroke, opacity: props.isFirst ? 0 : 0.1, width: 1.5, height: 17 }} />
         <SidewayPicture {...props} />
-        <View style={{ backgroundColor: props.stroke, opacity: 0.1, width: 1.5, flex: 1 }} />
+        <View style={{ backgroundColor: props.stroke, opacity: props.isLast ? 0 : 0.1, width: 1.5, flex: 1 }} />
     </StyledView>
 
 const Sideway = props => {
@@ -45,7 +45,8 @@ const Sideway = props => {
         color={color}
         opacity={opacity}
         style={props.style}
-        isLinked={props.isLinked}
+        isFirst={props.isFirst}
+        isLast={props.isLast}
     />
 
 }
@@ -54,14 +55,16 @@ Sideway.propTypes = {
     style: PropTypes.object,
     active: PropTypes.bool,
     color: PropTypes.string,
-    isLinked: PropTypes.bool
+    isFirst: PropTypes.bool,
+    isLast: PropTypes.bool
 }
 
 Sideway.defaultProps = {
     style: {},
     active: false,
     color: '#f12',
-    isLinked: false
+    isFirst: false,
+    isLast: false
 }
 
 export default memo(Sideway);

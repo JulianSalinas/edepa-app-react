@@ -1,10 +1,10 @@
 {
-  "expoServerNgrokUrl": "https://hh-scc.anonymous.edepa-app-react.exp.direct",
-  "packagerNgrokUrl": "https://packager.hh-scc.anonymous.edepa-app-react.exp.direct",
-  "ngrokPid": 8804,
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null,
   "webpackServerPort": 19006,
   "devToolsPort": 19002,
   "expoServerPort": 19000,
   "packagerPort": 19001,
-  "packagerPid": 15996
+  "packagerPid": 6804
 }

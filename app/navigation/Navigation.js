@@ -109,7 +109,7 @@ const BottomNavigation = createMaterialBottomTabNavigator({
         }
     }
 }, {
-    initialRouteName: 'Schedule', 
+    // initialRouteName: 'Schedule', 
     defaultNavigationOptions: props => {
 
         const darkMode = props.theme === 'dark';

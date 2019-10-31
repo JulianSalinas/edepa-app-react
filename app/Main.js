@@ -22,7 +22,7 @@ export default class Main extends PureComponent {
     state = {
         people: [],
         events: [],
-        darkMode: false
+        darkMode: true
     }
 
     /**
