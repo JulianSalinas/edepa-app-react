@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 // Libs
 import styled from 'styled-components/native';
 import { View, Text } from 'react-native';
-import { withMode } from '../../app/theme/Mode';
+import { withMode } from '../../theme/Mode';
 
 
 const StyledView = styled(View)`

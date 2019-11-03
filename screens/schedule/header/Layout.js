@@ -12,8 +12,8 @@ import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 // Local 
 import Filter from './Filter';
 import Switcher from './Switch';
-import Theme from '../../../app/theme/Theme';
-import Background from '../../../app/theme/Background';
+import Theme from '../../../theme/Theme';
+import Background from '../../../theme/Background';
 import { getWeekDay, getMonth, getYear, getDay } from '../../../scripts/Time';
 import { opacityFor } from '../../../scripts/Color';
 import { Ionicons, Entypo } from '@expo/vector-icons';
@@ -65,7 +65,7 @@ const UpperView = props =>
             onPress={props.navigation.openDrawer}
         />
         <UpperText {...props} />
-        <Ionicons 
+        <Ionicons
             size={24}
             color={'#FFF'}
             name={`${Platform.OS ? 'ios' : 'md'}-search`}

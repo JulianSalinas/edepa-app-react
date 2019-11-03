@@ -7,7 +7,7 @@ import { Animated } from 'react-native';
 // Local 
 import Layout from './Layout';
 import Loading from '../loading/Indicator';
-import { withMode } from '../../app/theme/Mode';
+import { withMode } from '../../theme/Mode';
 import { getStart, addTime } from '../../scripts/Time';
 
 class Schedule extends PureComponent {

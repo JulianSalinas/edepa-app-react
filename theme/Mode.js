@@ -1,10 +1,10 @@
 // Core 
-import React, { memo } from 'react';
+import React from 'react';
 
 // Local 
 import Switch from './Switch';
 import Background from './Background';
-
+import { withContext } from '../app/AppContext';
 
 const ModeSwitch = props =>
     <Switch
@@ -22,17 +22,13 @@ const Mode = props =>
 
 export function withMode(Component, debug = false) {
 
-    return memo(props => {
-
-        const { darkMode, changeDarkMode } = props.screenProps.mode;
-
-        return <Mode
+    return withContext(props =>
+        <Mode
             debug={debug}
-            darkMode={darkMode}
-            changeDarkMode={changeDarkMode}
-            component={<Component darkMode={darkMode} navigation={props.navigation} />}
+            darkMode={props.theme.darkMode}
+            changeDarkMode={props.theme.changeDarkMode}
+            component={<Component {...props} />}
         />
-
-    })
+    )
 
 }

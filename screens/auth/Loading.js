@@ -3,12 +3,10 @@ import React, { PureComponent } from 'react';
 
 // Local 
 import Indicator from '../loading/Indicator';
-import { withMode } from '../../app/theme/Mode';
+import { withMode } from '../../theme/Mode';
 
 
 class Loading extends PureComponent {
-
-    // Put AuthFlow here 
 
     render() {
         return <Indicator />
@@ -16,4 +14,4 @@ class Loading extends PureComponent {
 
 }
 
-export default withMode(Loading);
+export default withMode(Loading, true);

@@ -6,12 +6,10 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components/native';
 import { View } from 'react-native';
 import { Text, Title, Caption } from 'react-native-paper';
-import { withMode } from '../../app/theme/Mode';
-import AppDatabase from '../../services/Firebase';
-import { getStatusBarHeight } from 'react-native-status-bar-height';
+import { withMode } from '../../theme/Mode';
 import Loading from '../loading/Indicator';
 import { opacityFor } from '../../scripts/Color';
-import Theme from '../../app/theme/Theme';
+import Theme from '../../theme/Theme';
 import Logo from '../../shared/Edepa';
 import { ScrollView } from 'react-native-gesture-handler';
 
@@ -31,7 +29,7 @@ const StyledContent = styled(View)`
 `
 
 const Layout = props =>
-    <StyledView style={{ paddingTop: getStatusBarHeight() }} contentContainerStyle={{ padding: 16 }}>
+    <StyledView style={{}} contentContainerStyle={{ padding: 16 }}>
 
         <StyledUpper>
             <Logo darkMode={props.darkMode} />
@@ -87,23 +85,12 @@ class Home extends PureComponent {
         isLoading: true
     }
 
-    constructor(props) {
-        super(props);
-        this.database = new AppDatabase();
-    }
-
-    componentDidMount() {
-        this.database.synchHome(value => this.setState({
-            event: value,
-            isLoading: false,
-        }))
-    }
-
     render() {
+        console.log('Props in home', this.props);
         return this.state.isLoading ? <Loading /> : <Layout {...this.props} event={this.state.event} />
     }
 
 }
 
 
-export default withMode(Home);
+export default withMode(Home, true);

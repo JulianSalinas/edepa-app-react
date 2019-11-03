@@ -1,6 +1,12 @@
 // Core 
-import Main from './app/Main';
+import { AppProvider } from './app/AppProvider';
 import React, { PureComponent } from 'react';
+import Container from './app/AppContainer';
+
+// Firebase 
+import firebase from 'firebase/app';
+import environment from './environment';
+const { firebaseConfig } = environment();
 
 // Libs
 import * as Font from 'expo-font';
@@ -31,28 +37,35 @@ export default class App extends PureComponent {
         Roboto_medium: require('native-base/Fonts/Roboto_medium.ttf'),
     }
 
+    loadFirebase = async () => {
+        if (!firebase.apps.length) {
+            require('firebase/database');
+            firebase.initializeApp(firebaseConfig);
+        }
+    }
+
     loadResources = async () => {
         const fonts = Font.loadAsync(this.fonts);
         const assets = Asset.loadAsync(this.assets);
-        await Promise.all([fonts, assets]);
+        await Promise.all([fonts, assets, this.loadFirebase()]);
     }
 
     loading = () =>
         <AppLoading
             startAsync={this.loadResources}
-            onError={console.warn}
             onFinish={() => this.setState({ isLoadingComplete: true })}
         />
 
     started = () =>
-        <View style={{ flex: 1 }}>
-            {Platform.OS === 'ios' && <StatusBar barStyle='default' />}
-            <Main />
-        </View>
+        <AppProvider>
+            <View style={{ flex: 1 }}>
+                {Platform.OS === 'ios' && <StatusBar barStyle='dark-content' translucent />}
+                <Container />
+            </View>
+        </AppProvider>
 
     render() {
-        const condition = !this.state.isLoadingComplete;
-        return condition ? this.loading() : this.started();
+        return this.state.isLoadingComplete ? this.started() : this.loading()
     }
 
 }

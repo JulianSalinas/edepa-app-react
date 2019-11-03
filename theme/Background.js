@@ -9,7 +9,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 // Local 
 import Theme from './Theme';
-import { gradient } from '../../scripts/Color';
+import { gradient } from '../scripts/Color';
 
 
 const BackgroundImage = ({ style, darkBackground }) => ([style, {

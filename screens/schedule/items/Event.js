@@ -12,12 +12,12 @@ import Decoration from './Sideway';
 import Enrolled from '../states/Enrolled';
 import Favorite from '../states/Favorite';
 
-import Theme from '../../../app/theme/Theme';
+import Theme from '../../../theme/Theme';
 import Sample from '../../../samples/Event';
 import Colors from '../../../colors/Events';
 
 // Utils
-import { EventTypes } from '../../../app/Types';
+import { EventTypes } from '../../../app/AppTypes';
 import { getLapse } from '../../../scripts/Time';
 import { opacityFor } from '../../../scripts/Color';
 import { useTheme } from 'react-navigation';

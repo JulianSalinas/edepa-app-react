@@ -6,10 +6,12 @@ import React, { PureComponent } from 'react';
 import { SectionList } from 'react-native';
 
 // Local 
-import { PersonTypes } from '../../app/Types';
+import { withMode } from '../../theme/Mode';
+import { PersonTypes } from '../../app/AppTypes';
 import Item from './Person';
 import Section from '../../shared/Section';
 import { groupBy } from '../../scripts/Utils';
+import Firebase from '../../services/Firebase';
 
 
 const getInitial = (item, prop = 'completeName') => {
@@ -45,11 +47,43 @@ const PeopleLayout = props => <SectionList
  */
 class People extends PureComponent {
 
-    state = { people: [] }
+    state = {
+        people: [],
+        peopleGroups: []
+    }
+
+    constructor(props) {
+        super(props);
+        this.database = new Firebase();
+    }
+
+    componentDidMount() {
+        this.database.synchPeople(this.synchList('people'))
+    }
+
+    onItemRead = (list, item) => this.setState(state => ({
+        [list]: [...state[list], item]
+    }))
+
+    onItemUpdated = (list, item) => this.setState(state => ({
+        [list]: state[list].map(old => old.key === key ? item : old)
+    }))
+
+    onItemDeleted = (list, updated) => this.setState(state => ({
+        [list]: state[list].filter(item => item.key !== updated.key)
+    }))
+
+    synchList = listName => (key, item, action) => {
+        item.key = key;
+        action === Firebase.READ ? this.onItemRead(listName, item) :
+            action === Firebase.DELETE ? this.onItemDeleted(listName, item) :
+                this.onItemUpdated(listName, item);
+    }
 
     render() {
+        console.log(this.props)
         return <PeopleLayout
-            people={this.state.people}
+            people={this.state.peopleGroups}
             darkMode={this.props.darkMode}
         />
     }
@@ -61,24 +95,14 @@ class People extends PureComponent {
  * group in the state
  * ? The people are ordered alphabetically
  */
-People.getDerivedStateFromProps = (props, state) => {
+// People.getDerivedStateFromProps = (props, state) => {
 
-    const current = state.people.reduce((acc, next) => acc + next.data.length, 0);
+//     const current = state.people.reduce((acc, next) => acc + next.data.length, 0);
 
-    if (props.people.length === 0 || current === props.people.length){
-        return null;
-    }
-    return { people: groupBy(props.people, 'completeName', getInitial) }
-}
+//     if (props.people.length === 0 || current === props.people.length) {
+//         return null;
+//     }
+//     return { people: groupBy(props.people, 'completeName', getInitial) }
+// }
 
-People.propTypes = {
-    darkMode: PropTypes.bool,
-    people: PropTypes.arrayOf(PersonTypes)
-}
-
-People.defaultProps = {
-    darkMode: true,
-    people: []
-}
-
-export default People;
+export default withMode(People, true);

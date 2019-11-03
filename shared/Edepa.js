@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import Svg, { Path, Defs, LinearGradient, Stop } from 'react-native-svg';
 
 // Local 
-import Theme from '../app/theme/Theme';
+import Theme from '../theme/Theme';
 
 const Logo = props =>
 
@@ -52,7 +52,7 @@ const Edepa = props => {
 }
 
 Edepa.propTypes = {
-    darkMode: PropTypes.string
+    darkMode: PropTypes.bool
 }
 
 Edepa.defaultProps = {

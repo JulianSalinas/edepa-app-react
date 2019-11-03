@@ -1,15 +1,7 @@
 import firebase from 'firebase/app';
-import environment from '../environment';
-const { firebaseConfig } = environment();
-
-/**
- * Set up Firebase from environment 
- */
-require('firebase/database');
-firebase.initializeApp(firebaseConfig);
 
 
-export default class AppDatabase {
+export default class Firebase {
 
     static READ = 'read';
     static UPDATE = 'update';
@@ -30,9 +22,9 @@ export default class AppDatabase {
     synchEvents(receive) {
         const reference = this.database.child('schedule');
         const callback = action => this.createSynchCallback(action, receive);
-        reference.on('child_added', callback(AppDatabase.READ));
-        reference.on('child_changed', callback(AppDatabase.UPDATE));
-        reference.on('child_removed', callback(AppDatabase.DELETE));
+        reference.on('child_added', callback(Firebase.READ));
+        reference.on('child_changed', callback(Firebase.UPDATE));
+        reference.on('child_removed', callback(Firebase.DELETE));
     }
 
     updateEvent(key, event) {
@@ -50,9 +42,9 @@ export default class AppDatabase {
     synchPeople(receive) {
         const reference = this.database.child('people');
         const callback = action => this.createSynchCallback(action, receive);
-        reference.orderByChild('completeName').on('child_added', callback(AppDatabase.READ));
-        reference.on('child_changed', callback(AppDatabase.UPDATE));
-        reference.on('child_removed', callback(AppDatabase.DELETE));
+        reference.orderByChild('completeName').on('child_added', callback(Firebase.READ));
+        reference.on('child_changed', callback(Firebase.UPDATE));
+        reference.on('child_removed', callback(Firebase.DELETE));
     }
 
     synchHome(receive) {
