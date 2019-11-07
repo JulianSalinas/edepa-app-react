@@ -41,20 +41,17 @@ const PeopleStack = createStackNavigator({
 
 const BottomNavigation = createMaterialBottomTabNavigator({
     Home: {
-        screen: Loading,
-        navigationOptions: ({ theme, navigation, ...props }) => {
-
-            return {
-
-                tabBarIcon: ({ focused, horizontal, tintColor }) => {
-                    return <AntDesign
-                        size={24}
-                        name={'home'}
-                        color={tintColor}
-                    />
-                }
+        screen: HomeStack,
+        navigationOptions: {
+            tabBarIcon: ({ focused, tintColor }) => {
+                return <AntDesign
+                    size={24}
+                    name={'home'}
+                    color={tintColor}
+                />
             }
         }
+        
     },
     // News: {
     //     screen: News,

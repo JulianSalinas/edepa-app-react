@@ -14,4 +14,4 @@ class Loading extends PureComponent {
 
 }
 
-export default withMode(Loading, true);
+export default withMode(Loading);

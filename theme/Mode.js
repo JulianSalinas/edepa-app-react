@@ -25,8 +25,8 @@ export function withMode(Component, debug = false) {
     return withContext(props =>
         <Mode
             debug={debug}
-            darkMode={props.theme.darkMode}
-            changeDarkMode={props.theme.changeDarkMode}
+            darkMode={props.darkMode}
+            changeDarkMode={props.actions.changeDarkMode}
             component={<Component {...props} />}
         />
     )
