@@ -1,0 +1,17 @@
+import Gradient from '../colors/Gradient';
+
+export default {
+
+    background: Gradient.CARBON,
+    foreground: Gradient.KASHMIR,
+
+    primary: Gradient.KASHMIR[0],
+    secondary: Gradient.DARK_REAL[1],
+
+    primaryFont: 'rgba(255, 255, 255, 1)',
+    secondaryFont: 'rgba(255, 255, 255, 0.6)',
+
+    primaryItem: 'rgba(255, 255, 255, 1)',
+    secondaryItem: 'rgba(255, 255, 255, 0.03)',
+
+}

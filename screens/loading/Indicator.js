@@ -20,7 +20,7 @@ const StyledText = styled(Text)`
 `
 
 const IndicatorText = props =>
-    <StyledText style={{ color: props.darkMode ? '#FFF' : '#000' }}>
+    <StyledText style={{ color: props.palette.primaryFont }}>
         {props.text}
     </StyledText>
 
@@ -33,7 +33,7 @@ const StyledLayout = styled(View)`
 
 const Indicator = props =>
     <StyledLayout>
-        <StyledActivity size='large' color={props.darkMode ? '#FFF' : '#000'} />
+        <StyledActivity size='large' color={props.palette.primaryFont} />
         <IndicatorText {...props} />
     </StyledLayout>
 

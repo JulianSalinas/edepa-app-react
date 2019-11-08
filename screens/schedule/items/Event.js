@@ -12,7 +12,7 @@ import Decoration from './Sideway';
 import Enrolled from '../states/Enrolled';
 import Favorite from '../states/Favorite';
 
-import Theme from '../../../theme/Theme';
+import Theme from '../../../theme/LightPalette';
 import Sample from '../../../samples/Event';
 import Colors from '../../../colors/Events';
 

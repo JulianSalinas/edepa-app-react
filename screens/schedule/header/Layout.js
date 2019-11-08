@@ -12,7 +12,7 @@ import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 // Local 
 import Filter from './Filter';
 import Switcher from './Switch';
-import Theme from '../../../theme/Theme';
+import Theme from '../../../theme/LightPalette';
 import Background from '../../../theme/Background';
 import { getWeekDay, getMonth, getYear, getDay } from '../../../scripts/Time';
 import { opacityFor } from '../../../scripts/Color';

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 // Libs
 import styled from 'styled-components/native';
 import { View } from 'react-native';
-import { withMode } from '../../theme/Mode';
+import { withMode } from '../../theme/ThemeMode';
 
 // Local
 import Login from '../auth/login/Layout';

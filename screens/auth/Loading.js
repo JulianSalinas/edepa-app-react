@@ -3,7 +3,7 @@ import React, { PureComponent } from 'react';
 
 // Local 
 import Indicator from '../loading/Indicator';
-import { withMode } from '../../theme/Mode';
+import { withMode } from '../../theme/ThemeMode';
 
 
 class Loading extends PureComponent {
@@ -14,4 +14,4 @@ class Loading extends PureComponent {
 
 }
 
-export default withMode(Loading);
+export default withMode(Loading, true);

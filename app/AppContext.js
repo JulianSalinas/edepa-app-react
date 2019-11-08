@@ -9,11 +9,11 @@ const AppContext = createContext();
 
 export const withContext = Component => props =>
     <AppContext.Consumer>
-        {({ theme, darkMode, actions }) => 
+        {({ palette, darkMode, actions }) =>
             <Component {...props}
                 actions={actions}
                 darkMode={darkMode}
-                theme={{ ...theme, darkMode }}
+                palette={{ ...palette, darkMode }}
             />
         }
     </AppContext.Consumer>

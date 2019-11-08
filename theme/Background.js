@@ -8,12 +8,12 @@ import { Platform, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 // Local 
-import Theme from './Theme';
+import DefaultTheme from './DarkPalette';
 import { gradient } from '../scripts/Color';
 
 
-const BackgroundImage = ({ style, darkBackground }) => ([style, {
-    backgroundImage: gradient(darkBackground[0], darkBackground[1], darkBackground[2])
+const BackgroundImage = ({ style, background }) => ([style, {
+    backgroundImage: gradient(background[0], background[1], background[2])
 }])
 
 const StyledView = styled(View)`
@@ -28,7 +28,7 @@ const LightBackground = props =>
     </StyledView>
 
 const WebBackground = props =>
-    <StyledView onLayout={props.onLayout} style={BackgroundImage(props)}>
+    <StyledView style={BackgroundImage(props)}>
         {props.children}
     </StyledView>
 
@@ -40,10 +40,9 @@ const StyledGradient = styled(LinearGradient)`
 
 const MobileBackground = props =>
     <StyledGradient
-        onLayout={props.onLayout}
         style={props.style}
         start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
-        colors={props.darkBackground}>
+        colors={props.background}>
         {props.children}
     </StyledGradient>
 
@@ -55,12 +54,11 @@ const BackgroundLayout = props => !props.darkMode ?
 const Background = props => {
     const isString = typeof (props.darkBackground) === 'string';
     let background = isString ? [props.darkBackground, props.darkBackground] : props.darkBackground;
-    return <BackgroundLayout {...props} darkBackground={background} />
+    return <BackgroundLayout {...props} background={background} />
 }
 
 Background.propsTypes = {
     style: PropTypes.object,
-    onLayout: PropTypes.func,
     darkMode: PropTypes.bool,
     darkBackground: PropTypes.string || PropTypes.arrayOf(PropTypes.string)
 }
@@ -68,7 +66,7 @@ Background.propsTypes = {
 Background.defaultProps = {
     style: {},
     darkMode: true,
-    darkBackground: Theme.darkBackground
+    darkBackground: DefaultTheme.background
 }
 
 export default memo(Background);

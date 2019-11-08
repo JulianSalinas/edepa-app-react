@@ -6,10 +6,10 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components/native';
 import { View, Animated, Text } from 'react-native';
 import { Caption } from 'react-native-paper';
-import { withMode } from '../../theme/Mode';
+import { withMode } from '../../theme/ThemeMode';
 import Loading from '../loading/Indicator';
 import { opacityFor } from '../../scripts/Color';
-import Theme from '../../theme/Theme';
+import Theme from '../../theme/LightPalette';
 import Logo from '../../shared/Edepa';
 import { ScrollView } from 'react-native-gesture-handler';
 import { getStatusBarHeight } from 'react-native-status-bar-height';
@@ -26,7 +26,7 @@ const StyledUpper = styled(View)`
     justify-content: center;
 `
 
-const Option = props => 
+const Option = props =>
     <View style={{
         paddingVertical: 8,
         paddingHorizontal: 16,
@@ -48,11 +48,11 @@ const Option = props =>
             alignItems: 'flex-start',
             paddingHorizontal: 16
         }}>
-            <Text style={{ color: props.darkMode ? '#FFF' : '#000'}}>
+            <Text style={{ color: props.darkMode ? '#FFF' : '#000' }}>
                 {props.text}
             </Text>
         </View>
-        
+
         <MaterialIcons
             name={'navigate-next'}
             size={16}
@@ -60,24 +60,23 @@ const Option = props =>
         />
     </View>
 
-const HomeDate = props => 
+const HomeDate = props =>
     <View>
 
 
     </View>
 
-const Text = props 
-const HomeStat = props => 
+const HomeStat = props =>
     <View style={{
         display: 'flex',
         flexDirection: 'column'
     }}>
 
-        <Text style={{ color: props.darkMode ? '#FFF' : '#000'}}>
+        <Text style={{ color: props.darkMode ? '#FFF' : '#000' }}>
             {props.amount}
         </Text>
 
-        <Text style={{ color: opacityFor(props.theme.fontOpacity, props.darkMode)}}>
+        <Text style={{ color: opacityFor(props.theme.fontOpacity, props.darkMode) }}>
             {props.description}
         </Text>
 
@@ -89,21 +88,21 @@ const StyledStats = styled(View)`
     justify-content: space-evenly;
 `
 
-const HomeStats = props => 
+const HomeStats = props =>
     <StyledStats>
-        <HomeStat {...props} amount={23} description={'Expositores'}/>
-        <HomeStat {...props} amount={123} description={'Eventos'}/>
-        <HomeStat {...props} amount={54} description={'Participantes'}/>
+        <HomeStat {...props} amount={23} description={'Expositores'} />
+        <HomeStat {...props} amount={123} description={'Eventos'} />
+        <HomeStat {...props} amount={54} description={'Participantes'} />
     </StyledStats>
 
 const Layout = props =>
-    <StyledView 
-        style={{ paddingTop: getStatusBarHeight() + 16 }} 
+    <StyledView
+        style={{ paddingTop: getStatusBarHeight() + 16 }}
         contentContainerStyle={{ paddingVertical: 16 }}>
 
         <StyledUpper>
             <Logo darkMode={props.darkMode} />
-            <Caption style={{ color: opacityFor(Theme.fontOpacity, props.darkMode)}}>
+            <Caption style={{ color: opacityFor(Theme.fontOpacity, props.darkMode) }}>
                 Bienvenido
             </Caption>
         </StyledUpper>
@@ -113,12 +112,12 @@ const Layout = props =>
             style={{ marginTop: 16 }}
         >
 
-            <HomeStats {...props}/>
-            <HomeDate {...props}/>
-            <Option {...props} text='Información'/>
-            <Option {...props} text='Ubicación'/>
-            <Option {...props} text='Acerca de'/>
-            <Option {...props} text='Salir'/>
+            <HomeStats {...props} />
+            <HomeDate {...props} />
+            <Option {...props} text='Información' />
+            <Option {...props} text='Ubicación' />
+            <Option {...props} text='Acerca de' />
+            <Option {...props} text='Salir' />
 
         </Animated.ScrollView>
 
@@ -133,8 +132,8 @@ class Home extends PureComponent {
         isLoading: true
     }
 
-    componentDidMount(){
-        this.props.actions.watchHome(event => this.setState({event, isLoading: false }));
+    componentDidMount() {
+        this.props.actions.watchHome(event => this.setState({ event, isLoading: false }));
     }
 
     render() {

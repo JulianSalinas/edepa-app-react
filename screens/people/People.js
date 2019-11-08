@@ -6,7 +6,7 @@ import React, { PureComponent } from 'react';
 import { SectionList } from 'react-native';
 
 // Local 
-import { withMode } from '../../theme/Mode';
+import { withMode } from '../../theme/ThemeMode';
 import { PersonTypes } from '../../app/AppTypes';
 import Item from './Person';
 import Section from '../../shared/Section';

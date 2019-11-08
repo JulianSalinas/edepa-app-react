@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import Svg, { Path, Defs, LinearGradient, Stop } from 'react-native-svg';
 
 // Local 
-import Theme from '../theme/Theme';
+import Theme from '../theme/LightPalette';
 
 const Logo = props =>
 

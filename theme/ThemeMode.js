@@ -2,12 +2,13 @@
 import React from 'react';
 
 // Local 
-import Switch from './Switch';
 import Background from './Background';
+import ThemeSwitch from './ThemeSwitch';
 import { withContext } from '../app/AppContext';
 
 const ModeSwitch = props =>
-    <Switch
+    <ThemeSwitch
+        palette={props.palette}
         darkMode={props.darkMode}
         changeDarkMode={props.changeDarkMode}
     />
@@ -25,6 +26,7 @@ export function withMode(Component, debug = false) {
     return withContext(props =>
         <Mode
             debug={debug}
+            palette={props.palette}
             darkMode={props.darkMode}
             changeDarkMode={props.actions.changeDarkMode}
             component={<Component {...props} />}

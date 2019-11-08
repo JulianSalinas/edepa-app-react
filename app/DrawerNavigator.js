@@ -11,7 +11,7 @@ import { Platform, Text } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator, createDrawerNavigator } from 'react-navigation';
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
 import { Ionicons, Feather, Entypo, AntDesign, MaterialIcons, SimpleLineIcons, FontAwesome } from '@expo/vector-icons';
-import Theme from '../theme/Theme';
+import DefaultTheme from '../theme/LightPalette';
 import { opacityFor } from '../scripts/Color';
 import { withContext } from '../app/AppContext';
 
@@ -41,7 +41,7 @@ const PeopleStack = createStackNavigator({
 
 const BottomNavigation = createMaterialBottomTabNavigator({
     Home: {
-        screen: HomeStack,
+        screen: Loading,
         navigationOptions: {
             tabBarIcon: ({ focused, tintColor }) => {
                 return <AntDesign
@@ -51,7 +51,6 @@ const BottomNavigation = createMaterialBottomTabNavigator({
                 />
             }
         }
-        
     },
     // News: {
     //     screen: News,
@@ -116,25 +115,21 @@ const BottomNavigation = createMaterialBottomTabNavigator({
     // }
 }, {
     initialRouteName: 'Home',
-    defaultNavigationOptions: props => {
-
-        console.log('drawer props', props)
-        const darkMode = props.theme === 'dark';
-        const activeColor = darkMode ? '#FFF' : Theme.primary
-        const inactiveColor = opacityFor(Theme.fontOpacity, darkMode)
-
-        return {
-            activeColor,
-            inactiveColor,
-            barStyle: {
-                backgroundColor: darkMode ?
-                    typeof (Theme.darkBackground) === 'string' ?
-                        Theme.darkBackground : Theme.darkBackground[0] : '#FFF'
-            }
-        }
-    }
+    defaultNavigationOptions: props => BottomNavigationOptions(props)
 })
 
+const BottomNavigationOptions = ({ screenProps }) => ({
+    activeColor: screenProps.palette.primary,
+    inactiveColor: screenProps.palette.fontColor,
+    barStyle: BottomNavigationColor(screenProps.palette)
+})
+
+const BottomNavigationColor = palette => ({
+    backgroundColor:
+        typeof (palette.background) === 'string' ?
+            palette.background :
+            palette.background[0]
+})
 
 const DrawerNavigation = createDrawerNavigator({
     Dashboard: {

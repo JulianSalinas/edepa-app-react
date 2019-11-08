@@ -7,7 +7,7 @@ import styled from 'styled-components/native';
 import { Text, View, Switch } from 'react-native';
 
 // Local
-import Theme from './Theme';
+import DefaultPalette from './LightPalette';
 
 
 const StyledText = styled(Text)`
@@ -18,7 +18,7 @@ const StyledText = styled(Text)`
 `
 
 const DarkText = props =>
-    <StyledText style={{ color: props.darkMode ? '#FFF' : '#000' }}>
+    <StyledText style={{ color: props.palette.primaryFont }}>
         MODO OSCURO
     </StyledText>
 
@@ -32,24 +32,23 @@ const StyledSwitch = styled(View)`
 
 const ModeSwitch = props =>
     <StyledSwitch style={{
-        backgroundColor: props.darkMode ?
-            typeof (props.darkBackground) === 'string' ?
-                props.darkBackground :
-                props.darkBackground[0] : '#FFF'
+        backgroundColor: typeof (props.palette.background) === 'string' ?
+            props.palette.background :
+            props.palette.background[0]
     }}>
-        <DarkText darkMode={props.darkMode} />
+        <DarkText {...props} />
         <Switch value={props.darkMode} onValueChange={props.changeDarkMode} />
     </StyledSwitch>
 
 ModeSwitch.propsTypes = {
     darkMode: PropTypes.bool,
     changeDarkMode: PropTypes.func.isRequired,
-    darkBackground: PropTypes.arrayOf(PropTypes.string)
+    palette: PropTypes.object
 }
 
 ModeSwitch.defaultProps = {
     darkMode: true,
-    darkBackground: Theme.darkBackground
+    palette: DefaultPalette
 }
 
 export default memo(ModeSwitch);

@@ -8,7 +8,7 @@ import { View, Platform, Text, FlatList } from 'react-native';
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 
 // Local 
-import Theme from '../../theme/Theme';
+import Theme from '../../theme/LightPalette';
 import Colors from '../../colors/Events';
 import { opacityFor } from '../../scripts/Color';
 import { useTheme } from 'react-navigation';
