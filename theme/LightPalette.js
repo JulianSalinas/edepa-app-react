@@ -2,7 +2,7 @@ import Gradient from '../colors/Gradient';
 
 export default {
 
-    background: '#000',
+    background: '#FFF',
     foreground: Gradient.CRIMSON_TIDE,
 
     primary: Gradient.CRIMSON_TIDE[0],

@@ -25,6 +25,10 @@ export class AppProvider extends PureComponent {
         this.database = firebase.database().ref('edepa6');
     }
 
+    watchUser = callback => {
+        callback(require('../samples/User').default)
+    }
+
     watchHome = callback => {
         this.database.child('congress').once('value', snapshot => callback(snapshot.val()));
     }
@@ -58,14 +62,8 @@ export class AppProvider extends PureComponent {
 
     // }
 
-    // watchPersonData = () => {
-    // firebase.database().ref("person").on("value", function (snapshot) {
-    //     var personData = snapshot.val();
-    //     this.setPersonData(personData);
-    // }.bind(this), function (error) { });
-    // }
-
     getActions = () => ({
+        watchUser: this.watchUser,
         watchHome: this.watchHome,
         changeDarkMode: this.changeDarkMode
     })

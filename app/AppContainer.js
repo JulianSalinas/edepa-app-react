@@ -17,4 +17,4 @@ const AppContainer = createAppContainer(
     createSwitchNavigator(routes)
 )
 
-export default withContext(props => <AppContainer theme={props.darkMode ? 'dark' : 'light'} screenProps={props} />)
+export default withContext(props => <AppContainer  screenProps={props} />)

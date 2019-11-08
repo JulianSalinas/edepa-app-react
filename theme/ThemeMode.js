@@ -14,7 +14,7 @@ const ModeSwitch = props =>
     />
 
 const Mode = props =>
-    <Background darkMode={props.darkMode} style={{ flex: 1 }}>
+    <Background darkMode={props.darkMode} darkBackground={props.palette.background} style={{ flex: 1 }}>
         {props.component}
         {
             props.debug ? <ModeSwitch {...props} /> : null

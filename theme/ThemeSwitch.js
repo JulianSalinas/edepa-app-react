@@ -31,19 +31,21 @@ const StyledSwitch = styled(View)`
 `
 
 const ModeSwitch = props =>
-    <StyledSwitch style={{
-        backgroundColor: typeof (props.palette.background) === 'string' ?
-            props.palette.background :
-            props.palette.background[0]
-    }}>
+    <StyledSwitch style={ ModeSwitchBackground(props) }>
         <DarkText {...props} />
         <Switch value={props.darkMode} onValueChange={props.changeDarkMode} />
     </StyledSwitch>
 
+const ModeSwitchBackground = ({ palette }) => ({
+    backgroundColor: typeof (palette.background) === 'string' ?
+        palette.background :
+        palette.background[0]
+})
+
 ModeSwitch.propsTypes = {
     darkMode: PropTypes.bool,
-    changeDarkMode: PropTypes.func.isRequired,
-    palette: PropTypes.object
+    palette: PropTypes.object,
+    changeDarkMode: PropTypes.func.isRequired
 }
 
 ModeSwitch.defaultProps = {
