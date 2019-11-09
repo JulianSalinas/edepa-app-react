@@ -11,11 +11,7 @@ import { View, Animated, Easing } from 'react-native';
 import { Platform } from '@unimodules/core';
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 import { useTheme } from 'react-navigation';
-
-// Constants
-const LIGHT_TRANSPARENT = 'rgba(0, 0, 0, 0.6)';
-const DARK_TRANSPARENT = 'rgba(255, 255, 255, 0.6)';
-
+import { withContext } from '../../../app/AppContext';
 
 const ClickableEnrolled = styled(View)`
     width: 40;
@@ -35,23 +31,23 @@ const TouchableEnrolled = styled(TouchableWithoutFeedback)`
     transform: translateY(2px); 
 `
 
-const EnrolledIcon = ({ darkMode, isActive }) =>
+const EnrolledIcon = props =>
     <Feather
-        color={isActive ? '#E91E63' : darkMode ? DARK_TRANSPARENT : LIGHT_TRANSPARENT}
-        name={isActive ? 'user-plus' : 'user-plus'} size={24}
+        color={props.isActive ? '#E91E63' : props.palette.secondaryFont}
+        name={props.isActive ? 'user-plus' : 'user-plus'} size={24}
     />
 
 const EnrolledWeb = props =>
     <ClickableEnrolled onClick={props.onPress}>
         <Animated.View style={props.style}>
-            <EnrolledIcon darkMode={props.darkMode} isActive={props.isActive} />
+            <EnrolledIcon {...props} isActive={props.isActive} />
         </Animated.View>
     </ClickableEnrolled>
 
 const EnrolledMobile = props =>
     <TouchableEnrolled onPress={props.onPress}>
         <Animated.View style={props.style}>
-            <EnrolledIcon darkMode={props.darkMode} isActive={props.isActive} />
+            <EnrolledIcon {...props} isActive={props.isActive} />
         </Animated.View>
     </TouchableEnrolled>
 
@@ -100,4 +96,4 @@ Enrolled.defaultProps = {
     toggleActive: () => console.log('Button pressed!')
 }
 
-export default Enrolled;
+export default withContext(Enrolled);

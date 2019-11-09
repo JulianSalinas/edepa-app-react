@@ -7,6 +7,7 @@ import styled from 'styled-components/native';
 import { useTheme } from 'react-navigation';
 import { View } from 'react-native';
 import Svg, { G, Circle } from 'react-native-svg'
+import { withContext } from '../../../app/AppContext';
 
 
 const StyledView = styled(View)`
@@ -36,7 +37,7 @@ const SidewayLayout = props =>
     </StyledView>
 
 const Sideway = props => {
-    const stroke = useTheme() === 'dark' ? '#FFF' : '#000';
+    const stroke = props.darkMode ? '#FFF' : '#000';
     const color = props.active ? props.color : stroke;
     const opacity = props.active ? 1 : 0.6;
 
@@ -67,4 +68,4 @@ Sideway.defaultProps = {
     isLast: false
 }
 
-export default memo(Sideway);
+export default withContext(Sideway);

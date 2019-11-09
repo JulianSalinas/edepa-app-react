@@ -12,11 +12,6 @@ import { View, Animated, Easing } from 'react-native';
 import { Platform } from '@unimodules/core';
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 
-// Constants
-const LIGHT_TRANSPARENT = 'rgba(0, 0, 0, 0.6)';
-const DARK_TRANSPARENT = 'rgba(255, 255, 255, 0.6)';
-
-
 const ClickableFavorite = styled(View)`
     width: 40;
     height: 40;
@@ -33,23 +28,23 @@ const TouchableFavorite = styled(TouchableWithoutFeedback)`
     justify-content: flex-end; 
 `
 
-const FavoriteIcon = ({ darkMode, isActive }) =>
+const FavoriteIcon = props =>
     <AntDesign
-        color={isActive ? '#FFC107' : darkMode ? DARK_TRANSPARENT : LIGHT_TRANSPARENT}
-        name={isActive ? 'star' : 'staro'} size={20}
+        color={props.isActive ? '#FFC107' : props.palette.secondaryFont}
+        name={props.isActive ? 'star' : 'staro'} size={20}
     />
 
 const FavoriteWeb = props =>
     <ClickableFavorite onClick={props.onPress}>
         <Animated.View style={props.style}>
-            <FavoriteIcon darkMode={props.darkMode} isActive={props.isActive} />
+            <FavoriteIcon {...props} isActive={props.isActive} />
         </Animated.View>
     </ClickableFavorite>
 
 const FavoriteMobile = props =>
     <TouchableFavorite onPress={props.onPress}>
         <Animated.View style={props.style}>
-            <FavoriteIcon darkMode={props.darkMode} isActive={props.isActive} />
+            <FavoriteIcon {...props} isActive={props.isActive} />
         </Animated.View>
     </TouchableFavorite>
 

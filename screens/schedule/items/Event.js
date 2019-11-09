@@ -21,6 +21,7 @@ import { EventTypes } from '../../../app/AppTypes';
 import { getLapse } from '../../../scripts/Time';
 import { opacityFor } from '../../../scripts/Color';
 import { useTheme } from 'react-navigation';
+import { withContext } from '../../../app/AppContext';
 
 
 const StyledLabel = styled(Text)`
@@ -32,16 +33,15 @@ const EventLabel = ({ color, event, eventype }) =>
         {`${eventype} ${event.id}`}
     </StyledLabel>
 
-
 const StyledTime = styled(Text)`
     font-size: 10;
     font-weight: 300;
     text-transform: uppercase;
 `
 
-const EventTime = ({ darkMode, event }) =>
-    <StyledTime numberOfLines={1} style={{ color: opacityFor(Theme.fontOpacity, darkMode) }}>
-        {getLapse(event.start, event.end)}
+const EventTime = props =>
+    <StyledTime numberOfLines={1} style={{ color: props.palette.secondaryFont }}>
+        {getLapse(props.event.start, props.event.end)}
     </StyledTime>
 
 const StyledHeader = styled(View)`
@@ -53,10 +53,10 @@ const StyledHeader = styled(View)`
     margin-bottom: 4px;
 `
 
-const Header = ({ darkMode, color, event, eventype }) =>
+const Header = props =>
     <StyledHeader>
-        <EventLabel event={event} color={color} eventype={eventype} />
-        <EventTime event={event} darkMode={darkMode} />
+        <EventLabel {...props} />
+        <EventTime {...props} />
     </StyledHeader>
 
 const StyledTitle = styled(Text)`
@@ -95,7 +95,7 @@ const StyledReadMore = styled(View)`
 
 const ReadMore = props =>
     <StyledReadMore>
-        <EventLocation event={props.event} color={opacityFor(Theme.fontOpacity, props.darkMode)} />
+        <EventLocation event={props.event} color={props.palette.secondaryFont} />
         <Text style={{ color: '#448AFF', marginStart: -4 }}> Leer más </Text>
     </StyledReadMore>
 
@@ -136,10 +136,10 @@ const EventLayout = props =>
     </StyledEvent>
 
 const WrappedEvent = props => {
-    const darkMode = useTheme() === 'dark';
-    const color = Colors[props.eventype][useTheme()];
-    const background = opacityFor(Theme.itemOpacity, darkMode, props.isEven);
-    return <EventLayout {...props} color={color} background={background} darkMode={darkMode} />
+    console.log('en wrapped', props)
+    const color = Colors[props.eventype][props.darkMode ? 'dark' : 'light'];
+    const background = props.isEven ? props.palette.secondaryItem : 'transparent';
+    return <EventLayout {...props} color={color} background={background} darkMode={props.darkMode} />
 }
 
 class Event extends PureComponent {
@@ -178,4 +178,4 @@ Event.defaultProps = {
     event: Sample,
 }
 
-export default Event;
+export default withContext(Event);

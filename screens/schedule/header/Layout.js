@@ -187,7 +187,7 @@ const Layout = props =>
     </Background>
 
 const Header = props => {
-    const foreground = props.darkMode ? Theme.darkForeground : Theme.foreground;
+    const foreground = props.palette.foreground;
     return <Layout {...props} foreground={foreground} />
 }
 

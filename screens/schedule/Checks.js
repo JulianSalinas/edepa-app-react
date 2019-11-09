@@ -22,8 +22,7 @@ const StyledText = styled(Text)`
 
 const ButtonText = props =>
     <StyledText style={{
-        color: props.isFocused ? props.darkMode ? '#FFF' : '#000' :
-            opacityFor(Theme.fontOpacity, props.darkMode)
+        color: props.isFocused ? props.palette.primaryFont : props.palette.secondaryFont
     }}>
         {props.text}
     </StyledText>
@@ -40,15 +39,18 @@ const ButtonView = props =>
         <ButtonText {...props} />
     </StyledButtonView>
 
-const ButtonStyle = ({ color, isFocused, darkMode }) => ({
-    display: 'flex',
-    alignItems: 'center',
-    borderRadius: 48,
-    paddingVertical: 4,
-    paddingHorizontal: 16,
-    borderWidth: 1,
-    borderColor: isFocused ? color : opacityFor(Theme.fontOpacity, darkMode),
-})
+const ButtonStyle = props => {
+    console.log('Button Style', props)
+    return ({
+        display: 'flex',
+        alignItems: 'center',
+        borderRadius: 48,
+        paddingVertical: 4,
+        paddingHorizontal: 16,
+        borderWidth: 1,
+        borderColor: props.isFocused ? props.color : props.palette.secondaryFont
+    })
+}
 
 const TouchableButton = props =>
     <TouchableWithoutFeedback
@@ -73,6 +75,7 @@ const CheckButton = props => {
 
 const CheckItem = props =>
     <CheckButton
+        {...props}
         key={props.type}
         text={props.type}
         color={Colors[props.type][props.darkMode ? 'dark' : 'light']}

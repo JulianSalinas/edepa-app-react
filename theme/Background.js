@@ -28,7 +28,7 @@ const LightBackground = props =>
     </StyledView>
 
 const WebBackground = props =>
-    <StyledView style={BackgroundImage(props)}>
+    <StyledView onLayout={props.onLayout} style={BackgroundImage(props)}>
         {props.children}
     </StyledView>
 
@@ -41,6 +41,7 @@ const StyledGradient = styled(LinearGradient)`
 const MobileBackground = props =>
     <StyledGradient
         style={props.style}
+        onLayout={props.onLayout}
         start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
         colors={props.background}>
         {props.children}
@@ -59,6 +60,7 @@ const Background = props => {
 
 Background.propsTypes = {
     style: PropTypes.object,
+    onLayout: PropTypes.func,
     darkMode: PropTypes.bool,
     darkBackground: PropTypes.string || PropTypes.arrayOf(PropTypes.string)
 }

@@ -44,39 +44,39 @@ const HomeScreen = {
     screen: Loading,
     navigationOptions: {
         tabBarIcon: ({ tintColor }) =>
-        <AntDesign size={24} name={'home'} color={tintColor}/>
+            <AntDesign size={24} name={'home'} color={tintColor} />
     }
 }
 
 const NewsScreen = {
     screen: News,
     navigationOptions: {
-        tabBarIcon: ({ tintColor }) => 
-        <Entypo size={24} name={'documents'} color={tintColor}/>
+        tabBarIcon: ({ tintColor }) =>
+            <Entypo size={24} name={'documents'} color={tintColor} />
     }
 }
 
 const ScheduleScreen = {
     screen: ScheduleStack,
     navigationOptions: {
-        tabBarIcon: ({ tintColor }) => 
-        <SimpleLineIcons size={24} name={'graduation'} color={tintColor}/>
+        tabBarIcon: ({ tintColor }) =>
+            <SimpleLineIcons size={24} name={'graduation'} color={tintColor} />
     }
 }
 
 const PeopleScreen = {
     screen: People,
     navigationOptions: {
-        tabBarIcon: ({ tintColor }) => 
-        <SimpleLineIcons size={24} name={'people'} color={tintColor}/>
+        tabBarIcon: ({ tintColor }) =>
+            <SimpleLineIcons size={24} name={'people'} color={tintColor} />
     }
 }
 
-const SettingsScreen = { 
-    screen: Settings,
+const SettingsScreen = {
+    screen: News,
     navigationOptions: {
-        tabBarIcon: ({ tintColor }) => 
-        <Feather size={24} name={'settings'} color={tintColor}/>
+        tabBarIcon: ({ tintColor }) =>
+            <Feather size={24} name={'settings'} color={tintColor} />
     }
 }
 
@@ -101,17 +101,17 @@ const BottomNavigationOptions = ({ screenProps }) => ({
  * TODO: Create Custom Content Component
  */
 const DrawerNavigation = createDrawerNavigator({
-    Dashboard: BottomNavigation, 
-    Settings: { 
-        screen: Settings,
+    Dashboard: BottomNavigation,
+    Settings: {
+        screen: News,
         navigationOptions: {
-            drawerIcon: ({ tintColor }) => 
-            <Feather size={24} name={'settings'} color={tintColor}/>
+            drawerIcon: ({ tintColor }) =>
+                <Feather size={24} name={'settings'} color={tintColor} />
         }
-    }    
+    }
 }, {
     initialRouteName: 'Dashboard',
-    contentComponent: props => <DrawerContent {...props}/>
+    contentComponent: props => <DrawerContent {...props} />
 })
 
 const NavigationColor = palette => ({

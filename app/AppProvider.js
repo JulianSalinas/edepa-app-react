@@ -4,6 +4,8 @@ import React, { PureComponent } from 'react';
 
 // Local
 import AppContext from './AppContext';
+import DarkPalette from '../theme/DarkPalette';
+import LightPalette from '../theme/LightPalette';
 
 /**
  * ? All data shared across the app should be here 
@@ -35,7 +37,7 @@ export class AppProvider extends PureComponent {
 
     changeDarkMode = value => this.setState({
         darkMode: value,
-        palette: require(`../theme/${value ? 'Dark' : 'Light'}Palette`).default
+        palette: value ? DarkPalette : LightPalette
     })
 
     // onValueRead = (key, value) => this.setState(state => ({

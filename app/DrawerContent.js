@@ -3,29 +3,62 @@ import React, { PureComponent } from 'react';
 
 import { Text, Animated, ScrollView, SafeAreaView } from 'react-native';
 import Background from '../theme/Background';
-import { Avatar } from 'react-native-paper';
+import Avatar from '../shared/Avatar';
 import { withContext } from './AppContext';
 import { View } from 'native-base';
 import styled from 'styled-components/native';
+import { NavigationActions } from 'react-navigation';
+import { Feather, SimpleLineIcons } from '@expo/vector-icons';
 
+const DrawerItemText = ({ item, ...props }) =>
+    <Text onPress={props.navigateTo(item.key)} style={{
+        paddingBottom: 4,
+        fontSize: 24,
+        fontWeight: props.activeItemKey === item.key ? 'bold' : '300',
+        color: props.palette[`${props.activeItemKey === item.key ? 'primary' : 'secondary'}Font`]
+    }}>
+        {item.routeName}
+    </Text>
 
-const DrawerItems = props => props.items.map((item, index) => 
-    <View key={`item.routeName-${index}`} style={{ padding: 4 }}>
-        {/* {props.renderIcon(props.activeItemKey)} */}
-        <Text style={{
-            fontSize: 24,
-            paddingHorizontal: 32,
-            color: props.activeItemKey === item.key ? 
-                props.palette.primaryFont : props.palette.secondaryFont,
-            fontWeight: props.activeItemKey === item.key ? 'bold' : '300'
-        }}>
-            {item.routeName}
-        </Text>
-        
+const DrawerItems = props => props.items.map((item, index) =>
+    <View key={`item.routeName-${index}`} style={{ display: 'flex', flexDirection: 'row' }}>
+        <DrawerItemText {...props} item={item} />
     </View>
 )
 
-const StyledHeader = styled(View)`
+const StyledList = styled(Animated.View)`
+    padding: 0px 32px 0px 32px;
+`
+
+const DrawerList = props =>
+    <StyledList style={{ flex: 1, transform: [{ translateX: props.translateX }, { translateY: props.translateY }] }}>
+        <DrawerItems {...props} />
+    </StyledList>
+
+const DrawerAvatar = props =>
+    <Avatar
+        size={48}
+        title={props.user ? props.user.username : ''}
+        source={require('../assets/images/robot-prod.png')}
+    />
+
+const DrawerUsername = props =>
+    <Text style={{ color: props.palette.primaryFont, fontWeight: 'bold' }} numberOfLines={1}>
+        {props.user ? props.user.username : ''}
+    </Text>
+
+const DrawerEmail = props =>
+    <Text style={{ color: props.palette.primaryFont, fontWeight: '100', fontSize: 12 }} numberOfLines={1}>
+        {props.user ? props.user.email : ''}
+    </Text>
+
+const DrawerUser = props =>
+    <View>
+        <DrawerUsername {...props} />
+        <DrawerEmail {...props} />
+    </View>
+
+const StyledHeader = styled(Animated.View)`
     display: flex;
     flex-flow: row;
     align-items: center;
@@ -33,38 +66,25 @@ const StyledHeader = styled(View)`
     padding: 64px 32px 16px 32px; 
 `
 
+const DrawerHeader = props =>
+    <StyledHeader style={{ flex: 1, transform: [{ translateX: props.translateX }, { translateY: props.translateY }] }}>
+        <DrawerAvatar {...props} />
+        <View style={{ margin: 8 }} />
+        <DrawerUser {...props} />
+    </StyledHeader>
+
 const ScrollableDrawer = props =>
-    <ScrollView>
-        <StyledHeader>
+    <Animated.ScrollView>
+        <DrawerHeader {...props} />
+        <DrawerList {...props} />
+    </Animated.ScrollView>
 
-            <View style={{ padding: 4 }}>
-                <Avatar.Image 
-                    size={48} 
-                    source={props.user ? props.user.photoUrl : require('../assets/images/robot-dev.png')}
-                />
-            </View>
-            
-            <View style={{ padding: 4 }}>
-                <Text style={{ color: props.palette.primaryFont, fontWeight: 'bold' }}>
-                    {props.user ? props.user.username : ''}
-                </Text>
-                <Text style={{ color: props.palette.primaryFont }}>
-                    {props.user ? props.user.email : ''}
-                </Text>
-            </View>
-
-        </StyledHeader>
-        <View>
-            <DrawerItems {...props} />
-        </View>
-    </ScrollView>
-
-const DrawerBackground = props => 
-    <Background 
+const DrawerBackground = props =>
+    <Background
         style={{ flex: 1 }}
-        darkMode={props.darkMode} 
+        darkMode={props.darkMode}
         darkBackground={props.palette.background}>
-        <ScrollableDrawer {...props}/>
+        <ScrollableDrawer {...props} />
     </Background>
 
 /**
@@ -73,17 +93,26 @@ const DrawerBackground = props =>
  */
 class DrawerContent extends PureComponent {
 
-
     state = {
         user: null
     }
 
     translateX = this.props.drawerOpenProgress.interpolate({
         inputRange: [0, 1],
-        outputRange: [-100, 0],
+        outputRange: [-80, 0],
     })
 
-    componentDidMount(){
+    translateY = this.props.drawerOpenProgress.interpolate({
+        inputRange: [0, 1],
+        outputRange: [-80, 0],
+    })
+
+    navigateTo = routeName => () => {
+        const navigateAction = NavigationActions.navigate({ routeName });
+        this.props.navigation.dispatch(navigateAction);
+    }
+
+    componentDidMount() {
         console.log('Drawer Content Props', this.props)
         this.props.actions.watchUser(user => this.setState({ user }));
     }
@@ -91,7 +120,12 @@ class DrawerContent extends PureComponent {
     render() {
         return (
             <SafeAreaView style={{ flex: 1 }}>
-                <DrawerBackground {...this.props} user={this.state.user}/>
+                <DrawerBackground
+                    {...this.props}
+                    user={this.state.user}
+                    translateX={this.translateX}
+                    translateY={this.translateY}
+                    navigateTo={this.navigateTo} />
             </SafeAreaView>
         )
     }
