@@ -81,7 +81,6 @@ class People extends PureComponent {
     }
 
     render() {
-        console.log(this.props)
         return <PeopleLayout
             people={this.state.peopleGroups}
             darkMode={this.props.darkMode}

@@ -2,7 +2,7 @@ import Gradient from '../colors/Gradient';
 
 export default {
 
-    background: Gradient.CARBON,
+    background: Gradient.DARK_REAL,
     foreground: Gradient.KASHMIR,
 
     primary: Gradient.KASHMIR[0],

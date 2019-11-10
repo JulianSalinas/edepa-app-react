@@ -1,18 +1,18 @@
-export default [
-    "#1abc9c",
-    "#16a085",
-    "#2ecc71",
-    "#27ae60",
-    "#3498db",
-    "#2980b9",
-    "#9b59b6",
-    "#8e44ad",
-    "#34495e",
-    "#2c3e50",
-    "#f1c40f",
-    "#f39c12",
-    "#e67e22",
-    "#d35400",
-    "#e74c3c",
-    "#c0392b"
-]
+export default {
+    TURQUOISE: "#1abc9c",
+    GREEN_SEA: "#16a085",
+    EMERALD: "#2ecc71",
+    NEPHRITIS: "#27ae60",
+    PETER_RIVER: "#3498db",
+    BELIZE_HOLE: "#2980b9",
+    AMETHYIST: "#9b59b6",
+    WISTERIA: "#8e44ad",
+    WET_ASPHALT: "#34495e",
+    MIDNIGHT_BLUE: "#2c3e50",
+    SUNFLOWER: "#f1c40f",
+    ORANGE: "#f39c12",
+    CARROT: "#e67e22",
+    PUMPKIN: "#d35400",
+    ALIZARIN: "#e74c3c",
+    POMEGRANATE: "#c0392b"
+}

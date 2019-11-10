@@ -1,24 +1,24 @@
 export default {
     CARBON: ['#222222', '#222222'],
-    CRIMSON_TIDE: ['#642B73', '#C6426E'], // Cool 
-    CRISTAL_CLEAR: ['#159957', '#155799'], // Aceptable
-    VICE_CITY: ['#4568DC', '#B06AB3'], // Cool 
-    NIGHT_PURPLE: ['#41295a', '#2F0743'], // Aceptable
-    DISCO: ['#4ECDC4', '#556270'], // Aceptable
-    BLUSH: ['#B24592', '#F15F79'], // Aceptable
-    SHROOM_HAZE: ['#5C258D', '#4389A2'], // Cool 
-    RED_SUNSET: ['#355C7D', '#6C5B7B', '#C06C84'], // Cool 
-    LOVE_COUPLE: ['#3a6186', '#89253e'], // Cool
-    RED_OCEAN: ['#1D4350', '#A43931'], // Aceptable
-    MEMARIANI: ['#aa4b6b', '#6b6b83', '#3b8d99'], // Aceptable
-    LAWREMCIUM: ['#0f0c29', '#302b63', '#24243e'], // Aceptable
-    KASHMIR: ['#614385', '#516395'], // Cool 
-    SELENIUM: ['#3C3B3F', '#605C3C'], // Ugly
-    DEEP_SPACE: ['#000000', '#434343'], // Cool 
-    MIDNIGHT_CITY: ['#232526', '#414345'], // Cool 
-    SOMEONE_TIE: ['#28313B', '#485461'], // Ugly 
-    NIGHT_SHIFT: ['#2b4162', '#12100e'], // Ugly
-    DARK_REAL: ['#141E30', '#243B55'],  // Transparent
+    CRIMSON_TIDE: ['#642B73', '#C6426E'],
+    CRISTAL_CLEAR: ['#159957', '#155799'],
+    VICE_CITY: ['#4568DC', '#B06AB3'],
+    NIGHT_PURPLE: ['#41295a', '#2F0743'],
+    DISCO: ['#4ECDC4', '#556270'],
+    BLUSH: ['#B24592', '#F15F79'],
+    SHROOM_HAZE: ['#5C258D', '#4389A2'],
+    RED_SUNSET: ['#355C7D', '#6C5B7B', '#C06C84'],
+    LOVE_COUPLE: ['#3a6186', '#89253e'],
+    RED_OCEAN: ['#1D4350', '#A43931'],
+    MEMARIANI: ['#aa4b6b', '#6b6b83', '#3b8d99'],
+    LAWREMCIUM: ['#0f0c29', '#302b63', '#24243e'],
+    KASHMIR: ['#614385', '#516395'],
+    SELENIUM: ['#3C3B3F', '#605C3C'],
+    DEEP_SPACE: ['#000000', '#434343'],
+    MIDNIGHT_CITY: ['#232526', '#414345'],
+    SOMEONE_TIE: ['#28313B', '#485461'],
+    NIGHT_SHIFT: ['#2b4162', '#12100e'],
+    DARK_REAL: ['#141E30', '#243B55'],
     MOONLIT_ASTEROID: ['#0F2027', '#203A43', '#2C5364'],
     AMIN: ['#8E2DE2', '#4A00E0'],
     SEA_BLUE: ['#2b5876', '#4e4376'],

@@ -7,7 +7,7 @@ import styled from 'styled-components/native';
 import { View, Text } from 'react-native';
 
 // Local 
-import flat from '../colors/Flat';
+import Flat from '../colors/Flat';
 import { initials } from '../scripts/Utils';
 import { colorFor } from '../scripts/Color';
 
@@ -46,7 +46,7 @@ Avatar.propTypes = {
 Avatar.defaultProps = {
     size: 90,
     style: {},
-    colors: flat,
+    colors: Object.values(Flat),
     title: 'Julian Salinas Rojas',
     shape: 'circle'
 }

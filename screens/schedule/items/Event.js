@@ -136,7 +136,6 @@ const EventLayout = props =>
     </StyledEvent>
 
 const WrappedEvent = props => {
-    console.log('en wrapped', props)
     const color = Colors[props.eventype][props.darkMode ? 'dark' : 'light'];
     const background = props.isEven ? props.palette.secondaryItem : 'transparent';
     return <EventLayout {...props} color={color} background={background} darkMode={props.darkMode} />

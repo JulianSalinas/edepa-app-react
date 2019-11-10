@@ -39,18 +39,15 @@ const ButtonView = props =>
         <ButtonText {...props} />
     </StyledButtonView>
 
-const ButtonStyle = props => {
-    console.log('Button Style', props)
-    return ({
-        display: 'flex',
-        alignItems: 'center',
-        borderRadius: 48,
-        paddingVertical: 4,
-        paddingHorizontal: 16,
-        borderWidth: 1,
-        borderColor: props.isFocused ? props.color : props.palette.secondaryFont
-    })
-}
+const ButtonStyle = props => ({
+    display: 'flex',
+    alignItems: 'center',
+    borderRadius: 48,
+    paddingVertical: 4,
+    paddingHorizontal: 16,
+    borderWidth: 1,
+    borderColor: props.isFocused ? props.color : props.palette.secondaryFont
+})
 
 const TouchableButton = props =>
     <TouchableWithoutFeedback
