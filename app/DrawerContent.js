@@ -1,24 +1,28 @@
 // Core 
 import React, { PureComponent } from 'react';
 
-import { Text, Animated, ScrollView, SafeAreaView } from 'react-native';
-import Background from '../theme/Background';
-import Avatar from '../shared/Avatar';
-import { withContext } from './AppContext';
-import { View } from 'native-base';
+// Libs 
 import styled from 'styled-components/native';
 import { NavigationActions } from 'react-navigation';
-import { Feather, SimpleLineIcons } from '@expo/vector-icons';
+import { View, Text, Animated, SafeAreaView } from 'react-native';
+
+//Local 
+import { withContext } from './AppContext';
+import Avatar from '../shared/Avatar';
+import Background from '../theme/Background';
+
+const StyledItemText = styled(Text)`
+    font-size: 24;
+    padding-bottom: 4px;
+`
 
 const DrawerItemText = ({ item, ...props }) =>
-    <Text onPress={props.navigateTo(item.key)} style={{
-        paddingBottom: 4,
-        fontSize: 24,
+    <StyledItemText onPress={props.navigateTo(item.key)} style={{
         fontWeight: props.activeItemKey === item.key ? 'bold' : '300',
         color: props.palette[`${props.activeItemKey === item.key ? 'primary' : 'secondary'}Font`]
     }}>
         {item.routeName}
-    </Text>
+    </StyledItemText>
 
 const DrawerItems = props => props.items.map((item, index) =>
     <View key={`item.routeName-${index}`} style={{ display: 'flex', flexDirection: 'row' }}>
@@ -113,7 +117,6 @@ class DrawerContent extends PureComponent {
     }
 
     componentDidMount() {
-        console.log('Drawer Content Props', this.props)
         this.props.actions.watchUser(user => this.setState({ user }));
     }
 

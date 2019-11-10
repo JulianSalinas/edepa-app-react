@@ -5,8 +5,6 @@ import PropTypes from 'prop-types';
 // Libs 
 import Svg, { Path, Defs, LinearGradient, Stop } from 'react-native-svg';
 
-// Local 
-import Theme from '../theme/LightPalette';
 
 const Logo = props =>
 
@@ -45,9 +43,9 @@ const Logo = props =>
     </Svg>
 
 const Edepa = props => {
-    const isString = typeof (Theme.darkForeground) === 'string';
-    const first = isString ? Theme.darkForeground : Theme.darkForeground[0];
-    const second = isString ? Theme.darkForeground : Theme.darkForeground[1];
+    const isString = typeof (props.color) === 'string';
+    const first = isString ? props.color : props.color[0];
+    const second = isString ? props.color : props.color[1];
     return <Logo {...props} first={first} second={second} />
 }
 

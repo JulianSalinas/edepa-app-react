@@ -1,20 +1,19 @@
+// Core 
 import React from 'react';
 
+// Libs 
+import { createStackNavigator, createDrawerNavigator } from 'react-navigation';
+import { Feather, Entypo, AntDesign, SimpleLineIcons } from '@expo/vector-icons';
+import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
+
+// Local 
+import Drawer from './DrawerContent';
 import Home from '../screens/home/Home';
-import Settings from '../screens/settings/Settings';
-import Schedule from '../screens/schedule/Schedule';
 import News from '../screens/news/News';
 import People from '../screens/people/People';
 import Loading from '../screens/auth/Loading';
-import DrawerContent from './DrawerContent';
+import Schedule from '../screens/schedule/Schedule';
 
-import { Platform, Text } from 'react-native';
-import { createStackNavigator, createBottomTabNavigator, createDrawerNavigator } from 'react-navigation';
-import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
-import { Ionicons, Feather, Entypo, AntDesign, MaterialIcons, SimpleLineIcons, FontAwesome } from '@expo/vector-icons';
-import DefaultTheme from '../theme/LightPalette';
-import { opacityFor } from '../scripts/Color';
-import { withContext } from '../app/AppContext';
 
 const ScheduleStack = createStackNavigator({
     Schedule: {
@@ -41,7 +40,7 @@ const PeopleStack = createStackNavigator({
 })
 
 const HomeScreen = {
-    screen: Loading,
+    screen: HomeStack,
     navigationOptions: {
         tabBarIcon: ({ tintColor }) =>
             <AntDesign size={24} name={'home'} color={tintColor} />
@@ -87,7 +86,7 @@ const BottomNavigation = createMaterialBottomTabNavigator({
     People: PeopleScreen,
     Settings: SettingsScreen
 }, {
-    initialRouteName: 'Schedule',
+    initialRouteName: 'Home',
     defaultNavigationOptions: props => BottomNavigationOptions(props)
 })
 
@@ -111,7 +110,7 @@ const DrawerNavigation = createDrawerNavigator({
     }
 }, {
     initialRouteName: 'Dashboard',
-    contentComponent: props => <DrawerContent {...props} />
+    contentComponent: props => <Drawer {...props} />
 })
 
 const NavigationColor = palette => ({

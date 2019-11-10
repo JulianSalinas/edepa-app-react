@@ -13,18 +13,9 @@ import Theme from '../../theme/LightPalette';
 import Logo from '../../shared/Edepa';
 import { ScrollView } from 'react-native-gesture-handler';
 import { getStatusBarHeight } from 'react-native-status-bar-height';
-import { Feather, MaterialIcons } from '@expo/vector-icons';
-
-const StyledView = styled(ScrollView)`
-    flex: 1;
-    display: flex;
-`
-
-const StyledUpper = styled(View)`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-`
+import { Feather, MaterialIcons, Entypo, Ionicons } from '@expo/vector-icons';
+import { Platform } from '@unimodules/core';
+import Toolbar from '../../shared/Toolbar';
 
 const Option = props =>
     <View style={{
@@ -95,37 +86,85 @@ const HomeStats = props =>
         <HomeStat {...props} amount={54} description={'Participantes'} />
     </StyledStats>
 
-const Layout = props =>
-    <StyledView
-        style={{ paddingTop: getStatusBarHeight() + 16 }}
-        contentContainerStyle={{ paddingVertical: 16 }}>
+const StyledUpperText = styled(Animated.Text)`
+    color: #FFF;
+    font-size: 10;
+    letter-spacing: 2.4;
+    text-transform: uppercase;
+`
 
-        <StyledUpper>
-            <Logo darkMode={props.darkMode} />
-            <Caption style={{ color: opacityFor(Theme.fontOpacity, props.darkMode) }}>
-                Bienvenido
-            </Caption>
-        </StyledUpper>
+const UpperText = props =>
+    <StyledUpperText style={TextStyle(props)}>
+        {getWeekDay(props.datetime)}
+    </StyledUpperText>
 
-        <Animated.ScrollView
-            scrollEventThrottle={16}
-            style={{ marginTop: 16 }}
-        >
+const StyledUpper = styled(View)`
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 8px 16px 8px 16px;
+`
 
-            <HomeStats {...props} />
-            <HomeDate {...props} />
-            <Option {...props} text='Información' />
-            <Option {...props} text='Ubicación' />
-            <Option {...props} text='Acerca de' />
-            <Option {...props} text='Salir' />
+const UpperView = props =>
+    <StyledUpper>
+        <Entypo
+            size={24}
+            color={'#FFF'}
+            name={'menu'}
+            onPress={props.navigation.openDrawer}
+        />
+        <UpperText {...props} />
+        <Ionicons
+            size={24}
+            color={'#FFF'}
+            name={`${Platform ? 'ios' : 'md'}-search`}
+        />
+    </StyledUpper>
 
-        </Animated.ScrollView>
+const StyledHeader = styled(View)`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`
 
-    </StyledView>
+const HomeHeader = props =>
+    <StyledHeader>
+        <Logo darkMode={props.darkMode} color={props.palette.foreground} />
+        <Caption style={{ color: props.palette.secondaryFont }}>
+            Bienvenido
+        </Caption>
+    </StyledHeader>
+
+const StyledScrollView = styled(ScrollView)`
+    flex: 1;
+    display: flex;
+`
+
+const HomeLayout = props =>
+    <View style={{ flex: 1, paddingTop: getStatusBarHeight() }}>
+        <Toolbar text={'Inicio'} darkMode={props.darkMode} />
+        <StyledScrollView contentContainerStyle={{ paddingVertical: 16 }}>
+            <HomeHeader {...props} />
+            {/* <Animated.ScrollView
+                scrollEventThrottle={16}
+                style={{ marginTop: 16 }}
+            >
+
+                <HomeStats {...props} />
+                <HomeDate {...props} />
+                <Option {...props} text='Información' />
+                <Option {...props} text='Ubicación' />
+                <Option {...props} text='Acerca de' />
+                <Option {...props} text='Salir' />
+
+            </Animated.ScrollView> */}
+
+        </StyledScrollView>
+    </View>
 
 
 class Home extends PureComponent {
-
 
     state = {
         event: null,
@@ -137,8 +176,7 @@ class Home extends PureComponent {
     }
 
     render() {
-        console.log('Props in home', this.props);
-        return this.state.isLoading ? <Loading /> : <Layout {...this.props} event={this.state.event} />
+        return this.state.isLoading ? <Loading /> : <HomeLayout {...this.props} event={this.state.event} />
     }
 
 }

@@ -5,19 +5,16 @@ import PropTypes from 'prop-types';
 // Libs 
 import styled from 'styled-components/native';
 import GestureRecognizer from 'react-native-swipe-gestures';
-import { getStatusBarHeight } from 'react-native-status-bar-height';
-import { View, Animated, TextInput } from 'react-native';
+import { View, Animated } from 'react-native';
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
+import { getStatusBarHeight } from 'react-native-status-bar-height';
 
 // Local 
 import Filter from './Filter';
 import Switcher from './Switch';
-import Theme from '../../../theme/LightPalette';
+import Toolbar from '../../../shared/Toolbar';
 import Background from '../../../theme/Background';
 import { getWeekDay, getMonth, getYear, getDay } from '../../../scripts/Time';
-import { opacityFor } from '../../../scripts/Color';
-import { Ionicons, Entypo } from '@expo/vector-icons';
-import { Platform } from '@unimodules/core';
 
 
 const TextStyle = props => ({
@@ -36,41 +33,10 @@ const Movement = props => ([
     { translateY: props.moveAnimation.y }
 ])
 
-const StyledUpperText = styled(Animated.Text)`
-    color: #FFF;
-    font-size: 10;
-    letter-spacing: 2.4;
-    text-transform: uppercase;
-`
-
-const UpperText = props =>
-    <StyledUpperText style={TextStyle(props)}>
-        {getWeekDay(props.datetime)}
-    </StyledUpperText>
-
-const StyledUpper = styled(Animated.View)`
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 8px 16px 8px 16px;
-`
-
 const UpperView = props =>
-    <StyledUpper style={{ opacity: CenterOpacity(props) }}>
-        <Entypo
-            size={24}
-            color={'#FFF'}
-            name={'menu'}
-            onPress={props.navigation.openDrawer}
-        />
-        <UpperText {...props} />
-        <Ionicons
-            size={24}
-            color={'#FFF'}
-            name={`${Platform.OS ? 'ios' : 'md'}-search`}
-        />
-    </StyledUpper>
+    <Animated.View style={{ opacity: CenterOpacity(props) }}>
+        <Toolbar text={getWeekDay(props.datetime)} darkMode />
+    </Animated.View>
 
 const CenterOpacity = ({ height }) => height.interpolate({
     inputRange: [200 - 45 * 2, 200 - 45],
