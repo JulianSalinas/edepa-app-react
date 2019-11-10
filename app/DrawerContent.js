@@ -87,7 +87,10 @@ const DrawerBackground = props =>
     <Background
         style={{ flex: 1 }}
         darkMode={props.darkMode}
-        darkBackground={props.palette.background}>
+        darkBackground={
+            typeof (props.palette.background) === 'string' ?
+                props.palette.background : props.palette.background[0]
+        }>
         <ScrollableDrawer {...props} />
     </Background>
 

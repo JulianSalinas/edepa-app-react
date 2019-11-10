@@ -4,7 +4,7 @@ import React, { memo } from 'react';
 
 // Libs
 import styled from 'styled-components/native';
-import { View, ScrollView } from 'react-native';
+import { SafeAreaView, ScrollView } from 'react-native';
 import { getStatusBarHeight } from 'react-native-status-bar-height';
 
 // Local 
@@ -29,10 +29,10 @@ const ScrollableHome = props =>
     </StyledScrollableHome>
 
 const Home = props =>
-    <View style={{ flex: 1, paddingTop: getStatusBarHeight() }}>
+    <SafeAreaView style={{ flex: 1, paddingTop: getStatusBarHeight() }}>
         <Toolbar text={props.toolbarText} darkMode={props.darkMode} />
         <ScrollableHome {...props} />
-    </View>
+    </SafeAreaView>
 
 Home.propTypes = {
     home: HomeTypes,

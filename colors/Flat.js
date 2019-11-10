@@ -14,5 +14,6 @@ export default {
     CARROT: "#e67e22",
     PUMPKIN: "#d35400",
     ALIZARIN: "#e74c3c",
-    POMEGRANATE: "#c0392b"
+    POMEGRANATE: "#c0392b",
+    FACEBOOK: "#3B5998"
 }

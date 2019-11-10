@@ -6,6 +6,7 @@ import React, { PureComponent } from 'react';
 import AppContext from './AppContext';
 import DarkPalette from '../theme/DarkPalette';
 import LightPalette from '../theme/LightPalette';
+import { READ, UPDATE, DELETE } from '../constants/Actions';
 
 /**
  * ? All data shared across the app should be here 
@@ -35,38 +36,48 @@ export class AppProvider extends PureComponent {
         this.database.child('congress').once('value', snapshot => callback(snapshot.val()));
     }
 
+    synchList = (name, receive) => {
+        const reference = this.database.child(name);
+        const callback = action => this.createSynchCallback(action, receive);
+        reference.on('child_changed', callback(UPDATE));
+        reference.on('child_removed', callback(DELETE));
+        return { reference, callback };
+    }
+
+    syncPeople = receive => {
+        const { reference, callback } = this.synchList('people', receive);
+        reference.orderByChild('completeName').on('child_added', callback(READ));
+    }
+
+    syncNews = receive => {
+        const { reference, callback } = this.synchList('news', receive);
+        reference.orderByChild('time').on('child_added', callback(READ));
+    }
+
+    stopSync = name => {
+        this.database.child(name).off();
+    }
+
+    /**
+     * @param {string} action, it could be READ, UPDATE, DELETE
+     * @param {function} receive, function from the app to receive the data back
+     * @returns {function({ key, val }): * }
+     */
+    createSynchCallback(action, receive) {
+        return snapshot => receive(snapshot.key, snapshot.val(), action);
+    }
+
     changeDarkMode = value => this.setState({
         darkMode: value,
         palette: value ? DarkPalette : LightPalette
     })
 
-    // onValueRead = (key, value) => this.setState(state => ({
-    //     [key]: value
-    // }))
-
-    // onItemRead = (key, value) => this.setState(state => ({
-    //     [key]: [...state[key], value]
-    // }))
-
-    // onItemUpdated = (key, value) => this.setState(state => ({
-    //     [key]: state[key].map(old => old.key === key ? value : old)
-    // }))
-
-    // onItemDeleted = (key, value) => this.setState(state => ({
-    //     [key]: state[key].filter(item => item.key !== value.key)
-    // }))
-
-    // synchList = name => (key, item, action) => {
-
-    // }
-
-    // synchObject = name => (key, item, action) => {
-
-    // }
-
     getActions = () => ({
         watchUser: this.watchUser,
         watchHome: this.watchHome,
+        stopSych: this.stopSync,
+        syncPeople: this.syncPeople,
+        syncNews: this.syncNews,
         changeDarkMode: this.changeDarkMode
     })
 

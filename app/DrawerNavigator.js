@@ -15,14 +15,6 @@ import Loading from '../screens/auth/Loading';
 import Schedule from '../screens/schedule/Schedule';
 
 
-const ScheduleStack = createStackNavigator({
-    Schedule: {
-        screen: Schedule,
-    }
-}, {
-    headerMode: 'none',
-})
-
 const HomeStack = createStackNavigator({
     Home: {
         screen: Home,
@@ -31,9 +23,33 @@ const HomeStack = createStackNavigator({
     headerMode: 'none'
 })
 
+const NewsStack = createStackNavigator({
+    Home: {
+        screen: News,
+    }
+}, {
+    headerMode: 'none'
+})
+
+const ScheduleStack = createStackNavigator({
+    Schedule: {
+        screen: Schedule,
+    }
+}, {
+    headerMode: 'none',
+})
+
 const PeopleStack = createStackNavigator({
     People: {
         screen: People,
+    }
+}, {
+    headerMode: 'none'
+})
+
+const SettingsStack = createStackNavigator({
+    People: {
+        screen: News,
     }
 }, {
     headerMode: 'none'
@@ -48,7 +64,7 @@ const HomeScreen = {
 }
 
 const NewsScreen = {
-    screen: News,
+    screen: NewsStack,
     navigationOptions: {
         tabBarIcon: ({ tintColor }) =>
             <Entypo size={24} name={'documents'} color={tintColor} />
@@ -86,7 +102,7 @@ const BottomNavigation = createMaterialBottomTabNavigator({
     People: PeopleScreen,
     Settings: SettingsScreen
 }, {
-    initialRouteName: 'Home',
+    initialRouteName: 'News',
     defaultNavigationOptions: props => BottomNavigationOptions(props)
 })
 
@@ -101,13 +117,7 @@ const BottomNavigationOptions = ({ screenProps }) => ({
  */
 const DrawerNavigation = createDrawerNavigator({
     Dashboard: BottomNavigation,
-    Settings: {
-        screen: News,
-        navigationOptions: {
-            drawerIcon: ({ tintColor }) =>
-                <Feather size={24} name={'settings'} color={tintColor} />
-        }
-    }
+    Settings: BottomNavigation
 }, {
     initialRouteName: 'Dashboard',
     contentComponent: props => <Drawer {...props} />

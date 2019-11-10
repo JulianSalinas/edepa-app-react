@@ -1,30 +1,49 @@
 // Core 
-import React from 'react';
 import PropTypes from 'prop-types';
+import React, { PureComponent } from 'react';
 
-// Libs
-import styled from 'styled-components/native';
-import { View, Text } from 'react-native';
+// Local 
+import Layout from './Layout';
 import { withMode } from '../../theme/ThemeMode';
+import { READ, UPDATE, DELETE } from '../../constants/Actions';
+
+// Cohstants 
+const LIST_KEY = 'posts';
 
 
-const StyledView = styled(View)`
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-`
+class News extends PureComponent {
 
-const StyledText = styled(Text)`
-    margin-right: 12px;
-    font-size: 18px;
-    letter-spacing: 2.5;
-    text-transform: uppercase;
-`
+    state = {
+        posts: []
+    }
 
-const News = props =>
-    <StyledView>
-        <StyledText style={{ color: props.darkMode ? '#FFF' : '#000' }}>News</StyledText>
-    </StyledView>
+    componentDidMount() {
+        this.props.actions.syncNews(this.syncList)
+    }
 
-export default withMode(News);
+    syncList = (key, value, action) => {
+        value.key = key;
+        if (action === READ) this.onItemRead(LIST_KEY, value)
+        else if (action === UPDATE) this.onItemUpdated(LIST_KEY, value)
+        else if (action === DELETE) this.onItemDeleted(LIST_KEY, value)
+    }
+
+    onItemRead = (key, value) => this.setState(state => ({
+        [key]: [value, ...state[key]]
+    }))
+
+    onItemUpdated = (key, value) => this.setState(state => ({
+        [key]: state[key].map(old => old.key === key ? value : old)
+    }))
+
+    onItemDeleted = (key, value) => this.setState(state => ({
+        [key]: state[key].filter(item => item.key !== value.key)
+    }))
+
+    render() {
+        return <Layout posts={this.state.posts} />
+    }
+
+}
+
+export default withMode(News, true);

@@ -20,6 +20,21 @@ const HomeTypes = PropTypes.shape({
     tag: PropTypes.string
 });
 
+const PreviewTypes = PropTypes.shape({
+    header: PropTypes.string,
+    description: PropTypes.string,
+    thumbnail: PropTypes.string,
+    url: PropTypes.string
+})
+
+const PostTypes = PropTypes.shape({
+    key: PropTypes.string,
+    time: PropTypes.number,
+    title: PropTypes.string,
+    content: PropTypes.string,
+    preview: PreviewTypes
+})
+
 const EventTypes = PropTypes.shape({
     ...CommonTypes,
     id: PropTypes.string,
@@ -46,29 +61,11 @@ const PersonTypes = PropTypes.shape({
     about: PropTypes.string,
 });
 
-const FeelTypes = PropTypes.shape({
-    darkMode: PropTypes.bool,
-    changeDarkMode: PropTypes.func
-}).isRequired;
-
-const StoreTypes = PropTypes.shape({
-    home: HomeTypes,
-    events: PropTypes.arrayOf(EventTypes),
-    people: PropTypes.arrayOf(PersonTypes)
-}).isRequired;
-
-const ScreenTypes = PropTypes.shape({
-    feel: FeelTypes,
-    store: StoreTypes
-}).isRequired;
-
 export {
     PositionTypes,
     HomeTypes,
     EventTypes,
     UserTypes,
     PersonTypes,
-    StoreTypes,
-    FeelTypes,
-    ScreenTypes
+    PostTypes
 }

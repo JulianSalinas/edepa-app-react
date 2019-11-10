@@ -52,7 +52,7 @@ const StyledShortcuts = styled(View)`
 // Each Access measure is 56, so the total space is 248 
 const Shortcuts = props =>
     <StyledShortcuts>
-        <Access icon={FacebookIcon} color={'#3B5998'} navigate={props.navigateToFacebook} />
+        <Access icon={FacebookIcon} color={Flat.FACEBOOK} navigate={props.navigateToFacebook} />
         <View style={{ width: 8 }} />
         <Access icon={InformationIcon} color={Flat.CARROT} navigate={props.navigateToInformation} />
         <View style={{ width: 8 }} />

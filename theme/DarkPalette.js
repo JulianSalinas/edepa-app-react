@@ -1,9 +1,10 @@
 import Gradient from '../colors/Gradient';
+import Flat from '../colors/Flat';
 
 export default {
 
     background: Gradient.DARK_REAL,
-    foreground: Gradient.KASHMIR,
+    foreground: Flat.PUMPKIN,
 
     primary: Gradient.KASHMIR[0],
     secondary: Gradient.DARK_REAL[1],
