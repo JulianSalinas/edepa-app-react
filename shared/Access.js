@@ -5,9 +5,9 @@ import PropTypes from 'prop-types';
 // Libs
 import { View } from 'react-native';
 import { withNavigation } from 'react-navigation';
-import { withContext } from '../../app/AppContext';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { Platform } from '@unimodules/core';
+
 
 const ButtonShadow = {
     elevation: 4,
@@ -21,12 +21,11 @@ const AccessStyle = props => ({
     ...ButtonShadow,
     alignItems: 'center',
     justifyContent: 'center',
-    borderWidth: 1,
-    borderColor: 'transparent',
+    borderWidth: 0,
     width: props.size,
     height: props.size,
-    borderRadius: props.shape === 'rounded' ? 4 : props.size * (props.shape === 'circle' ? 0.5 : 0.0),
-    backgroundColor: props.color
+    backgroundColor: props.color,
+    borderRadius: props.shape === 'rounded' ? 4 : props.size * (props.shape === 'circle' ? 0.5 : 0.0)
 })
 
 const ClickableAccess = props =>
@@ -48,7 +47,6 @@ Access.propTypes = {
     style: PropTypes.object,
     color: PropTypes.string,
     shape: PropTypes.oneOf(['square', 'circle', 'rounded']),
-
 }
 
 Access.defaultProps = {
@@ -58,4 +56,4 @@ Access.defaultProps = {
     shape: 'square'
 }
 
-export default withNavigation(withContext(Access));
+export default withNavigation(Access);

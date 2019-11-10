@@ -10,15 +10,15 @@ const CommonTypes = {
 }
 
 const PositionTypes = PropTypes.shape({
-    x: PropTypes.number,
-    y: PropTypes.number
-}).isRequired;
+    x: PropTypes.number.isRequired,
+    y: PropTypes.number.isRequired
+});
 
 const HomeTypes = PropTypes.shape({
     ...CommonTypes,
     position: PositionTypes,
     tag: PropTypes.string
-}).isRequired;
+});
 
 const EventTypes = PropTypes.shape({
     ...CommonTypes,
@@ -62,13 +62,13 @@ const ScreenTypes = PropTypes.shape({
     store: StoreTypes
 }).isRequired;
 
-export { 
-    PositionTypes, 
-    HomeTypes, 
-    EventTypes, 
-    UserTypes, 
-    PersonTypes, 
-    StoreTypes, 
-    FeelTypes, 
-    ScreenTypes 
+export {
+    PositionTypes,
+    HomeTypes,
+    EventTypes,
+    UserTypes,
+    PersonTypes,
+    StoreTypes,
+    FeelTypes,
+    ScreenTypes
 }
