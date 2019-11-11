@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 
 // Libs 
 import styled from 'styled-components/native';
-import { useTheme } from 'react-navigation';
 import { Text, View } from 'react-native';
+import { withContext } from '../app/AppContext';
 
 
 const StyledText = styled(Text)`
@@ -23,18 +23,14 @@ const StyledView = styled(View)`
 `
 
 const SectionColor = props => ({
-    backgroundColor: props.darkMode ? '#303C4E' : '#EEE'
+    backgroundColor: props.palette.secondaryItem
 })
 
-const SectionLayout = props =>
+const Section = props =>
     <StyledView style={[props.style, SectionColor(props)]}>
         <SectionText {...props} />
     </StyledView>
 
-const Section = props => {
-    const darkMode = useTheme() === 'dark';
-    return <SectionLayout {...props} darkMode={darkMode} />
-}
 
 Section.propTypes = {
     style: PropTypes.object,
@@ -45,4 +41,4 @@ Section.defaultProps = {
     style: {}
 }
 
-export default memo(Section);
+export default withContext(memo(Section));

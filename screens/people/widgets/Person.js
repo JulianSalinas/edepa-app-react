@@ -7,7 +7,7 @@ import styled from 'styled-components/native';
 import { Text, View } from 'react-native';
 
 //Local 
-import Avatar from '../../shared/Avatar';
+import Avatar from '../../../shared/Avatar';
 
 
 const StyledTitle = styled(Text)`

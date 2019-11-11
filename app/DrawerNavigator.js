@@ -1,11 +1,6 @@
 // Core 
 import React from 'react';
 
-// Libs 
-import { createStackNavigator, createDrawerNavigator } from 'react-navigation';
-import { Feather, Entypo, AntDesign, SimpleLineIcons } from '@expo/vector-icons';
-import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
-
 // Local 
 import Drawer from './DrawerContent';
 import Home from '../screens/home/Home';
@@ -14,95 +9,84 @@ import People from '../screens/people/People';
 import Loading from '../screens/auth/Loading';
 import Schedule from '../screens/schedule/Schedule';
 
+// Libs 
+import { createStackNavigator, createDrawerNavigator } from 'react-navigation';
+import { Feather, Entypo, AntDesign, SimpleLineIcons } from '@expo/vector-icons';
+import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
+
+// Constants 
+const INITIAL_ROUTE = 'People';
+
+
+const StackOptions = (name, icon) => ({
+    headerMode: 'none',
+    navigationOptions: { tabBarLabel: name, tabBarIcon: icon }
+})
+
+const HomeIcon = ({ tintColor }) => 
+    <AntDesign 
+        size={24} 
+        name={'home'} 
+        color={tintColor} 
+    />
 
 const HomeStack = createStackNavigator({
-    Home: {
-        screen: Home,
-    }
-}, {
-    headerMode: 'none'
-})
+    Home,
+}, StackOptions('Inicio', HomeIcon))
+
+const NewsIcon = ({ tintColor }) =>
+    <Entypo 
+        size={24} 
+        name={'documents'}
+        color={tintColor} 
+    />
 
 const NewsStack = createStackNavigator({
-    Home: {
-        screen: News,
-    }
-}, {
-    headerMode: 'none'
-})
+    News,
+}, StackOptions('Noticias', NewsIcon))
+
+const ScheduleIcon = ({ tintColor }) =>
+    <SimpleLineIcons 
+        size={24} 
+        name={'graduation'} 
+        color={tintColor} 
+    />
 
 const ScheduleStack = createStackNavigator({
-    Schedule: {
-        screen: Schedule,
-    }
-}, {
-    headerMode: 'none',
-})
+    Schedule,
+}, StackOptions('Cronograma', ScheduleIcon))
+
+const PeopleIcon = ({ tintColor }) =>
+    <SimpleLineIcons 
+        size={24} 
+        name={'people'} 
+        color={tintColor} 
+    />
 
 const PeopleStack = createStackNavigator({
-    People: {
-        screen: People,
-    }
-}, {
-    headerMode: 'none'
-})
+    People,
+}, StackOptions('Expositores', PeopleIcon))
+
+const SettingsIcon = ({ tintColor }) =>
+    <Feather 
+        size={24} 
+        name={'settings'} 
+        color={tintColor} 
+    />
 
 const SettingsStack = createStackNavigator({
-    People: {
-        screen: News,
-    }
-}, {
-    headerMode: 'none'
-})
+    People,
+}, StackOptions('Opciones', SettingsIcon))
 
-const HomeScreen = {
-    screen: HomeStack,
-    navigationOptions: {
-        tabBarIcon: ({ tintColor }) =>
-            <AntDesign size={24} name={'home'} color={tintColor} />
-    }
-}
-
-const NewsScreen = {
-    screen: NewsStack,
-    navigationOptions: {
-        tabBarIcon: ({ tintColor }) =>
-            <Entypo size={24} name={'documents'} color={tintColor} />
-    }
-}
-
-const ScheduleScreen = {
-    screen: ScheduleStack,
-    navigationOptions: {
-        tabBarIcon: ({ tintColor }) =>
-            <SimpleLineIcons size={24} name={'graduation'} color={tintColor} />
-    }
-}
-
-const PeopleScreen = {
-    screen: People,
-    navigationOptions: {
-        tabBarIcon: ({ tintColor }) =>
-            <SimpleLineIcons size={24} name={'people'} color={tintColor} />
-    }
-}
-
-const SettingsScreen = {
-    screen: News,
-    navigationOptions: {
-        tabBarIcon: ({ tintColor }) =>
-            <Feather size={24} name={'settings'} color={tintColor} />
-    }
-}
 
 const BottomNavigation = createMaterialBottomTabNavigator({
-    Home: HomeScreen,
-    News: NewsScreen,
-    Schedule: ScheduleScreen,
-    People: PeopleScreen,
-    Settings: SettingsScreen
+    Home: HomeStack,
+    News: NewsStack,
+    Schedule: ScheduleStack,
+    People: PeopleStack,
+    Settings: SettingsStack
 }, {
-    initialRouteName: 'News',
+    initialRouteName: INITIAL_ROUTE,
     defaultNavigationOptions: props => BottomNavigationOptions(props)
 })
 
@@ -110,6 +94,10 @@ const BottomNavigationOptions = ({ screenProps }) => ({
     activeColor: screenProps.darkMode ? '#FFF' : screenProps.palette.primary,
     inactiveColor: screenProps.palette.fontColor,
     barStyle: NavigationColor(screenProps.palette)
+})
+
+const NavigationColor = ({ background }) => ({
+    backgroundColor: typeof (background) === 'string' ? background : background[0]
 })
 
 /**
@@ -123,11 +111,5 @@ const DrawerNavigation = createDrawerNavigator({
     contentComponent: props => <Drawer {...props} />
 })
 
-const NavigationColor = palette => ({
-    backgroundColor:
-        typeof (palette.background) === 'string' ?
-            palette.background :
-            palette.background[0]
-})
 
 export default DrawerNavigation;
