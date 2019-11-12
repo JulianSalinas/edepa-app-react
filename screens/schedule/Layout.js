@@ -11,6 +11,7 @@ import { getStatusBarHeight } from 'react-native-status-bar-height';
 import Checks from './Checks';
 import Event from './items/Event';
 import Header from './header/Header';
+import { SafeAreaView } from 'react-navigation';
 
 // Constants 
 const MAX_HEIGHT = 245;
@@ -61,7 +62,7 @@ const ScrollView = props =>
         <Events {...props} />
     </Animated.ScrollView>
 
-const StyledLayout = styled(View)`
+const StyledLayout = styled(SafeAreaView)`
     flex: 1; 
     display: flex;
 `

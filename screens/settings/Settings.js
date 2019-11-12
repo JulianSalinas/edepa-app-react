@@ -4,13 +4,13 @@ import PropTypes from 'prop-types';
 
 // Libs
 import styled from 'styled-components/native';
-import { View } from 'react-native';
-import { withMode } from '../../theme/ThemeMode';
+import { Text, SafeAreaView } from 'react-native';
 
 // Local
-import Login from '../auth/login/Layout';
+import { withMode } from '../../theme/ThemeMode';
 
-const StyledView = styled(View)`
+
+const StyledView = styled(SafeAreaView)`
     flex: 1;
     display: flex;
     align-items: center;
@@ -19,7 +19,9 @@ const StyledView = styled(View)`
 
 const Settings = props =>
     <StyledView>
-        <Login darkMode={props.darkMode} />
+        <Text>
+            Configuración
+        </Text>
     </StyledView>
 
 export default withMode(Settings, true);

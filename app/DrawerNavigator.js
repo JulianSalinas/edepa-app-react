@@ -2,12 +2,13 @@
 import React from 'react';
 
 // Local 
-import Drawer from './DrawerContent';
+import Drawer from './DrawerMenu';
 import Home from '../screens/home/Home';
 import News from '../screens/news/News';
 import People from '../screens/people/People';
 import Loading from '../screens/auth/Loading';
 import Schedule from '../screens/schedule/Schedule';
+import Settings from '../screens/settings/Settings';
 
 // Libs 
 import { createStackNavigator, createDrawerNavigator } from 'react-navigation';
@@ -15,7 +16,7 @@ import { Feather, Entypo, AntDesign, SimpleLineIcons } from '@expo/vector-icons'
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
 
 // Constants 
-const INITIAL_ROUTE = 'People';
+const INITIAL_ROUTE = 'Home';
 
 
 const StackOptions = (name, icon) => ({
@@ -75,7 +76,7 @@ const SettingsIcon = ({ tintColor }) =>
     />
 
 const SettingsStack = createStackNavigator({
-    People,
+    Settings,
 }, StackOptions('Opciones', SettingsIcon))
 
 
