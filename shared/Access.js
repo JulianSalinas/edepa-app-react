@@ -43,10 +43,10 @@ const Access = props => Platform.OS === 'web' ?
     <TouchableAccess {...props} />
 
 Access.propTypes = {
+    icon: PropTypes.func,
     size: PropTypes.number,
     style: PropTypes.object,
     color: PropTypes.string,
-    icon: PropTypes.element.isRequired,
     shape: PropTypes.oneOf(['square', 'circle', 'rounded']),
 }
 

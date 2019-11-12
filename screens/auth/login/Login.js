@@ -11,7 +11,7 @@ import { withNavigation } from 'react-navigation';
 class Login extends PureComponent {
 
     state = {
-        email: 'july12sali@gmail.com',
+        email: 'july12sali@hotmail.com',
         password: 'dekajuta'
     }
 
@@ -26,8 +26,25 @@ class Login extends PureComponent {
             .catch(error => console.log(error))
     }
 
+    onEmailChange = email => {
+        console.log('Email changed to: ', email);
+        this.setState({ email });
+    }
+
+    onPasswordChange = password => {
+        console.log('Password changed to: ', password);
+        this.setState({ password });
+    }
+
     render() {
-        return <Layout {...this.props} login={this.login} />
+        return <Layout 
+            {...this.props} 
+            login={this.login} 
+            email={this.state.email}
+            password={this.state.password}
+            onEmailChange={this.onEmailChange}
+            onPasswordChange={this.onPasswordChange}
+        />
     }
 
 }

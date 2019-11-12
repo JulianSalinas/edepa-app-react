@@ -29,7 +29,16 @@ export class AppProvider extends PureComponent {
     }
 
     watchUser = callback => {
-        callback(require('../samples/User').default)
+
+        const userInfo = firebase.auth().currentUser;
+
+        callback({ 
+            userid: userInfo.uid,
+            username: userInfo.displayName,
+            email: userInfo.email,
+            photoUrl: userInfo.photoURL
+        })
+
     }
 
     watchHome = callback => {

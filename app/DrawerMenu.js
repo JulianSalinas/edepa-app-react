@@ -4,12 +4,14 @@ import React, { PureComponent } from 'react';
 // Libs 
 import styled from 'styled-components/native';
 import { NavigationActions } from 'react-navigation';
-import { View, Text, Animated, SafeAreaView } from 'react-native';
+import { View, Text, Animated, SafeAreaView, ScrollView } from 'react-native';
 
 //Local 
-import { withContext } from './AppContext';
-import Avatar from '../shared/Avatar';
 import Background from '../theme/Background';
+import DrawerHeader from './DrawerHeader';
+import DrawerFooter from './DrawerFooter';
+import { withContext } from './AppContext';
+
 
 const StyledItemText = styled(Text)`
     font-size: 24;
@@ -30,69 +32,41 @@ const DrawerItems = props => props.items.map((item, index) =>
     </View>
 )
 
-const StyledList = styled(Animated.View)`
+const StyledList = styled(ScrollView)`
+    flex: 1;
     padding: 0px 32px 0px 32px;
 `
 
 const DrawerList = props =>
-    <StyledList style={{ flex: 1, transform: [{ translateX: props.translateX }, { translateY: props.translateY }] }}>
+    <StyledList>
         <DrawerItems {...props} />
     </StyledList>
 
-const DrawerAvatar = props =>
-    <Avatar
-        size={48}
-        title={props.user ? props.user.username : ''}
-        source={require('../assets/images/robot-prod.png')}
-    />
+const DrawerContainerStyle = props => ({
+    flex: 1, 
+    transform: [{ translateX: props.translateX }, { translateY: props.translateY }] 
+})
 
-const DrawerUsername = props =>
-    <Text style={{ color: props.palette.primaryFont, fontWeight: 'bold' }} numberOfLines={1}>
-        {props.user ? props.user.username : ''}
-    </Text>
-
-const DrawerEmail = props =>
-    <Text style={{ color: props.palette.primaryFont, fontWeight: '100', fontSize: 12 }} numberOfLines={1}>
-        {props.user ? props.user.email : ''}
-    </Text>
-
-const DrawerUser = props =>
-    <View>
-        <DrawerUsername {...props} />
-        <DrawerEmail {...props} />
-    </View>
-
-const StyledHeader = styled(Animated.View)`
-    display: flex;
-    flex-flow: row;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 64px 32px 16px 32px; 
-`
-
-const DrawerHeader = props =>
-    <StyledHeader style={{ flex: 1, transform: [{ translateX: props.translateX }, { translateY: props.translateY }] }}>
-        <DrawerAvatar {...props} />
-        <View style={{ margin: 8 }} />
-        <DrawerUser {...props} />
-    </StyledHeader>
-
-const ScrollableDrawer = props =>
-    <Animated.ScrollView>
+const DrawerContainer = props =>
+    <Animated.View style={DrawerContainerStyle(props)}>
         <DrawerHeader {...props} />
         <DrawerList {...props} />
-    </Animated.ScrollView>
+        <DrawerFooter {...props}/>
+    </Animated.View>
 
 const DrawerBackground = props =>
     <Background
         style={{ flex: 1 }}
         darkMode={props.darkMode}
-        darkBackground={
-            typeof (props.palette.background) === 'string' ?
-                props.palette.background : props.palette.background[0]
-        }>
-        <ScrollableDrawer {...props} />
+        darkBackground={props.background}>
+        <DrawerContainer {...props} />
     </Background>
+
+const DrawerLayout = props => {
+    const isString = typeof (props.palette.background) === 'string';
+    const background = isString ? props.palette.background : props.palette.background[0];
+    return <DrawerBackground {...props} background={background}/>
+}
 
 /**
  * ? Wrap with this to animate
@@ -126,7 +100,7 @@ class DrawerContent extends PureComponent {
     render() {
         return (
             <SafeAreaView style={{ flex: 1 }}>
-                <DrawerBackground
+                <DrawerLayout
                     {...this.props}
                     user={this.state.user}
                     translateX={this.translateX}

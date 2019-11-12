@@ -59,6 +59,7 @@ const GoogleButton = props => {
 }
 
 GoogleButton.propTypes = {
+    icon: PropTypes.func,
     style: PropTypes.object,
     color: PropTypes.string,
     text: PropTypes.string,

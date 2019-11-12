@@ -39,8 +39,8 @@ export default class App extends PureComponent {
 
     loadFirebase = async () => {
         if (!firebase.apps.length) {
-            require('firebase/database');
             require('firebase/auth');
+            require('firebase/database');
             firebase.initializeApp(firebaseConfig);
         }
     }
