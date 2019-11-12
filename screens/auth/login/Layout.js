@@ -8,11 +8,19 @@ import { View } from 'react-native';
 
 // Local 
 import Logo from '../../../shared/Edepa';
-import Google from '../../../shared/buttons/Google';
-import Facebook from '../../../shared/buttons/Facebook';
+import Google from '../../../shared/JButton';
+import { withContext } from '../../../app/AppContext';
+import { FontAwesome } from '@expo/vector-icons';
 
+const GoogleIcon = () =>
+    <FontAwesome
+        size={24}
+        color={'#FFF'}
+        name={'google'}
+        style={{ marginEnd: 16 }}
+    />
 
-const StyledLayout = styled(View)`
+const StyledLogin = styled(View)`
     flex: 1;
     display: flex;
     align-items: center;
@@ -20,20 +28,17 @@ const StyledLayout = styled(View)`
 `
 
 const Login = props =>
-    <StyledLayout>
-        <Logo darkMode={props.darkMode} />
-        <Google onClick={props.login} style={{ margin: 16 }} />
-        <Facebook onClick={props.login} />
-    </StyledLayout>
+    <StyledLogin>
+        <Logo darkMode={props.darkMode} color={props.palette.foreground}/>
+        <Google icon={GoogleIcon} onClick={props.login} style={{ marginTop: 16 }}/>
+    </StyledLogin>
 
 Login.propTypes = {
-    darkMode: PropTypes.bool,
     login: PropTypes.func.isRequired
 }
 
 Login.defaultProps = {
-    darkMode: true,
     login: () => console.warn('Required function: login')
 }
 
-export default memo(Login);
+export default withContext(memo(Login));

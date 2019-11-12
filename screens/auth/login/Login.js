@@ -2,29 +2,34 @@
 import React, { PureComponent } from 'react';
 
 // Local 
+import firebase from 'firebase';
 import Layout from './Layout';
-import { AppConsumer } from '../../../app/AppContext';
+import { withMode } from '../../../theme/ThemeMode';
+import { withNavigation } from 'react-navigation';
 
 
 class Login extends PureComponent {
 
+    state = {
+        email: 'july12sali@gmail.com',
+        password: 'dekajuta'
+    }
+
     login = () => {
         console.log('LOGIN PRESSED');
+        firebase.auth()
+            .signInWithEmailAndPassword(this.state.email, this.state.password)
+            .then(info => {
+                console.log(info);
+                this.props.navigation.navigate('Home');
+            })
+            .catch(error => console.log(error))
     }
 
     render() {
-        return (
-            <AppConsumer>
-                {
-                    value => {
-                        console.log('Props from consumer', value);
-                        return <Layout {...this.props} login={this.login} />
-                    }
-                }
-            </AppConsumer>
-        )
+        return <Layout {...this.props} login={this.login} />
     }
 
 }
 
-export default Login;
+export default withNavigation(withMode(Login, true));

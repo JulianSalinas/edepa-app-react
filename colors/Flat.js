@@ -15,5 +15,6 @@ export default {
     PUMPKIN: "#d35400",
     ALIZARIN: "#e74c3c",
     POMEGRANATE: "#c0392b",
-    FACEBOOK: "#3B5998"
+    FACEBOOK: "#3B5998",
+    GOOGLE: "#d34836"
 }

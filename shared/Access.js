@@ -46,6 +46,7 @@ Access.propTypes = {
     size: PropTypes.number,
     style: PropTypes.object,
     color: PropTypes.string,
+    icon: PropTypes.element.isRequired,
     shape: PropTypes.oneOf(['square', 'circle', 'rounded']),
 }
 
