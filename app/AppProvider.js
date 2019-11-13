@@ -29,16 +29,9 @@ export class AppProvider extends PureComponent {
     }
 
     watchUser = callback => {
-
-        const userInfo = firebase.auth().currentUser;
-
-        callback({ 
-            userid: userInfo.uid,
-            username: userInfo.displayName,
-            email: userInfo.email,
-            photoUrl: userInfo.photoURL
-        })
-
+        // The user always is supposed to be logged here 
+        const uid = firebase.auth().currentUser.uid;
+        this.database.child('users').child(uid).once('value', snapshot => callback(snapshot.val()));
     }
 
     watchHome = callback => {

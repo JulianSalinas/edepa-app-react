@@ -7,12 +7,12 @@ import { createSwitchNavigator } from 'react-navigation';
 
 // Local 
 import { withContext } from './AppContext';
+import Flow from '../screens/auth/Flow';
 import Login from '../screens/auth/login/Login';
-import Loading from '../screens/auth/Loading';
 import DrawerNavigation from './DrawerNavigator';
 
 const routes = {
-    Loading,
+    Flow,
     Login,
     Navigation: DrawerNavigation
 }

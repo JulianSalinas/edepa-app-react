@@ -21,13 +21,14 @@ const ButtonShadow = {
 }
 
 const StyledText = styled(Text)`
+    color: #FFF;
     font-size: 10;
     letter-spacing: 2.4;
     text-transform: uppercase;
 `
 
 const ButtonText = props =>
-    <StyledText style={{ color: props.darkMode ? '#FFF' : props.color }}>
+    <StyledText>
         {props.text}
     </StyledText>
 
@@ -53,13 +54,11 @@ const GoogleButton = props => {
     return <ButtonComponent
         onPress={props.onClick}
         onClick={props.onClick}
-        style={[props.style, ButtonStyle, {
+        style={[props.style, ButtonStyle, ButtonShadow, {
             borderColor: props.color,
-            backgroundColor: props.darkMode ? props.color : 'transparent',
-            paddingHorizontal: props.icon ? 24 : 16,
-            borderWidth: props.darkMode ? 0 : 1,
-        },
-        props.darkMode ? ButtonShadow : {}]}>
+            backgroundColor: props.color,
+            paddingHorizontal: props.icon ? 24 : 16
+        }]}>
         <ButtonContent {...props} />
     </ButtonComponent>
 
@@ -81,4 +80,3 @@ GoogleButton.defaultProps = {
 }
 
 export default withContext(memo(GoogleButton));
-

@@ -3,11 +3,12 @@ import React, { PureComponent } from 'react';
 
 // Libs 
 import firebase from 'firebase';
-import { Button, View } from 'react-native';
+import { View } from 'react-native';
 import { withNavigation } from 'react-navigation';
 
 //Local 
 import Flat from '../colors/Flat';
+import JButton from '../shared/JButton';
 
 
 class DrawerFooter extends PureComponent {
@@ -22,11 +23,11 @@ class DrawerFooter extends PureComponent {
 
     render() {
         return (
-            <View style={{ padding: 16 }}>
-                <Button 
-                    title={'CERRAR SESIóN'} 
+            <View style={{ padding: 32 }}>
+                <JButton
+                    text={'CERRAR SESIóN'}
                     color={Flat.POMEGRANATE}
-                    onPress={this.logOut}
+                    onClick={this.logOut}
                 />
             </View>
         )

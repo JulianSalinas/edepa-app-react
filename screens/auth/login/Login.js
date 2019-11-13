@@ -1,45 +1,52 @@
 // Core 
 import React, { PureComponent } from 'react';
 
-// Local 
+// Libs 
 import firebase from 'firebase';
+import { withNavigation } from 'react-navigation';
+
+// Local 
 import Layout from './Layout';
 import { withMode } from '../../../theme/ThemeMode';
-import { withNavigation } from 'react-navigation';
 
 
 class Login extends PureComponent {
 
     state = {
-        email: 'july12sali@hotmail.com',
-        password: 'dekajuta'
-    }
-
-    login = () => {
-        console.log('LOGIN PRESSED');
-        firebase.auth()
-            .signInWithEmailAndPassword(this.state.email, this.state.password)
-            .then(info => {
-                console.log(info);
-                this.props.navigation.navigate('Home');
-            })
-            .catch(error => console.log(error))
+        email: '',
+        password: '',
     }
 
     onEmailChange = email => {
-        console.log('Email changed to: ', email);
         this.setState({ email });
     }
 
     onPasswordChange = password => {
-        console.log('Password changed to: ', password);
         this.setState({ password });
     }
 
+    signup = () => {
+        console.log('Sign Up');
+    }
+
+    login = type => () => {
+        if (type === 'Email') {
+            firebase.auth()
+                .signInWithEmailAndPassword(this.state.email, this.state.password)
+                .then(info => {
+                    this.props.navigation.navigate('Home');
+                }).catch(error => console.log(error))
+        }
+        else {
+            console.log('Log with Google');
+        }
+    }
+
     render() {
-        return <Layout 
-            {...this.props} 
-            login={this.login} 
+        return <Layout
+            {...this.props}
+            login={this.login}
+            signup={this.signup}
             email={this.state.email}
             password={this.state.password}
             onEmailChange={this.onEmailChange}

@@ -6,7 +6,6 @@ import Drawer from './DrawerMenu';
 import Home from '../screens/home/Home';
 import News from '../screens/news/News';
 import People from '../screens/people/People';
-import Loading from '../screens/auth/Loading';
 import Schedule from '../screens/schedule/Schedule';
 import Settings from '../screens/settings/Settings';
 
@@ -24,11 +23,11 @@ const StackOptions = (name, icon) => ({
     navigationOptions: { tabBarLabel: name, tabBarIcon: icon }
 })
 
-const HomeIcon = ({ tintColor }) => 
-    <AntDesign 
-        size={24} 
-        name={'home'} 
-        color={tintColor} 
+const HomeIcon = ({ tintColor }) =>
+    <AntDesign
+        size={24}
+        name={'home'}
+        color={tintColor}
     />
 
 const HomeStack = createStackNavigator({
@@ -36,10 +35,10 @@ const HomeStack = createStackNavigator({
 }, StackOptions('Inicio', HomeIcon))
 
 const NewsIcon = ({ tintColor }) =>
-    <Entypo 
-        size={24} 
+    <Entypo
+        size={24}
         name={'documents'}
-        color={tintColor} 
+        color={tintColor}
     />
 
 const NewsStack = createStackNavigator({
@@ -47,10 +46,10 @@ const NewsStack = createStackNavigator({
 }, StackOptions('Noticias', NewsIcon))
 
 const ScheduleIcon = ({ tintColor }) =>
-    <SimpleLineIcons 
-        size={24} 
-        name={'graduation'} 
-        color={tintColor} 
+    <SimpleLineIcons
+        size={24}
+        name={'graduation'}
+        color={tintColor}
     />
 
 const ScheduleStack = createStackNavigator({
@@ -58,10 +57,10 @@ const ScheduleStack = createStackNavigator({
 }, StackOptions('Cronograma', ScheduleIcon))
 
 const PeopleIcon = ({ tintColor }) =>
-    <SimpleLineIcons 
-        size={24} 
-        name={'people'} 
-        color={tintColor} 
+    <SimpleLineIcons
+        size={24}
+        name={'people'}
+        color={tintColor}
     />
 
 const PeopleStack = createStackNavigator({
@@ -69,10 +68,10 @@ const PeopleStack = createStackNavigator({
 }, StackOptions('Expositores', PeopleIcon))
 
 const SettingsIcon = ({ tintColor }) =>
-    <Feather 
-        size={24} 
-        name={'settings'} 
-        color={tintColor} 
+    <Feather
+        size={24}
+        name={'settings'}
+        color={tintColor}
     />
 
 const SettingsStack = createStackNavigator({
