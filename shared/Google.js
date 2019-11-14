@@ -4,8 +4,7 @@ import PropTypes from 'prop-types';
 
 // Libs
 import styled from 'styled-components/native';
-import { Platform } from '@unimodules/core';
-import { Text, View, TouchableOpacity } from 'react-native';
+import { Text, TouchableOpacity } from 'react-native';
 
 // Local 
 import Flat from '../colors/Flat';
@@ -47,22 +46,16 @@ const ButtonContent = props =>
         <ButtonText {...props} />
     </>
 
-const GoogleButton = props => {
-
-    const ButtonComponent = Platform.OS === 'web' ? View : TouchableOpacity;
-
-    return <ButtonComponent
+const GoogleButton = props => 
+    <TouchableOpacity
         onPress={props.onClick}
-        onClick={props.onClick}
         style={[props.style, ButtonStyle, ButtonShadow, {
             borderColor: props.color,
             backgroundColor: props.color,
             paddingHorizontal: props.icon ? 24 : 16
         }]}>
         <ButtonContent {...props} />
-    </ButtonComponent>
-
-}
+    </TouchableOpacity>
 
 GoogleButton.propTypes = {
     icon: PropTypes.func,

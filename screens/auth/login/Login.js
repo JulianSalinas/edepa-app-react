@@ -21,7 +21,8 @@ class Login extends PureComponent {
     state = {
         email: '',
         password: '',
-        isLogging: false
+        isLoading: false,
+        byPassGoogle: Platform.OS === 'web'
     }
 
     onEmailChange = email => {
@@ -32,27 +33,29 @@ class Login extends PureComponent {
         this.setState({ password });
     }
 
-    signup = () => {
-        console.log('Sign Up');
+    signUp = () => {
+        console.log('Sign Up executed');
+        this.setState({ isLoading: true }, () => this.props.navigation.navigate('SignUp'));
     }
 
-    login = type => () => {
-        this.setState({ isLogging: true }, () => this.handleLogin(type));
+    login = type => {
+        console.log('Login executed with type', type);
+        this.setState({ isLoading: true }, () => this.handleLogin(type));
     }
 
     handleLogin = type => {
-        if (type === 'Google' && Platform.OS === 'web') return this.byPassLogin();
+        if (this.state.byPassGoogle && type === 'Google') return this.byPassLogin();
         const signIn = type === 'Email' ? this.signInWithEmailAndPassword : this.signInWithGoogle;
         return signIn();
     }
 
     byPassLogin = () => {
         const logged = () => this.props.navigation.navigate('Home');
-        return this.setState({ isLogging: false }, logged);
+        this.setState({ isLoading: false }, logged);
     }
 
     resetPassword = () => {
-        this.setState({ isLogging: true }, this.handleResetPassword);
+        this.setState({ isLoading: true }, this.handleResetPassword);
     }
 
     handleResetPassword = () => {
@@ -60,7 +63,7 @@ class Login extends PureComponent {
         firebase.auth()
             .sendPasswordResetEmail(this.state.email)
             // .then(() => this.props.navigation.navigate('Home'))
-            .then(() => this.setState({ isLogging: false }))
+            .then(() => this.setState({ isLoading: false }))
             .catch(this.signInError);
     }
 
@@ -93,15 +96,13 @@ class Login extends PureComponent {
     }
 
     signInError = error => {
-        this.setState({ isLogging: false }, () => console.warn(error));
+        this.setState({ isLoading: false }, () => console.warn(error));
     }
 
     render() {
-        return this.state.isLogging ? <Indicator /> : <Layout
-            {...this.props}
+        return this.state.isLoading ? <Indicator /> : <Layout
             login={this.login}
-            signup={this.signup}
-            isLogging={this.isLogging}
+            signUp={this.signUp}
             email={this.state.email}
             password={this.state.password}
             onEmailChange={this.onEmailChange}
