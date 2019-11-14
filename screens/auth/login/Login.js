@@ -21,8 +21,7 @@ class Login extends PureComponent {
     state = {
         email: '',
         password: '',
-        isLoading: false,
-        byPassGoogle: Platform.OS === 'web'
+        isLoading: false
     }
 
     onEmailChange = email => {
@@ -34,17 +33,15 @@ class Login extends PureComponent {
     }
 
     signUp = () => {
-        console.log('Sign Up executed');
         this.setState({ isLoading: true }, () => this.props.navigation.navigate('SignUp'));
     }
 
     login = type => {
-        console.log('Login executed with type', type);
         this.setState({ isLoading: true }, () => this.handleLogin(type));
     }
 
     handleLogin = type => {
-        if (this.state.byPassGoogle && type === 'Google') return this.byPassLogin();
+        if (Platform.OS === 'web' && type === 'Google') return this.byPassLogin();
         const signIn = type === 'Email' ? this.signInWithEmailAndPassword : this.signInWithGoogle;
         return signIn();
     }
@@ -62,7 +59,6 @@ class Login extends PureComponent {
         console.log('trying to reset password');
         firebase.auth()
             .sendPasswordResetEmail(this.state.email)
-            // .then(() => this.props.navigation.navigate('Home'))
             .then(() => this.setState({ isLoading: false }))
             .catch(this.signInError);
     }
