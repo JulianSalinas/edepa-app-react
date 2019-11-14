@@ -43,15 +43,15 @@ const DrawerList = props =>
     </StyledList>
 
 const DrawerContainerStyle = props => ({
-    flex: 1, 
-    transform: [{ translateX: props.translateX }, { translateY: props.translateY }] 
+    flex: 1,
+    transform: [{ translateX: props.translateX }, { translateY: props.translateY }]
 })
 
 const DrawerContainer = props =>
     <Animated.View style={DrawerContainerStyle(props)}>
         <DrawerHeader {...props} />
         <DrawerList {...props} />
-        <DrawerFooter {...props}/>
+        <DrawerFooter {...props} />
     </Animated.View>
 
 const DrawerBackground = props =>
@@ -65,7 +65,7 @@ const DrawerBackground = props =>
 const DrawerLayout = props => {
     const isString = typeof (props.palette.background) === 'string';
     const background = isString ? props.palette.background : props.palette.background[0];
-    return <DrawerBackground {...props} background={background}/>
+    return <DrawerBackground {...props} background={background} />
 }
 
 /**

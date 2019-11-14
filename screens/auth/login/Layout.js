@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 // Libs
 import styled from 'styled-components/native';
-import { View, TextInput } from 'react-native';
+import { View, TextInput, ActivityIndicator } from 'react-native';
 
 // Local 
 import Flat from '../../../colors/Flat';
@@ -15,6 +15,11 @@ import { FontAwesome, MaterialCommunityIcons, AntDesign } from '@expo/vector-ico
 import { Caption } from 'react-native-paper';
 import Google from '../../../shared/Google';
 
+const Indicator = props =>
+    <ActivityIndicator
+        size={"small"}
+        color={props.darkMode ? '#FFF' : props.color}
+    />
 
 const GoogleIcon = () =>
     <FontAwesome
@@ -64,7 +69,7 @@ const EmailInput = props =>
         <EmailIcon color={props.palette.primaryFont} />
         <TextInput
             value={props.email}
-            placeholder={'email'}
+            placeholder={'Email'}
             onChangeText={props.onEmailChange}
             style={{ flex: 1, color: props.palette.primaryFont }}
         />
@@ -79,7 +84,7 @@ const PasswordInput = props =>
         <TextInput
             secureTextEntry={true}
             value={props.password}
-            placeholder={'contraseña'}
+            placeholder={'Contraseña'}
             onChangeText={props.onPasswordChange}
             style={{ flex: 1, color: props.palette.primaryFont }}
         />

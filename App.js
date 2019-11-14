@@ -16,7 +16,12 @@ import { Ionicons } from '@expo/vector-icons';
 import { Platform, StatusBar, View, YellowBox } from 'react-native';
 
 // Ignore 
-YellowBox.ignoreWarnings(['Setting a timer', 'Warning: Using the']);
+YellowBox.ignoreWarnings([
+    'Setting a timer',
+    'Warning: Using the',
+    'Deprecated: You will',
+    'Info: The current domain'
+]);
 console.disableYellowBox = true;
 
 

@@ -3,6 +3,7 @@ import firebase from 'firebase/app';
 import React, { PureComponent } from 'react';
 
 // Local
+import User from '../samples/User';
 import AppContext from './AppContext';
 import DarkPalette from '../theme/DarkPalette';
 import LightPalette from '../theme/LightPalette';
@@ -29,10 +30,34 @@ export class AppProvider extends PureComponent {
     }
 
     watchUser = callback => {
-        // The user always is supposed to be logged here 
-        const uid = firebase.auth().currentUser.uid;
-        this.database.child('users').child(uid).once('value', snapshot => callback(snapshot.val()));
+        const user = firebase.auth().currentUser;
+        if (!user) return callback(User);
+        this.database
+            .child('users')
+            .child(user.uid)
+            .once('value', snapshot => this.watchUserInfo(user, callback, snapshot));
     }
+
+    watchUserInfo = (user, callback, snapshot) => {
+        if (!snapshot.val()) return this.updateUserInfo(user, callback);
+        else callback(snapshot.val());
+    }
+
+    updateUserInfo = (user, callback) => {
+        this.database
+            .child('users')
+            .child(user.uid)
+            .set(this.extractUserInfo(user))
+            .then(callback(user));
+    }
+
+    extractUserInfo = user => ({
+        allowPhoto: true,
+        userid: user.uid,
+        email: user.email,
+        username: user.displayName,
+        photoUrl: user.photoURL
+    })
 
     watchHome = callback => {
         this.database.child('congress').once('value', snapshot => callback(snapshot.val()));

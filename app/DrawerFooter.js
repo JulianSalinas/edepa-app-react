@@ -2,7 +2,7 @@
 import React, { PureComponent } from 'react';
 
 // Libs 
-import firebase from 'firebase';
+import firebase from 'firebase/app';
 import { View } from 'react-native';
 import { withNavigation } from 'react-navigation';
 
