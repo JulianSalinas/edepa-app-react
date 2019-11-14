@@ -51,6 +51,19 @@ class Login extends PureComponent {
         return this.setState({ isLogging: false }, logged);
     }
 
+    resetPassword = () => {
+        this.setState({ isLogging: true }, this.handleResetPassword);
+    }
+
+    handleResetPassword = () => {
+        console.log('trying to reset password');
+        firebase.auth()
+            .sendPasswordResetEmail(this.state.email)
+            // .then(() => this.props.navigation.navigate('Home'))
+            .then(() => this.setState({ isLogging: false }))
+            .catch(this.signInError);
+    }
+
     signInWithEmailAndPassword = () => {
         firebase.auth()
             .signInWithEmailAndPassword(this.state.email, this.state.password)
@@ -93,6 +106,7 @@ class Login extends PureComponent {
             password={this.state.password}
             onEmailChange={this.onEmailChange}
             onPasswordChange={this.onPasswordChange}
+            resetPassword={this.resetPassword}
         />
     }
 

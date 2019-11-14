@@ -1,10 +1,10 @@
 // Core 
-import React, { memo } from 'react';
+import React, { memo, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
 // Libs
 import styled from 'styled-components/native';
-import { View, TextInput, ActivityIndicator } from 'react-native';
+import { Button, View, TextInput, ActivityIndicator } from 'react-native';
 
 // Local 
 import Flat from '../../../colors/Flat';
@@ -14,6 +14,7 @@ import { withContext } from '../../../app/AppContext';
 import { FontAwesome, MaterialCommunityIcons, AntDesign } from '@expo/vector-icons';
 import { Caption } from 'react-native-paper';
 import Google from '../../../shared/Google';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const Indicator = props =>
     <ActivityIndicator
@@ -38,19 +39,14 @@ const EmailIcon = props =>
     />
 
 const PasswordIcon = props =>
-    <MaterialCommunityIcons
-        size={24}
-        color={props.color}
-        name={'key'}
-        style={{ marginEnd: 16 }}
-    />
-
-const StyledLogin = styled(View)`
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-`
+    <TouchableOpacity onPress={props.onPress}>
+        <MaterialCommunityIcons
+            size={24}
+            color={props.color}
+            name={'key'}
+            style={{ marginEnd: 16 }}
+        />
+    </TouchableOpacity>
 
 const InputStyle = {
     height: 48,
@@ -75,20 +71,40 @@ const EmailInput = props =>
         />
     </View>
 
-const PasswordInput = props =>
+const PasswordInputLayout = props =>
     <View style={[InputStyle, {
         marginBottom: 8,
         backgroundColor: props.palette.secondaryItem,
     }]}>
-        <PasswordIcon color={props.palette.primaryFont} />
+        <PasswordIcon {...props} color={props.palette.primaryFont} />
         <TextInput
-            secureTextEntry={true}
+            secureTextEntry={props.secureTextEntry}
             value={props.password}
             placeholder={'Contraseña'}
             onChangeText={props.onPasswordChange}
             style={{ flex: 1, color: props.palette.primaryFont }}
         />
     </View>
+
+class PasswordInput extends PureComponent {
+
+    state = {
+        secureTextEntry: true
+    }
+
+    onPress = () => {
+        this.setState(state => ({ secureTextEntry: !state.secureTextEntry }));
+    }
+
+    render() {
+        return <PasswordInputLayout
+            {...this.props}
+            onPress={this.onPress}
+            secureTextEntry={this.state.secureTextEntry}
+        />
+    }
+
+}
 
 const StyledButtons = styled(View)`
     display: flex;
@@ -117,14 +133,29 @@ const LoginAlternativeCaption = props =>
         {'》Ó puedes'}
     </Caption>
 
+const LoginResetPassword = props =>
+    <TouchableOpacity onPress={props.resetPassword}>
+        <Caption style={{ color: Flat.PETER_RIVER, textAlign: 'center' }}>
+            {'¿Has olvidado tu contraseña?'}
+        </Caption>
+    </TouchableOpacity>
+
 const LoginControls = props =>
     <View style={{ marginTop: 16 }}>
         <EmailInput {...props} />
         <PasswordInput {...props} />
         <LoginButtons {...props} />
         <LoginAlternativeCaption {...props} />
-        <Google icon={GoogleIcon} onClick={props.login('Google')} style={{ marginBottom: 8 }} />
+        <Google icon={GoogleIcon} onClick={props.login('Google')} style={{ marginBottom: 12 }} />
+        <LoginResetPassword {...props} />
     </View>
+
+const StyledLogin = styled(View)`
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`
 
 const Login = props =>
     <StyledLogin>
@@ -138,7 +169,8 @@ Login.propTypes = {
     email: PropTypes.string.isRequired,
     password: PropTypes.string.isRequired,
     onEmailChange: PropTypes.func.isRequired,
-    onPasswordChange: PropTypes.func.isRequired
+    onPasswordChange: PropTypes.func.isRequired,
+    resetPassword: PropTypes.func.isRequired
 }
 
 export default withContext(memo(Login));
