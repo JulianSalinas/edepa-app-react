@@ -39,16 +39,19 @@ export class AppProvider extends PureComponent {
     }
 
     watchUserInfo = (user, callback, snapshot) => {
+        console.log(user);
+        console.log(snapshot);
         if (!snapshot.val()) return this.updateUserInfo(user, callback);
         else callback(snapshot.val());
     }
 
     updateUserInfo = (user, callback) => {
+        const userInfo = this.extractUserInfo(user);
         this.database
             .child('users')
             .child(user.uid)
-            .set(this.extractUserInfo(user))
-            .then(callback(user));
+            .set(userInfo)
+            .then(callback(userInfo));
     }
 
     extractUserInfo = user => ({
